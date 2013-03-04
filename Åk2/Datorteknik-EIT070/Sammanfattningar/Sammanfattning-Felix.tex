@@ -167,5 +167,12 @@ Trådar befinner sig i tre olika tillstånd: \textbf{exekverande, redo} och \tex
 \begin{itemize}
 \item \textbf{Register:} Används för att temporärt lagra data inne i processorn; så att denne inte behöver hämta från minnet lika ofta. Registeråtkomst är snabbare än minnesåtkomst (de sitter på samma chip som processorn.
 \item \textbf{ALU:} arithmetic logic unit. I moderna processorer finns det flera ALU. Ofta en för flyttal utöver standard-ALU:n.
+\paragraph{IEEE Standarden för flyttal:} { \center $ (-1)^x (1.yyyyyyyy) 2^{(z-127)} $ \endcenter }  Ett flyttal består utav 32 bitar. Den mest signifikatia biten (32) är teckenbiten $x$ och avgör tecknet. Och de resterande bitarna, altså bitar 22-0 är mantissan,  också kallad signifikanden $y$. Bitar 31-23  är exponenten $z$. Den mest signifikanta biten i mantissan motsvarar $2^{-1}$, den näst signifikanta $2^{-2}$ och så vidare.
 \end{itemize}
+
+\section{Avbrott}
+\paragraph{Statusfält:} Innehåller vilka användardefinierade avbrott som är tillåtna. Varje avbrott motsvarar en bit i C0\_STATUS-registret. 
+\paragraph{Orsaksfält:} Innehåller vilka avbrott som har inträffat. Varje avbrott motsvarar en bit i C0\_CAUSE-registret.
+\paragraph{EPC:} Exception Program Counter, innehåller vad huvudprocessorns programräknare (PC) var innan avbrottet inträffade.  
+
 \end{document}
