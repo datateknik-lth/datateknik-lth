@@ -4,6 +4,7 @@ Detta är det inofficiella repot för Civilingenjör datateknik vid LTH. Det är
 
 ## Regler
  1. Inget fusk får finnas i repot.
+ 2. Ifall man bidrar till en sammanfattning, så skriver man till sig i title el dyl.
 
 ## Mappstruktur
  Strukturen är enligt följande
