@@ -8,6 +8,6 @@ Detta är det inofficiella repot för Civilingenjör datateknik vid LTH. Det är
 ## Mappstruktur
  Strukturen är enligt följande
 
- `/Årskurs/Kursnamn-kurskod/Extentor
-  /Årskurs/Kursnamn-kurskod/Sammanfattningar
-  /Årskurs/Kursnamn-kurskod/Övrigt`
+ `/Årskurs/Kursnamn-kurskod/Extentor`
+ `/Årskurs/Kursnamn-kurskod/Sammanfattningar`
+ `/Årskurs/Kursnamn-kurskod/Övrigt`
