@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
 \title{Kontrollfrågor och Bra att veta}
-\author{Meris Bahti & Felix Mul}
+\author{Meris Bahti \& Felix Mul}
 
 \usepackage[version=3]{mhchem} % Package for chemical equation typesetting
 \setcounter{secnumdepth}{-1}
@@ -43,7 +43,7 @@ Använd regel (16): \\  $\mathcal{L}(f(t)) = s\mathcal{L}(f(t)) = (f(t)\theta(t)
 \paragraph{Q:} Vad blir faltningarna $\delta * f$ och $\delta ^{(n)} * f$?
 \paragraph{A:} $\delta ^{(n)} * f = f^{(n)}$ t.ex. $\delta ' * f = f'$ eftersom $\mathcal{L}^{-1}(sF(s)) = f'(t)$ och $\mathcal{L}(\delta '(t)) = s$ 
 
-\section{Fråga 7}
+\section{Fråga 7 - viktig}
 \paragraph{Q:} Vad menas med att ett system i insignal- \and utsignalform är:
 \begin{enumerate}[a)]
 \item Linjärt
@@ -58,7 +58,7 @@ Använd regel (16): \\  $\mathcal{L}(f(t)) = s\mathcal{L}(f(t)) = (f(t)\theta(t)
 \item Stabilt: Ifall insignalen är begränsad så är även utsignalen begränsad.
 \item Kausalt: Orsak föregår verkan. Insignalen $f(t)=0$ för $t<t_0$ så är utsignalen $y(t)=0$ för $t<t_0$
 \end{enumerate}
-\section{Fråga 8}
+\section{Fråga 8 - viktig}
 \paragraph{Q:} Under vilka villkor på impulssvaret är ett linjärt system i insignal-utsignalform:
 \begin{enumerate}[a)]
 \item Tidsinvariant - kommer ej
@@ -129,7 +129,7 @@ A=\mathcal{S}0\mathcal{S}^{-1}=0$ \underline{\textbf{motsägelse}}: det sista st
 \paragraph{A:} $tr(A)=\lambda_1 + \ldots + \lambda_n$ \\ $det(A)=\lambda_1 \cdot \ldots \cdot \lambda_n$
 
 \section{Fråga 19}
-\paragraph{Q:} Finns ej!
+\paragraph{Q:} Kommer ej på tentamen, tack Victor.
 
 \section{Fråga 20}
 \paragraph{Q:} Definiera matrisexponentialfunktionen $e^{At}$ för en godtycklig kvadratisk matris. 
@@ -164,7 +164,7 @@ A=\mathcal{S}0\mathcal{S}^{-1}=0$ \underline{\textbf{motsägelse}}: det sista st
 \item För alla lösningar, $s_i$, av $Q(s) = 0$ så är $Re(s) < 0$
 \end{enumerate}
 
-\section{Satser och övrigt}
+\section{Satser och tips och trix}
 \begin{itemize}
 \item $D=S^{-1}AS \Leftrightarrow A=SDS^{-1}$
 \item Frekvensfunktion: $H(i\omega)$
@@ -178,8 +178,7 @@ A=\mathcal{S}0\mathcal{S}^{-1}=0$ \underline{\textbf{motsägelse}}: det sista st
 \item Alla egenvärden är unika $\Rightarrow$ diagonaliserbar
 \item Om något $\lambda_i=0$ för matrisen $A$ så är $det(A)=0\Rightarrow$ ej inverterbar 
 \item Om något $\lambda_i=0$ för matrisen $A$ så är matrisen ej ortogonal eftersom denna inte är inverterbar.
-\item $det(A)<0\Rightarrow$ ostabil matris
-\item Stabil matris $\Leftrightarrow$ egenvärden har negativ realdel $\Rightarrow tr(A)<0, det(A)>0$
+\item $det(A)<0\Rightarrow$ icke-stabil matris, för ett $\lambda_i=0$ så blir matrisen alltså icke-stabil.
 \item $B(t)=e^{At}$, $B(2)^2=e^{2A2}$
 \item Istället för att kvadratkomplettera den kvadratiska formen kan man gaussa matrisen $K$ så att denna har 1:or diagonalt. $d_i$ blir då det man delar respektive rad med för att få en etta på diagonalen.
 \item Alla $d_i>0$: positivt definit matris
@@ -187,6 +186,19 @@ A=\mathcal{S}0\mathcal{S}^{-1}=0$ \underline{\textbf{motsägelse}}: det sista st
 \item Alla $d_i\geq0$: positivt semidefinit matris
 \item Alla $d_i\leq0$: negativt semidefinit matris
 \item Matrisen har både $d_i<0$ och $d_i>0$: indefinit matris
+\item $e^0 = I$
+\item För att lösa begynnelsevärdesproblemet: $X'=AX, X(0)=\begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}$ kan man använda $X(t)=e^{At}X(0)$ för att enkelt lösa problemet.
+\item En matris är diagonaliserbar ifall alla egenvärden är unika.
+\item En matris är inverterbar då $det(A)\ne0$
+\item En matris är symmetrisk då den \textbf{inte} innehåller imaginära egenvärden.
+\item Om $tr(A)<0$ så måste minst ett av egenvärdena vara mindre än noll.
+\item $u=Sv$, $\frac{du}{dt}=Au$
+\item $f(x_1,x_2)=x_1^2+2x_2^2$: positivt definit
+\item $f(x_1,x_2,x_3)=x_1^2+2x_2^2$: positivt semidefinit
 \end{itemize}
-
+\section{Exempeluppgifter}
+\subsection{Hur många egenvärden < 2?}
+$A=\begin{bmatrix}1&&2&&3\\2&&3&&4\\3&&4&&5\end{bmatrix}$\\
+För att lösa detta gör vi följande: $(A-2I)=B$\\ Om $AX=\lambda B$ så $BX=(A-2I)X=\lambda X-2X=(\lambda-2)X$. Gaussning med denna nya matris ger samma egenvektorer men $\lambda_i-2$ som egenvärde. Eftersom $\lambda_i-2<0 \Leftrightarrow \lambda_i<2$ så följer:
+$B=A-2I=\begin{bmatrix}-1&&2&&3\\2&&1&&4\\3&&4&&3\end{bmatrix}$ gaussning av denna matris ger ut: $d_1=-1$,$d_2=5$,$d_3=-8$. De egenvärden som < 0 är de vi söker. $d_1$ och $d_3$ uppfyller detta. Alltså har vi två egenvärden som är mindre än noll.
 \end{document}
