@@ -3,7 +3,7 @@
 \usepackage[swedish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
-\title{Kontrollfrågor}
+\title{Kontrollfrågor och Bra att veta}
 \author{Meris Bahti & Felix Mul}
 
 \usepackage[version=3]{mhchem} % Package for chemical equation typesetting
@@ -163,5 +163,30 @@ A=\mathcal{S}0\mathcal{S}^{-1}=0$ \underline{\textbf{motsägelse}}: det sista st
 \item $deg(P(s)) \leq deg(Q(s))$ 
 \item För alla lösningar, $s_i$, av $Q(s) = 0$ så är $Re(s) < 0$
 \end{enumerate}
+
+\section{Satser och övrigt}
+\begin{itemize}
+\item $D=S^{-1}AS \Leftrightarrow A=SDS^{-1}$
+\item Frekvensfunktion: $H(i\omega)$
+\item Amplitudfunktion: $A(\omega)=|H(i\omega)|$
+\item Fasfunktion:      $\phi(\omega)=arg(H(i\omega))$
+\item $H(i\omega)=A(\omega)e^{i\phi(\omega)}$
+\item Egenvärdena till en diagonalmatris är egenvärdena.
+\item $e^{At}=Se^{Dt}S^{-1}$, vilket betyder att ifall man diagonaliserar matrisen $A$ och tar fram $S$ så kan man få fram exponentialmatrisen enkelt genom denna sats.
+\item $|t|=2t\theta(t)-t$
+\item ${\int}f(t)\theta(t-a)dt=[F(t)-F(a)]\theta(t-a)$
+\item Alla egenvärden är unika $\Rightarrow$ diagonaliserbar
+\item Om något $\lambda_i=0$ för matrisen $A$ så är $det(A)=0\Rightarrow$ ej inverterbar 
+\item Om något $\lambda_i=0$ för matrisen $A$ så är matrisen ej ortogonal eftersom denna inte är inverterbar.
+\item $det(A)<0\Rightarrow$ ostabil matris
+\item Stabil matris $\Leftrightarrow$ egenvärden har negativ realdel $\Rightarrow tr(A)<0, det(A)>0$
+\item $B(t)=e^{At}$, $B(2)^2=e^{2A2}$
+\item Istället för att kvadratkomplettera den kvadratiska formen kan man gaussa matrisen $K$ så att denna har 1:or diagonalt. $d_i$ blir då det man delar respektive rad med för att få en etta på diagonalen.
+\item Alla $d_i>0$: positivt definit matris
+\item Alla $d_i<0$: negativt definit matris
+\item Alla $d_i\geq0$: positivt semidefinit matris
+\item Alla $d_i\leq0$: negativt semidefinit matris
+\item Matrisen har både $d_i<0$ och $d_i>0$: indefinit matris
+\end{itemize}
 
 \end{document}
