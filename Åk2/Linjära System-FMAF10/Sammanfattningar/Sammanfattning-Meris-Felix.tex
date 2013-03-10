@@ -28,7 +28,7 @@ $\int_{-\infty}^{\infty} f(t)\delta(t)dt=f(0)$
 
 \section{Fråga 4}
 \paragraph{Q:} Definiera Laplacetransform av en funktion. Har alla funktioner en Laplacetransform? Om inte så förklara varför.
-\paragraph{A:} $\mathcal{L} f(t) = \int_{-\infty}^{\infty} e^{-st}f(t)dt=F(s),\> s=\sigma + 0 \omega$ \\
+\paragraph{A:} $\mathcal{L} f(t) = \int_{-\infty}^{\infty} e^{-st}f(t)dt=F(s),\> s=\sigma + i \omega$ \\
 
 Alla funktioner har inte en laplacetransform. Integralen måste konvergera för att det ska finnas en sådan. T.ex:\\$f(t)=1, \mathcal{L}f(t) = \int_{-\infty}^{\infty} e^{-st}dt = [\frac{1}{s} e^{-st}]_{-\infty}^{+\infty} $ 
 
@@ -73,8 +73,8 @@ Använd regel (16): \\  $\mathcal{L}(f(t)) = s\mathcal{L}(f(t)) = (f(t)\theta(t)
 \end{enumerate}
 \newpage
 \section{Fråga 9}
-\paragraph{Q:} System i insignal-utsignalform kan ibland beskrivas som faltningar med en fix funktion. Under vilka villkor på systemet gäller det atta och vad kallas den fixa funktionen?
-\paragraph{A:} Detta gäller för LTI-system (Linjärt tidsinvaranta) där $h(t)$ är impulssvaret och utsignalen $y(t)=f(t)*h(t)$ 
+\paragraph{Q:} System i insignal-utsignalform kan ibland beskrivas som faltningar med en fix funktion. Under vilka villkor på systemet gäller detta och vad kallas den fixa funktionen?
+\paragraph{A:} Detta gäller för LTI-system (Linjärt tidsinvarianta) där $h(t)$ är impulssvaret och utsignalen $y(t)=f(t)*h(t)$ 
 
 \section{Fråga 10}
 \paragraph{Q:} Vilka samband finns mellan stegsvar och impulssvar för ett linjärt tidsinvariant system?
@@ -87,6 +87,7 @@ Använd regel (16): \\  $\mathcal{L}(f(t)) = s\mathcal{L}(f(t)) = (f(t)\theta(t)
 \section{Fråga 12}
 \paragraph{Q:} Definiera överföringsfunktionen för ett LTI-system.
 \paragraph{A:} Överföringsfunktionen är laplacetransformen av impulssvaret\\$\mathcal{L}(h(t)) = H(s)$ eller $\frac{\mathcal{S}e^{st}}{e^{st}}$
+\paragraph{Exempel:} Utsignal kan beräknas med hjälp av frekvensfunktionen $F_n(\omega)=H(s)$, se fråga 14.
 
 \section{Fråga 13}
 \paragraph{Q:} Vilka villkor måste man lägga på ett system för att det skall ha en frekvensfunktion? Ange sambandet mellan frekvens- och överföringsfunktionen.
@@ -168,6 +169,7 @@ A=\mathcal{S}0\mathcal{S}^{-1}=0$ \underline{\textbf{motsägelse}}: det sista st
 \begin{itemize}
 \item $D=S^{-1}AS \Leftrightarrow A=SDS^{-1}$
 \item $A^n=SD^{n}S^{-1}$
+\item $f(t)\delta(t-a)=f(a)\delta(t-a)$
 \item Frekvensfunktion: $H(i\omega)$
 \item Amplitudfunktion: $A(\omega)=|H(i\omega)|$
 \item Fasfunktion:      $\phi(\omega)=arg(H(i\omega))$
