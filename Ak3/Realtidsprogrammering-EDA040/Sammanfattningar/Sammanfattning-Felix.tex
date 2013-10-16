@@ -121,7 +121,7 @@ prevents starvation in a single thread.)
 
 \subsection{Drifting}
 The following piece of code will cause accumulative drift.
-\begin{lstlisting}[label=dekkers,caption=Dekker's Algorithm]
+\begin{lstlisting}[label=drift,caption=Drift example]
 while (!isInterrupted()) {
               sleep(100); foo.bar();
 }
@@ -129,5 +129,23 @@ while (!isInterrupted()) {
 
 Sleep specifies a minimun time to sleep, and a context switch may have ocurred
 after sleep and before the method call thus drift is accumulated.
+
+\begin{lstlisting}[label=drift-fix,caption=Drift fixed]
+long t = System.currentTimeMillis();
+while (!isInterrupted()) {
+  foo.bar();
+  t += 100;
+  long diff = t - System.currentTimeMillis();
+  if (diff > 0) sleep(diff);
+}
+\end{lstlisting}
+
+\subsection{volatile, transient keywords}
+Volatile means that the compiler is not allowed to cache the value of this
+variable. It should be updated before evaluation.
+
+Transient means that the variable has no meaning outside of its current context
+if the variable is passed along with a serialized object over a network, it
+gets set to ``null'' or its equivalence.
 
 \end{document}
