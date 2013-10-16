@@ -4,8 +4,22 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{enumerate}
-\title{Sammanfattning EDAF05}
-\author{Meris Bahti \& Felix Mul}
+%------------------------------------------
+% For source code
+%------------------------------------------
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+%------------------------------------------
+
+\title{Sammanfattning EDA040}
+\author{Felix Mulder}
 \begin{document}
 \maketitle
 \newpage
@@ -44,6 +58,76 @@ Cycles in the graph indicate the possibility of deadlocks.
   \includegraphics[scale=0.2]{res_alloc}
 \end{center}
 
-\section{}
+\section{Process synchronization}
+\subsection{Dekker's Algorithm}
+Dekker's algorithm solves the process synchronization problem with busy waits.
+Meaning: using the below specified code results in a correctl handling of
+critical areas. Alas, the threads spend CPU cycles in the while loop, needlessly.
+If we implement Dekker's we should compliment it with wait/notify functionality.
+
+\begin{lstlisting}[label=dekkers,caption=Dekker's Algorithm]
+public class Dekkers extends MutualExclusion {
+  public Dekkers () {
+    flag[0] = false;
+    flag[1] = false;
+    turn = TURN_0;
+  }
+
+  public void enteringCriticalSection (int t) {
+    int other;
+
+    other = 1 - t;
+
+    flag[t] = true;
+    turn = other;
+
+    while ((flag[other] == true) && (turn == other)) {
+      Thread.yield();
+    }
+  }
+
+  public void leavingCriticalSection (int t) {
+    flag[t] = false;
+  }
+
+  private volatile int turn;
+  private volatile boolean[] flag = new boolean[2];
+}
+\end{lstlisting}
+
+\subsection{Race condition}
+A race condition is when multiple threads access and manipulate the same
+data concurrently, and where outcome of the execution depends on the
+particular order in which access takes place.
+
+\subsection{Mutual Exclustion}
+If thread $T_i$ is executing in its critical section, then no other threads
+can be executing in their critical sections.
+
+\subsection{Progress}
+If no thread is executing in its critical section and there exist threads
+that wish to enter their critical sections, then only the threads not executing
+in their critical section get to partake in the process of deciding which
+thread gets to execute its critical section next.
+
+\subsection{Starvation}
+When some threads are allowed to execute and make progress, but others are
+left ``starving.''
+
+\subsection{Bounded waiting}
+There exists a limit to the amount of times a thread will wait for other
+threads before its request to enter a critical area is granted. (This
+prevents starvation in a single thread.)
+
+\subsection{Drifting}
+The following piece of code will cause accumulative drift.
+\begin{lstlisting}[label=dekkers,caption=Dekker's Algorithm]
+while (!isInterrupted()) {
+              sleep(100); foo.bar();
+}
+\end{lstlisting}
+
+Sleep specifies a minimun time to sleep, and a context switch may have ocurred
+after sleep and before the method call thus drift is accumulated.
 
 \end{document}
