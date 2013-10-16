@@ -59,11 +59,19 @@ Cycles in the graph indicate the possibility of deadlocks.
 \end{center}
 
 \section{Process synchronization}
+
+The critical section problem could be solved simply by disallowing interrupts
+on a single core cpu. With multiple cores, however, disabling these interrupts
+will be too time consuming.
+
 \subsection{Dekker's Algorithm}
 Dekker's algorithm solves the process synchronization problem with busy waits.
 Meaning: using the below specified code results in a correctl handling of
 critical areas. Alas, the threads spend CPU cycles in the while loop, needlessly.
 If we implement Dekker's we should compliment it with wait/notify functionality.
+Without this improvement the semaphores can be referred to as spinlocks.
+The only advantage with using spinlocks is that there is no context switch
+required.
 
 \begin{lstlisting}[label=dekkers,caption=Dekker's Algorithm]
 public class Dekkers extends MutualExclusion {
@@ -114,6 +122,9 @@ thread gets to execute its critical section next.
 When some threads are allowed to execute and make progress, but others are
 left ``starving.''
 
+\subsection{Livelock}
+No thread makes progress, but they keep executing.
+
 \subsection{Bounded waiting}
 There exists a limit to the amount of times a thread will wait for other
 threads before its request to enter a critical area is granted. (This
@@ -140,6 +151,8 @@ while (!isInterrupted()) {
 }
 \end{lstlisting}
 
+Even with this fix, sleep still causes a minimum busy wait.
+
 \subsection{volatile, transient keywords}
 Volatile means that the compiler is not allowed to cache the value of this
 variable. It should be updated before evaluation.
@@ -147,5 +160,27 @@ variable. It should be updated before evaluation.
 Transient means that the variable has no meaning outside of its current context
 if the variable is passed along with a serialized object over a network, it
 gets set to ``null'' or its equivalence.
+
+\section{Scheduling}
+\subsection{Priority inversion phenomenon}
+Occurs when a low priority thread manages to lock a resource and this thread
+is then interrupted by a higher priority thread. When the thread requests the
+same resource, the lower thread blocks the higher thread and can thus resume
+its execution. (Despite being lower prioritized than the other thread.)
+If we called the highest prioritized thead A, and call the lowest Z. If Z
+blocks A, and Z is interrupted by a higher prioritized thread (M?) that doesn't
+share its resources, then this thread (M) also blocks A. This is called a 
+\emph{prioriy inversion} since Z and M will execute before A.
+
+\subsection{Priority inheritence protocol}
+The basic idea is to modify the priority of the tasks causing the blocking. In
+particular when Z blocks higher prioritized tasks, it temporarily inherits the
+highest priority of the blocked tasks. This prevents medium prioritized threads
+from preempting Z and prolonging the blocking duration.
+\subsubsection{Basic}
+Raises the priority of the low priority thread temporarily
+\subsubsection{Ceil}
+http://fileadmin.cs.lth.se/cs/Education/EDA040/lecture/rtpL5.pdf
+\subsubsection{Immediate}
 
 \end{document}
