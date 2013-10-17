@@ -4,6 +4,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{enumerate}
+
+%------------------------------------------
+% Math
+%------------------------------------------
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
 %------------------------------------------
 % For source code
 %------------------------------------------
@@ -179,8 +186,69 @@ highest priority of the blocked tasks. This prevents medium prioritized threads
 from preempting Z and prolonging the blocking duration.
 \subsubsection{Basic}
 Raises the priority of the low priority thread temporarily
-\subsubsection{Ceil}
+\subsubsection{Priority Ceiling Protocol}
+To bound the priority inversion phenomenon and preent the formation of deadlocks
+and chained blocking; PCP extends the priority inheritence protocol with a
+rule for granting a lock request.
+
+When a job enters a critical section it receives the \emph{priority ceiling} 
+equal to the highest prioritized job able to access said resource, meaning that
+once it enters the critical region. This means that the only time it is
+interrupted is when a job with higher priority needs to run. (The interrupting
+job doesn't access the lower prioritized job's resource.)
+
+If a job with higher priority than the currently running job in the semaphore
+tries to gain access, its priority is transferred to the lower prioritized job
+ensuring that a job won't be interrupted again by some job of said priority or
+lower.
+
+\begin{enumerate}
+  \item Each semaphore is assigned a priority ceiling equal to the highest
+        priority of jobs that can lock it.
+  \item The job with the highest priority gets to run first.
+  \item The job running locks a semaphore.
+  \item Another job tries to interrupt the currently running job, but if said
+        job has a lower priority than the priority ceiling, the first job
+        continues to run. If the interrupting job had a higher priority than
+        the job running inside the semaphore, its priority is transferred to the
+        currently running job. (Priority inheritence)
+  \item When no others jobs are blocked by the thread it resumes its original
+        priority, i.e. its ``nominal priority.''
+  \item Priority inheritence is transitive. I.e. if job $J_3$ blocks $J_2$ which
+        in turn blocks $J_1$ then $J_3$ may inherit the priority from $J_1$.
+\end{enumerate}
+
 http://fileadmin.cs.lth.se/cs/Education/EDA040/lecture/rtpL5.pdf
-\subsubsection{Immediate}
+\subsubsection{Immediate inheritence}
+The priority of the thread running in a semaphore is immediately raised to the
+ceiling priority.
+
+\subsection{Direct blocking}
+Occurs when a higher-priority job tries to acquire resources held by a job
+with lower priority.
+
+\subsection{Push-through blocking}
+Occurs when a medium priority job is blocked by a lower priority job that has
+inherited a higher priority from a job it directly blocks. This is necessary
+to avoid unbounded priority inversion.
+
+\subsection{Rate monotonic scheduling}
+Scheduling by rate of occurrence. I.e. a job that has a high occurrence rate is
+highly prioritized. A set of tasks is said to be schedulable by the rate monotonic 
+algorithm if 
+\begin{center}
+  $\sum_{i=1}^{n} \frac{C_i}{T_i} \leq n(2^{1/n}-1)$
+\end{center}
+
+The tasks are also schedulable if $R_i \leq C_i$ for all jobs. We define $R_i$ as:
+
+\begin{center}
+  $R_i = C_i + B_i + \sum_{j=1}^{i-1} \ceil{\frac{R_i}{T_j}}C_j$
+\end{center}
+
+\subsection{Chained blocking}
+When a highly prioritized job needs to collect resources held by two or more
+lower prioritized jobs, meaning it has to wait for a series of lower prioritized
+jobs to finish before managing to complete its own tasks.
 
 \end{document}
