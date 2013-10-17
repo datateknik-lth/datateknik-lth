@@ -51,6 +51,9 @@
         and resources (not between threads and other threads).
   \item \emph{Improvement to mutex:} using give could check to make sure that the
         same entity taking the semaphore is the same entity yielding it.
+  \item \emph{Drift:} when an operation is designed to run at a fixed duration,
+        but due to context switches and least sleep times will accumulate a diff
+        in time. (Accumulative drift)
 \end{itemize}
 
 \section{Deadlock Analysis}
