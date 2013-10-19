@@ -36,13 +36,8 @@
 \section{Terminology}
 \begin{itemize}
   \item \emph{Scheduler:} a scheduler schedules different threads for execution
-        on the CPU. States of threads:
-        \begin{itemize}
-          \item \emph{Running:} Currently executing its instructions on the CPU.
-          \item \emph{Ready:} Has told the scheduler that it's ready to run.
-          \item \emph{Blocked:} Not yet ready to run, won't be picked by the
-                scheduler.
-        \end{itemize}
+        on the CPU. States of threads \emph{running, ready and blocked}. More
+        in the \emph{Scheduling} section.
   \item \emph{Signalling:} is used when you want to make sure that a thread is
         running exclusively. I.e. flag passing between threads.
   \item \emph{Mutual exclusion:} a thread has a critical area and uses a semaphore
@@ -193,6 +188,39 @@ if the variable is passed along with a serialized object over a network, it
 gets set to ``null'' or its equivalence.
 
 \section{Scheduling}
+\subsection{Scheduler}
+The scheduler schedules different threads for execution time on the CPU. As
+explained above, there are three different states for the threads/processes:
+
+\begin{itemize}
+  \item \emph{Running:} the thread is executing its instructions on the CPU.
+        The scheduler could decide that the thread has had enough execution time
+        and move the thread \emph{from} running \emph{to} ready.
+  \item \emph{Ready:} The thread has told the scheduler that it is ready for
+        execution on the CPU. When the scheduler decides that the thread should
+        get to execute, it initiates a context switch and transfers it into
+        the running state.
+  \item \emph{Blocked:} the thread has reached a point in its execution where
+        it decides to yield the processor. This could be due to not being able
+        to lock a resource or having to sleep. Important to note is that it is
+        the thread itself that decides when to block. When the thread can continue
+        it is usually due to another thread changing the state of something.
+        It can thus be argued that it is the other thread that takes the first
+        thread from blocked to ready.
+\end{itemize}
+
+\subsection{Context switch}
+A context switch occurs for instance when the scheduler decides that the
+current thread has run long enough, and allows another thread to execute. The
+threads each have a call stack. This call stack together with the current
+registers are saved away and the other thread's call stack and registers are
+restored.
+
+\subsubsection{Faster context switches}
+Without preemption we can speed up the process of a context switch, since
+we will then know exactly what needs to get saved away. With preemption we
+cannot be entirely sure. Ergo we will need to save everything.
+
 \subsection{Priority inversion phenomenon}
 Occurs when a low priority thread manages to lock a resource and this thread
 is then interrupted by a higher priority thread. When the thread requests the
@@ -412,7 +440,8 @@ bound $U \rightarrow 0.693$. Which has led to the simple rule of thumb saying
 that if the utilization is less than $0.693$ all deadlines are met.
 
 \subsubsection{Generalized RMS}
-Restrictive assumptions have been relaxed, in the following way: $D_i \leq T_i$
+Restrictive assumptions have been relaxed, in the following way: $D_i \leq T_i$.
+We can also assume that the worst possible response time will be $\leq T_i$.
 
 Also for a system with utilization larger than $0.693$ all deadlines will still
 be met if:
@@ -443,7 +472,7 @@ which recently proved that a task is schedulable if:
 
 
 \subsubsection{Calculating $B_i$}
-In RMS a thread can only be blocked by a lower priority thread. Remember that
+In RMS a thread can only be blocked by a \emph{lower} priority thread. Remember that
 it can thus be blocked by push-through blocking.
 
 \begin{enumerate}
@@ -452,5 +481,96 @@ it can thus be blocked by push-through blocking.
   \item Can it be blocked on a different monitor? The value from 1 added to this.
   \item Can it be blocked by push-through blocking? Take this into account.
 \end{enumerate}
+
+\subsubsection{Calculating $C_i$}
+If $R_i$ or $T_i$ and $B_i$ is known we may calculate the smallest possible $C_i$
+using the following chain of reasoning: \\
+
+\emph{Example:} $R_i = 50$,$B_i = 10$ and i has one higher priority thread,
+A, with $T_A = 100$ and $C_A = 10$. This gives us:
+\begin{center}
+  $R_i = C_i + B_i + \sum_{\forall k \in hp(k)} \ceil{\frac{R_k}{T_j}} C_j = 50$ \\
+  $\Longleftrightarrow$ \\
+  $90 = C_i + 10 + \ceil{\frac{90}{100}} 10$ \\
+  $C_i = 70$
+\end{center}
+
+\section{Garbage collection}
+
+\subsection{Manual memory management}
+Using manual memory management we have to make sure that we get no dangling
+pointers and no memory leaks. Even if we do this, we can't be sure that the
+heap is properly defragmented. (GC without compaction also leads to this.)
+
+\subsection{Reference Counting}
+We keep a count to how many references a certain object in memory has. When
+this counter reaches zero we remove the object.
+
+\emph{Advantages:} Easy to implement, short pauses.
+\emph{Disadvantages:} 
+\begin{itemize}
+  \item DEqueues will have circular references, meaning they won't
+        be marked for removal by the GC.
+  \item No compaction $\rightarrow$ fragmentation
+  \item Expensive, the counters have to be adjusted for every pointer
+        assignment.
+\end{itemize}
+\subsection{Traversing algorithms}
+The idea is to periodically traverse the objects in the heap from a root
+pointer, usually located in or near main. Objects that are encountered
+are marked, and the ones not marked are deleted.
+
+\subsubsection{Cheney's algorithm}
+The heap is divided into two equal halves, only one of which is in use at any
+one time. Garbage collection is performed by copying live objects from one heap
+to the next, which then becomes current heap. The entire old heap can then be
+discarded in one piece.
+
+A pointer from the old object location to the new one is kept during copy so
+that the program can still run during garbage collection.
+
+\subsubsection{Generation-based GC}
+It stands to reason that if objects die young, the ones that don't usually
+live for a long time.
+
+\begin{itemize}
+  \item Partition heap into several generations
+  \item New objects are allocated into the young generation
+  \item Surviving objects are promoted into the next generation
+\end{itemize}
+
+\emph{Pros:} Efficient! Most pauses are short. Most garbage collection is done
+             in the youngest generation.
+\emph{Cons:} Complex. Must keep track of inter-generation pointers.
+
+\subsubsection{Idea}
+By our own Roger Henriksson!
+\begin{itemize}
+  \item Avoid doing GC work when high-priority threads execute.
+  \item Perform GC in the pauses. Memory always available.
+  \item Low-priority threads: standard incremental techniques.
+  \item Minimize the cost for pointer operations for the high-
+        priority threads.
+  \item Interruptible garbage collection, minimum locking.
+  \item Theory for a priori schedulability analysis.
+\end{itemize}
+
+\subsection{Implementation details}
+For the garbage collector not getting in the way of things, with a similar
+scenario, the following should be done:
+
+\begin{itemize}
+  \item Assuming we have one HP thread and one LP thread.
+  \item Garbage collection should be scheduled after the HP thread has run.
+        I.e. the GC should have a medium priority.
+  \item Cleaning after the LP thread should be done in its context. I.e. the
+        GC should have the same priority as the LP for cleaning up after said
+        thread.
+\end{itemize}
+
+
+
+
+
 
 \end{document}
