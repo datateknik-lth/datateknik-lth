@@ -98,7 +98,7 @@ Samma vokabulär mellan kund och utvecklare. Använd gärna metaforer.
 \subsection{Testning}
 Testning har en central del i XP. \\
 Enhetstest (unit-tests) för varje klass/modul. Testfall skrivs \textbf{innan} motsvarande kod. Skrivs i små iterationer: testa..koda..testa..koda.. \\
-Körs gärna automatiskt. 
+Körs med fördel automatiskt. 
 \subsection{Kodning och design}
 \subsubsection{Enkel design}
 \begin{itemize}
@@ -126,7 +126,7 @@ I XP så accepterar man att förändringar är oundvikliga, och gör lite för att för
 
 \subsection{XP's grundläggande struktur / arkitektur}
 \subsubsection*{Spikes}
-Är experimentell prototyplösning. En eller två utvecklare skriver kod för att undersöka ett problem. Koden bör inte vara ren och enligt konstens alla regler - koden kommer att kastas sedan. 
+Är experimentell prototyplösning. En eller två utvecklare skriver kod för att undersöka ett problem. Koden behöver inte vara ''ren'' och enligt konstens alla regler - koden kommer att kastas sedan. 
 
 \subsubsection*{System Metafor}
 System metaphor är en liknelse som alla - kund, programmerare och chefer förstår. Används för att beskriva hur systemet fungerar.
@@ -176,7 +176,7 @@ Repositoryt sparar alla versioner av filerna så att man ska kunna gå tillbaka om
 \begin{itemize}
 \item{\textbf{checkout}: skapa ett nytt workspace.}
 \item{\textbf{update}: uppdatera workspacet, dvs. kopiera nya filer från repositoryt till workspacet.}
-\item{\textbf{kommit}: ladda upp ändrade filer från repositoryt.}
+\item{\textbf{commit}: ladda upp ändrade filer från repositoryt.}
 \end{itemize}
 \begin{tips}[]
 \textbf{Viktiga arbetsvanor:}
@@ -219,7 +219,7 @@ Bidrar till
 \end{itemize}
 \subsection{Mål med SCM}
 \begin{itemize}
-\item{Att kunna gå till baka till fungerande ''states''.}
+\item{Att kunna gå tillbaka till fungerande ''states''.}
 \item{Att ha en överblick över mjukvarans utvecklings-historik.}
 \item{Visa vad som beror på vad.}
 \item{Hjälpa människor att samordna sitt arbete.}
@@ -266,7 +266,7 @@ Man brukar dela upp tester i två kategorier, enhetstest och acceptanstest.
 \end{itemize}
 
 \section{Parprogrammering} % ------------- NEW SECTION -------------
-Två personer som sitter vid samma maskin. Den som skriver kod brukar kallas för \emph{Föraren} (Driver) och den andra kallas för \emph{Navigatör}. 
+Två personer sitter vid samma maskin. Den som skriver kod brukar kallas för \emph{Föraren} (Driver) och den andra kallas för \emph{Navigatör}. 
 \subsection*{Föraren}
 \begin{itemize}
 \item{Skriver kod.}
@@ -285,7 +285,7 @@ Två personer som sitter vid samma maskin. Den som skriver kod brukar kallas för 
 \begin{itemize}
 \item{Byt partner ofta.}
 \item{Tala i Vi-termer istället för Du-termer. ''Vi gjorde fel här och bör göra såhär istället..''.}
-\item{Driver 
+\item{Föraren 
 	\begin{itemize}
 	\item{Var lyhörd.}
 	\item{Rusa inte iväg, se till så att partnern förstår.}
@@ -310,8 +310,9 @@ Två personer som sitter vid samma maskin. Den som skriver kod brukar kallas för 
 \begin{itemize}
 \item{Tydlig och lättbegriplig.}
 \item{Har inte någon duplicerad kod.}
-\item{All komplexitet skall vara motiverad av dagens behov - testfallen.}
+\item{All komplexitet skall vara motiveras av testfallen.}
 \end{itemize}
+Observera att en enkel design kan vara komplex om problemet vi försöker lösa är komplext. Men om koden fortfarande har ovanstående egenskaper så har den fortfarande en ''enkel'' design.
 \subsubsection*{Exempel på icke-enkel design}
 \begin{itemize}
 \item{Krånglig kod, obegripliga namn.}
@@ -328,14 +329,6 @@ Detta får vi med t.ex:
 \item{Varje metod skall vara så liten och enkel att man lätt kan förstå vad som händer i den, och så att den är enkel att namnge.}
 \item{Varje variabel och klass skall användas till ett väldefinierat ändamål (så att den är enkel att namnge).}
 \item{Namn ska uttrycka vad objektet innehåller, inte hur.}
-\end{itemize}
-\subsection*{Komplex kod med enkel design}
-En enkel design kan vara komplex om problemet vi försöker lösa är komplext. \\
-Men designen är ''enkel'' om:
-\begin{itemize}
-\item{Varje ide är explicit i koden.}
-\item{Det inte finns duplicerad kod.}
-\item{All komplexitet i koden är motiverad av testfallen.}
 \end{itemize}
 \subsection{Code Smells}
 Code smells är symptom i koden som antyder om bristfällig design. \\
@@ -354,8 +347,8 @@ Exempel på code smells:
 \end{itemize}
 \section{Refaktorisering} % ------------- NEW SECTION -------------
 
-Refaktorisering: omstrukturering av koden utan att ändra det yttre beteendet. \\ \\
-Syftet med refaktorisering är att göra mjukvaran enklare att ändra och förstå. Refaktoriseringen ändrar inte det observerbara beteendet av mjukvaran. \\ \\
+Refaktorisering: omstrukturering av koden utan att ändra det observerbara yttre beteendet. \\ \\
+Syftet med refaktorisering är att göra mjukvaran enklare att ändra och förstå. \\ \\
 Man bör refaktorisera hela tiden när man utvecklar mjukvara. Det är inte något som man avsätter tid till att göra, utan det är en viktig del i själva utvecklingsprocessen som bör ske reflexmässigt.
 \subsubsection*{Syftet med refaktorisering}
 \begin{itemize}
