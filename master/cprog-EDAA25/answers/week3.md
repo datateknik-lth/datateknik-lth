@@ -49,4 +49,30 @@
     an int (can be promoted to unsigned int if the value cannot be contained
     within the signed int).
 
-1.  bit-fields
+1.  When only needing to represent a small number, one can use a bit-field.
+    Specifying something like:
+    ```
+    struct {
+            unsigned int a : 4;
+            unsigned int b : 3;
+    } rect;
+    ```
+
+    The compiler will then add padding to the struct, making it atleast the size
+    of an int. (I.e. sizeof(rect) will most likely result in 4.)
+
+    We should use unsigned ints since the result of the following example can
+    result in both 1 and -1. (Due to compilers using different signedness)
+    ```
+    struct {
+      int a:1;
+    } node;
+    
+    node.a = 1;
+
+    printf("%d\n", node.a);
+    ```
+
+1.  Enums are integer-based, meaning that they cannot represent larger numbers
+    or fractions. When debugging however, they are useful, since the debugger
+    can print out their variable names.
