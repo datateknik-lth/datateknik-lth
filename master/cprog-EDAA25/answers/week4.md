@@ -40,7 +40,8 @@
             int b[];
     }
     ```
-    It must be the last member of the struct (all other types must be complete).
+    It must be the last member of the struct (all other types must be complete)
+    and it cannot be the only member of the struct.
 
 1.  It may be modified once, and the must common sequence point is variable
     assignment.
