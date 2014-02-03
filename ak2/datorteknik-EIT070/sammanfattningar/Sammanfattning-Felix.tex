@@ -18,7 +18,7 @@
 \begin{Verbatim}
 #include <iregdef.h>        # För att definiera zero, s0-s7, ra etc.
 
-add s0, s0, s1              # Adderar innehållet i s0 med s0 och lägger det i det mest vänstra, s0.
+add s0, s0, s1              # Adderar innehållet i s0 med s0 och lägger det i s0.
 add s0, s1                  # Gör samma sak som föregående
 
 neg t0, s4                  # Gör innehållet i s4 negativt och lägger det i t0
@@ -29,8 +29,8 @@ addiu t0, zero, s0          # Lägger innehållet i s0 i t0.
 move t0, s0                 # Samma som föregående
 
 # Adresseringsmetoder
-lw t0, 4(t3)                # t3 håller en register-adress. Lägg till 4 på denna adress och ladda in 
-                            # innehållet från den resulterande adressen.
+lw t0, 4(t3)                # t3 håller en register-adress. Lägg till 4 på denna
+                            # adress och ladda in resultatet i t0
 # Hoppinstruktioner         # Hoppa till L1 om:
 beq t0, t1, L1              # t0 == t1
 bne t0, t1, L1              # t0 != t1
@@ -145,7 +145,7 @@ void wait(sem S)
 void signal(sem S)
 {
     disable_interrupts();
-    S.lock--;
+    S.lock++;
     enable_interrupts();
 }
 \end{verbatim}
