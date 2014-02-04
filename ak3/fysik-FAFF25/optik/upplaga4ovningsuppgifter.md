@@ -3,6 +3,43 @@
 
 Upplägg: 5:e till vänster, 4:e till höger
 
+* Kapitel 3
+
+Alla övningsuppgifter har samma nummer i bägge upplagor.
+
+| Femte | Fjärde |
+|-------+--------|
+|     3 |      3 |
+|     4 |      4 |
+|     5 |      5 |
+
+* Kapitel 4
+
+Alla övningsuppgifter har samma nummer i bägge upplagor.
+
+| Femte | Fjärde |
+|-------+--------|
+|     1 |      1 |
+|     2 |      2 |
+|     8 |      8 |
+|    10 |     10 |
+|    11 |     11 |
+|    14 |     14 |
+|    15 |     15 |
+|    16 |     16 |
+|    19 |     19 |
+
+* Kapitel 11
+
+| Femte | Fjärde |
+|-------+--------|
+|     4 |      4 |
+|     6 |      6 |
+|     9 |      8 |
+|    11 |     10 |
+|    13 |     12 |
+|    15 |     13 |
+
 * Kapitel 12
 
 | Femte | Fjärde |
@@ -35,13 +72,29 @@ Upplägg: 5:e till vänster, 4:e till höger
 
 | Femte | Fjärde |
 |-------+--------|
-|     6 | 6      |
-|    10 | 10     |
-|    17 | 16     |
-|    18 | 17     |
-|    20 | 19     |
-|    21 | 20     |
-|    22 | 21     |
-|    29 | 27     |
-|    32 | 30     |
+|     6 |      6 |
+|    10 |     10 |
+|    17 |     16 |
+|    18 |     17 |
+|    20 |     19 |
+|    21 |     20 |
+|    22 |     21 |
+|    29 |     27 |
+|    32 |     30 |
+
+* Kapitel 15
+
+| Femte | Fjärde |
+|-------+--------|
+|     4 |      4 |
+|    11 |     10 |
+|    14 |     13 |
+|    22 |     21 |
+|     3 |      3 |
+|    17 |     16 |
+|    31 |     28 |
+|    35 |     32 |
+|    37 |     34 |
+|    39 |     36 |
+|    41 |     38 |
 
