@@ -34,5 +34,25 @@ Exam Checklist
       using a different reduction function for each step in the chain we
       eliminate large collisions and can thus use a single table instead of many
       different tables with different reduction functions as in regular TMTO
-* **Password hashing:**
-* **Salt:**
+* **Salt in password hashing:** Using large and random salts decrease the
+  effectiveness of TMTO/Rainbow attacks as well as dictionary attacks since
+  these are precomputed without (or hopefully without your) salt. The salt is
+  concatenated with the password before hashing it. By the Kerckhoff principle
+  the salt should be available to the attacker. Thus to be effective the salt
+  should be unique for each user (a.k.a. dynamic).
+* **How the system can help protecting against password compromise:**
+  * Checking the password at appropriate events
+  * Forcing password expiration
+  * Forcing the user to use a strong password
+  * Limiting log in attempts
+  * Showing audit information
+* **Biometric Systems:**
+  * **FRR:** False rejection rate, how many users were falsely rejected
+  * **FAR:** False acceptance rate, how many users were falsely accepted
+  * **EER:** Equal error rate
+  * Relations: EER ->FAR = FRR if **FTA** (Failure to acquire, i.e. read
+    biometric data) is zero.
+
+## Chapter 5
+* **Discretionary control:**
+* **Mandatory control:**
