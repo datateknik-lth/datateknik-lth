@@ -97,7 +97,7 @@ Checklist for exam 2014-03-12
                             |Security |
                             |Kernel   |
                             |Database |
-                          -----------
+                            -----------
   A: Requests access
   B: Checks if subject has right to access object
   C: Writes to audit 
@@ -116,14 +116,14 @@ Checklist for exam 2014-03-12
     Effective - ID used for access control. Root can change to anything. Anyone can change to real.
     
 *
-  Crypts
-                    |  DES crypt         MD5 crypt         bcrypt
-  ---------------------------------------------------------------------------
-  Password length   |  Max 8 chars       Infinity          max 72 chars
-  Salt length       |  12 bits           12-48 bits        128 bits
-  Variable cost     |  No                No                Yes
-  Evals/sec         |  1 000 000         10 000            450
-  Conclusions       |  Fast                                Safe
+    Crypts
+                      |  DES crypt         MD5 crypt         bcrypt
+    ---------------------------------------------------------------------------
+    Password length   |  Max 8 chars       Infinity          max 72 chars
+    Salt length       |  12 bits           12-48 bits        128 bits
+    Variable cost     |  No                No                Yes
+    Evals/sec         |  1 000 000         10 000            450
+    Conclusions       |  Fast                                Safe
   
 *
   Shadow file - Save password in non-world readable file. Hide hashes.
@@ -322,7 +322,7 @@ Checklist for exam 2014-03-12
 
 *
   Bell-LaPadula properties:
-    ss-property - Simple security property.
+      ss-property - Simple security property.
       Mandatory access control
       No read-up: A user is not allowed read (observe) access to objects with higher security level.
 
@@ -413,7 +413,7 @@ Checklist for exam 2014-03-12
 *
   Stream ciphers and One time pads (OTP)
     Stream cipher
-      Take a short random key and sxpand it to a long pseudorandom sequence of bits.
+      Take a short random key and expand it to a long pseudorandom sequence of bits.
 
     OTP
       Different substitutions for every character
