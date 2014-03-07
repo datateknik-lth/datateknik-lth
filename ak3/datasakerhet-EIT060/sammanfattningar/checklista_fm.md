@@ -86,13 +86,13 @@ Exam Checklist
   * **Effective:** ID used for access control, i.e. a process can be run as
     another user
 * Crypts
-  |                  |  DES crypt    |  MD5 crypt   | bcrypt        |
-  |------------------|---------------|--------------|---------------|
-  |Password length   |  Max 8 chars  |  Infinity    | max 72 chars  |
-  |Salt length       |  12 bits      |  12-48 bits  | 128 bits      |
-  |Variable cost     |  No           |  No          | Yes           |
-  |Evals/sec         |  1 000 000    |  10 000      | 450           |
-  |Conclusions       |  Fast         |              | Safe          |
+|                  |  DES crypt    |  MD5 crypt   | bcrypt        |
+|------------------|---------------|--------------|---------------|
+|Password length   |  Max 8 chars  |  Infinity    | max 72 chars  |
+|Salt length       |  12 bits      |  12-48 bits  | 128 bits      |
+|Variable cost     |  No           |  No          | Yes           |
+|Evals/sec         |  1 000 000    |  10 000      | 450           |
+|Conclusions       |  Fast         |              | Safe          |
 * **/etc/shadow-file:** saves password in hashed form along with:
   * Username
   * Hashed passwords
