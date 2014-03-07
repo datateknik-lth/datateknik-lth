@@ -11,7 +11,7 @@ Exam Checklist
   * **Accountability:**   Entities affecting security are held responsible
 * **Data:**         Raw, unorganized facts in need of processing
 * **Information:**  Organized data interpretable by humans
----
+
 ## Chapter 4
 * **Spoofing attacks:** An attempt to fool users that an illegitimate 
   site/e-mail is legitimate. I.e. spoofing e-mails from sysadmins, spoofing
@@ -54,7 +54,7 @@ Exam Checklist
   * **EER:** Equal error rate
   * Relations: EER ->FAR = FRR if **FTA** (Failure to acquire, i.e. read
     biometric data) is zero
----
+
 ## Chapter 5
 * **Discretionary control:** Rights defined by owner of object
 * **Mandatory control:** Rights defined by system
@@ -65,7 +65,7 @@ Exam Checklist
 * **Least upper bound (lattices):** a={x}, b={y} -> u={x,y} (smallest union)
 * **Greatest lower bound (lattices:**  a={x,y}, b={x,z} -> l={x} (greatest
   set of common elements)
----
+
 ## Chapter 6
 * **Reference Monitor:** An abstract idea of how to implement security in a
   system including how access to files should be handled other policies
@@ -79,7 +79,7 @@ Exam Checklist
   supervisor mode and performs the task, then reverts to normal permissions and
   gives back control to users. An example being running system programs in
   Windows Vista/7 or switching users in Unix
----
+
 ## Chapter 7
 * **UID in Unix** 
   * **Real:** ID of logged in principal, can only be changed by root 
