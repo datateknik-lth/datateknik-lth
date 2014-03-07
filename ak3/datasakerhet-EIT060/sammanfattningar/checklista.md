@@ -83,20 +83,20 @@ Checklist for exam 2014-03-12
 *
   Reference monitor:
   
-                            -------
-                            |Audit|
-                            ---^---
-                               |
-                               |C
-  ---------       A            |           D             -------
-  |Subject|----------------->(RM)----------------------->|Object|
-  ---------                   |^                          -------
-                              ||
-                              ||B
-                          ----V|-----
-                          |Security |
-                          |Kernel   |
-                          |Database |
+                              -------
+                              |Audit|
+                              ---^---
+                                 |
+                                 |C
+    ---------       A            |           D             -------
+    |Subject|----------------->(RM)----------------------->|Object|
+    ---------                   |^                          -------
+                                ||
+                                ||B
+                            ----V|-----
+                            |Security |
+                            |Kernel   |
+                            |Database |
                           -----------
   A: Requests access
   B: Checks if subject has right to access object
