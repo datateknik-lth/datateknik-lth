@@ -61,9 +61,23 @@ Exam Checklist
 * **Capabilities:** A user has capabilities, i.e. the rights of the user
 * **Access Control Lists:** From the object perspective i.e. which users have
   what rights
-* **Powersets:*** (how they can be used in access control)
+* **Powersets:** (how they can be used in access control)
 * **Least upper bound (lattices):** a={x}, b={y} -> u={x,y} (smallest union)
 * **Greatest lower bound (lattices:**  a={x,y}, b={x,z} -> l={x} (greatest
   set of common elements)
 
 ## Chapter 6
+* **Reference Monitor:** An abstract idea of how to implement security in a
+  system including how access to files should be handled other policies
+* **Security kernel:** hardware, firmware and software that implements the basic
+  security procedures described in the reference monitor
+* **Trusted computing base (TCB):** hardware, firmware and/or software
+  components that are critical to its security, if bugs or vulnerabilities
+  occur within the TCB the security for the whole system could be jeopardized
+* **Controlled Invocation:** when a user needs to run a program which performs
+  something that requires elevated permissions, the system switches to a
+  supervisor mode and performs the task, then reverts to normal permissions and
+  gives back control to users. An example being running system programs in
+  Windows Vista/7 or switching users in Unix
+
+## Chapter 7
