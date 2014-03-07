@@ -34,6 +34,8 @@ Exam Checklist
       using a different reduction function for each step in the chain we
       eliminate large collisions and can thus use a single table instead of many
       different tables with different reduction functions as in regular TMTO
+    * **Math for TMTO:**
+    ``` T = t^2, P=N, M=mt, N=mt^2 => N^2=M^2*T P = N ```
 * **Salt in password hashing:** Using large and random salts decrease the
   effectiveness of TMTO/Rainbow attacks as well as dictionary attacks since
   these are precomputed without (or hopefully without your) salt. The salt is
@@ -51,8 +53,17 @@ Exam Checklist
   * **FAR:** False acceptance rate, how many users were falsely accepted
   * **EER:** Equal error rate
   * Relations: EER ->FAR = FRR if **FTA** (Failure to acquire, i.e. read
-    biometric data) is zero.
+    biometric data) is zero
 
 ## Chapter 5
-* **Discretionary control:**
-* **Mandatory control:**
+* **Discretionary control:** Rights defined by owner of object
+* **Mandatory control:** Rights defined by system
+* **Capabilities:** A user has capabilities, i.e. the rights of the user
+* **Access Control Lists:** From the object perspective i.e. which users have
+  what rights
+* **Powersets:*** (how they can be used in access control)
+* **Least upper bound (lattices):** a={x}, b={y} -> u={x,y} (smallest union)
+* **Greatest lower bound (lattices:**  a={x,y}, b={x,z} -> l={x} (greatest
+  set of common elements)
+
+## Chapter 6
