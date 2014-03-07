@@ -11,7 +11,7 @@ Exam Checklist
   * **Accountability:**   Entities affecting security are held responsible
 * **Data:**         Raw, unorganized facts in need of processing
 * **Information:**  Organized data interpretable by humans
-
+---
 ## Chapter 4
 * **Spoofing attacks:** An attempt to fool users that an illegitimate 
   site/e-mail is legitimate. I.e. spoofing e-mails from sysadmins, spoofing
@@ -54,7 +54,7 @@ Exam Checklist
   * **EER:** Equal error rate
   * Relations: EER ->FAR = FRR if **FTA** (Failure to acquire, i.e. read
     biometric data) is zero
-
+---
 ## Chapter 5
 * **Discretionary control:** Rights defined by owner of object
 * **Mandatory control:** Rights defined by system
@@ -65,7 +65,7 @@ Exam Checklist
 * **Least upper bound (lattices):** a={x}, b={y} -> u={x,y} (smallest union)
 * **Greatest lower bound (lattices:**  a={x,y}, b={x,z} -> l={x} (greatest
   set of common elements)
-
+---
 ## Chapter 6
 * **Reference Monitor:** An abstract idea of how to implement security in a
   system including how access to files should be handled other policies
@@ -79,5 +79,43 @@ Exam Checklist
   supervisor mode and performs the task, then reverts to normal permissions and
   gives back control to users. An example being running system programs in
   Windows Vista/7 or switching users in Unix
-
+---
 ## Chapter 7
+* **UID in Unix** 
+  * **Real:** ID of logged in principal, can only be changed by root 
+  * **Effective:** ID used for access control, i.e. a process can be run as
+    another user
+* Crypts
+  |                  |  DES crypt    |  MD5 crypt   | bcrypt        |
+  |------------------|---------------|--------------|---------------|
+  |Password length   |  Max 8 chars  |  Infinity    | max 72 chars  |
+  |Salt length       |  12 bits      |  12-48 bits  | 128 bits      |
+  |Variable cost     |  No           |  No          | Yes           |
+  |Evals/sec         |  1 000 000    |  10 000      | 450           |
+  |Conclusions       |  Fast         |              | Safe          |
+* **/etc/shadow-file:** saves password in hashed form along with:
+  * Username
+  * Hashed passwords
+  * Date of last password change
+  * Min days between password change
+  * Max valid days of password
+  * Days in advance to warn user to change password
+  * Days account is active after password expiration
+  * Days of account disabling
+  * Also contains a reserved entry
+* **Access control in Unix:** discretionary access control, owner of object can
+  change permissions
+
+  ```
+  drwxr--r--
+  ```
+  The above stands for a directory with read, write and execute for owner, read
+  for group and read for other (in that order grouped by three). First bit is
+  reserved for directory and is left blank on files
+
+  * Access control for folders:
+    * **Read:** list directory contents
+    * **Write:** delete, rename and insert files in directory
+    * **Execute:** access directory and access files in directory
+* **Setuid in Unix:**
+
