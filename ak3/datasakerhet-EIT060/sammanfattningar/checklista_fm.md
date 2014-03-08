@@ -194,3 +194,83 @@ Exam Checklist
 * **Access control for restricted token:** used to remove privileges from a
   given access token by adding a restricted token to the token. If both the
   access token and the restricted token are allowed access is given
+
+## Chapter 9
+* **Tracker attacks:** basically using statistical methods to elicit information
+  from a database. If information is known about the target this can be used to
+  design queries that would further reveal iformation by returning a small (or
+  single) amount of entries. A basic fix would be to disallow queries that
+  result in small entries. The query's complement could then be used, so to we
+  would also have to ensure that the query's complement is large enough. This
+  alone is not enough and other measures must be taken
+
+## Chapter 10
+* **Buffer overflow attacks:** in non-safe languages such as C, a buffer's
+  bounds can be overwritten resulting in the adjacent data being overwritten
+  in the stack or heap. If enough of the buffer is overwritten on the stack we
+  can effectively change the return address to some address we control, such as
+  the beginning of malicious input in an adjacent program.
+  * Countermeasures: canary values, defining a section of the stack as
+  non-writable or switching to a "safe" language
+* **SQL-injections:** when a user is allowed to inject his own queries into the
+  database by ending a previous query or modifying one that will be sent to the
+  server.
+  * Example:
+  ```
+  val input = getRequest("uid")
+
+  val query = "SELECT * FROM users WHERE uid = " + input
+  ```
+    Where the user would enter something like "105 or 1=1" resulting in all
+    users
+  * Countermeasure: escape special characters, always use prepared statements,
+    check for correct types, i.e. "1=1" is not an integer
+
+## Chapter 11
+* **Bell-LaPadula**
+  * **ss-property:** simple security property, mandatory access control
+    * Condition: State (b,M,f) satisfies the ss-property if for each element
+    (s,o,a) belongs to b where the access operation is read or write, the
+    security level of s dominates security level of o, i.e. `f_o(o) <= f_s(s)`
+    * Attacks: since the condition implies no read-up the attacker would
+    insert a trojan at a higher level transferring information to a lower level
+    process
+  * ***-property:** does not apply to trusted subjects, no write-down
+    * Condition: State (b,M,f) satisfies the *-property if for each element
+    (s,o,a) belongs to b where the access operation is append or write, the
+    current security level of s is dominated by the security level of o, i.e.
+    `f_c(s) <= f_o(o)`
+  * **ds-property** access rights given in acceess control matrix must be
+  followed, discretionary access control, subjects may pass access permission on
+  to other users
+  * **Basic security theorem:** if all above properties are satisfied, the
+  current state can be considered secure. As long as any state change doesn't
+  violate these properties the system remains secure
+  * **Tranquility:** Security levels and acces rights never change
+* **Difference betweeen BLP and Biba:** focuses on integrity, subjects and 
+  objects are mapped to integrity levels, forming a lattice. Integrity levels
+  in biba are automatically adjusted:
+  * Subject s reads object o at any integrity level, the new integrity level of
+  the subject is now the greatest lower bound of `F_s(s) and F_o(o)`.
+  * Subject s modifies object o at any integrity level, the new integrity level
+  of said object is now the greatest lower bound of `F_s(s) and F_o(o)`.
+* **Clark-Wilson:** addresses security requirements of commercial applications
+  where the focus is mainly on integrity. *Internal consistency* refers to
+  properties of the internal state of the system, manageable by the computing
+  system. *External consistency* refers to the relation of the internal system
+  and the real world and has to be enforced by means outside the system, like
+  auditing
+
+## Chapter 13
+* **Strengths and limitations of security evaluation**
+  * **Orange Book**
+  * **ITSEC**
+  * **Common Criteria**
+* Classifications of products (in above books)
+
+## Chapter 14
+## Chapter 15
+## Chapter 16
+## Chapter 17
+## Chapter 18
+## Chapter 19
