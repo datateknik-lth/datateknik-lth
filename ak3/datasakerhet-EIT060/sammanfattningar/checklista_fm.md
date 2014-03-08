@@ -149,4 +149,48 @@ Exam Checklist
   **hosts.deny** file is searched. If the host isn't found in either, access is
   granted
 
-## Chapter 8
+## Chapter 8 - Windows Security
+* **LM hash:** The LM hash is considered weak as the password is converted to
+  uppercase and padded to 14 bytes (giving a maximum of 14 chars) then split
+  into two and encrypted with a known salt (KGS!@#%) using DES. The result is
+  stored in the SAM database
+* **NTLM hash:** The NTLM hash is better, the password is hashed using MD4 and
+  then padded up to 21 bytes. It is then split into three parts and encrypted
+  with a challange sent by the server the result is then sent to the server and
+  verified. Supports different cases and more chars
+  * **Vulnerabilities:**
+    * Backwards compatible with LM (meaning old passwords stored in LM)
+    * Credential forwarding attack
+    * MD4 is very fast, no salt so TMTO/Rainbow attacks are possible
+* **Access tokens:** when a user is authenticated, the **Local Security
+    Authority** (LSA) creates an access token for said user. The token is then
+    attached to all processes run by the user and lists user, user's group and
+    user privileges amongst others
+* **Privileges:** are associated with operating system functions and relate to
+  activities like system administration, backup, mail/network access. Is applied
+  to the local computer and stored in the access token.
+* **Security descriptor:** Data structure which contains security information
+  associated with an object.
+  * Owner SID
+  * Primary group SID
+  * DACL
+  * SACL
+* **DACL:** discretionary access controll list, identifies who is allowed/denied
+  acces to object
+  * No DACL: full control
+  * Empty DACL: denied access
+  * SID can be allowed/denied - denies stored in beginning
+  * List of ACE (access control entries), containing flags, object type,
+    inherited type, access rights, principal SID (the principal to which the ACE
+    applies)
+  * Difference between Windows and Unix:
+    * Windows: user read, group rw -> user read and write
+    * Unix: user read, group rw -> user read
+* **SACL:** system access control list, specifies types of events that should
+  generate audit records
+* **Network access control:** users must go through two access control lists to
+  access files via a share, namely the share ACL and the local ACL. The
+  permissions are then anded together for the resulting permission
+* **Access control for restricted token:** used to remove privileges from a
+  given access token by adding a restricted token to the token. If both the
+  access token and the restricted token are allowed access is given
