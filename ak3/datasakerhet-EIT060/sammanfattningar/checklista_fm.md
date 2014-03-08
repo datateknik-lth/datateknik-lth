@@ -34,8 +34,12 @@ Exam Checklist
       using a different reduction function for each step in the chain we
       eliminate large collisions and can thus use a single table instead of many
       different tables with different reduction functions as in regular TMTO
-    * **Math for TMTO:**
-    ``` T = t^2, P=N, M=mt, N=mt^2 => N^2=M^2*T P = N ```
+    * **Math for TMTO:** 
+
+    ```
+    T = t^2, P=N, M=mt, N=mt^2 => N^2=M^2*T P = N
+    ```
+
 * **Salt in password hashing:** Using large and random salts decrease the
   effectiveness of TMTO/Rainbow attacks as well as dictionary attacks since
   these are precomputed without (or hopefully without your) salt. The salt is
@@ -82,7 +86,7 @@ Exam Checklist
 
 ## Chapter 7
 * **UID in Unix** 
-  * **Real:** ID of logged in principal, can only be changed by root 
+  * **Real:** ID of logged in principal, can only be changed by root - inherited
   * **Effective:** ID used for access control, i.e. a process can be run as
     another user
 * Crypts
@@ -113,16 +117,36 @@ Exam Checklist
   ```
   The above stands for a directory with read, write and execute for owner, read
   for group and read for other (in that order grouped by three). First bit is
-  reserved for directory and is left blank on files
+  reserved for directory and is left blank on files ('c' for a character device,
+  'b' for a block device)
 
   * Access control for folders:
     * **Read:** list directory contents
     * **Write:** delete, rename and insert files in directory
     * **Execute:** access directory and access files in directory
-* **Setuid in Unix:**
+  * **Setuid in Unix:** can be used to change the UID giving elevated
+    permissions to a process. Programs using this function should be heavily
+    scrutinized
 * **Inode:** index node, contains information about object such as:
   * Size
   * Access rights
   * Last access
   * Last modification of file / inode
-* **Umask:** like chmod, but sets default permissions
+* **Umask:** like chmod, but sets default permissions which are anded with the
+  permission of the object
+* **Searchpath:** an incorrect searchpath could have users executing false
+  programs, i.e. a custom version of "ls" is added to path and then used
+  maliciously. Since folders are searched in order, adding this malicious
+  program earlier than its real counterpart results in the "wrong" program
+  being executed, without the user's knowledge.
+
+  ```
+  PATH=.:$HOME/bin:/usr/ucb:/bin:/usr:/bin:/usr/local:/usr/new:/usr/hosts
+  ```
+
+* **hosts.allow, hosts.deny:** in Unix TCPD and SSHD services will allow access
+  to hosts in the **hosts.allow** file first, if the host isn't found the 
+  **hosts.deny** file is searched. If the host isn't found in either, access is
+  granted
+
+## Chapter 8
