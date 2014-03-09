@@ -235,7 +235,7 @@ Exam Checklist
     * Attacks: since the condition implies no read-up the attacker would
     insert a trojan at a higher level transferring information to a lower level
     process
-  * ***-property:** does not apply to trusted subjects, no write-down
+  * **star-property:** does not apply to trusted subjects, no write-down
     * Condition: State (b,M,f) satisfies the *-property if for each element
     (s,o,a) belongs to b where the access operation is append or write, the
     current security level of s is dominated by the security level of o, i.e.
@@ -262,10 +262,62 @@ Exam Checklist
   auditing
 
 ## Chapter 13
+* **Purpose of evaluation:**
+  * **Evaluation:** assessing whether a product has the security properties
+    claimed for it
+  * **Certification:** assessing whether a product is suitable for a given
+    application
+  * **Accreditation:** deciding that a product will be used in a given
+    application
 * **Strengths and limitations of security evaluation**
-  * **Orange Book**
-  * **ITSEC**
-  * **Common Criteria**
+  * Fee paid for evaluation
+  * Time devoted to producing evidence required for evaluation
+  * Assurance for non-technical users resulting in improved user perception
+  * Evaluation performed by private companies can result in certain bias since
+    the company performing the evaluation is getting paid
+  * Time consuming to do a proper evaluation, especially if the TCB is advanced
+  * **Government evaluation:** fair, slow, not all products accepted for
+    evaluation
+  * **Private evaluators:** more difficult to avoid bias, consistency between
+    evaluating bodies (meaning clear formulation of criteria is mandatory),
+    faster evaluation
+* **Orange Book**
+  * Mainly security products i.e. operating systems
+  * The orange book attempts to provide a general document providing:
+    * A yardstick for users to assess the degree of trust that can be placed in
+      a system
+    * Guidance for manufacturers of computer security systems
+    * A basis for specifying security requirements
+  * Evaluation examines TCB, access control policies from Bell-LaPadula
+  * Uses evaluation classes that combine security features with assurance
+    requirements
+    * **D** - minimal protection, i.e. submitted but does not meet requirements
+      for higher rating
+    * **C1** - discreationary security protection, DAC for users/groups,
+      co-operating users, process data at same level, features identification
+      and verification of users. Suitable for a "friendly" environment
+    * **C2** - controlled access protection, DAC for individual users, no object
+      reuse, audit needed, common for commercial applications
+    * **B1** - labelled security protection, MAC (for some objects),
+      documentation and source code analyzed, labels constructed from levels and
+      categories
+    * **B2** - structured protection, MAC for all objects, trusted path for
+      login, formal model of security policy
+    * **B3** - security domains, security administrator, automatic warnings from
+      audit
+    * **A1** - verified design, formal models and formal analysis, stringent
+      configuration management and distribution control
+  * **Limitations:** only recognized in the US, evaluation performed in other
+    countries not valid in the US, focused on OS:s, MAC rarely used in
+    commercial applications, integrity and availability not addressed, criteria
+    creep (criteria become more and more specific, ie.e harder to get C2 year X
+    than to get C2 year X-1), very slow
+* **ITSEC**
+  * Co-op between European countries
+  * Removes link between functionality and assurance
+  * Applies to both products and systems
+  *
+* **Common Criteria**
 * Classifications of products (in above books)
 
 ## Chapter 14
