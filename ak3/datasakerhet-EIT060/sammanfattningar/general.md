@@ -30,3 +30,16 @@ General terminology
   to find a second preimage `x' != x` such that `h(x) = h(x')`
 * **Collision resistance:** computationally infeasible to find any distinct
   inputs `x`,`x'` which hash to the same output
+* **Confidentiality in Bell-LaPadula:** Subjects are not allowed to read objects
+  with a higher security level. Subjects are not allowed to write information to
+  objects with lower clearance. The main idea is that information should not be
+  allowed to flow downwards in a system
+* **Integrity in Biba:** subjects and objects are labelled depending on their
+  level of integrity. Where integrity means how reliable the information they
+  provide is. The subjects are not allowed to read information from objects with
+  lower clearance than themselves. Subjects are not allowed to write to objects
+  with higher clearance than themselves. The idea is that information should not
+  be allowed to flow upwards in a system.
+* **Combining integrity from Biba with confidentiality from BLP results in
+  information not being allowed to flow either upwards or downwards in the
+  system**
