@@ -368,6 +368,9 @@ Exam Checklist
 * **CBC:** cipher block chaining, redundancy removed
 * **OFB:** output feedback, turns the block cipher into a stream cipher
 * **Symmetric and asymmetric keys:**
+  * Symmetric - same key for encryption and decryption
+  * Asymmetric - public (to encrypt or verify) and private key (to sign or
+      decrypt)
 <pre>
                 Security Primitives
                 ------------------
@@ -383,9 +386,7 @@ Exam Checklist
                                       -----   ------
 
 </pre>
-  * Symmetric - same key for encryption and decryption
-  * Asymmetric - public (to encrypt or verify) and private key (to sign or
-    decrypt)
+
 * **Computing a toy RSA example:**
 
   ```
@@ -420,6 +421,7 @@ Exam Checklist
   * Does **not** provide encryption
   * **HOWEVER:** it does provide nonrepudiation
 * **El Gamal** is based on the discrete logarithm problem
+
 ## Chapter 15
 * **Key transport:** one party obtains secret key and securely transfers it
   to the other party (aka key distribution).
@@ -462,7 +464,81 @@ Exam Checklist
     attacks
 * **Kerberos:** like NS with timestamps and limited lifetime for keys, solving
   the problems with NS
+
 ## Chapter 16
+* **Traffic analysis:** who is talking to whom, and how often? What types of
+  information are they receiving? By looking at the length of messages
+  statistical methods can be used to determine what information is being
+  exchanged
+* **The SSL handshake when RSA is used:** client generates "premaster secret"
+  and uses RSA to encrypt it with public key of server. Process:
+
+<pre>
+    Client Hello
+      Client random
+      Suggested cipher suits
+      Suggested compression
+
+    Server Hello
+      Server random
+      Decided cipher suit
+      Decided compression
+
+    Server
+      sends certificate
+      requests certificate
+      hello done
+
+    Client
+      sends certificate
+      verifies certificate
+      change cipher
+      finish
+
+    Server
+      change cipher
+      finish
+</pre>
+
+* **Purpose of random numbers in SSL:** provide known seed to PRF (pseudo random
+  functions), Allow both client and server to contribute to key generation.
+  Avoid replay attacks
+* **IPSec:** provides security on the network layer, mandatory for IPv6,
+  optional for IPv4 contains an **authentication header** (no longer recommended)
+  as well as an ESP (encapsulating security payload
+  * **Authentication header:** data origin authentication and integrity with MAC
+  * **ESP:** provides confidentiality and/or authentications. Uses symmetric
+    encrytption and MAC
+  * **Transport-mode:** ent-to-end security, endpoints must implement IPSec,
+    covers payload only, append new header behind old header
+  * **Tunnel-mode:** gateway-to-gateway security, no need for hosts to implement
+    IPSec, covers entire datagram. ESP makes real source and destination unknown
+    to intermediate routers when combined with tunnel mode
+
 ## Chapter 17
-## Chapter 18
+* **Packet filters:** working on IP and TCP/UDPlayers. Packets examined
+  individually, base filter on ip and port
+  * *Permissive policies:* allow all except ...
+  * *Restrictive policiies:* deny all except ...
+  * **Problems:** must allow all ports >1023 in order to allow
+* **Stateful Packet filters:** solution to above issue, keep track of connection
+  in a table. Allow incoming packets on ports >1023 only if it is in table
+* **Application level proxies:** relays application-level traffic, sets up own
+  connection to remote host, can audit and log att application level, slower
+  than packet filter, higher cost
+* **Idea behind anomaly detection:** user statistics, attacks are not necessary
+  anomalies, common metrics like counter, gauge, interval timer and resource
+  utilization.
+  * Finding anomalies: mean and standard deviation, multivariate, markov
+    processes, time series, operational model deciding what is *normal.*
+* **Misuse detection for IDS (Intrusion Detection System):** works against
+  insider threats to vulnerable company data. Looks for attack signatures,
+  examining network traffic and logs i.e. failed logins. Uses database for
+  signature. Works well against attacks with fixed behaviour. Race between
+  attackers and signature developers
+* **Purpose of Honeypots:** draw attention away from real system, collect
+  information on attackers, encourage attackers to stay in system long enough
+  to be identified
+
 ## Chapter 19
+
