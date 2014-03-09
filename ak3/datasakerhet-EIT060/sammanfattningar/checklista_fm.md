@@ -541,4 +541,28 @@ Exam Checklist
   to be identified
 
 ## Chapter 19
-
+* **Authentication and key agreement in GSM**
+  1. TMSI sent to MSC/VLR, IMSI sent from MSC/VLR to HLR/AuC
+  1. AuC uses A3/A8 to compute RES and Kc, sends challange to SIM
+  1. SIM hashes challange with RAND (challange) giving Kc and SRES
+  1. SRES sent to AuC, if SRES=RES SIM is authenticated
+* **Improvements in UMTS compared to GSM:** GSM had broken encryption
+  algorithms, only users were authenticated - the network was not. In UMTS the
+  user is authenticated, a session key for encryption is used, the network is
+  authenticated and a 128bit session key is used
+* In GSM a stream cipher is used
+* In UTMS a block cipher in a stream cipher mode
+* **CRC-32 problem in WEP:** The remainder of the CRC32 is the ICV (Integrity
+  check value). This allows for a message to be added to the original message
+  without breaking the integrity check.
+* **IV-size problem in WEP:** The initialization vector is only 24 bits, after
+  `2^24` frames the IV will repeat. RC4 does not define how to use IV resulting
+  in the IV being concatenated with the key. Which means that it is possible to
+  recover the key very fast, no matter if the key is 40 or 108 bits. Since the
+  IV repeats, there is no defense against replay attacks
+* **Authentication problem in WEP:** when authenticating we send an auth request
+  which is answered by a 128 byte challange. The challange is encrypted with the
+  shared key, success if correct encryption.
+  * *Attack:* Save `keystream = challange (+) response` for an IV, use the same
+    keystream for any new challange and use same IV
+* WPA2 uses AES and is completely different from WEP and WPA
