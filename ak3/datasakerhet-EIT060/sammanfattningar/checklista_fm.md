@@ -298,6 +298,8 @@ Exam Checklist
       and verification of users. Suitable for a "friendly" environment
     * **C2** - controlled access protection, DAC for individual users, no object
       reuse, audit needed, common for commercial applications
+    * **B:** is generally intended for products that handle classified data and
+      enforce the mandatory Bell-LaPadula policies
     * **B1** - labelled security protection, MAC (for some objects),
       documentation and source code analyzed, labels constructed from levels and
       categories
@@ -316,12 +318,150 @@ Exam Checklist
   * Co-op between European countries
   * Removes link between functionality and assurance
   * Applies to both products and systems
-  *
+  * Evaluation levels determine confidence and correctness (E0-E6)
+  * Close cooperation between sponsor/developer and evaluator
 * **Common Criteria**
-* Classifications of products (in above books)
+  * An effort to make security evaluations as widely recognized as possible
+  * CC merges ideas from their various predecessors (extermely voluminous
+  document)
+  * Abandons strict separation of functionality classes and assurance levels and
+    follow the Fedaral Criteria in using **protection profiles** like predefined
+    security classes
+  * New protection profiles can be added by anyone (is of course vetted and
+    evaluated)
+  * Some public sector customers require security evaluation, popular in smart
+    cards sector
+  * **Criticism:** expensive and driven by government requirements, cost can be
+    10-40% of development cost, time delay, re-evaluatiing new version is
+    expensive, only applies to **one** version and **one configurarion**, EAL5-7
+    are only accepted within the country where they're evaluated
+* **Functionality and assurance for products**
+  * **Orange book:** uses evaluation classes that combine the two
+  * **ITSEC:** security functions specified individually or by predefined
+    functionality class
+  * **Common Criteria:** security functional requirements, evaluation assurance
+    level, package of assurance requirements
+
+* **Classifications of products**
+  * **Orange Book** - D to A
+  * **ITSEC** - protection profiles
+  * **Common criteria** - EAL1 to EAL7
 
 ## Chapter 14
+* **Empirically secure:** Secure based on the fact that no one has broken it for
+  sometime
+* **Provably secure:** We prove that breaking a scheme is at least as hard as
+   breaking som well known problem like factoring or deiscrete log.
+* **Unconditionally secure:** The schemes are secure even if the adversary has
+   nlimited computing power.
+* **Kerckhoff's principle:** Only the key should be unknown to an adversary.
+   ecurity should not be based on the fact that an algorithm is secret.
+* **Stream ciphers and one time pads (OTP)**
+  * **Stream cipher:** take a short random key and expand it to a long
+     seudorandom sequence of bits
+  * **OTP:** different substitutions for every character, "Stream cipher is a
+    number of OTP that repeats"
+* **Stream ciphers vs. block ciphers:** stream send message bit by bit in a
+   tream, block sends larger blocks and cannot retain state between blocks
+* **ECB:** electric code block, all blocks encrypted independantly, redundancy
+  reserver
+* **CBC:** cipher block chaining, redundancy removed
+* **OFB:** output feedback, turns the block cipher into a stream cipher
+* **Symmetric and asymmetric keys:**
+<pre>
+                Security Primitives
+                ------------------
+                  |             |
+          Asymmetric            Symmetric
+          (public keys)         (Private key)
+          -------------         -------------
+          |       |             |         |
+    Digital     Ciphers       MAC       Ciphers
+    Signature   -------       ---       -------
+    ---------                           |     |
+                                      Block   Stream
+                                      -----   ------
+
+</pre>
+  * Symmetric - same key for encryption and decryption
+  * Asymmetric - public (to encrypt or verify) and private key (to sign or
+    decrypt)
+* **Computing a toy RSA example:**
+
+  ```
+  //Pick primes p,q let n=p*q
+  phi(n) = (p-1)(q-1)
+  //Pick an integer e such that
+  gcd(e,phi(n)) = 1
+  //Find d such that
+  e*d = 1 mod phi(n)
+  //Public key: e,n
+  //Private key d,phi(n),p,q
+
+  //Encrypt:
+  c = m^e mod n
+  //Decrypt:
+  m = c^d mod n
+  ```
+
+* **Properties of hash functions:** one way, deterministic, uniform (same
+  probability for all values) , variable range, variable range with minimal
+  movement, data normalization, continuous
+* **Birthday paradox:** comes from statistical theory, and more specifically
+  from the answer to "How many people do you need in a room such that the
+  probability that two have the same birthday is 50%?" (Answer: 23). This means
+  that chances of collision with given h(x) is 2^n and chances of collision with
+  **any** earlier trial is 2^n/2.
+* **Properties of MAC functions:** ease of computation (given parameters),
+  signature algorithm and verification algorithm, does **not** provide
+  encryption
+* **Digital signatures:** key generation, signature and verification algorithm
+  * Private key for signatures, public for verification
+  * Does **not** provide encryption
+  * **HOWEVER:** it does provide nonrepudiation
+* **El Gamal** is based on the discrete logarithm problem
 ## Chapter 15
+* **Key transport:** one party obtains secret key and securely transfers it
+  to the other party (aka key distribution).
+* **Key agreement:** both parties contribute to the generation of the secret key
+* **Implicit key authentication:** one party knows that no one besides a
+  specifically identified 2nd party may gain access to a secret key
+* **Key confirmation:** one party is assured that the second party has possesion
+  of a secret key, but doesn't have to know the identity of said party
+* **Explicit key authentication:** both implicit and explicit key authentication
+  and key confirmation
+* **Replay attacks:** listening in on communication between parties and then
+  repeating the information to one party. Can be used to authenticate when a
+  nonce hasn't been used
+* **Certificates**
+  * Primarily binds a subject name to a public key, information is signed by a
+    CA. If a user trusts the CA, it will trust the certificates signed by the CA
+  * Important certificate fields: Version, Issuer name, Period of validity,
+    subject name, public key information, extensions, signature
+* **Diffie-Hellman:** A and B do not share any secret in advance, goal is to
+  establish a secret shared key, send equation based on random number and
+  compute key from this.
+  * **Vulnerabilities:** prone to man-in-the-middle attacks
+* **Station-to-station:** solves DH, authentication added by adding signature
+  to handshake. Alice generates `g^x` and sends this to Bob. Bob calculates
+  `g^y` and the key `K = g^x*y` concatenates `g^y` with `g^x` and signs with
+  his asymmetric key and then encrypts the signature with K. He then sends `g^y,
+  E_k(S_B(g^y,g^x))` to Alice. Alice decodes the message and sends her own
+  encrypted package to Bob, veryfying her own identity.
+* **AKEP2:** authenticated key exchange protocol 2, uses nonce, two long-term
+  keys shared by A and B. Two secure keyed hash functions, implicit key
+  authentication against active attack
+  * Limitations: two parties are required to share som secrets in advance. If
+    one user has communications with a lot of people, a table for secrets has to
+    be maintained
+  * Solution: use a trusted middle party, i.e. a server
+* **EKE:** encrypted key exchange, use a temporary public key encrypted with
+  password to encrypt session key
+* **Needham-Shroeder:** like EKE, but uses nonce
+  * Problem: Receiving party does not know if key is fresh, prone to replay
+    attacks
+* **Kerberos:** like NS with timestamps and limited lifetime for keys, solving
+  the problems with NS
 ## Chapter 16
 ## Chapter 17
 ## Chapter 18
