@@ -228,18 +228,11 @@ xam Checklist
 
 ## Chapter 11
 * **Bell-LaPadula**
-  * **ss-property:** simple security property, mandatory access control
-    * Condition: State (b,M,f) satisfies the ss-property if for each element
-    (s,o,a) belongs to b where the access operation is read or write, the
-    security level of s dominates security level of o, i.e. `f_o(o) <= f_s(s)`
-    * Attacks: since the condition implies no read-up the attacker would
-    insert a trojan at a higher level transferring information to a lower level
-    process
-  * **star-property:** does not apply to trusted subjects, no write-down
-    * Condition: State (b,M,f) satisfies the *-property if for each element
-    (s,o,a) belongs to b where the access operation is append or write, the
-    current security level of s is dominated by the security level of o, i.e.
-    `f_c(s) <= f_o(o)`
+  * **ss-property:** If access operation includes read then subject security
+    level must dominate classification of object (i.e. >= object)
+  * **star-property:** (*-property) if access operation includes append or write
+    then subject security level must be dominated by the classification of the
+    object. (i.e. the object's level >= subjects)
   * **ds-property** access rights given in acceess control matrix must be
   followed, discretionary access control, subjects may pass access permission on
   to other users
@@ -338,14 +331,15 @@ xam Checklist
 * **Functionality and assurance for products**
   * **Orange book:** uses evaluation classes that combine the two
   * **ITSEC:** security functions specified individually or by predefined
-    functionality class
+    functionality class. Separation of functionality and assurance.
   * **Common Criteria:** security functional requirements, evaluation assurance
     level, package of assurance requirements
 
 * **Classifications of products**
   * **Orange Book** - D to A
-  * **ITSEC** - 
-  * **Common criteria** - EAL1 to EAL7, uses protection profiles
+  * **ITSEC** - separation between functionality and assurance
+  * **Common criteria** - EAL1 to EAL7, uses protection profiles which can then
+    be assured
 
 ## Chapter 14
 * **Empirically secure:** Secure based on the fact that no one has broken it for

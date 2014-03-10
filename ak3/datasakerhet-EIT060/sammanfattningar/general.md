@@ -1,5 +1,8 @@
-General terminology
+eneral terminology
 ===================
+
+De flesta punkterna i det här dokumentet är taget från gamla tentor.
+
 * **Subject:** processes
 * **Object:** files, folders, memory and I/O devices
 * **Principal:** UID
@@ -90,3 +93,42 @@ General terminology
   evaluated against one ore more protection profiles, which state the
   functionality of the product. The assurance level is separated from this and
   is given by how much effort was put into the evaluation
+* **Examples of measures of strength:**
+  * *Empirically secure:* there are no known attacks, i.e. it has been unbroken
+    for a long time. **Example:** AES, unbroken stream and
+    block ciphers
+  * *Provably secure:* the algorithm is secure as long as the problem for which
+    it is based on (factoring, discrete logarithm problem) is unfeasable to
+    break. **Example:** RSA
+  * *Unconditionally secure:* not possible to break at all, regardless of
+    computation time. **Example:** one time pad or vernam cipher
+* **Chinese wall security:** a security model focusing on avoiding conflicts of
+  interest. I.e. a law firm not having clients on both sides of the fence
+* **How IV adds to security:** allows for reuse of a key in a stream cipher and
+  most block cipher modesof operation wihtout revealing important information
+  about the plaintext to the eavesdropper
+* **Why isn't the client typically authenticated on the web?** Normally a client
+  will authenticate via a system on the server after the secure connection has
+  been established. There is also a practicality issue i.e. letting each user
+  have a unique certificate which the server trusts is logistically insecure.
+* **Anomaly vs misuse detection:**
+  * *Anomaly detection* analyses the system with respect to a baseline. If the
+    behaviour is too far from the baseline this is regarded as an intrusion.
+    This can detect new and previously unknown attacks.
+  * In *Misuse detection*, the IDS compares system events to a database of well
+    known attack methods but it will not detect new attacks that do not have
+    their signature records in the database.
+* **Adding stuff to CRC-32 (WEP):** CRC-32 is linear meaning
+
+  ```
+  CRC-32(M+d) = CRC-32(M)  (+) CRC-32(d)
+  // Which gives the transmitted bitstring as:
+  M || CRC-32(M) (+) RC4(K)
+  //To change M to M (+) d (where d = 100...001)
+  M || CRC-32(M) (+) RC4(K) (+) d || CRC-32(d) =
+  (M (+) d) || CRC-32(M) (+) CRC-32(d) (+) RC4(K) =
+  (M (+) d) || CRC-32(M (+) d) (+) RC4(K)
+  ```
+* **Finding a preimage from n-bit hash:** `2^n/2` inputs before collision is
+  found
+* **Finding a second preimage from n-bit hash:** `2^n` inputs
