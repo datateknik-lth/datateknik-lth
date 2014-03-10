@@ -344,8 +344,8 @@ Exam Checklist
 
 * **Classifications of products**
   * **Orange Book** - D to A
-  * **ITSEC** - protection profiles
-  * **Common criteria** - EAL1 to EAL7
+  * **ITSEC** - 
+  * **Common criteria** - EAL1 to EAL7, uses protection profiles
 
 ## Chapter 14
 * **Empirically secure:** Secure based on the fact that no one has broken it for
