@@ -1,4 +1,4 @@
-Exam Checklist
+xam Checklist
 ==============
 
 ## Chapter 3
@@ -461,7 +461,8 @@ Exam Checklist
   password to encrypt session key
 * **Needham-Shroeder:** like EKE, but uses nonce
   * Problem: Receiving party does not know if key is fresh, prone to replay
-    attacks
+    attacks. The key as in `K_ab` in `eK_bs(K_ab, A)` which is sent from A
+    after telling key-server it wants to communicate with B.
 * **Kerberos:** like NS with timestamps and limited lifetime for keys, solving
   the problems with NS
 
@@ -503,16 +504,16 @@ Exam Checklist
 * **Purpose of random numbers in SSL:** provide known seed to PRF (pseudo random
   functions), Allow both client and server to contribute to key generation.
   Avoid replay attacks
-* **IPSec:** provides security on the network layer, mandatory for IPv6,
+* **IPsec:** provides security on the network layer, mandatory for IPv6,
   optional for IPv4 contains an **authentication header** (no longer recommended)
   as well as an ESP (encapsulating security payload
   * **Authentication header:** data origin authentication and integrity with MAC
   * **ESP:** provides confidentiality and/or authentications. Uses symmetric
     encrytption and MAC
-  * **Transport-mode:** ent-to-end security, endpoints must implement IPSec,
+  * **Transport-mode:** ent-to-end security, endpoints must implement IPsec,
     covers payload only, append new header behind old header
   * **Tunnel-mode:** gateway-to-gateway security, no need for hosts to implement
-    IPSec, covers entire datagram. ESP makes real source and destination unknown
+    IPsec, covers entire datagram. ESP makes real source and destination unknown
     to intermediate routers when combined with tunnel mode
 
 ## Chapter 17

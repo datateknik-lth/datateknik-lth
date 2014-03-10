@@ -16,6 +16,13 @@ General terminology
   The IV is also sent in clear text and can be eavesdropped. To authenticate as
   Alice, all Eve has to do is take a challange and calculate the response
   described above.
+* **How WEP fails**
+  * **Confidentiality:** the usage of IV in the stream cipher is flawed, also
+    the IV is too short
+  * **Integrity:** The integrity algorithm used is linear (CRC32) resulting in
+    the attacker being able to append to the message without failing the
+    integrity check
+  * **Authentication:** see "**Breaking WEP**"
 * **Difference between data and information:** data is something storeable, and
   representable by ones and zeroes. Information is the interpretation of data.
   We usually want to protect information but we can only protect data
@@ -43,3 +50,43 @@ General terminology
 * **Combining integrity from Biba with confidentiality from BLP results in
   information not being allowed to flow either upwards or downwards in the
   system**
+* **ACE:** access control entry
+* **Merkle-Damgård:** is a method that can be used to construct hash functions.
+  Namely collision-resistant cryptographic hash functions from
+  collision-resistant one-way compression functions. Used to construct **MD5**,
+  **SHA1** and **SHA2**.
+* **Protection profile:** a document in common criteria (CC) which specifies the
+  functionality of a product
+* **Security Association:** the SA holds information about algorithms, keys and
+  usage modes for an IPsec connection
+* **Clark-Wilson model:** a security model which focuses on integrity in
+  commercial systems rather than military systems. Integrity is maintained by
+  preventing corruption of objects in a system due to either error or malicious
+  intent
+* **Canary value:** a value that is inserted in the stack just before the local
+  variables. When the function returns, this value is checked to make sure it
+  hasn't changed, as it would have in the case of a buffer overflow attack
+* **How UMTS provides non-repudiation:** only symmetric cryptography is used in
+  UMTS meaning that there is no non-repudiation provided at all
+* **Preventing spoofing:** system spoofing, can be prevented via a control
+  sequence (trusted path) in windows this is *Ctr-alt-delete*.
+* **Detecting spoofing:** The system can show number of failed login attempts
+* **Real UID and effective UID in Linux:** The real UID is the ID of the logged
+  in user. It is used to identify the logged in user in case the effective UID
+  is temporarily changed. The effective UID an always be changed to that of the
+  real UID. The effective UID is used for access control. Access rights for
+  files are compared with the effective UID of the user
+* **Group access control Win vs Linux:** in windows the rights are the union of
+  the user's rights and rights of the user's groups. In Linux if the user is the
+  owner of a file, the only permissions checked are that of the owner. Else the
+  groups' permissions are checked.
+* **Location of header in IPsec:** in transport mode the original IP header is
+  placed before the ESP header. In tunnel mode the original IP header is
+  encapsulated in the payload (gateway-to-gateway, meaning that the actual hosts
+  do not need to be IPsec aware)
+* **Differences between orange book and CC:** in OB, functionality and assurance
+  were not separated, meaning that a product could not have low functionality
+  and high assurance. In CC there is a separation. In CC a product can be
+  evaluated against one ore more protection profiles, which state the
+  functionality of the product. The assurance level is separated from this and
+  is given by how much effort was put into the evaluation
