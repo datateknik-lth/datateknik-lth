@@ -410,7 +410,8 @@ Exam Checklist
   from the answer to "How many people do you need in a room such that the
   probability that two have the same birthday is 50%?" (Answer: 23). This means
   that chances of collision with given h(x) is `2^n/2` and chances of collision
-  with **any** earlier trial is `2^n`.
+  with **any** earlier trial is `2^n`. This is a n-bit long hash. If the number
+  of different outcomes is "n", then 50% chance of collision comes at `sqrt(n)`.
 * **Properties of MAC functions:** ease of computation (given parameters),
   signature algorithm and verification algorithm, does **not** provide
   encryption
@@ -550,7 +551,7 @@ Exam Checklist
   user is authenticated, a session key for encryption is used, the network is
   authenticated and a 128bit session key is used
 * In GSM a stream cipher is used
-* In UTMS a block cipher in a stream cipher mode
+* In UMTS a block cipher in a stream cipher mode
 * **CRC-32 problem in WEP:** The remainder of the CRC32 is the ICV (Integrity
   check value). This allows for a message to be added to the original message
   without breaking the integrity check.

@@ -132,3 +132,21 @@ De flesta punkterna i det här dokumentet är taget från gamla tentor.
 * **Finding a preimage from n-bit hash:** `2^n/2` inputs before collision is
   found
 * **Finding a second preimage from n-bit hash:** `2^n` inputs
+* **Sticky bit on directories:** only the owner of the file and the owner of the
+  folder are allowed to delete a file in the directory. If the bit is not set,
+  anyone with write access to the directory would be allowed to delete it.
+* **Sticky bit on files:** in Solaris these files will not be cached by the
+  kernel. Usually set on swap files to prevent access on the file from flushing
+  more important data from the system cache.
+* **SSL Protection against Replay attacks:** In the handshake, both the client
+  and server send random numbers in the hello messages. In the finished message,
+  previous handshake messages are hashed and encrypted. Since the random numbers
+  are included someone replaying the messages would not be able to produce the
+  correct finished messages and a replay message would not be valid.
+* **Why isn't the header encrypted in ESP (IPsec)?** Because the SPI is stored
+  in the header. This is an index pointing to the algorithms and keys used in
+  encryption.
+* **Clean and dirty subjects in Biba:** a clean object contains information that
+  is more correct than a dirty object. We trust clean subjects to provide
+  information that is more correct than dirty subjects. Dirty and clean are in
+  Biba, relative terms.
