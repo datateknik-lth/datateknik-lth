@@ -5,7 +5,7 @@ Exam Checklist
 * **Terms:**
   * **Confidentiality:**  Prevent unauthorized disclosure of information
   * **Integrity:**        Prevent unauthorized modification of information
-  * **Availability:**     Information that should be available is not witheld
+  * **Availability:**     Information that should be available is not withheld
   * **Authentication:**   Confirming the identity of person or process
   * **Non-repudiation:**  Sender/Receiver cannot deny having made a transmission
   * **Accountability:**   Entities affecting security are held responsible
@@ -27,7 +27,7 @@ Exam Checklist
   * **Dictionary:** Trying a set of common words/phrases/passwords as the
     password (usually from a large dictionary, i.e. RockYou.com and language
     specific words and phrases)
-  * **Time-memory-tradeoff:** Using a pre-computed table of resulting hashes and
+  * **Time-memory-trade-off:** Using a pre-computed table of resulting hashes and
     passwords. During the offline portion of the attack, the table is
     constructed. During the online phase, the table is used to look up the
     result of a reduction function. When the string is found in the column with
@@ -56,12 +56,12 @@ Exam Checklist
   * Forcing the user to use a strong password
   * Limiting log in attempts
   * Showing audit information
-* **Biometric Systems:**
+* **Bio-metric Systems:**
   * **FRR:** False rejection rate, how many users were falsely rejected
   * **FAR:** False acceptance rate, how many users were falsely accepted
   * **EER:** Equal error rate
   * Relations: EER ->FAR = FRR if **FTA** (Failure to acquire, i.e. read
-    biometric data) is zero
+    bio-metric data) is zero
 
 ## Chapter 5
 * **Discretionary control:** Rights defined by owner of object
@@ -138,7 +138,7 @@ Exam Checklist
   * Last modification of file / inode
 * **Umask:** like chmod, but sets default permissions which are anded with the
   permission of the object
-* **Searchpath:** an incorrect searchpath could have users executing false
+* **Search path:** an incorrect search path could have users executing false
   programs, i.e. a custom version of "ls" is added to path and then used
   maliciously. Since folders are searched in order, adding this malicious
   program earlier than its real counterpart results in the "wrong" program
@@ -160,7 +160,7 @@ Exam Checklist
   stored in the SAM database
 * **NTLM hash:** The NTLM hash is better, the password is hashed using MD4 and
   then padded up to 21 bytes. It is then split into three parts and encrypted
-  with a challange sent by the server the result is then sent to the server and
+  with a challenge sent by the server the result is then sent to the server and
   verified. Supports different cases and more chars
   * **Vulnerabilities:**
     * Backwards compatible with LM (meaning old passwords stored in LM)
@@ -169,7 +169,7 @@ Exam Checklist
 * **Access tokens:** when a user is authenticated, the **Local Security
     Authority** (LSA) creates an access token for said user. The token is then
     attached to all processes run by the user and lists user, user's group and
-    user privileges amongst others
+    user privileges among others
 * **Privileges:** are associated with operating system functions and relate to
   activities like system administration, backup, mail/network access. Is applied
   to the local computer and stored in the access token.
@@ -179,8 +179,8 @@ Exam Checklist
   * Primary group SID
   * DACL
   * SACL
-* **DACL:** discretionary access controll list, identifies who is allowed/denied
-  acces to object
+* **DACL:** discretionary access control list, identifies who is allowed/denied
+  access to object
   * No DACL: full control
   * Empty DACL: denied access
   * SID can be allowed/denied - denies stored in beginning
@@ -202,7 +202,7 @@ Exam Checklist
 ## Chapter 9
 * **Tracker attacks:** basically using statistical methods to elicit information
   from a database. If information is known about the target this can be used to
-  design queries that would further reveal iformation by returning a small (or
+  design queries that would further reveal information by returning a small (or
   single) amount of entries. A basic fix would be to disallow queries that
   result in small entries. The query's complement could then be used, so to we
   would also have to ensure that the query's complement is large enough. This
@@ -237,14 +237,14 @@ Exam Checklist
   * **star-property:** (*-property) if access operation includes append or write
     then subject security level must be dominated by the classification of the
     object. (i.e. the object's level >= subjects)
-  * **ds-property** access rights given in acceess control matrix must be
+  * **ds-property** access rights given in access control matrix must be
   followed, discretionary access control, subjects may pass access permission on
   to other users
   * **Basic security theorem:** if all above properties are satisfied, the
   current state can be considered secure. As long as any state change doesn't
   violate these properties the system remains secure
-  * **Tranquility:** Security levels and acces rights never change
-* **Difference betweeen BLP and Biba:** focuses on integrity, subjects and 
+  * **Tranquility:** Security levels and access rights never change
+* **Difference between BLP and Biba:** focuses on integrity, subjects and 
   objects are mapped to integrity levels, forming a lattice. Integrity levels
   in biba are automatically adjusted:
   * Subject s reads object o at any integrity level, the new integrity level of
@@ -290,14 +290,14 @@ Exam Checklist
     requirements
     * **D** - minimal protection, i.e. submitted but does not meet requirements
       for higher rating
-    * **C1** - discreationary security protection, DAC for users/groups,
+    * **C1** - discretionary security protection, DAC for users/groups,
       co-operating users, process data at same level, features identification
       and verification of users. Suitable for a "friendly" environment
     * **C2** - controlled access protection, DAC for individual users, no object
       reuse, audit needed, common for commercial applications
     * **B:** is generally intended for products that handle classified data and
       enforce the mandatory Bell-LaPadula policies
-    * **B1** - labelled security protection, MAC (for some objects),
+    * **B1** - labeled security protection, MAC (for some objects),
       documentation and source code analyzed, labels constructed from levels and
       categories
     * **B2** - structured protection, MAC for all objects, trusted path for
@@ -309,7 +309,7 @@ Exam Checklist
   * **Limitations:** only recognized in the US, evaluation performed in other
     countries not valid in the US, focused on OS:s, MAC rarely used in
     commercial applications, integrity and availability not addressed, criteria
-    creep (criteria become more and more specific, ie.e harder to get C2 year X
+    creep (criteria become more and more specific, i.e harder to get C2 year X
     than to get C2 year X-1), very slow
 * **ITSEC**
   * Co-op between European countries
@@ -319,18 +319,18 @@ Exam Checklist
   * Close cooperation between sponsor/developer and evaluator
 * **Common Criteria**
   * An effort to make security evaluations as widely recognized as possible
-  * CC merges ideas from their various predecessors (extermely voluminous
+  * CC merges ideas from their various predecessors (extremely voluminous
   document)
   * Abandons strict separation of functionality classes and assurance levels and
-    follow the Fedaral Criteria in using **protection profiles** like predefined
+    follow the Federal Criteria in using **protection profiles** like predefined
     security classes
   * New protection profiles can be added by anyone (is of course vetted and
     evaluated)
   * Some public sector customers require security evaluation, popular in smart
     cards sector
   * **Criticism:** expensive and driven by government requirements, cost can be
-    10-40% of development cost, time delay, re-evaluatiing new version is
-    expensive, only applies to **one** version and **one configurarion**, EAL5-7
+    10-40% of development cost, time delay, re-evaluating new version is
+    expensive, only applies to **one** version and **one configuration**, EAL5-7
     are only accepted within the country where they're evaluated
 * **Functionality and assurance for products**
   * **Orange book:** uses evaluation classes that combine the two
@@ -349,20 +349,20 @@ Exam Checklist
 * **Empirically secure:** Secure based on the fact that no one has broken it for
   sometime
 * **Provably secure:** We prove that breaking a scheme is at least as hard as
-   breaking som well known problem like factoring or deiscrete log.
+   breaking some well known problem like factoring or discrete log.
 * **Unconditionally secure:** The schemes are secure even if the adversary has
-   nlimited computing power.
+   unlimited computing power.
 * **Kerckhoff's principle:** Only the key should be unknown to an adversary.
-   ecurity should not be based on the fact that an algorithm is secret.
+   security should not be based on the fact that an algorithm is secret.
 * **Stream ciphers and one time pads (OTP)**
   * **Stream cipher:** take a short random key and expand it to a long
-     seudorandom sequence of bits
+     pseudo-random sequence of bits
   * **OTP:** different substitutions for every character, "Stream cipher is a
     number of OTP that repeats"
 * **Stream ciphers vs. block ciphers:** stream send message bit by bit in a
-   tream, block sends larger blocks and cannot retain state between blocks
-* **ECB:** electric code block, all blocks encrypted independantly, redundancy
-  reserver
+   stream, block sends larger blocks and cannot retain state between blocks
+* **ECB:** electric code block, all blocks encrypted independently, redundancy
+  reserved
 * **CBC:** cipher block chaining, redundancy removed
 * **OFB:** output feedback, turns the block cipher into a stream cipher
 * **Symmetric and asymmetric keys:**
@@ -409,15 +409,15 @@ Exam Checklist
 * **Birthday paradox:** comes from statistical theory, and more specifically
   from the answer to "How many people do you need in a room such that the
   probability that two have the same birthday is 50%?" (Answer: 23). This means
-  that chances of collision with given h(x) is 2^n and chances of collision with
-  **any** earlier trial is 2^n/2.
+  that chances of collision with given h(x) is `2^n/2` and chances of collision
+  with **any** earlier trial is `2^n`.
 * **Properties of MAC functions:** ease of computation (given parameters),
   signature algorithm and verification algorithm, does **not** provide
   encryption
 * **Digital signatures:** key generation, signature and verification algorithm
   * Private key for signatures, public for verification
   * Does **not** provide encryption
-  * **HOWEVER:** it does provide nonrepudiation
+  * **HOWEVER:** it does provide non-repudiation
 * **El Gamal** is based on the discrete logarithm problem
 
 ## Chapter 15
@@ -426,7 +426,7 @@ Exam Checklist
 * **Key agreement:** both parties contribute to the generation of the secret key
 * **Implicit key authentication:** one party knows that no one besides a
   specifically identified 2nd party may gain access to a secret key
-* **Key confirmation:** one party is assured that the second party has possesion
+* **Key confirmation:** one party is assured that the second party has possession
   of a secret key, but doesn't have to know the identity of said party
 * **Explicit key authentication:** both implicit and explicit key authentication
   and key confirmation
@@ -447,11 +447,11 @@ Exam Checklist
   `g^y` and the key `K = g^x*y` concatenates `g^y` with `g^x` and signs with
   his asymmetric key and then encrypts the signature with K. He then sends `g^y,
   E_k(S_B(g^y,g^x))` to Alice. Alice decodes the message and sends her own
-  encrypted package to Bob, veryfying her own identity.
+  encrypted package to Bob, verifying her own identity.
 * **AKEP2:** authenticated key exchange protocol 2, uses nonce, two long-term
   keys shared by A and B. Two secure keyed hash functions, implicit key
   authentication against active attack
-  * Limitations: two parties are required to share som secrets in advance. If
+  * Limitations: two parties are required to share some secrets in advance. If
     one user has communications with a lot of people, a table for secrets has to
     be maintained
   * Solution: use a trusted middle party, i.e. a server
@@ -461,7 +461,7 @@ Exam Checklist
   * Problem: Receiving party does not know if key is fresh, prone to replay
     attacks. The key as in `K_ab` in `eK_bs(K_ab, A)` which is sent from A
     after telling key-server it wants to communicate with B.
-* **Kerberos:** like NS with timestamps and limited lifetime for keys, solving
+* **Kerberos:** like NS with time-stamps and limited lifetime for keys, solving
   the problems with NS
 
 ## Chapter 16
@@ -507,8 +507,8 @@ Exam Checklist
   as well as an ESP (encapsulating security payload
   * **Authentication header:** data origin authentication and integrity with MAC
   * **ESP:** provides confidentiality and/or authentications. Uses symmetric
-    encrytption and MAC
-  * **Transport-mode:** ent-to-end security, endpoints must implement IPsec,
+    encryption and MAC
+  * **Transport-mode:** end-to-end security, endpoints must implement IPsec,
     covers payload only, append new header behind old header
   * **Tunnel-mode:** gateway-to-gateway security, no need for hosts to implement
     IPsec, covers entire datagram. ESP makes real source and destination unknown
@@ -518,22 +518,22 @@ Exam Checklist
 * **Packet filters:** working on IP and TCP/UDPlayers. Packets examined
   individually, base filter on ip and port
   * *Permissive policies:* allow all except ...
-  * *Restrictive policiies:* deny all except ...
+  * *Restrictive policies:* deny all except ...
   * **Problems:** must allow all ports >1023 in order to allow
 * **Stateful Packet filters:** solution to above issue, keep track of connection
   in a table. Allow incoming packets on ports >1023 only if it is in table
 * **Application level proxies:** relays application-level traffic, sets up own
-  connection to remote host, can audit and log att application level, slower
+  connection to remote host, can audit and log at application level, slower
   than packet filter, higher cost
 * **Idea behind anomaly detection:** user statistics, attacks are not necessary
   anomalies, common metrics like counter, gauge, interval timer and resource
   utilization.
-  * Finding anomalies: mean and standard deviation, multivariate, markov
+  * Finding anomalies: mean and standard deviation, multivariate, Markov
     processes, time series, operational model deciding what is *normal.*
 * **Misuse detection for IDS (Intrusion Detection System):** works against
   insider threats to vulnerable company data. Looks for attack signatures,
   examining network traffic and logs i.e. failed logins. Uses database for
-  signature. Works well against attacks with fixed behaviour. Race between
+  signature. Works well against attacks with fixed behavior. Race between
   attackers and signature developers
 * **Purpose of Honeypots:** draw attention away from real system, collect
   information on attackers, encourage attackers to stay in system long enough
@@ -542,7 +542,7 @@ Exam Checklist
 ## Chapter 19
 * **Authentication and key agreement in GSM**
   1. TMSI sent to MSC/VLR, IMSI sent from MSC/VLR to HLR/AuC
-  1. AuC uses A3/A8 to compute RES and Kc, sends challange to SIM
+  1. AuC uses A3/A8 to compute RES and Kc, sends challenge to SIM
   1. SIM hashes challange with RAND (challange) giving Kc and SRES
   1. SRES sent to AuC, if SRES=RES SIM is authenticated
 * **Improvements in UMTS compared to GSM:** GSM had broken encryption
