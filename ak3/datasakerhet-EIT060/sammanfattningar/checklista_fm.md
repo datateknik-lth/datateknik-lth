@@ -1,4 +1,4 @@
-xam Checklist
+Exam Checklist
 ==============
 
 ## Chapter 3
