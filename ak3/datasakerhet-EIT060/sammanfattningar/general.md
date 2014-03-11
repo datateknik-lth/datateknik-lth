@@ -1,4 +1,4 @@
-eneral terminology
+General terminology
 ===================
 
 De flesta punkterna i det här dokumentet är taget från gamla tentor.

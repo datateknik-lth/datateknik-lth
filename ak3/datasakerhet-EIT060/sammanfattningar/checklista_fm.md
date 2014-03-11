@@ -17,6 +17,10 @@ Exam Checklist
   site/e-mail is legitimate. I.e. spoofing e-mails from sysadmins, spoofing
   a banking site. Usually in attempt to gain passwords or other sensitive
   information such as credit cards etc
+  * *Example:* program imitating login screen of Windows. The Ctrl-alt-Delete
+    sequence can here be used to make sure that the login screen is not a
+    spoofed version. I.e. even when it appears that the system is logged out
+    a user should always press the control sequence
 * **Password recovery**
   * **Brute force:** Testing every possible combination for a password. Time
     consuming for large passwords
