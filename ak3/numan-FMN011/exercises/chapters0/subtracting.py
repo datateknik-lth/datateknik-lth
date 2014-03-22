@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""horner.py: Subtracting numbers 0.4 C1"""
+"""subtracting.py: Subtracting numbers 0.4 C1"""
 
 __author__      = "Ragnar Mellbin"
 
