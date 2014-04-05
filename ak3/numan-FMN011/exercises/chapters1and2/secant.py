@@ -31,13 +31,13 @@ def secant(polynom, x0, x1, root, verbose) -> []:
 	superlinearquota=np.divide(np.diff(superlinear),superlinear[1:])
 	if verbose:
 		print(eii)
-		print("Superlinear:")
+		print("Superlinear constants:")
 		print(superlinear)
 		print("Div")
 		print(superlinearquota)
-		print("Linear:")
+		print("Normated diff:")
 		print(linear)
-		print("Div:")
+		print("Normated diff:")
 		print(linearquota)
 		if(np.linalg.norm(linearquota[-5:-2]) < np.linalg.norm(superlinearquota[-5:-2])):
 			print("Linear convergence")
