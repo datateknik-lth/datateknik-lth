@@ -104,7 +104,8 @@ Traditional risk management techniques can be used, but not prescribed by Agile 
 * Scalable with Scrum-of–Scrums, shared backlog
 * Upscaling specific to each organisation
 
-```          ____
+```
+             ____
             | AX |            <-- Scrum of Scrums of Scrums
               / \____..
            __/_
