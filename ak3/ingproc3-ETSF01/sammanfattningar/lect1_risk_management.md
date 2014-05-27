@@ -123,3 +123,11 @@ And if replace the risk exposure is:
 RE = 250.000 * 0.2 - 50.000 * 0.8 = 10.000
 Therefore in this example we should obviously **EXTEND THE SYSTEM!!!!!!**
 
+
+#### Risk planning: There are five alternatives:
+    1. Acceptance
+    1. Avoidance - Find a risk-free solution.
+    1. Reduction - Reduce probability
+    1. Mitigation - Reduce damage, e.g. taking backups
+    1. Transfer - e.g. outsource
+
