@@ -96,22 +96,20 @@ The worst risks are indicated by X'es since they both have a high cost and proba
 
 ```
                                                                              
-                                      Net Product Value (NPV)                                            
+                                         Net Product Value (NPV)                                            
                     ,_______________                                                    
-      ,____________/ (20%) Expansion   -100.000 $                                                     
-     /   Extend    \ (80%)                                                              
+      ,____________/ (20%) Expansion     -100.000 $                                                     
+     /   Extend    \ (80%) No Expansion   75.000 $                                                              
     /               `---------------                                        
-   /                  No Expansion      75.000 $                                
+   /                                                  
   /                                                       
 D                                                        
   \                                                       
-   \                ,_______________                 
-    \              /   Expansion        250.000 $                         
-     `-------------   (20%)                                                
-         Replace   \  80%                                                
-                    `---------------
-                      No Expansion     -50.000 $
-                                                                                     
+   \                                 
+    \               ,_______________                           
+     `-------------´ (20%) Expansion      250.000 $                                          
+         Replace   \ (80%) No Expansion  -50.000 $                                               
+                    `---------------                                                 
 ```
 
 
