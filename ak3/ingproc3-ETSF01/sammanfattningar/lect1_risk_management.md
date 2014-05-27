@@ -166,6 +166,7 @@ RRL > 1.00 *therefore worth doing*
 **PERT = Program Evaluation and Review Technique**
 **PERT - A statistical tool for analysing completion time**
 
+##### Method
 Three estimates are produced for each activity (task)
 
 * (m) Most likely time
@@ -174,6 +175,7 @@ Three estimates are produced for each activity (task)
 * (t\_e) 'expected time' t\_e = (a +4m +b)/6
 * (S) 'activity standard deviation' S = (b-a)/6
 
+##### Calculations
 Suppose the dependecies are as such:
 ```
  ______      ______      ______              
@@ -188,3 +190,89 @@ Suppose the dependecies are as such:
 |  C   | 20| 24| 38| 26  | 3 |
 |A+B+C |   |   |   | 49  | 3 |
 
+The calculations are completed. Just use the previously mentioned formulae if
+you want to review them.
+
+##### Assessing the likelihood of meeting a target
+
+* Imagine now that the target for completing A+B+C was 52 days.
+* Calculate the Z-value as (T - t\_e)/s = (52 - 48.65) / 3.32 = 1.01 
+* Look the Z-value up on the table of Z-values (not included)
+
+Which results in a 15% chance of **NOT** meeting the target 52 days.
+And that's PERT for you, kids!
+
+#### Problems with estimates of task duration
+* Estimators usually add a safety zone to cover difficulties
+* Developers work to the estimate, meaning the time is lost
+* No advantage is taken of opportunities where tasks can finish early - and
+  provide a buffer for later activities
+
+> Parkinson's law: 
+>
+> Work expands so as to fill the time available for its completion
+>
+> => All buffers are usually consumed by end of the project.
+
+#### Basic Ideas of Critical Chain
+To reduce time wasted, a critical chain is constructed as such:
+
+```
+ _____ __
+|_____'__| ____ __
+          |____'__| ___ __
+                   |___'__|
+```
+
+Move all buffers to the end and halve them.
+
+
+```
+ _____
+|_____| ____ 
+       |____| ___ ___
+             |___'___|
+```
+
+Thus, the buffers have been reduced in half so that people don't waste time!!!
+
+
+#### Critical Chain Approach
+
+1. Ask the estimators for two estimates
+ * Most likely duration: 50% chance of meeting this
+ * Comfort zone: additional time needed to have 95% chance
+2. Schedule all activities using most likely values and
+starting all activities on latest start date
+
+* “Critical chain” the same as “critical path” but resources
+also considered
+* Put a project buffer at the end of the critical chain with
+duration 50% of sum of comfort zones of the activities
+on the critical chain
+* During project execution monitor how much of the
+buffer that has been used
+* Supported in tools, e.g. through add-on to MS Project
+
+
+#### Executing  and monitoring Critical Chain plans
+
+* Principle: focus your efforts - ”multitasking is evil”
+  * No chain of tasks is started earlier than
+    scheduled, but once it has started is finished as
+    soon as possible
+  * This means the activity following the current one
+    starts as soon as the current one is completed,
+    even if this is early – the relay race principle
+* Fever charts are used to monitor progress and catch tasks at risk
+
+### Summary of Risk Management
+
+* Definition of ‘risk’ and ‘risk management’
+* Risk management
+  * Risk identification – what are the risks to a project?
+  * Risk analysis – which ones are really serious?
+  * Risk planning – what shall we do?
+  * Risk monitoring – has the planning worked?
+* Methods: causal mapping, probability impact matrix, decision trees
+* Managing risk of delay with PERT and critical chain
