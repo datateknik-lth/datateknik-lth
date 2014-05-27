@@ -10,12 +10,15 @@ Performed after activities, effort, and risks have been identified.
 
 ### Schedules
 * Activity schedules
+
    Indicating start and completion dates for each activity.
 
 * Resource schedule
+
    Indicating dates when resources needed and the levels of available resources.
 
 * Cost schedule
+
    Showing accumulative costs, total spending over time.
  
 
@@ -23,8 +26,10 @@ Performed after activities, effort, and risks have been identified.
 * Resource types
   * Includes labour, equipment, materials, space, services etc.
   * Time (duration)
+
      Can often be reduced by adding more staff.
   * Money
+
      Used to buy other types of resources.
 
 
