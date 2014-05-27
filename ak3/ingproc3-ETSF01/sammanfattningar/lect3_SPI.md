@@ -93,6 +93,22 @@ __Control__: remeasure, continously assess
 * Often applied after project completion
 * Important SPI method for self-governing agile teams
   * Sprint (iteration) retrospectives
+* **Benefits**: Team learning & improvements, widen perspectives & insight into
+  bigger picture
+* **Challanges**: taking the time together, remembering (correctly and uniformly),
+  risk of incorrect conclusion for pure experience based retros
+
+__Evidence-Based Timeline Retrospectives__
+A PM extracts *evidence* from the project, i.e. notes, tasks, estimations etc,
+to form a Timeline. The team, or parts of the team, are then invited to review
+the timeline. This gives a chance for reflection and stimulates discussion
+around the project. It also gives the team a chance to jointly identify issues
+and solve them in a positive manner. The aim of the meeting is to further
+analyze how different events and actions influence each other with the aim of
+identifying practices that work or that need improvement.
+
+Roles: Moderator (leading discussion and creating positive atmosphere),
+co-moderator (basically secretary), team member (discusses and evaluates)
 
 ### CMM & CMMI ###
 Capability Maturity Model for Software (SW-CMM)
@@ -206,3 +222,17 @@ Software Process Improvement Capability dEtermination model
   testers, tech dep vs comm flow
 * Used to identify bottlenecks, missing connections, information brokers (key nodes)
 * Social network analysis often applied
+
+## Change requires... ##
+
+* Commitment from management
+* Support & training
+* Staff involvement
+* Measurable goals
+
+## SMART Goals ##
+* Specific - who, what, when, where, why, how?
+* Measurable - How will you know when you're done?
+* Attainable - Is this realistic?
+* Relevant - How does this relate to current situation & visions for future?
+* Time-bound - what's the deadline?
