@@ -22,7 +22,7 @@ Performed after activities, effort, and risks have been identified.
  * Resource types
  ..* Includes labour, equipment, materials, space, services etc.
  ..* Time (duration)
-  ... Can often be reduced by adding more staff.
+ ... Can often be reduced by adding more staff.
  ..* Money
-  ... used to buy other types of resources.
+ ... used to buy other types of resources.
 
