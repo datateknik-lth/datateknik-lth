@@ -38,4 +38,27 @@ Task A:      |====>_________|
 Task B: |==============>_________|
 Task C: |=============>|
 ```
+Where *Task A* is behind schedule, *Task B* is on schedule but
+not done, and *Task C* was completed on schedule.
 
+* Slip chart: A Gantt chart with a vertical line showing the
+progress.
+
+```
+|                  TODAY         |
+|--DATE-| 12 | 13 | 14 | 15 | 16 |
+                    |
+                   /
+Task A:      |====>_________|
+                   \
+                    |
+                     \
+                      \
+Task B: |==============>_________|
+                      /
+                     /
+                    |
+                     \
+                      \
+Task C: |=============>|
+```
