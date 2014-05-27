@@ -177,15 +177,41 @@ Actal cost = 80
 
 ### Prioritizing monitoring
 Focus on monitoring based on risk
-* Critical path activities
-* Activities with no free float
-* Activities with less than a specified float
-* High risk activities
-* Activities using critical resources
-* Activities with external dependencies
+* Critical path activities: Any delay in an activity in the critical
+path will cause a delay in the project complete date.
+* Activities with no free float: A delay of an activity with no free float
+might cause a delay on some subsequent activities. But it might not delay
+the whole project.
+* Activities with less than a specified float: Same as above.
+* High risk activities: Activities that have a high chance of failing/delay.
+* Activities using critical resources: Such activities might be expensive.
+* Activities with external dependencies: Same
 
 ## Control
 Almost any project will be delayed at some point, the project
 manager must recognize when this is happening and take immediate action! **dum dum!**
 
 
+### Get back on track
+* Try to shorten critical path by adding resources
+..* Overtime
+..* Re-allocate existing staff to more critical activities
+..* Get more staff
+..* Reduce quality of some activities
+* Reconsider activity dependencies
+..* Over-lap activities to avoid waiting for completion of another
+..* Split activities to remove dependencies to activities / critical resources
+
+### Typical change control process
+1. One or more stakeholder might perceive the **need for a change**
+2. Affected/receiving party (e.g. customer rep for customer request)
+decide that the change is valid and worthwhile. **Request for change** (RFC or CR)
+to the development management for change control management
+3. **Change investigated** by developer. Impact and cost estimated. All
+impact should be considered including testing, long-term maintenance etc
+4. The impact investigation is shared with initiating stakeholder who
+**decides to proceed or not**
+5. RFC and its impact discussed with all stakeholders, typically at a
+**change control board meeting** where RFC is approved or rejected.
+6. .... Varied process for implementating change. Should involve
+**communication** and **tracking of results**
