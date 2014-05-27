@@ -62,3 +62,71 @@ Task B: |==============>_________|
                       \
 Task C: |=============>|
 ```
+
+* Brigette's timeline plots planned time along the horizontal
+axis and elapsed time along the vertical axis. A diagonal line
+means that the task was delayed, a dot/star means the task is
+complete.
+
+```
+         Task A  Task B Task C
+| T | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| 1 | .       |       |   |
+| 2 |     .   |        \  |
+| 3 |         *         \  \
+| 4 |             .     |   \
+| 5 |                 . |    \
+| 6 |                   * . 
+| 7 |                         .
+```
+
+Where *Task A* was finished on schedule, *Task B* was
+delayed but is finished. *Task C* was delayed even more and
+is still incomplete.
+
+* Burn-Down Charts (Scrum): A chart displaying the ideal velocity
+of the project, and a line displaying the actual progress.
+
+```
+| T | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| 1 | . ___
+| 2 |     .\
+| 3 |       \ .
+| 4 |        \__  . 
+| 5 |           \_____.___ 
+| 6 |                     .\ 
+| 7 |                       \_.
+```
+
+The dots represent the ideal veolocity, the lines the actual.
+
+* Fever chart (critical chain). The upper part indicates
+that the project most likely will be late, the lower part
+that the project will finish early, and the middle that
+it is on schedule.
+
+```
+
+* * * * * * * * * * * * * * * -
+* * * * * * * * Y * * *       -
+* * * * * * * Y * *         - -
+* * * * * * Y Y *         - - -
+* * * * * Y Y *  K      - - - -
+* * * * * Y    K      - - - - - 
+* * * * Y Y K K     - - - - - - 
+* * *   Y K       - - - - - - - 
+*     K Y       - - - M M - - - 
+    K   Y     - - M M - - - - - 
+  K     Y   - - M - - - - - - - 
+K     Y   - M M - - - - - - - - 
+  Y Y M M M - - - - - - - - - -
+M Y M - - - - - - - - - - - - - 
+Y Y - - - - - - - - - - - - - - 
+Y - - - - - - - - - - - - - - -
+Y - - - - - - - - - - - - - - - 
+```
+
+Where *Y* is late, *K* is on schedule, and *M* is early.
+
+### Earned value analysis
+
