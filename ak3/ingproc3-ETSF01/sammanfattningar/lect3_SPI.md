@@ -12,6 +12,54 @@ Lecture 3
 * **PSP:** Personal Software Process
 * **TSP:** Team Software Process
 
+### Personal Software Process ###
+> The PSP aims to provide software engineers with disciplined methods for
+> improving personal software development processes.
+
+* Goes from PSP0 => PSP2.1
+* PSP0, PSP0.1: Introduces process discipline and measurement
+  * 3 phases: planning, development and post mortem
+  * Baseline established: time spent programming, faults injected/removed, size
+    of program
+  * In PSP0.1 a coding standard is introduced, size measurements and PIP
+  * PIP - engineer establishes a personal improvement plans and records ideas on
+    self-improvement
+* PSP1, PSP1.1: Introduces estimating and planning
+  * Based on the baseline established in PSP0 the engineer prepares a test
+    report. Data used is accumulated from the baseline data and used to estimate
+    total time.
+  * Each new project will record actual time spent, this information is used for
+    task schedule planning. (PSP1.1)
+* PSP2, PSP2.1: Introduces quality management and design
+  * PSP2 adds two new phases: design review and code review. Defect prevention
+    and removal are the focus at the PSP2. Engineers learn to evaluate and
+    improve their process by measuring how long tasks take and the number of
+    defects they inject and remove in each phase of development. Engineers
+    construct and use checklists for design and code reviews. PSP2.1 introduces
+    design specification and analysis techniques
+
+### Team Software Process ###
+Before engineers can participate in the TSP, it is required that they have
+already learned about the PSP, so that the TSP can work effectively. Training
+is also required for other team members, the team lead, and management.
+
+The TSP software development cycle begins with a planning process called the
+launch, led by a coach who has been specially trained, and is either certified
+or provisional. The launch is designed to begin the team building
+process, and during this time teams and managers establish goals, define team
+roles, assess risks, estimate effort, allocate tasks, and produce a team plan.
+During an execution phase, developers track planned and actual effort,
+schedule, and defects, meeting regularly (usually weekly) to report status and
+revise plans. A development cycle ends with a Post Mortem to assess
+performance, revise planning parameters, and capture lessons learned for
+process improvement.
+
+The coach role focuses on supporting the team and the individuals on the team
+as the process expert while being independent of direct project management
+responsibility. The team leader role is different from the coach role in that,
+team leaders are responsible to management for products and project outcomes
+while the coach is responsible for developing individual and team performance.
+
 ## Software process improvement ##
 1. Evaluation of current practices
 1. Planning for improvements
