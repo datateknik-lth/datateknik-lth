@@ -214,4 +214,35 @@ And that's PERT for you, kids!
 >
 > => All buffers are usually consumed by end of the project.
 
+#### Basic Ideas of Critical Chain
+To reduce time wasted, a critical chain is constructed as such:
+
+```
+ _____ __
+|_____'__| ____ __
+          |____'__| ___ __
+                   |___'__|
+```
+
+Move all buffers to the end and halve them.
+
+
+```
+ _____
+|_____| ____ 
+       |____| ___ ___
+             |___'___|
+```
+
+Thus, the buffers have been reduced in half so that people don't waste time!!!
+
+
+#### Critical Chain Approach
+
+1. Ask the estimators for two estimates
+ * Most likely duration: 50% chance of meeting this
+ * Comfort zone: additional time needed to have 95% chance
+2. Schedule all activities using most likely values and
+starting all activities on latest start date
+
 
