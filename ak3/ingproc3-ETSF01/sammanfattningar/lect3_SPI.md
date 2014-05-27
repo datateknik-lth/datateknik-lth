@@ -93,6 +93,10 @@ __Control__: remeasure, continously assess
 * Often applied after project completion
 * Important SPI method for self-governing agile teams
   * Sprint (iteration) retrospectives
+* **Benefits**: Team learning & improvements, widen perspectives & insight into
+  bigger picture
+* **Challanges**: taking the time together, remembering (correctly and uniformly),
+  risk of incorrect conclusion for pure experience based retros
 
 ### CMM & CMMI ###
 Capability Maturity Model for Software (SW-CMM)
