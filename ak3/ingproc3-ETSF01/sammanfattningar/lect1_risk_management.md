@@ -265,3 +265,14 @@ buffer that has been used
     starts as soon as the current one is completed,
     even if this is early – the relay race principle
 * Fever charts are used to monitor progress and catch tasks at risk
+
+### Summary of Risk Management
+
+* Definition of ‘risk’ and ‘risk management’
+* Risk management
+  * Risk identification – what are the risks to a project?
+  * Risk analysis – which ones are really serious?
+  * Risk planning – what shall we do?
+  * Risk monitoring – has the planning worked?
+* Methods: causal mapping, probability impact matrix, decision trees
+* Managing risk of delay with PERT and critical chain
