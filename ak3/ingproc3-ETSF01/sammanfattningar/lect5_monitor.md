@@ -99,3 +99,34 @@ of the project, and a line displaying the actual progress.
 ```
 
 The dots represent the ideal veolocity, the lines the actual.
+
+* Fever chart (critical chain). The upper part indicates
+that the project most likely will be late, the lower part
+that the project will finish early, and the middle that
+it is on schedule.
+
+```
+
+* * * * * * * * * * * * * * * -
+* * * * * * * * Y * * *       -
+* * * * * * * Y * *         - -
+* * * * * * Y Y *         - - -
+* * * * * Y Y *  K      - - - -
+* * * * * Y    K      - - - - - 
+* * * * Y Y K K     - - - - - - 
+* * *   Y K       - - - - - - - 
+*     K Y       - - - M M - - - 
+    K   Y     - - M M - - - - - 
+  K     Y   - - M - - - - - - - 
+K     Y   - M M - - - - - - - - 
+  Y Y M M M - - - - - - - - - -
+M Y M - - - - - - - - - - - - - 
+Y Y - - - - - - - - - - - - - - 
+Y - - - - - - - - - - - - - - -
+Y - - - - - - - - - - - - - - - 
+```
+
+Where *Y* is late, *K* is on schedule, and *M* is early.
+
+### Earned value analysis
+
