@@ -1,4 +1,4 @@
-# Monitor & Control Project Execution
+# Monitor & control 
 
 Monitor & control is needed since plan != reality.
 By using this the aim is to reach
@@ -6,56 +6,127 @@ By using this the aim is to reach
 * Budget: cost
 * Timelineness: market window
 
-## Project roles & responsibilities
-**Project sponsor or director** Secure budget + resources.
-Champion of project goals, ultimate decision maker. Approve
-changes, progress, sign-off deliverables etc.
+## Monitor
 
-**Steering committee** Resp for overall project success.
-Representatives for key stakeholders and involved organisational
-units. Support project sponsor by providing multiple perspectives.
+* Objective: check if project is on track with plan
+* Different kinds of data/measurements
+..* Data from reports
+..* Subjective data on completion rate
+..* Data comparing actual cost/value and planned cost/value
 
-**Project manager** Day-to-day resp to ensure project meets goals
-(Scope-Time-Cost) by planning and managing project and project
-team. Secure acceptance of deliverables from sponsor and stakeholders.
+### Cost vs Time
+*Behind time* but *under budget*, ex: delayed due to not
+deploying committed staff
+On time but *over budget*, ex: additional resources have
+been added to cope with work load.
 
-**Stakeholders: Key and other** All project roles and others who
-may be impacted by the outcome of the project.
+### Collecting the data
+* Time sheet: Report hours, percentage done, etc.
+* Red/amber/green (RAG) reporting: Simply chose the color of
+likelihood to reach deadline of specific task. Do this for every
+week/day etc.
 
-**Customer respresentatives/decision-makers** Active and
-available to project on matters of customer interests, e.g.
-regarding requirements and acceptance of deliveriables.
+### Visualizing
+* Gantt chart: Basically multiple activity bars, indicating
+when a task should be started and done, as well as the current
+progress. Preferably the progress of the bar should be aligned
+with *today*.
+```
+|                  TODAY         |
+|--DATE-| 12 | 13 | 14 | 15 | 16 |
+Task A:      |====>_________|
+Task B: |==============>_________|
+Task C: |=============>|
+```
+Where *Task A* is behind schedule, *Task B* is on schedule but
+not done, and *Task C* was completed on schedule.
 
-**Vendors** Contracted to deliver products or services to the
- project.
+* Slip chart: A Gantt chart with a vertical line showing the
+progress.
 
-**Project team members** Execute tasks, produce deliverables as
-directed by project manager.
+```
+|                  TODAY         |
+|--DATE-| 12 | 13 | 14 | 15 | 16 |
+                    |
+                   /
+Task A:      |====>_________|
+                   \
+                    |
+                     \
+                      \
+Task B: |==============>_________|
+                      /
+                     /
+                    |
+                     \
+                      \
+Task C: |=============>|
+```
 
-## Organizational structures
-An organizational structure is needed to form and manage 
-groups in large projects. 
+* Brigette's timeline plots planned time along the horizontal
+axis and elapsed time along the vertical axis. A diagonal line
+means that the task was delayed, a dot/star means the task is
+complete.
 
-### Formal versus informal
-The *formal* structure focuses on *authority*, about who has which
-boss. This is usually the base of the organization's structure.
-When the "unexpected happens" the *informal* structure takes over,
-this structure consists of spontaneous contact and communication
-between the members of the staff while working.
-The informal organization gets built up and unofficial ways are
-found around the obstacles imposed by the formal structure.
+```
+         Task A  Task B Task C
+| T | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| 1 | .       |       |   |
+| 2 |     .   |        \  |
+| 3 |         *         \  \
+| 4 |             .     |   \
+| 5 |                 . |    \
+| 6 |                   * . 
+| 7 |                         .
+```
 
-### Hierarchical approach
-Each member of the staff only has one manager, and the manager 
-has responsibility for several staff members. Authority flows
-top down. A concern with this approach is *span of control* - 
-the number of people that a manager control.
+Where *Task A* was finished on schedule, *Task B* was
+delayed but is finished. *Task C* was delayed even more and
+is still incomplete.
 
-### Staff versus line
-*Line* workers produce the end product, support *staff* carry out
-supporting roles (think IT-department).
+* Burn-Down Charts (Scrum): A chart displaying the ideal velocity
+of the project, and a line displaying the actual progress.
 
+```
+| T | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| 1 | . ___
+| 2 |     .\
+| 3 |       \ .
+| 4 |        \__  . 
+| 5 |           \_____.___ 
+| 6 |                     .\ 
+| 7 |                       \_.
+```
 
-## Reporting
+The dots represent the ideal veolocity, the lines the actual.
 
+* Fever chart (critical chain). The upper part indicates
+that the project most likely will be late, the lower part
+that the project will finish early, and the middle that
+it is on schedule.
+
+```
+
+* * * * * * * * * * * * * * * -
+* * * * * * * * Y * * *       -
+* * * * * * * Y * *         - -
+* * * * * * Y Y *         - - -
+* * * * * Y Y *  K      - - - -
+* * * * * Y    K      - - - - - 
+* * * * Y Y K K     - - - - - - 
+* * *   Y K       - - - - - - - 
+*     K Y       - - - M M - - - 
+    K   Y     - - M M - - - - - 
+  K     Y   - - M - - - - - - - 
+K     Y   - M M - - - - - - - - 
+  Y Y M M M - - - - - - - - - -
+M Y M - - - - - - - - - - - - - 
+Y Y - - - - - - - - - - - - - - 
+Y - - - - - - - - - - - - - - -
+Y - - - - - - - - - - - - - - - 
+```
+
+Where *Y* is late, *K* is on schedule, and *M* is early.
+
+### Earned value analysis
 
