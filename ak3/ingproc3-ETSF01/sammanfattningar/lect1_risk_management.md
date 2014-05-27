@@ -36,3 +36,6 @@ will not be met in *time* and on budget (*cost/effort*).
 
    "... neat ideas... I'll code 'em up, and if they *don't fit* other 
    peoples ideas, we'll just evolve things until they work."
+   
+   
+   
