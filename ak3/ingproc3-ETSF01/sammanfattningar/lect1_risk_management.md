@@ -63,4 +63,27 @@ will not be met in *time* and on budget (*cost/effort*).
                           /                                \              
 (Unrealistic schedule estimates)                      (Lack of skill)
 ```
-   
+
+#### Risk assessment
+
+Risk exposure = Potential Damage * Probability 
+
+* Not neccesary nor possible to give exact estimates: Qualitative descriptors
+  , e.g High, Significant, Moderate and Low.
+* Pripritizethe worst risks (high probability and large damage)
+##### Example of a probability/impact matrix
+```           _____________________________
+             |       |      |      |       |
+High         |       |      |      |       |                         
+             |_______|______|______|_______|    
+             |       |      |      |       |
+Significant  |       |      |      |       |                              
+             |_______|______|______|_______|      
+             |       |      |      |       |
+Moderate     |       |      |      |       |                                
+             |_______|______|______|_______|      
+             |       |      |      |       |
+Low (cost)   |       |      |      |       |
+             |_______|______|______|_______|
+                Low    Med    Med+    High                      
+```
