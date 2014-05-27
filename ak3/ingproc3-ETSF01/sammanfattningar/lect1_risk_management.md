@@ -52,7 +52,7 @@ will not be met in *time* and on budget (*cost/effort*).
  * Brainstorming - getting knowledgeable stakeholders together to pool concerns.
  * Casual mapping - Identifying possible chains of cause and effect using a map.
  
-##### Casual mapping 
+##### Casual mapping (Applied example)
 ```
                                 (DELAY IN PROJECT!)                                           
                                /                  \                
