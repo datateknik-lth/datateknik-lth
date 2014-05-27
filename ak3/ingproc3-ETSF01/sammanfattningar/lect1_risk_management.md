@@ -37,5 +37,30 @@ will not be met in *time* and on budget (*cost/effort*).
    "... neat ideas... I'll code 'em up, and if they *don't fit* other 
    peoples ideas, we'll just evolve things until they work."
    
-   
+###Risk Management
+
+ * Risk Assessment
+   - Identification (What might go wrong?)
+   - Analysis & prioritization (What are the most serious risks?)
+ * Control of risk
+   - Planning & Resolution
+   - Monitoring
+
+#### Approaches to risk identification:
+ Includes but isn't limited to:
+ * Use of checklists, check which risks may come up based on previous experience.
+ * Brainstorming - getting knowledgeable stakeholders together to pool concerns.
+ * Casual mapping - Identifying possible chains of cause and effect using a map.
+ 
+##### Casual mapping (Applied example)
+```
+                                (DELAY IN PROJECT!)                                           
+                               /                  \                
+                              /                    \              
+                             /                 (Poor project outcome)                     
+                            /                            \              
+                           /                              \              
+                          /                                \              
+(Unrealistic schedule estimates)                      (Lack of skill)
+```
    
