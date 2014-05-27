@@ -73,7 +73,7 @@ Risk exposure = Potential Damage * Probability
 * Pripritizethe worst risks (high probability and large damage)
 
 
-##### Example of a probability/impact matrix
+###### Example of a probability/impact matrix
 ```
 (cost)        _____________________________
              |       |xxxxxx|xxxxxx|xxxxxxx|
@@ -93,11 +93,16 @@ Low          |       |      |      |       |
 The worst risks are indicated by X'es since they both have a high cost and probability.
 
 ###### An example of a risk assessment technique is a decision tree.
-
+In this scenario we ponder on wether or not to extend or replace a system.
+The outcome of this depends on if the market expands or not.
+If we extend the system and the market expands we lose -100.000$, if it doesn't expand
+we will gain 75.000$.
+If we replace the system and the market expands we gain 250.000$, if it doesn't
+expand we lose 50.000$
 ```
                                                                              
-                                         Net Product Value (NPV)                                            
-                    ,_______________                                                    
+                                                                                     
+                    ,_______________     Net Product Value (NPV)                                               
       ,____________/ (20%) Expansion     -100.000 $                                                     
      /   Extend    \ (80%) No Expansion   75.000 $                                                              
     /               `---------------                                        
