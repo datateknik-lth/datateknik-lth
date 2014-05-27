@@ -93,6 +93,8 @@ Traditional risk management techniques can be used, but not prescribed by Agile 
 * Progress monitored by asking ”How much work remains?”
 * Frequent status checks -> Burn-down charts, see monitor and control chapter.
 
+
+
 * Management does NOT control in agile, the ”pigs” (Product owner, scrum master, team leader) do!
 * Team is responsible for managing itself – Team pull!
 
