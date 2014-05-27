@@ -57,7 +57,7 @@ Examples: QIP, iFLAP, Lean Six Sigma
 * A process for process improvement
 * LSS 'belts' - training and certification
 
-#### LSS Process for Process Improvement (yo dawg I heard you liek process improvement in your process improvement ####
+#### LSS Process for Process Improvement (yo dawg I heard you liek process improvement in your process improvement) ####
 
 ```
 Entry     * Prepare charter, sponsor, team and leader
