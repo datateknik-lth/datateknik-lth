@@ -200,4 +200,17 @@ you want to review them.
 * Look the Z-value up on the table of Z-values (not included)
 
 Which results in a 15% chance of **NOT** meeting the target 52 days.
-And the method is complete!
+And that's PERT for you, kids!
+
+#### Problems with estimates of task duration
+* Estimators usually add a safety zone to cover difficulties
+* Developers work to the estimate, meaning the time is lost
+* No advantage is taken of opportunities where tasks can finish early - and
+  provide a buffer for later activities
+
+> Parkinson's law: 
+> Work expands so as to fill the time available for its completion
+> => All buffers are usually consumed by end of the project.
+
+
+
