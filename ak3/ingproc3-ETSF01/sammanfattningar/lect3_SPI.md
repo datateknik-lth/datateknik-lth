@@ -98,6 +98,18 @@ __Control__: remeasure, continously assess
 * **Challanges**: taking the time together, remembering (correctly and uniformly),
   risk of incorrect conclusion for pure experience based retros
 
+__Evidence-Based Timeline Retrospectives__
+A PM extracts *evidence* from the project, i.e. notes, tasks, estimations etc,
+to form a Timeline. The team, or parts of the team, are then invited to review
+the timeline. This gives a chance for reflection and stimulates discussion
+around the project. It also gives the team a chance to jointly identify issues
+and solve them in a positive manner. The aim of the meeting is to further
+analyze how different events and actions influence each other with the aim of
+identifying practices that work or that need improvement.
+
+Roles: Moderator (leading discussion and creating positive atmosphere),
+co-moderator (basically secretary), team member (discusses and evaluates)
+
 ### CMM & CMMI ###
 Capability Maturity Model for Software (SW-CMM)
 
