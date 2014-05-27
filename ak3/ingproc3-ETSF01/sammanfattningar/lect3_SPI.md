@@ -49,7 +49,7 @@ Examples: QIP, iFLAP, Lean Six Sigma
 * Retrospective reflection aka Lessons learnt, project post-mortem
 
 ### CMM & CMMI ###
-__C__apability __M__aturity __M__odel for Software (SW-CMM)
+Capability Maturity Model for Software (SW-CMM)
 
 * Mission to promote software technology transfer, particularly to defense
   contractors
@@ -109,7 +109,7 @@ recommend specific actions to bring the organization up to a higher level.
   * Continous: grades each process area
 
 ### SPICE ###
-__S__oftware __P__rocess __I__mprovement __C__apability d__E__termination model
+Software Process Improvement Capability dEtermination model
 
 * Developed from CMM
 * Parts of SPICE defined as ISO standard
