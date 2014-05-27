@@ -253,3 +253,15 @@ on the critical chain
 * During project execution monitor how much of the
 buffer that has been used
 * Supported in tools, e.g. through add-on to MS Project
+
+
+#### Executing  and monitoring Critical Chain plans
+
+* Principle: focus your efforts - ”multitasking is evil”
+  * No chain of tasks is started earlier than
+    scheduled, but once it has started is finished as
+    soon as possible
+  * This means the activity following the current one
+    starts as soon as the current one is completed,
+    even if this is early – the relay race principle
+* Fever charts are used to monitor progress and catch tasks at risk
