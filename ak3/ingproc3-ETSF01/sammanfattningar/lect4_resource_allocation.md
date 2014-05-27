@@ -20,10 +20,10 @@ Performed after activities, effort, and risks have been identified.
  
 ### Resource allocation
 * Resource types
-..* Includes labour, equipment, materials, space, services etc.
-..* Time (duration)
-... Can often be reduced by adding more staff.
-..* Money
-... used to buy other types of resources.
+  * Includes labour, equipment, materials, space, services etc.
+  * Time (duration)
+    Can often be reduced by adding more staff.
+  * Money
+    Used to buy other types of resources.
 
 
