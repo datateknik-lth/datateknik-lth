@@ -71,6 +71,8 @@ Risk exposure = Potential Damage * Probability
 * Not neccesary nor possible to give exact estimates: Qualitative descriptors
   , e.g High, Significant, Moderate and Low.
 * Pripritizethe worst risks (high probability and large damage)
+
+
 ##### Example of a probability/impact matrix
 ```
 (cost)        _____________________________
@@ -88,3 +90,29 @@ Low          |       |      |      |       |
              |_______|______|______|_______|
                 Low    Med    Med+    High   (probability)                      
 ```
+The worst risks are indicated by X'es since they both have a high cost and probability.
+
+###### An example of a risk assessment technique is a decision tree.
+
+```
+                                                                             
+                                      Net Product Value (NPV)                                            
+                    ,_______________                                                    
+      ,____________/ (20%) Expansion   -100.000 $                                                     
+     /   Extend    \ (80%)                                                              
+    /               `---------------                                        
+   /                  No Expansion      75.000 $                                
+  /                                                       
+D                                                        
+  \                                                       
+   \                ,_______________                 
+    \              /   Expansion        250.000 $                         
+     `-------------   (20%)                                                
+         Replace   \  80%                                                
+                    `---------------
+                      No Expansion     -50.000 $
+                                                                                     
+```
+
+
+
