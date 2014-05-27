@@ -91,21 +91,43 @@ Traditional risk management techniques can be used, but not prescribed by Agile 
 
 ### Monitor and control
 * Progress monitored by asking ”How much work remains?”
-* Frequent status checks -> Burn-down charts, see below
+* Frequent status checks -> Burn-down charts, see monitor and control chapter.
 
+* Management does NOT control in agile, the ”pigs” (Product owner, scrum master, team leader) do!
+* Team is responsible for managing itself – Team pull!
+**Team responsible for its own work practice / process**
+* Regular feedback loops: pair programming, daily stand-up
+* Sprint retrospectives
+
+### Scaling agile
+* Designed for small scale – 1 team
+* Scalable with Scrum-of–Scrums, shared backlog
+* Upscaling specific to each organisation
+
+```          ____
+            | AX |            <-- Scrum of Scrums of Scrums
+              / \____..
+           __/_
+          |ABCD|              <-- Scrum of Scrums
+    _________|_________
+ __/_   __/_   _\__   _\__
+|AAAA| |BBBB| |CCCC| |DDDD|   <-- Scrum teams
 ```
-\ Is desired velocity
-+ Is actual velocity
 
-|\+++++++
-|  \    +++
-|    \    ++
-|      \   +
-|        \  +
-|          \+
-|           +\
-|            + \
-|             +++\
-  0  1  2  3  4  5  6
-```
+### Strengths
+* Feedback from early stages used in developing latter stages.
+* Shorter development thresholds
+* Quickly delivers working increments
+* User gets some benefits earlier
+* Reduces ‘gold-plating’
+* Avoids unnecessary overhead, e.g. keeping docs updated
+* Shorten comm paths within cross-functional teams
 
+### Weaknesses
+* Refactoring causes software breakages-
+* Loss of economy of scale.
+* Weak / missing documentation – especially for large scale.
+  * Dependence on personal knowledge.
+  * Decision rationale, reqst-tc tracing may be lost.
+* Generalists have weaker specialist competence, e.g. requirements, testing, architecture.
+* Weak long-term and overall perspective.
