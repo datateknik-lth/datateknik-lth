@@ -67,3 +67,10 @@ supporting roles (think IT-department).
 #### Ad Hoc
 * **Oral** Ad hoc meetings
 * **Written** Emails for issues investigation
+
+## Leadership
+Leadership is the ability to influence other and achieve a common goal.
+Management includes leadership, as well as organising, planning and controlling.
+Both exercise power but in different ways, position power (formal authority; rewards,
+punishment)
+or personal power (individual qualities; an expert, access to information).
