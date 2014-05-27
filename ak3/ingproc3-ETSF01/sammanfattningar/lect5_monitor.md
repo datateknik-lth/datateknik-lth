@@ -132,21 +132,36 @@ Where *Y* is late, *K* is on schedule, and *M* is early.
 Earned value analysis is based on assigning a "value" to each
 task or work, based on the original expenditures forecasts.
 
-* Original estimate: Planned value (PV) or Budgeted cost of
-work scheduled (BCWS)
-* Work completed this far: Earned value (EV) or Budgeted cost
-of work performed (BCWP)
-* Actual work performed this far: Actual cost (AC) or Actual
-cost of work performed (ACWS)
+* Planned value (PV) or Budgeted cost of
+work scheduled (BCWS): Original estimate
+* Earned value (EV) or Budgeted cost
+of work performed (BCWP): Work completed this far
+* Actual cost (AC) or Actual
+cost of work performed (ACWS): Actual work performed this far
+* Budget at completion (BAC): The budget when the project is done
+* Estimate at completion (EAC):
+Estimated budget at completion, updated as the project progresses
 
-Performance ratios (value for money)
+### Earned value tracking
+When the baseline budget has been established, the project can be tracked
+as it progresses.
+
+* Schedule variance (SV): EV - AV. Difference between the estimated
+and actual value.
+* Time variance (TV): Difference between planned finish date and actual.
+* Cost variance: EV - AC. Indicates the difference between the earned value
+and the actual cost. A negative CV means that the project is over cost.
+
+### Performance ratios
+Value for money.
+
 * Cost performance indicator (CPI) = EV / AC
 * Schedule performance indicator (SPI) = EV/PV
 
-#### Example
+### Example
 
 ```
-Budget at completion = 100
+BAC = 100
 Actal cost = 80
 |===========>        |
     EV = 60 ^        ^ PV = 100
@@ -154,4 +169,23 @@ Actal cost = 80
 
 * CPI = EV / AC = 60 / 80 = 75 % => over budget
 * SPI = EV / PV = 60 / 100 = 60 %
-* Estimate at completion = Budget at completion / CPI = 100 / 0.75 = 133
+* EAC = BAC / CPI = 100 / 0.75 = 133
+
+* Cost variance = EV - AC = 60 - 80 = -20
+* Budget variance = PV - AC = 100 - 80 = 20
+* Schedule variance = EV - PV = 60 - 100 = -40
+
+### Prioritizing monitoring
+Focus on monitoring based on risk
+* Critical path activities
+* Activities with no free float
+* Activities with less than a specified float
+* High risk activities
+* Activities using critical resources
+* Activities with external dependencies
+
+## Control
+Almost any project will be delayed at some point, the project
+manager must recognize when this is happening and take immediate action! **dum dum!**
+
+
