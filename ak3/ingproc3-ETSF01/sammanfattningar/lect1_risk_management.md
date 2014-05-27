@@ -214,4 +214,65 @@ And that's PERT for you, kids!
 >
 > => All buffers are usually consumed by end of the project.
 
+#### Basic Ideas of Critical Chain
+To reduce time wasted, a critical chain is constructed as such:
 
+```
+ _____ __
+|_____'__| ____ __
+          |____'__| ___ __
+                   |___'__|
+```
+
+Move all buffers to the end and halve them.
+
+
+```
+ _____
+|_____| ____ 
+       |____| ___ ___
+             |___'___|
+```
+
+Thus, the buffers have been reduced in half so that people don't waste time!!!
+
+
+#### Critical Chain Approach
+
+1. Ask the estimators for two estimates
+ * Most likely duration: 50% chance of meeting this
+ * Comfort zone: additional time needed to have 95% chance
+2. Schedule all activities using most likely values and
+starting all activities on latest start date
+
+* “Critical chain” the same as “critical path” but resources
+also considered
+* Put a project buffer at the end of the critical chain with
+duration 50% of sum of comfort zones of the activities
+on the critical chain
+* During project execution monitor how much of the
+buffer that has been used
+* Supported in tools, e.g. through add-on to MS Project
+
+
+#### Executing  and monitoring Critical Chain plans
+
+* Principle: focus your efforts - ”multitasking is evil”
+  * No chain of tasks is started earlier than
+    scheduled, but once it has started is finished as
+    soon as possible
+  * This means the activity following the current one
+    starts as soon as the current one is completed,
+    even if this is early – the relay race principle
+* Fever charts are used to monitor progress and catch tasks at risk
+
+### Summary of Risk Management
+
+* Definition of ‘risk’ and ‘risk management’
+* Risk management
+  * Risk identification – what are the risks to a project?
+  * Risk analysis – which ones are really serious?
+  * Risk planning – what shall we do?
+  * Risk monitoring – has the planning worked?
+* Methods: causal mapping, probability impact matrix, decision trees
+* Managing risk of delay with PERT and critical chain
