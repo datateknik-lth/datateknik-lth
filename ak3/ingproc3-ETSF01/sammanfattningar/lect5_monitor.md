@@ -47,20 +47,23 @@ progress.
 ```
 |                  TODAY         |
 |--DATE-| 12 | 13 | 14 | 15 | 16 |
-                    |
+                       |
+                      /
+                     /
+                    /
                    /
 Task A:      |====>_________|
                    \
-                    |
+                    \
                      \
                       \
 Task B: |==============>_________|
+                       |
+                       |
+                       /
                       /
                      /
-                    |
-                     \
-                      \
-Task C: |=============>|
+Task C: |==========>|
 ```
 
 * Brigette's timeline plots planned time along the horizontal
