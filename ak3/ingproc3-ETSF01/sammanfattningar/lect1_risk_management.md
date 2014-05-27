@@ -133,6 +133,8 @@ Therefore in this example we should obviously **EXTEND THE SYSTEM!!!!!!**
 
 #### METHOD: Risk reduction leverage
 
+##### Risk reduction leverage is a method of comparing different options by comparing risk exposures.
+
 RRL = (RE\_before - RE\_after)/(cost of risk reduction)
 
 RE_before is risk expose before risk reduction, e.g. 1% chance of
