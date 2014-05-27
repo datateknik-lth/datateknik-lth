@@ -95,6 +95,7 @@ Traditional risk management techniques can be used, but not prescribed by Agile 
 
 * Management does NOT control in agile, the ”pigs” (Product owner, scrum master, team leader) do!
 * Team is responsible for managing itself – Team pull!
+
 **Team responsible for its own work practice / process**
 * Regular feedback loops: pair programming, daily stand-up
 * Sprint retrospectives
