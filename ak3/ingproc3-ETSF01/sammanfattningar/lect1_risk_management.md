@@ -245,4 +245,11 @@ Thus, the buffers have been reduced in half so that people don't waste time!!!
 2. Schedule all activities using most likely values and
 starting all activities on latest start date
 
-
+* “Critical chain” the same as “critical path” but resources
+also considered
+* Put a project buffer at the end of the critical chain with
+duration 50% of sum of comfort zones of the activities
+on the critical chain
+* During project execution monitor how much of the
+buffer that has been used
+* Supported in tools, e.g. through add-on to MS Project
