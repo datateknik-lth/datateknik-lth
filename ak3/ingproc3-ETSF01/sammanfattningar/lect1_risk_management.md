@@ -172,3 +172,16 @@ Three estimates are produced for each activity (task)
 * (t\_e) 'expected time' t\_e = (a +4m +b)/6
 * (S) 'activity standard deviation' S = (b-a)/6
 
+Suppose the dependecies are as such:
+```
+ ______      ______      ______              
+|TASK A| -> |TASK B| -> |TASK C|               
+ ¨¨¨¨¨¨      ¨¨¨¨¨¨      ¨¨¨¨¨¨
+```
+
+| Task | a | m | b | t_e | s |
+|------|---|---|---|-----|---|
+|  A   | 10| 12| 16| 13  | 1 |
+|  B   | 8 | 10| 14| 10  | 1 |
+|  C   | 20| 24| 38| 26  | 3 |
+|A+B+C |   |   |   | 49  | 3 |
