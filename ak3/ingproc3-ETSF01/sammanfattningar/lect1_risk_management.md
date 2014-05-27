@@ -73,7 +73,7 @@ Risk exposure = Potential Damage * Probability
 * Pripritizethe worst risks (high probability and large damage)
 
 
-##### Example of a probability/impact matrix
+##### METHOD: Cost-Probability Matrix
 ```
 (cost)        _____________________________
              |       |xxxxxx|xxxxxx|xxxxxxx|
@@ -92,7 +92,7 @@ Low          |       |      |      |       |
 ```
 The worst risks are indicated by X'es since they both have a high cost and probability.
 
-##### An example of a risk assessment technique is a decision tree.
+##### METHOD: Decision Tree
 
 In this scenario we ponder on wether or not to extend or replace a system.
 The outcome of this depends on if the market expands or not.
@@ -125,9 +125,21 @@ Therefore in this example we should obviously **EXTEND THE SYSTEM!!!!!!**
 
 
 #### Risk planning: There are five alternatives:
-    1. Acceptance
-    1. Avoidance - Find a risk-free solution.
-    1. Reduction - Reduce probability
-    1. Mitigation - Reduce damage, e.g. taking backups
-    1. Transfer - e.g. outsource
+1. Acceptance
+1. Avoidance - Find a risk-free solution.
+1. Reduction - Reduce probability
+1. Mitigation - Reduce damage, e.g. taking backups
+1. Transfer - e.g. outsource
 
+#### METHOD: Risk reduction leverage
+
+RRL = (RE\_before - RE\_after)/(cost of risk reduction)
+
+RE_before is risk expose before risk reduction, e.g. 1% chance of
+a fire causing $200k dmg.
+
+RE_after is risk exposure after risk reduction, e.g. $500 alarm
+which reduced probability of fire dmg by 0.5%
+
+RRL = (1% of $200k - 0.5% of $200k)/$500 = 2
+RRL > 1.00 *therefore worth doing*
