@@ -73,7 +73,7 @@ Risk exposure = Potential Damage * Probability
 * Pripritizethe worst risks (high probability and large damage)
 
 
-###### Example of a probability/impact matrix
+##### METHOD: Cost-Probability Matrix
 ```
 (cost)        _____________________________
              |       |xxxxxx|xxxxxx|xxxxxxx|
@@ -92,7 +92,8 @@ Low          |       |      |      |       |
 ```
 The worst risks are indicated by X'es since they both have a high cost and probability.
 
-###### An example of a risk assessment technique is a decision tree.
+##### METHOD: Decision Tree
+
 In this scenario we ponder on wether or not to extend or replace a system.
 The outcome of this depends on if the market expands or not.
 If we extend the system and the market expands we lose -100.000$, if it doesn't expand
@@ -122,3 +123,65 @@ And if replace the risk exposure is:
 RE = 250.000 * 0.2 - 50.000 * 0.8 = 10.000
 Therefore in this example we should obviously **EXTEND THE SYSTEM!!!!!!**
 
+
+#### Risk planning: There are five alternatives:
+1. Acceptance
+1. Avoidance - Find a risk-free solution.
+1. Reduction - Reduce probability
+1. Mitigation - Reduce damage, e.g. taking backups
+1. Transfer - e.g. outsource
+
+#### METHOD: Risk reduction leverage
+
+##### Risk reduction leverage is a method of comparing different options by comparing risk exposures.
+
+RRL = (RE\_before - RE\_after)/(cost of risk reduction)
+
+RE_before is risk expose before risk reduction, e.g. 1% chance of
+a fire causing $200k dmg.
+
+RE_after is risk exposure after risk reduction, e.g. $500 alarm
+which reduced probability of fire dmg by 0.5%
+
+RRL = (1% of $200k - 0.5% of $200k)/$500 = 2
+RRL > 1.00 *therefore worth doing*
+
+#### The risk of delays in completing activities, examples.
+| Risk |
+| ---- |
+| Personell shortfalls |
+| **Unrealistic time and cost estimates** |
+| Developing the wrong software functions |
+| Developing the wrong user interface |
+| Gold plating |
+| Late changes to requirements |
+| Shortfalls in externally supplied components |
+| Shortfalls in externally performed tasks |
+| Real time performance problems |
+| Development technically too difficult |
+
+#### METHOD: Using PERT 
+**PERT = Program Evaluation and Review Technique**
+**PERT - A statistical tool for analysing completion time**
+
+Three estimates are produced for each activity (task)
+
+* (m) Most likely time
+* (a) Optimistic time
+* (b) Pessimistic
+* (t\_e) 'expected time' t\_e = (a +4m +b)/6
+* (S) 'activity standard deviation' S = (b-a)/6
+
+Suppose the dependecies are as such:
+```
+ ______      ______      ______              
+|TASK A| -> |TASK B| -> |TASK C|               
+ ¨¨¨¨¨¨      ¨¨¨¨¨¨      ¨¨¨¨¨¨
+```
+
+| Task | a | m | b | t_e | s |
+|------|---|---|---|-----|---|
+|  A   | 10| 12| 16| 13  | 1 |
+|  B   | 8 | 10| 14| 10  | 1 |
+|  C   | 20| 24| 38| 26  | 3 |
+|A+B+C |   |   |   | 49  | 3 |
