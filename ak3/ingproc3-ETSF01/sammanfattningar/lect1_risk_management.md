@@ -116,6 +116,9 @@ D
          Replace   \ (80%) No Expansion  -50.000 $                                               
                     `---------------                                                 
 ```
-
-
+If we extend the risk exposure is:
+RE = -100.000 * 0.2 + 75.000 * 0.8 = 40.000
+And if replace the risk exposure is:
+RE = 250.000 * 0.2 - 50.000 * 0.8 = 10.000
+Therefore in this example we should obviously **EXTEND THE SYSTEM!!!!!!**
 
