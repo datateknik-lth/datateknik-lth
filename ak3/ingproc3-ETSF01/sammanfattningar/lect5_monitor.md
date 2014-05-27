@@ -32,8 +32,13 @@ when a task should be started and done, as well as the current
 progress. Preferably the progress of the bar should be aligned
 with *today*.
 |                  TODAY        |
+
 |-------| 12 | 13 | 14 | 15 | 16
+
 Task A:      |====>           |
+
 Task B:  |=============>        |
+
 Task C:  |===============>|
+
 
