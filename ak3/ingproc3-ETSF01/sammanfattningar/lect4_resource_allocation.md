@@ -36,6 +36,8 @@ Performed after activities, effort, and risks have been identified.
 3. Allocate resource types to activites, and examine each resource type histogram.
 4. If resources needed exceeds the available resources at some time, perform resource smoothing.
 
+* Resource histograms, where the first is before resource smoothing. Available resources are the dotted line, 
+  and the required are shown with lines.
 ```
                        ___
 |5|            ___    |   |
@@ -53,4 +55,39 @@ Performed after activities, effort, and risks have been identified.
 |2|   |   |   |   |   |   |   |   |
 |1|   |   |   |   |   |   |   |   |
   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+```
+
+### Resource clashes
+Occurs when the same resource is needed in more than one place at the same time.
+Can be resolved by delaying one activity and taking advantage of the float time, 
+or if that is not possible, push back project completion.
+Could also be resolved by taking resources from a non-critical activity, 
+or by bringing in additional resources - increases cost.
+
+### Prioritizing
+
+When prioritizing between two competing activities, there are two ways of doing this.
+* Total float priority - Those with the smallest float have the highest priority.
+* Ordered list priority - Takes account the duration of an activity, as well as the float, see Burman's.
+
+#### Burman's priority list
+1. Shortest critical activities
+2. Other critical activities.
+3. Shortest non-critical activities.
+4. Non-critical activities with least float.
+5. Non-critical activities.
+
+### Resource usage
+Need to... 
+* maximise %usage of resources = reduce idle periods between tasks.
+* balance costs against early completion date.
+* allow for contingency.
+
+```
+          /\
+Target   /  \   Cost/
+scope   /    \  effort
+       /      \
+      /________\
+       lead time
 ```
