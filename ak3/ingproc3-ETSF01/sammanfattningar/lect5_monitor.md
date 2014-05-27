@@ -129,4 +129,29 @@ Y - - - - - - - - - - - - - - -
 Where *Y* is late, *K* is on schedule, and *M* is early.
 
 ### Earned value analysis
+Earned value analysis is based on assigning a "value" to each
+task or work, based on the original expenditures forecasts.
 
+* Original estimate: Planned value (PV) or Budgeted cost of
+work scheduled (BCWS)
+* Work completed this far: Earned value (EV) or Budgeted cost
+of work performed (BCWP)
+* Actual work performed this far: Actual cost (AC) or Actual
+cost of work performed (ACWS)
+
+Performance ratios (value for money)
+* Cost performance indicator (CPI) = EV / AC
+* Schedule performance indicator (SPI) = EV/PV
+
+#### Example
+
+```
+Budget at completion = 100
+Actal cost = 80
+|===========>        |
+    EV = 60 ^        ^ PV = 100
+```
+
+* CPI = EV / AC = 60 / 80 = 75 % => over budget
+* SPI = EV / PV = 60 / 100 = 60 %
+* Estimate at completion = Budget at completion / CPI = 100 / 0.75 = 133

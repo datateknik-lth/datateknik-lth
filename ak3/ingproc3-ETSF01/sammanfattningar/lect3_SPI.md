@@ -35,18 +35,68 @@ These steps are also known as the "*General Steps for SPI*"
 ## SPI approaches ##
 
 ### Prescriptive ###
-Top-down approaches
+Top-down approaches (general -> specific)
 
 Examples: CMMI, SPICE
 
 ### Inductive ###
-Bottom-up approaches
+Bottom-up approaches (specific parts -> general)
 
 Examples: QIP, iFLAP, Lean Six Sigma
 
 * Process modelling and simulation
 * Information flow analysis
 * Retrospective reflection aka Lessons learnt, project post-mortem
+
+### Lean Six Sigma ###
+* **Focus:** elimination of waste in the process flow (LEAN)
+* **Combination** of **LEAN** and **Six Sigma**
+  * *Lean:* Toyota productions, eliminate waste, quality
+  * *Six Sigma:* Motorola (1986) 99.99966% of products statistically expected
+    to be free of defect (6*sigma)
+* A process for process improvement
+* LSS 'belts' - training and certification
+
+#### LSS Process for Process Improvement (yo dawg I heard you liek process improvement in your process improvement ####
+
+```
+Entry     * Prepare charter, sponsor, team and leader
+  |
+  V
+Define    * The problem
+  |       * The relevant process
+  V       * Customer critical aspects
+Measure   * Current performance
+  |
+  V
+Analyze   * Data and process
+  |       * Identify root causes
+  V
+Improve   * Process w solutions
+  |
+  V
+Control   * Ensure targets met over time
+  |
+  V
+Exit      * Share results, benefits and lessons learnt
+```
+__Define__: input, process factors, output
+__Measuring__: Lead time, customer satisfaction, cost per customer, competence
+level etc
+__Analyze__: root cause analysis, "5 Why?", identify improvement
+__Improve__: implement
+__Control__: remeasure, continously assess
+
+##### Retrospective Analysis #####
+* Consider the past in order to identify problems and improvements - individua,
+  but mostly in groups
+* Often applied after project completion
+* Important SPI method for self-governing agile teams
+  * Sprint (iteration) retrospectives
+* **Benefits**: Team learning & improvements, widen perspectives & insight into
+  bigger picture
+* **Challanges**: taking the time together, remembering (correctly and uniformly),
+  risk of incorrect conclusion for pure experience based retros
 
 ### CMM & CMMI ###
 Capability Maturity Model for Software (SW-CMM)
@@ -61,6 +111,12 @@ into a single integrated framework. These models place organizations at one of
 five levels of process maturity which indicate the sophistication and quality of
 their production practices. These levels are defined as follows.
 
+#### Structure ####
+* Maturity Level: indicate capability and contains Key Process Areas
+* Key Process Areas: goals and common features
+* Common Features: addresses implementation and contains Key Practices
+* Key Practices: describes infrastructure and activities
+
 * **Level 1** *Initial*: The procedures followed tend to be haphazard. Some
   projects may be successful, but this tends to be because of the skills of
   particular individuals, including project managers. There is no level 0 and
@@ -69,12 +125,21 @@ their production practices. These levels are defined as follows.
   * Crises common
   * Success depends entirely on having exceptional managers and developers
   * Level 1 companies, however, can deliver products
+  __Key Process Areas__
+  * None, initial level
 * **Level 2** *Managed (Repeatable, in slides)*: Organizations at this level
   will have basic project management procedures in place. The way, however,
   individual tasks are carried out will depend largely on the person doing it.
   * Policies for managing software projecs are implemented
   * Realistic commitments
   * Capability: disciplined, earlier successes can be repeated
+  __Key Process Areas__
+  * Configuration management
+  * Software QA
+  * Subcontract management
+  * Project tracking and oversight
+  * Project planning
+  * Requirements management
 * **Level 3** *Defined*: The organization has defined the way that each task in
   the software development life cycle should be done.
   * A typical process for developing and maintaining software in the
@@ -82,6 +147,10 @@ their production practices. These levels are defined as follows.
   * A Software Engineering Process Group (SEPG) is defined
   * Capabilitiy: standard and consistent - both software engineering and
     management are stable and repeatable
+  __Key Process Areas__
+  * Organization process def
+  * Peer reviews
+  * Training program
 * **Level 4** *Quantitatively managed*: The products and processes involved in
   software development are subject to measurement control.
   * The organization sets quantitative quality goals for both products and
@@ -90,12 +159,19 @@ their production practices. These levels are defined as follows.
   * Organization-wide metrics database
   * Meaningful variations can be distinguished from noise
   * Capability: predictable
+  __Key Process Areas__
+  * Software quality management
+  * Quantitative process management
 * **Level 5** *Optimizing*: Improvement in procedures can be designed and
   implemented using the data gathered from the measurement process.
   * The whole organization is focused on continous process improvement
   * The organisation has the means to identify process weaknesses and take
     actions
   * Cost benefit analysis possible
+  __Key Process Areas__
+  * Process change management
+  * Technology change management
+  * Defect prevention
 
 The evaluation is performed by a team of assessors coming into the organization
 and interviewing key staff about their practices, using a standard questionnaire
@@ -118,3 +194,19 @@ Software Process Improvement Capability dEtermination model
   * Capability dimension: how processes are impl and managed
 * Particularly appropriate for small organisations (ability to focus on process
   areas)
+
+## Process Modelling ##
+* Map & Understand
+* Facilitate group communication
+* Process guidance and tool support for process flows
+
+## Simulating processes ##
+* What-if analysis
+* Measuring of flow for different alternatives
+* Requires tool support
+
+## Information Flows ##
+* Focuses on flow and transformation of information e.g. req changes ->
+  testers, tech dep vs comm flow
+* Used to identify bottlenecks, missing connections, information brokers (key nodes)
+* Social network analysis often applied
