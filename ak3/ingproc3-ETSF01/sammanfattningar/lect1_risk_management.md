@@ -1,6 +1,8 @@
 #Risk Management
 
-"A risk is a potential problem; a problem is a risk that has materialized" [Fairley 1994]
+> A risk is a potential problem; a problem is a risk that has materialized
+
+[Fairley 1994]
 
 ##What can go wrong?
  * Staff turn-around: quit, moved to other project, illness
@@ -164,6 +166,7 @@ RRL > 1.00 *therefore worth doing*
 **PERT = Program Evaluation and Review Technique**
 **PERT - A statistical tool for analysing completion time**
 
+##### Method
 Three estimates are produced for each activity (task)
 
 * (m) Most likely time
@@ -172,3 +175,29 @@ Three estimates are produced for each activity (task)
 * (t\_e) 'expected time' t\_e = (a +4m +b)/6
 * (S) 'activity standard deviation' S = (b-a)/6
 
+##### Calculations
+Suppose the dependecies are as such:
+```
+ ______      ______      ______              
+|TASK A| -> |TASK B| -> |TASK C|               
+ ¨¨¨¨¨¨      ¨¨¨¨¨¨      ¨¨¨¨¨¨
+```
+
+| Task | a | m | b | t_e | s |
+|------|---|---|---|-----|---|
+|  A   | 10| 12| 16| 13  | 1 |
+|  B   | 8 | 10| 14| 10  | 1 |
+|  C   | 20| 24| 38| 26  | 3 |
+|A+B+C |   |   |   | 49  | 3 |
+
+The calculations are completed. Just use the previously mentioned formulae if
+you want to review them.
+
+##### Assessing the likelihood of meeting a target
+
+* Imagine now that the target for completing A+B+C was 52 days.
+* Calculate the Z-value as (T - t\_e)/s = (52 - 48.65) / 3.32 = 1.01 
+* Look the Z-value up on the table of Z-values (not included)
+
+Which results in a 15% chance of **NOT** meeting the target 52 days.
+And the method is complete!
