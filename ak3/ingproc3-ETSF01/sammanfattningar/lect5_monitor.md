@@ -21,4 +21,19 @@ On time but *over budget*, ex: additional resources have
 been added to cope with work load.
 
 ### Collecting the data
+* Time sheet: Report hours, percentage done, etc.
+* Red/amber/green (RAG) reporting: Simply chose the color of
+likelihood to reach deadline of specific task. Do this for every
+week/day etc.
+
+### Visualizing
+* Gantt chart: Basically multiple activity bars, indicating
+when a task should be started and done, as well as the current
+progress. Preferably the progress of the bar should be aligned
+with *today*.
+|                  TODAY        |
+|-------| 12 | 13 | 14 | 15 | 16
+Task A:      |====>           |
+Task B:  |=============>        |
+Task C:  |===============>|
 
