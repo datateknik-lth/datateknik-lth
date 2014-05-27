@@ -83,3 +83,19 @@ complete.
 Where *Task A* was finished on schedule, *Task B* was
 delayed but is finished. *Task C* was delayed even more and
 is still incomplete.
+
+* Burn-Down Charts (Scrum): A chart displaying the ideal velocity
+of the project, and a line displaying the actual progress.
+
+```
+| T | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| 1 | . ___
+| 2 |     .\
+| 3 |       \ .
+| 4 |        \__  . 
+| 5 |           \_____.___ 
+| 6 |                     .\ 
+| 7 |                       \_.
+```
+
+The dots represent the ideal veolocity, the lines the actual.
