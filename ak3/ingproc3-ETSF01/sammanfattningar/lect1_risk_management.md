@@ -1,6 +1,8 @@
 #Risk Management
 
-"A risk is a potential problem; a problem is a risk that has materialized" [Fairley 1994]
+> A risk is a potential problem; a problem is a risk that has materialized
+
+[Fairley 1994]
 
 ##What can go wrong?
  * Staff turn-around: quit, moved to other project, illness
@@ -185,3 +187,4 @@ Suppose the dependecies are as such:
 |  B   | 8 | 10| 14| 10  | 1 |
 |  C   | 20| 24| 38| 26  | 3 |
 |A+B+C |   |   |   | 49  | 3 |
+
