@@ -26,8 +26,15 @@ No difference except for:
 The measurement of a projects success or failure is the degree to which objectives are met.
 
 An example would be a project running out of time, which could be recovered by:
- A Reducing the scope of the project
+ A Reducing the scope of the project. which would in turn reduce the lead time (total time for the project from start to finish)
  B Increasing the costs/spent effort by adding more resources to the resource pool
 
 On average, a software project costs 30% more than planned.
 1/6 of IT projects are 'black swans' meaning it costs 200% more than planned and takes 70% more time than planned.
+
+###Software Project Management - Main Areas
+ * Activity planning
+ * Effort estimation
+ * Risk management
+ * Resource allocation
+ * Monitor & control execution
