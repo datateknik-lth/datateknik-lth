@@ -209,8 +209,9 @@ And that's PERT for you, kids!
   provide a buffer for later activities
 
 > Parkinson's law: 
+>
 > Work expands so as to fill the time available for its completion
+>
 > => All buffers are usually consumed by end of the project.
-
 
 
