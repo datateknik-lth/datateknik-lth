@@ -68,7 +68,8 @@ axis and elapsed time along the vertical axis. A diagonal line
 means that the task was delayed, a dot/star means the task is
 complete.
 
-```      Task A  Task B Task C
+```
+         Task A  Task B Task C
 | T | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 | 1 | .       |       |   |
 | 2 |     .   |        \  |
@@ -78,6 +79,7 @@ complete.
 | 6 |                   * . 
 | 7 |                         .
 ```
+
 Where *Task A* was finished on schedule, *Task B* was
 delayed but is finished. *Task C* was delayed even more and
 is still incomplete.
