@@ -222,3 +222,17 @@ Software Process Improvement Capability dEtermination model
   testers, tech dep vs comm flow
 * Used to identify bottlenecks, missing connections, information brokers (key nodes)
 * Social network analysis often applied
+
+## Change requires... ##
+
+* Commitment from management
+* Support & training
+* Staff involvement
+* Measurable goals
+
+## SMART Goals ##
+* Specific - who, what, when, where, why, how?
+* Measurable - How will you know when you're done?
+* Attainable - Is this realistic?
+* Relevant - How does this relate to current situation & visions for future?
+* Time-bound - what's the deadline?
