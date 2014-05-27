@@ -73,7 +73,7 @@ Risk exposure = Potential Damage * Probability
 * Pripritizethe worst risks (high probability and large damage)
 ##### Example of a probability/impact matrix
 ```           -----------------------------
-             |       |xxxxxx|xxxxxx|xxxxxxx|
+(cost)       |       |xxxxxx|xxxxxx|xxxxxxx|
 High         |       |xxxxxx|xxxxxx|xxxxxxx|                         
              |_______|______|______|_______|    
              |       |      |      |xxxxxxx|
@@ -83,7 +83,7 @@ Significant  |       |      |      |xxxxxxx|
 Moderate     |       |      |      |       |                                
              |_______|______|______|_______|      
              |       |      |      |       |
-Low (cost)   |       |      |      |       |
+Low          |       |      |      |       |
              |_______|______|______|_______|
-                Low    Med    Med+    High                      
+                Low    Med    Med+    High   (probability)                      
 ```
