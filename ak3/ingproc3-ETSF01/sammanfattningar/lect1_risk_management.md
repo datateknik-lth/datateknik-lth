@@ -145,3 +145,30 @@ which reduced probability of fire dmg by 0.5%
 
 RRL = (1% of $200k - 0.5% of $200k)/$500 = 2
 RRL > 1.00 *therefore worth doing*
+
+#### The risk of delays in completing activities, examples.
+| Risk |
+| ---- |
+| Personell shortfalls |
+| **Unrealistic time and cost estimates** |
+| Developing the wrong software functions |
+| Developing the wrong user interface |
+| Gold plating |
+| Late changes to requirements |
+| Shortfalls in externally supplied components |
+| Shortfalls in externally performed tasks |
+| Real time performance problems |
+| Development technically too difficult |
+
+#### METHOD: Using PERT 
+**PERT = Program Evaluation and Review Technique**
+**PERT - A statistical tool for analysing completion time**
+
+Three estimates are produced for each activity (task)
+
+* (m) Most likely time
+* (a) Optimistic time
+* (b) Pessimistic
+* (t\_e) 'expected time' t\_e = (a +4m +b)/6
+* (S) 'activity standard deviation' S = (b-a)/6
+
