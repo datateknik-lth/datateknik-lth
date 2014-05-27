@@ -72,12 +72,12 @@ Risk exposure = Potential Damage * Probability
   , e.g High, Significant, Moderate and Low.
 * Pripritizethe worst risks (high probability and large damage)
 ##### Example of a probability/impact matrix
-```           _____________________________
-             |       |      |      |       |
-High         |       |      |      |       |                         
+```           -----------------------------
+             |       |xxxxxx|xxxxxx|xxxxxxx|
+High         |       |xxxxxx|xxxxxx|xxxxxxx|                         
              |_______|______|______|_______|    
-             |       |      |      |       |
-Significant  |       |      |      |       |                              
+             |       |      |      |xxxxxxx|
+Significant  |       |      |      |xxxxxxx|                              
              |_______|______|______|_______|      
              |       |      |      |       |
 Moderate     |       |      |      |       |                                
