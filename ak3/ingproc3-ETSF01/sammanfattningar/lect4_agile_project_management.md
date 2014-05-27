@@ -56,12 +56,12 @@ Used to, visualize workflow, limit work-in-progress, pull work from column to co
 
 ### Development 
 * Iterations a.k.a. sprints
-  – Scrum: 30 days prescribed, but varies in reality
-  – XP: shorter, 2 weeks
+  * Scrum: 30 days prescribed, but varies in reality
+  * XP: shorter, 2 weeks
 * Work in prio order
-  – Scrum: team chooses stories in sprint planning
-  – XP: team chooses stories strictly according to agreed prio
+  * Scrum: team chooses stories in sprint planning
+  * XP: team chooses stories strictly according to agreed prio
 * Managing change
-  – Scrum: no changes in scope / stories during sprint
-  – XP: changes allowed
+  * Scrum: no changes in scope / stories during sprint
+  * XP: changes allowed
 
