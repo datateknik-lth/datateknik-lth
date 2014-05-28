@@ -56,6 +56,7 @@ Standard deviation (S) = (worst time (b) - minimum time (a))/6
 
 ## Activity planning (WIP)
 
+klas
 
 ## SPI (Lecture 3)
 
