@@ -60,4 +60,46 @@ All of these require decision support!
 * Interval scale: relative distance between entries
 * Ratio scale: relative size
 
+## Metrics challenges
+
+### Challenges
+* Data collected in diﬀerent projects should be comparable
+* Data collected should be reliable and of high quality
+* People do not want to collect data that is not used
+### Solutions
+* Collect only data that you really need (but all data that you need)
+* Understand and record the context in which data is collected
+  * Product
+  * Team
+  * Process
+  * etc.
+* Quality assurance for data collection
+
+## Goal question metrics (GQM)
+Top-down approach
+* Conceptual level – Goals
+  What are we trying to achieve?
+  Example: shorten lead time of issue management
+* Operational level - Questions
+  about areas of uncertainty related to the goals. You
+  need process knowledge to derive these.
+  Example: average time to resolve issues?
+* Quantitative level - Metrics
+  Measurements that answer the questions
+  Ex: time( open → closed ) in issue management system
+
+## Examples
+
+### Goals
+Purpose - improve  
+Issues (quality focus) -  the efficiency  
+Object(s) - issues management  
+Viewpoint - from the project manager’s viewpoint
+
+Align with
+* Organisational policy & strategy
+* Relevant processes / products
+* Organisational structure for viewpoint
+
+
 
