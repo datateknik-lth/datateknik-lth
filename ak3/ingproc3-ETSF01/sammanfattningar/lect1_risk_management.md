@@ -107,7 +107,7 @@ expand we lose 50.000$
                                                                                      
                     ,_______________     Net Product Value (NPV)                                               
       ,____________/ (20%) Expansion     -100.000 $                                                     
-     /   Extend    \ (80%) No Expansion   75.000 $                                                              
+     /   Extend    \ (80%) No Expansion   75.000 $                                                             
     /               `---------------                                        
    /                                                  
   /                                                       
