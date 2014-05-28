@@ -18,8 +18,10 @@ Content of a business case
   * how the project is going to be implemented
 * Costs:
   * the implementation plan will supply information to establish these
-** Financial plan:
+* Financial plan:
   * combines costs and benefit data to establish value of project
 * Risk:
   * initial risk analysis to identify risks to project execution and to business
     aspects that affect profit
+
+
