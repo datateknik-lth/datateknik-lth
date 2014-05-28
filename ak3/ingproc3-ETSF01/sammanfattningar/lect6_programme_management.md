@@ -1,16 +1,16 @@
 # Programme & Portfolio Management
 
-### Project: Business case & contracts
+## Project: Business case & contracts
 
 A business case may be presented for several potential projects. It should show
 that the benefits of the project will exceed development, implementation and 
 operational costs. This is part of portfolio management. 
 
-**Content of a business case:**
+###Content of a business case:###
 
-1. **Introduction/background**:
+1. Introduction/background:
   * describes a problem to be solved or an oppertunity to be exploited.
-2. **The proposed project**:
+2. The proposed project:
   * a brief outline of the project scope.
 3. **The market**:
   * the project could be to develop a new product. The likely *demand for the 
@@ -32,27 +32,28 @@ operational costs. This is part of portfolio management.
 10. **Management Plan**:
   * Missing information but part of the business plan.
 
-#### Selection of project approach
+### Selection of project approach
 
 *steps from Step Wise chart*
 
-- 2 Organization structure needed
+- **2 Organization structure needed**
   - Make/buy/outsource
   - Make/reuse/
   - Make/share
   - ...
 
-- 3 Process model
+- **3 Process model**
 
-**Buying from external suppliers[10.2]**
-Different buy-situations:
+#### -Buying from external suppliers[10.2]
+
+  Different buy-situations:
 * Bespoke system/component
 * Outsourcing a task
 * Commercial off-the-shelf (COTS)
   - bought *as is*
   - customized
 
-**Types of contract**
+#### -Types of contract
 * **Fixed price contracts**: fixed price, terms, requirements & delivery time
   - + known cost,supplieri motivation
   - - higher price to absorb risk, frozen reqs, *impossible* cost - quality risk
@@ -68,5 +69,12 @@ Different buy-situations:
   - - difficulties with SW size measurement - may need independent fixed price 
       counter, changing requirements - how do you charge?
 
+### Cost-benefit analysis (CBA)
 
+* **Identify all the costs which could be:**
+  - development costs incl buy-ins
+  - set-up incl recruitment and training
+  - operational costs after set-up
+* **Identify the value of benefits**
+* **Check if benefits are greater than costs**
 

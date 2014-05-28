@@ -122,7 +122,7 @@ need                   ___
   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 ```
 
-## Monitor (Lecture 6)
+## Monitor (Lecture 5)
 
 ### Earned value analysis
 
@@ -159,5 +159,8 @@ Actal cost = 80
 * Budget variance = PV - AC = 100 - 80 = 20
 * Schedule variance = EV - PV = 60 - 100 = -40
 
+## Cost Benifit Evaluation (Lecture 6)
+
+Djank the dank 
 
 
