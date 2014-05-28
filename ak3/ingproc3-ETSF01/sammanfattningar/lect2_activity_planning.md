@@ -70,6 +70,7 @@
    * Activity on arrow
   - Precedence network
    * Activity on node
+   * most common
 
 ## Rules for project networks:
   
