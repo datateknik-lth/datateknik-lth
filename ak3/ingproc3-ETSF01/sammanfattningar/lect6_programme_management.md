@@ -29,5 +29,6 @@ operational costs. This is part of portfolio management.
 9. **Risks**:
   * initial risk analysis to identify risks to project execution and to business
     aspects that affect profit.
-
+10. **Management Plan**:
+  * Missing information but part of the business plan.
 
