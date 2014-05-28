@@ -2,7 +2,7 @@ Effort Estimation
 =================
 
 ## Problems with Effort Estimation ##
-* Subjective nature of estimating
+ Subjective nature of estimating
   * Difficult to produce evidence in support of decision
 * Changing techologies
   * these bring uncertainties, especially in the early days when there is a
@@ -32,3 +32,23 @@ __Cost includes:__
 * Currency exchange rates
 * Marketing & Advertising
 * Inflation rate
+
+## Over- and under-estimating ##
+
+### Parkinson's Law ###
+> Work expands to fill the time available
+
+### Brooks's ###
+> Putting more people on a late job makes it later
+
+### Weinberg's Zeroth Law of reliability ###
+> a software project that does not have to meet a reliability requirement
+> can meet any other requirement
+
+Vad betyder då den här lagen? Jo det ska ni få veta! (Brace yourselves) Lagen
+innebär att ifall projektet inte har en tydligt specificerad krav på 
+tillförlitlighet när det ska skeppas så kan detta arbiträrt väljas. Vilket
+resulterar i sämre kvalitet som sedan visas i __testning__ eller senare faser.
+
+* Over-estimations => project likely to take longer
+* Under-estimations => lower quality in order to meet target
