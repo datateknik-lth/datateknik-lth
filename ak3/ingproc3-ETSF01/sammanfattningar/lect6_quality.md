@@ -85,8 +85,9 @@ has to be estimated. Using testing techniques or expert opinion.
   * Quality product that meets customer need
   * New lessons learnt (experience, process improvements)
 
-# Quality Management gurus
-QM gurus.
-## Deming
-## Juran
-## Crosby
+## Summary
+* Quality is a vague concept, things have to be carefully defined
+* Most qualities that are apparent to users can only be tested with the complete product
+* Need ways of testing during development to see how the final product will behave
+* Some techniques concentrate on testing the product of the development process, while others test the
+process itself.
