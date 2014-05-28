@@ -54,8 +54,19 @@ Different buy-situations:
 
 **Types of contract**
 * **Fixed price contracts**: fixed price, terms, requirements & delivery time
-  - + known cost,supplier motivation
-* Time and materails contracts
-* Fixed price per delivered unit
+  - + known cost,supplieri motivation
+  - - higher price to absorb risk, frozen reqs, *impossible* cost - quality risk
+* **Time and materails contracts**:fixed rate/unit of effort
+  - + reqs changes, lack of price pressure
+  - - customer liability due to uncertain cost & commitment, lack of incentive
+      supplier
+* **Fixed price per delivered unit**:incremental delivery and payment = a series
+    of contracts
+  - + customer understanding price calculation, comparability between pricing
+      schedules, emerging functionality can be accounted, supplier motivated to
+      be cost-effective
+  - - difficulties with SW size measurement - may need independent fixed price 
+      counter, changing requirements - how do you charge?
+
 
 
