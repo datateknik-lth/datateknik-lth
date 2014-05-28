@@ -138,7 +138,7 @@ COCOMO focus on productivity factors.
 Models system size
 
 ```
-UFP* = SUM(i=1..15, n items of weight i * weight)
+UFP = SUM(i=1..15, n items of weight i * weight)
 FP   = UFP * "technical complexity factor"
 ```
 
