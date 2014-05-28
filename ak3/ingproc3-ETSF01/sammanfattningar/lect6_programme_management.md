@@ -14,7 +14,8 @@ Content of a business case:
   * the project could be to develop a new product. The likely *demand for the 
     product* is assessed.
 4. Organizational/Operational infrastructure
-  * 
+  * describes how the structure of the organization will be afftected by the 
+    implementation of the project.
 5. Benefits:
   * These should be expressed in financial terms.
 6. Outline implementation plan:
@@ -26,6 +27,5 @@ Content of a business case:
 9. Risk:
   * initial risk analysis to identify risks to project execution and to business
     aspects that affect profit.
-10. Management plan:
-  *
+
 
