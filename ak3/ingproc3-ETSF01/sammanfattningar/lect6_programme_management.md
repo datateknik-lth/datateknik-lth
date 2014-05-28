@@ -46,7 +46,7 @@ operational costs. This is part of portfolio management.
 
 #### -Buying from external suppliers[10.2]
 
-    Different buy-situations:
+  Different buy-situations:
 * Bespoke system/component
 * Outsourcing a task
 * Commercial off-the-shelf (COTS)
@@ -69,5 +69,12 @@ operational costs. This is part of portfolio management.
   - - difficulties with SW size measurement - may need independent fixed price 
       counter, changing requirements - how do you charge?
 
+### Cost-benefit analysis (CBA)
 
+* **Identify all the costs which could be:**
+  - development costs incl buy-ins
+  - set-up incl recruitment and training
+  - operational costs after set-up
+* **Identify the value of benefits**
+* **Check if benefits are greater than costs
 
