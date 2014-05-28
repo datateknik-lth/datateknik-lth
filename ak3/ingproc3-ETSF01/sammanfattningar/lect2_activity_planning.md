@@ -67,11 +67,12 @@
      activities, you create a WBS that is based on the projects products. 
 
 ## Network planning models
-  * Program Evaluation Review Technique (PERT)
-  * Critical Path Method (CPM)
-  * Precedence network
+  
+  - Program Evaluation Review Technique (PERT)
+  - Critical Path Method (CPM)
+  - Precedence network
 
-  Rules for project networks:
+### Rules for project networks:
   
   * Should have only one start node.
   * Should have only one end node.
