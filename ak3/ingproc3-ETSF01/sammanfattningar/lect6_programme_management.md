@@ -156,6 +156,7 @@ For potential projects
 * **Dependencies between projects**
 
 **Probability of **
+
 ```
                success
              high ^ 
@@ -174,12 +175,10 @@ low               |        xxxxxx   high
              low  |
 ```                  
                   
-
-
-
-
 **Optimize Over Time**
+
 ```
+
 -----------------
 |  Project 1    |
 -----------------
@@ -207,7 +206,7 @@ low               |        xxxxxx   high
 ##Programme Management
 
 **One definition:**  
-*a group of projects that are managed in a _co-ordinated_ way to _gain benefits_
+*a group of projects that are managed in a _co-ordinated_ way to _gain benefits
 that would not be possible where the projects to be managed independently*
 * **Business cycle programmes - common time & resources**
 * **Strategic - with common goal**
