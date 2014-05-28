@@ -168,3 +168,18 @@ to cause larger projects to require disproportionately more estimated effort
 than smaller ones in the es, as larger projects are often found to be less
 productive in practice.
 
+In COCOMO II there are models for estimates at three different stages in a project; *Application composition (inception)*, *Early design (elaboration)* and *Post architecture (construction)*. The core model is now
+
+    pm = A(size)^(sf) * (em_1) * (em_2) * ... * (em_n)
+
+where A is a magical constant and sf, the scale factor, depends on the following *exponent driver ratings*:
+
+* Precedentedness (PREC)
+* Development flexibility (FLEX)
+* Architecture/risk resolution (RESL)
+* Team cohesion (TEAM)
+* Process maturity (PMAT)
+
+These ratings are estimated on a six level scale ranging from *very low* to
+*extra high*. From this guesstimation a table provides a numerical magical
+constant.
