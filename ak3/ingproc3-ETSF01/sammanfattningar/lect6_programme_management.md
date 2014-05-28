@@ -257,5 +257,5 @@ A                 C               |            F
                  /|offices     |     /|            |
                   --------------      -------------                  
 ```
-
+To this activity plan, an Gantt chart is made to overview the plan.
 
