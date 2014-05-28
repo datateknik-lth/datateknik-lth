@@ -122,7 +122,8 @@ size = lines of code
   * Good experience base
   * Good size estimate
 
-## Parametric Models Used in top-down approaches. Productivity factors are used
+## Parametric Models 
+Used in top-down approaches. Productivity factors are used
 as parameters. A parametric model normally has formulae in the form
 
     effort = (system size) * (productivity rate)
@@ -143,7 +144,7 @@ FP   = UFP * "technical complexity factor"
 
 #### Albrecht function point analysis
 * Top down method developed by Allan Albrecht, IBM.
-* Information systems comprised of (5):
+* Information systems comprised of five *external user types*:
   * *External input types* - input transactions which update internal computer
     files
   * *External output types* - transactions where data is output to the user
@@ -157,7 +158,44 @@ FP   = UFP * "technical complexity factor"
   above listed points. The amount of items in each category is then multiplied
   by its counterpart in the table. The weighted sum of these are the Albrecht FPs.
 
-### COCOMO
-Focuses on productivity factors
-1. COCOMO81 (original)
-1. COCOMO2
+### COCOMO (COnstructive COst MOdel)
+Developed by Barry W. Boehm. Focuses on productivity factors. The first version (COCOMO81) used the formula
+
+    effort = c * size^k
+
+where effort is measured in person-months and size in KLOC. c and k are
+constants that depend on the system being developed. The exponent k is selected
+to cause larger projects to require disproportionately more estimated effort
+than smaller ones in the es, as larger projects are often found to be less
+productive in practice.
+
+In COCOMO II there are models for estimates at three different stages in a project; *Application composition (inception)*, *Early design (elaboration)* and *Post architecture (construction)*. The core model is now
+
+    pm = A(size)^(sf) * (em_1) * (em_2) * ... * (em_n)
+
+where A is a magical constant and sf, the scale factor, depends on the following *exponent driver ratings*:
+
+* Precedentedness (PREC)
+* Development flexibility (FLEX)
+* Architecture/risk resolution (RESL)
+* Team cohesion (TEAM)
+* Process maturity (PMAT)
+
+These ratings are estimated on a six level scale ranging from *very low* to
+*extra high*. From this guesstimation a table provides a numerical magical
+constant.
+
+em\_1..em\_n are *effort multipliers*. A wide range of standard effort
+multipliers are defined in COCOMO II for every development stage along with
+corresponding magical constant.
+
+## Expert judgement
+
+Ask an important looking person to pull a suitable guesstimation out of his
+pocket. Research show that expert judgement in practice often is based on
+*analogy*.[citation needed]
+
+How to? First, find the right people (people with experience from similar
+products and processes). Then, ask the right questions (present context and
+goals, be specific about resource restrictions). Finally, ensure the experts
+have time to think about it.
