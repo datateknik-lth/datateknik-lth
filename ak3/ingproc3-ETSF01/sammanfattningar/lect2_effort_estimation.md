@@ -142,7 +142,7 @@ FP   = UFP * "technical complexity factor"
 
 #### Albrecht function point analysis
 * Top down method developed by Allan Albrecht, IBM.
-* Information systems comprised of (5):
+* Information systems comprised of five *external user types*:
   * *External input types* - input transactions which update internal computer
     files
   * *External output types* - transactions where data is output to the user
@@ -156,7 +156,14 @@ FP   = UFP * "technical complexity factor"
   above listed points. The amount of items in each category is then multiplied
   by its counterpart in the table. The weighted sum of these are the Albrecht FPs.
 
-### COCOMO
-Focuses on productivity factors
-1. COCOMO81 (original)
-1. COCOMO2
+### COCOMO (COnstructive COst MOdel)
+Developed by Barry W. Boehm. Focuses on productivity factors. The first version (COCOMO81) used the formula
+
+    effort = c * size^k
+
+where effort is measured in person-months and size in KLOC. c and k are
+constants that depend on the system being developed. The exponent k is selected
+to cause larger projects to require disproportionately more estimated effort
+than smaller ones in the es, as larger projects are often found to be less
+productive in practice.
+
