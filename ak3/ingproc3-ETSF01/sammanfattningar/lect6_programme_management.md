@@ -86,20 +86,20 @@ Liftime of Return of Investment (ROI) for potential project
 
 i|
 n|
-c|
-o|
-m|
-e|
+c| MERGE CONFLICT          C
+o|                         O
+m|                         N
+e|                          F
 -------------------------------------------------------------------------------
 e|                                                           time ->
-x|
+x|           MERGE CONFLICT
 p|
-e|
-n|
-d|
-i|
-t|
-u|
-r|
-e|
+e| M
+n| E
+d| R
+i| G
+t| E
+u|       MERGE CONLICT
+r| 
+e| CONFLICT
 
