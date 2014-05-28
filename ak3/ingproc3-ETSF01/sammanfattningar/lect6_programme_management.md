@@ -32,3 +32,30 @@ operational costs. This is part of portfolio management.
 10. **Management Plan**:
   * Missing information but part of the business plan.
 
+#### Selection of project approach
+
+*steps from Step Wise chart*
+
+- 2 Organization structure needed
+  - Make/buy/outsource
+  - Make/reuse/
+  - Make/share
+  - ...
+
+- 3 Process model
+
+**Buying from external suppliers[10.2]**
+Different buy-situations:
+* Bespoke system/component
+* Outsourcing a task
+* Commercial off-the-shelf (COTS)
+  - bought *as is*
+  - customized
+
+**Types of contract**
+* **Fixed price contracts**: fixed price, terms, requirements & delivery time
+  - + known cost,supplier motivation
+* Time and materails contracts
+* Fixed price per delivered unit
+
+
