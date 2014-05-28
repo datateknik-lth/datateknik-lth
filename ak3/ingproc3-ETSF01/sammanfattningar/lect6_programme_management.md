@@ -77,4 +77,29 @@ operational costs. This is part of portfolio management.
   - operational costs after set-up
 * **Identify the value of benefits**
 * **Check if benefits are greater than costs**
+
 *Costs and benefits must be identified and expressed in the same unit..*
+
+Liftime of Return of Investment (ROI) for potential project
+
+```
+
+i|
+n|
+c|
+o|
+m|
+e|
+-------------------------------------------------------------------------------
+e|                                                           time ->
+x|
+p|
+e|
+n|
+d|
+i|
+t|
+u|
+r|
+e|
+
