@@ -90,7 +90,7 @@ PUMA = Planera Utför Mstudera Agera
 * Do - Implement plan & measure performance
 
 
-## Resource Allocation 
+## Resource Allocation (Lecture 4)
 A resource includes labour, equipment, materials, space, services etc.
 ### Allocation step by step
 1. Identify resources needed and create a resource requirements list.
@@ -121,6 +121,27 @@ need                   ___
   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 ```
 
+## Monitor (Lecture 6)
 
+### Earned value analysis
+
+#### Basics 
+Earned value analysis is based on assigning a "value" to each task or work, based on the original expenditures forecasts.
+
+* Planned value (PV) or Budgeted cost of work scheduled (BCWS): Original estimate
+* Earned value (EV) or Budgeted cost of work performed (BCWP): Work completed this far
+* Actual cost (AC) or Actual cost of work performed (ACWS): Actual work performed this far
+* Budget at completion (BAC): The budget when the project is done
+* Estimate at completion (EAC): Estimated budget at completion, updated as the project progresses
+
+#### Performance ratios
+
+Value for money.
+
+* Cost performance indicator (CPI) = EV / AC
+* Schedule performance indicator (SPI) = EV/PV
+* Estimated Actual Cost = BAC / CPI    
+
+EAC = BAC / CPI
 
 
