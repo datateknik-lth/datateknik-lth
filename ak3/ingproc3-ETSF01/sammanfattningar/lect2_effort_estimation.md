@@ -122,7 +122,8 @@ size = lines of code
   * Good experience base
   * Good size estimate
 
-## Parametric Models Used in top-down approaches. Productivity factors are used
+## Parametric Models 
+Used in top-down approaches. Productivity factors are used
 as parameters. A parametric model normally has formulae in the form
 
     effort = (system size) * (productivity rate)
