@@ -60,4 +60,73 @@ All of these require decision support!
 * Interval scale: relative distance between entries
 * Ratio scale: relative size
 
+## Metrics challenges
+
+### Challenges
+* Data collected in diﬀerent projects should be comparable
+* Data collected should be reliable and of high quality
+* People do not want to collect data that is not used
+### Solutions
+* Collect only data that you really need (but all data that you need)
+* Understand and record the context in which data is collected
+  * Product
+  * Team
+  * Process
+  * etc.
+* Quality assurance for data collection
+
+## Goal question metrics (GQM)
+Top-down approach
+* Conceptual level – Goals
+  What are we trying to achieve?
+  Example: shorten lead time of issue management
+* Operational level - Questions
+  about areas of uncertainty related to the goals. You
+  need process knowledge to derive these.
+  Example: average time to resolve issues?
+* Quantitative level - Metrics
+  Measurements that answer the questions
+  Ex: time( open → closed ) in issue management system
+
+## Examples
+
+### Goals
+Purpose - improve  
+Issues (quality focus) -  the efficiency  
+Object(s) - issues management  
+Viewpoint - from the project manager’s viewpoint
+
+Align with  
+* Organisational policy & strategy
+* Relevant processes / products
+* Organisational structure for viewpoint
+
+### Questions
+1. How characterize the object, i.e. issue management?
+  *Q1: What is current turn-around time for issues of varying prio?*
+2. How characterize attributes relevant to issues, i.e. issues management efficiency?  
+  *Q2: What is the deviation in turn-around time compared to committed response time?*
+3. How evaluate characteristics of object relevant to issues & viewpoint?
+  *Q3: Is the current performance satisfactory from project manager’s viewpoint?*  
+  *Q4: Is the performance visibly improving?*
+
+### Measurements
+Q/m | Info
+--- | ---
+**Q1** | **What is current turn-around time for issues of varying prio?**
+*M1* | *Average cycle time (open → close), for all prio types*
+*M2* | *Standard deviation*
+*M3* | *% cases outside the upper limit, per prio type*
+**Q2** | **What is the deviation in turn-around time compared to committed response time?**
+*M4* | *(Current average cycle time (M1) – Committed response time)/ M1*
+*M5* | *Subjective evaluation by project manager*
+**Q3** | **Is the current performance satisfactory from project manager’s viewpoint?**
+*M5* | *Subjective evaluation by project manager*
+
+## Summary
+* SW Metrics provide decision support
+  * Project progress, product quality, process, cost etc.
+* Objective vs subjective measurements
+* Different scales
+* Goal Question Metrics (GQM): top-down approach
 
