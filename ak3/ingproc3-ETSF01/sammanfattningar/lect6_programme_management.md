@@ -140,7 +140,7 @@ NPV =----------------------
   - There is e.g. a Microsoft Excel function which can be used to calculate the
     IRR (or use a suitable technique from numerical analysis)
 
-## Portfolio Management 
+## Portfolio Management (PM) 
 
 Porfolio project management provides an overview of all the projects that an
 organisation is undertaking or is considering. The optimization coverage of 
@@ -153,9 +153,9 @@ product ranges and market segment are need & profit.
 For potential projects
 * **Balance total risk**
 * **Resource sharing**
-* **Dependencies between projects
+* **Dependencies between projects**
 
-Probability of 
+**Probability of **
 ```
                success
              high ^ 
@@ -198,4 +198,22 @@ low               |        xxxxxx   high
 ------------------------------------------------------------------------------>
                                                                         time t
 ```
+**Issues with PM**
+
+* **Will another project be more profitable**
+* **Hard to express benefits in financial terms**
+* **Projects with the highest potential returns are often the most risky**
+
+:w
+
+##Programme Management
+
+**One definition:**  
+*a group of projects that are managed in a **co-ordinated** way to **gain benefits**
+that would not be possible where the projects to be managed independently*
+* **Business cycle programmes - common time & resources**
+* **Strategic - with common goal**
+* **Infrastructure programmes - e.g. IT support projects**
+* **Research & developemt (R&D) development programmes - *safe* + *risky* projects**
+* **Innovative partnerships - new technologies, precompetitive**
 
