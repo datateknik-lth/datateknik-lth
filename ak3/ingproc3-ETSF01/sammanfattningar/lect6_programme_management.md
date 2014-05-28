@@ -155,7 +155,7 @@ For potential projects
 * **Resource sharing**
 * **Dependencies between projects**
 
-**Probability of **
+**Probability of**
 
 ```
                success
@@ -206,7 +206,7 @@ low               |        xxxxxx   high
 ##Programme Management
 
 **One definition:**  
-*a group of projects that are managed in a _co-ordinated_ way to _gain benefits
+*a group of projects that are managed in a _co-ordinated** way to _gain benefits
 that would not be possible where the projects to be managed independently*
 * **Business cycle programmes - common time & resources**
 * **Strategic - with common goal**
