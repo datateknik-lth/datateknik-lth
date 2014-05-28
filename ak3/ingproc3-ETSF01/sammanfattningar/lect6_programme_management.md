@@ -200,20 +200,20 @@ low               |        xxxxxx   high
 ```
 **Issues with PM**
 
-* **Will another project be more profitable**
+* **Will another project be more profitable?**
 * **Hard to express benefits in financial terms**
 * **Projects with the highest potential returns are often the most risky**
-
-:w
 
 ##Programme Management
 
 **One definition:**  
-*a group of projects that are managed in a **co-ordinated** way to **gain benefits**
+*a group of projects that are managed in a _co-ordinated_ way to _gain benefits_
 that would not be possible where the projects to be managed independently*
 * **Business cycle programmes - common time & resources**
 * **Strategic - with common goal**
 * **Infrastructure programmes - e.g. IT support projects**
 * **Research & developemt (R&D) development programmes - *safe* + *risky* projects**
 * **Innovative partnerships - new technologies, precompetitive**
+
+**Responsibilities of a program manager**
 
