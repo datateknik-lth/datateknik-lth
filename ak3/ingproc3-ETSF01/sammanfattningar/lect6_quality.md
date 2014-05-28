@@ -41,7 +41,49 @@ new environment?
 |    on facts    | | be committed  |
 |________________| |_______________|
 
+       Committed leadership
 ```
+
+## Practical
+* Quality plan
+* Define criteria for activities & include inspections
+* When are we done?
+  * Monitoring quality levels
+  * Release decision based on quality measurements
+
+## Quality Plan
+A quality plan can be seen as a checklit that all quality
+issues have been dealt with by the planning process.
+
+* scope of plan & references to other documents
+* quality management, incl organization, tasks, and responsibilities
+* documentation to be produced
+* standards, practices and conventions, reviews and audits
+* testing strategy and plan
+* problem reporting and corrective action
+* tools, techniques, and methodologies
+* code, media and supplier control
+* records collection, maintenance and retention
+* training
+* risk management - methods of risk management that are to be used
+
+## Clear criterias for activities/inspections
+* Entry requirements - test data and expected results prepared
+* Implementation requirements - "when error is found, do this and that"
+* Exit requirements - done when all tests ok
+
+## When are we done?
+It is not possible to **know** when there are no more errors, this
+has to be estimated. Using testing techniques or expert opinion.
+
+### Result
+
+* Successful?
+  * Delivered on time
+  * Delivered within budget
+* Gains
+  * Quality product that meets customer need
+  * New lessons learnt (experience, process improvements)
 
 # Quality Management gurus
 QM gurus.
