@@ -72,7 +72,7 @@
   - Critical Path Method (CPM)
   - Precedence network
 
-### Rules for project networks:
+## Rules for project networks:
   
   * Should have only one start node.
   * Should have only one end node.
@@ -83,7 +83,7 @@
   * A network may not contain loops.
   * No dangling activities.
 
-### Lagged activities
+## Lagged activities
   
 ```
    ____        ____        ____                                     
@@ -95,3 +95,40 @@
 Lagged acitivites are dependent on other activities but are initiated with a lag. In the above
 example, the second-row activity is started 1 day after the dependent activity and completed 
 2 days after the dependent activity has completed.
+
+## Start and finish time of activities
+
+  * Earliest start (ES)
+  * Earliest finish (EF) = ES + duration
+  * Latest finish (LF) = latest task that can be completed without affecting project end.
+  * Latest start = LF - duration
+
+## Forward and backward pass
+
+  - Forward pass
+   * A forward pass calculates the earliest dates on which each activity may be started and completed.
+   * It does this by going through the dependencies from start to finish and sorting the activities
+     accordingly.
+  
+  - Backward pass
+   * A backward pass calculates the latest date at which each activity may be started and completed.
+   * It does this by going backwards and looking at the duration of each activity.
+
+## Critical path and float
+
+   The float of an activity is defined as the difference between its earliest start date and latest start date
+   (or earliest finish - latest finish).
+   It is a measure of how much the start or completion of an activity may be delayed without
+   affecting the end of the project.
+
+   - Free float
+    * The time by which an activity may be delayed without affecting any subsequent activities.
+   - Interfering float
+    * The difference between total float and free float. Indicates how much the activity can be
+      delayed without delaying the project end date.
+
+   The critical path shows the path of activities in a project that define the duration of the whole
+   project. Any delay in these activities will delay the whole project, which means these activities
+   have no float.
+
+   If a project duration needs to be reduced it is the critical path that needs to be shortened. 
