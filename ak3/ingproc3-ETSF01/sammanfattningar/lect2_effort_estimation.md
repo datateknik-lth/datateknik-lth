@@ -185,4 +185,4 @@ These ratings are estimated on a six level scale ranging from *very low* to
 *extra high*. From this guesstimation a table provides a numerical magical
 constant.
 
-em\_1..em\_n are *effort multipliers*.
+em\_1..em\_n are *effort multipliers*. A wide range of standard effort multipliers are defined in COCOMO II for every development stage along with corresponding magical constant.
