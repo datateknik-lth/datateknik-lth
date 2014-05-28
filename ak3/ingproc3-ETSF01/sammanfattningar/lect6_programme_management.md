@@ -80,26 +80,64 @@ operational costs. This is part of portfolio management.
 
 *Costs and benefits must be identified and expressed in the same unit..*
 
-Liftime of Return of Investment (ROI) for potential project
+**Liftime of Return on Investment (ROI) for potential project**
 
+* **Estimate timing costs and income**
+* **Development incurs costs**
+* **Release of system/product generates income - gradual pay off**
+* **Include decommissioning cost**s
+
+Typical project life cycle cash flow
+```
+  |
+i |
+n |                       
+c |                              *      *
+o |                        *                     *  
+m |                     *                                *
+e |                   *                                           *
+---------------------*--------------------------------------------------*-----*-
+e |*                *                                            time -> *   *
+x | *              *                                                       *
+p |  *            *
+e |   *          *
+n |     *       *
+d |        *  *
+i |
+t |
+u |
+r |
+e |
 ```
 
-i|
-n|
-c|
-o|
-m|
-e|
--------------------------------------------------------------------------------
-e|                                                           time ->
-x|
-p|
-e|
-n|
-d|
-i|
-t|
-u|
-r|
-e|
+**Cost-benefit evaluation techniques**
+
+* **Return on investment (ROI) or also known as Accounting rate of return (ARR) 
+  = Net profit / total investment.** 
+  *Also useful for company individual choices
+  or features.*
+* **Net profit:** 
+  - total income - total cost
+* **Payback period:** 
+  - time to break even
+
+```
+      average annual profit
+ROI =---------------------- X 100
+        total investment
+
+        value in year t
+NPV =----------------------
+            (1 + r)^t
+```
+
+* **Net present-value**
+  - Present value of future cash flow
+* **Internal rate of return (IRR)**
+  - Internal rate of return (IRR) is the discount rate that would produce an NPV
+    of 0 for the project
+  - Can be used to compare different investment opportunities
+  - There is e.g. a Microsoft Excel function which can be used to calculate the
+    IRR (or use a suitable technique from numerical analysis)
+
 
