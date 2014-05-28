@@ -52,3 +52,27 @@ resulterar i sämre kvalitet som sedan visas i __testning__ eller senare faser.
 
 * Over-estimations => project likely to take longer
 * Under-estimations => lower quality in order to meet target
+
+## When & Why ##
+* Strategic planning
+* Feasability study
+* Requirements spec
+* Evaluation of suppliers' proposals
+* Project planning
+
+## What don't we know? ##
+* Customers' needs & expectations - requirements
+* Technical complexity & design components
+* Reuse - internal and external components
+* People
+  * Skills, competence and experience
+  * Co-operation & communication
+* ... (srsly wtf, why the dots here grrl?)
+
+## Bottom-up versus top-down estimation ##
+
+### Bottom-up ###
+* Identify all tasks that have to be done (top-down)
+* Estimate tasks of 1-2 mw, accumulate effort bottom-up
+* Time consuming
+* Useful when no past project data for similar projects exist
