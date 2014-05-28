@@ -36,13 +36,13 @@ operational costs. This is part of portfolio management.
 
 *steps from Step Wise chart*
 
-- 2 Organization structure needed
+- **2 Organization structure needed**
   - Make/buy/outsource
   - Make/reuse/
   - Make/share
   - ...
 
-- 3 Process model
+- **3 Process model**
 
 #### -Buying from external suppliers[10.2]
 
@@ -76,5 +76,5 @@ operational costs. This is part of portfolio management.
   - set-up incl recruitment and training
   - operational costs after set-up
 * **Identify the value of benefits**
-* **Check if benefits are greater than costs
+* **Check if benefits are greater than costs**
 
