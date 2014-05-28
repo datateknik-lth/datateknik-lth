@@ -65,7 +65,9 @@
 ## Network planning models
   
   - Program Evaluation Review Technique (PERT)
+   * Activity on arrow
   - Critical Path Method (CPM)
+   * Activity on arrow
   - Precedence network
 
 ## Rules for project networks:
