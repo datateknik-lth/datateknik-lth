@@ -49,10 +49,30 @@ D
                     `---------------                                                 
 ```
 
+### PERT (Program Evaluation and Review Technique)
+
+Expected time (t\_e) = (minimum time (a) + 4 * medium time (m) + worst time (b) / 6
+Standard deviation (S) = (worst time (b) - minimum time (a))/6
+
 ## Activity planning (WIP)
 
 
-## 
+## SPI (Lecture 3)
+
+```
+         , - ~ ~ ~ - ,
+     , '       |       ' ,
+   ,        -> |    Act    ,
+  ,    Study   |     |      ,
+ ,             |     v       ,
+ ,-------------|-------------,
+ ,       ^     |             ,
+  ,      |     |<-  Plan    ,
+   ,    Do     |           ,
+     ,         |        , '
+       ' - , _ _ _ ,  '
+
+```
 
 
 
