@@ -1,4 +1,4 @@
-Software Project Impruvment
+Suftware Prucess Impruvment
 =========
 
 * Why Focus on processes?
