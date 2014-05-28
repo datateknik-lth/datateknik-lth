@@ -3,11 +3,11 @@ Effort Estimation
 
 ## Problems with Effort Estimation
  Subjective nature of estimating
+<<<<<<< HEAD
 
 * Difficult to produce evidence in support of decision
-* Changing techologies
   * these bring uncertainties, especially in the early days when there is a
-  'learning curve'
+    'learning curve'
 * Projects differ
   * Experience on one project may not be applicable to another
 * Political pressure
@@ -122,9 +122,16 @@ size = lines of code
   * Good experience base
   * Good size estimate
 
-## Parametric Models
-* Other models focus on productivity (e.g. COCOMO)
-* Lines of code (or function points, FP etc) an input
+## Parametric Models Used in top-down approaches. Productivity factors are used
+as parameters. A parametric model normally has formulae in the form
+
+    effort = (system size) * (productivity rate)
+
+where system size may for example be measured in KLOC (kilo-lines of code) or
+function points and productivity rate in days per KLOC.
+
+Some parametric models are focused on system or task size, while others like
+COCOMO focus on productivity factors.
 
 ### Function Points - Albrecht/IFPUG FP
 Models system size
@@ -135,8 +142,8 @@ FP   = UFP * "technical complexity factor"
 ```
 
 #### Albrecht function point analysis
-* Top down method (IBM)
-* Information systems compirsed of (5):
+* Top down method developed by Allan Albrecht, IBM.
+* Information systems comprised of (5):
   * *External input types* - input transactions which update internal computer
     files
   * *External output types* - transactions where data is output to the user
@@ -146,9 +153,9 @@ FP   = UFP * "technical complexity factor"
     by the system.
   * *External interface file types* - allow for output and input that may pass
     to and from other computer applications
-* A table consists of "low", "medium" and "high" complexity numbers for the above
-  listed points. The amount of items in each category is then multiplied by its
-  counterpart in the table. The sum of these are the Albrecht FPs.
+* A table consists of "low", "medium" and "high" complexity numbers for the
+  above listed points. The amount of items in each category is then multiplied
+  by its counterpart in the table. The weighted sum of these are the Albrecht FPs.
 
 ### COCOMO
 Focuses on productivity factors
