@@ -72,7 +72,7 @@
    * Activity on node
    * most common
 
-## Rules for project networks:
+## Rules for precedence networks:
   
   * Should have only one start node.
   * Should have only one end node.
