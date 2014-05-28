@@ -132,21 +132,36 @@ Where *Y* is late, *K* is on schedule, and *M* is early.
 Earned value analysis is based on assigning a "value" to each
 task or work, based on the original expenditures forecasts.
 
-* Original estimate: Planned value (PV) or Budgeted cost of
-work scheduled (BCWS)
-* Work completed this far: Earned value (EV) or Budgeted cost
-of work performed (BCWP)
-* Actual work performed this far: Actual cost (AC) or Actual
-cost of work performed (ACWS)
+* Planned value (PV) or Budgeted cost of
+work scheduled (BCWS): Original estimate
+* Earned value (EV) or Budgeted cost
+of work performed (BCWP): Work completed this far
+* Actual cost (AC) or Actual
+cost of work performed (ACWS): Actual work performed this far
+* Budget at completion (BAC): The budget when the project is done
+* Estimate at completion (EAC):
+Estimated budget at completion, updated as the project progresses
 
-Performance ratios (value for money)
+### Earned value tracking
+When the baseline budget has been established, the project can be tracked
+as it progresses.
+
+* Schedule variance (SV): EV - AV. Difference between the estimated
+and actual value.
+* Time variance (TV): Difference between planned finish date and actual.
+* Cost variance: EV - AC. Indicates the difference between the earned value
+and the actual cost. A negative CV means that the project is over cost.
+
+### Performance ratios
+Value for money.
+
 * Cost performance indicator (CPI) = EV / AC
 * Schedule performance indicator (SPI) = EV/PV
 
-#### Example
+### Example
 
 ```
-Budget at completion = 100
+BAC = 100
 Actal cost = 80
 |===========>        |
     EV = 60 ^        ^ PV = 100
@@ -154,4 +169,49 @@ Actal cost = 80
 
 * CPI = EV / AC = 60 / 80 = 75 % => over budget
 * SPI = EV / PV = 60 / 100 = 60 %
-* Estimate at completion = Budget at completion / CPI = 100 / 0.75 = 133
+* EAC = BAC / CPI = 100 / 0.75 = 133
+
+* Cost variance = EV - AC = 60 - 80 = -20
+* Budget variance = PV - AC = 100 - 80 = 20
+* Schedule variance = EV - PV = 60 - 100 = -40
+
+### Prioritizing monitoring
+Focus on monitoring based on risk
+* Critical path activities: Any delay in an activity in the critical
+path will cause a delay in the project complete date.
+* Activities with no free float: A delay of an activity with no free float
+might cause a delay on some subsequent activities. But it might not delay
+the whole project.
+* Activities with less than a specified float: Same as above.
+* High risk activities: Activities that have a high chance of failing/delay.
+* Activities using critical resources: Such activities might be expensive.
+* Activities with external dependencies: Same
+
+## Control
+Almost any project will be delayed at some point, the project
+manager must recognize when this is happening and take immediate action! **dum dum!**
+
+
+### Get back on track
+* Try to shorten critical path by adding resources
+..* Overtime
+..* Re-allocate existing staff to more critical activities
+..* Get more staff
+..* Reduce quality of some activities
+* Reconsider activity dependencies
+..* Over-lap activities to avoid waiting for completion of another
+..* Split activities to remove dependencies to activities / critical resources
+
+### Typical change control process
+1. One or more stakeholder might perceive the **need for a change**
+2. Affected/receiving party (e.g. customer rep for customer request)
+decide that the change is valid and worthwhile. **Request for change** (RFC or CR)
+to the development management for change control management
+3. **Change investigated** by developer. Impact and cost estimated. All
+impact should be considered including testing, long-term maintenance etc
+4. The impact investigation is shared with initiating stakeholder who
+**decides to proceed or not**
+5. RFC and its impact discussed with all stakeholders, typically at a
+**change control board meeting** where RFC is approved or rejected.
+6. .... Varied process for implementating change. Should involve
+**communication** and **tracking of results**

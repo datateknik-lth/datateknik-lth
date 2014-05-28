@@ -52,18 +52,25 @@ supporting roles (think IT-department).
 ## Reporting
 ### Formal
 #### Regular
-**Oral** Progress meetings
-**Written** Job sheets
+* **Oral** Progress meetings
+* **Written** Job sheets
 
 #### Ad Hoc
-**Oral** Review meetings
-**Written** Issues reports
+* **Oral** Review meetings
+* **Written** Issues reports
 
 ### Informal
 #### Regular
-**Oral** Around the coffee machine
-**Written** Emails to collegues
+* **Oral** Around the coffee machine
+* **Written** Emails to collegues
 
 #### Ad Hoc
-**Oral** Ad hoc meetings
-**Written** Emails for issues investigation
+* **Oral** Ad hoc meetings
+* **Written** Emails for issues investigation
+
+## Leadership
+Leadership is the ability to influence other and achieve a common goal.
+Management includes leadership, as well as organising, planning and controlling.
+Both exercise power but in different ways, position power (formal authority; rewards,
+punishment)
+or personal power (individual qualities; an expert, access to information).
