@@ -3,7 +3,6 @@ Effort Estimation
 
 ## Problems with Effort Estimation
  Subjective nature of estimating
-<<<<<<< HEAD
 
 * Difficult to produce evidence in support of decision
   * these bring uncertainties, especially in the early days when there is a
