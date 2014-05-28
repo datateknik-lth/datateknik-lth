@@ -37,9 +37,9 @@ right e.g. pay, working conditions
 Satisfaction of a job is based on five factors.
 
 * Meaningful
-..* Skill varierty: Multiple skills used in the exercise
-..* Task identiy: Ownership
-..* Task significance: Influence on others
+  * Skill varierty: Multiple skills used in the exercise
+  * Task identiy: Ownership
+  * Task significance: Influence on others
 * Autonomy: Dicretion of the way that you do the job
 * Feedback: Information you get back rom the results of your work
 
