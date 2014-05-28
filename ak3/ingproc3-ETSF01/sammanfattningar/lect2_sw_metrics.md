@@ -96,10 +96,30 @@ Issues (quality focus) -  the efficiency
 Object(s) - issues management  
 Viewpoint - from the project manager’s viewpoint
 
-Align with
+Align with  
 * Organisational policy & strategy
 * Relevant processes / products
 * Organisational structure for viewpoint
 
+### Questions
+1. How characterize the object, i.e. issue management?
+  *Q1: What is current turn-around time for issues of varying prio?*
+2. How characterize attributes relevant to issues, i.e. issues management efficiency?  
+  *Q2: What is the deviation in turn-around time compared to committed response time?*
+3. How evaluate characteristics of object relevant to issues & viewpoint?
+  *Q3: Is the current performance satisfactory from project manager’s viewpoint?*  
+  *Q4: Is the performance visibly improving?*
 
+### Measurements
+Q/m | Info
+--- | ---
+Q1 | What is current turn-around time f issues of varying prio?
+M1 | Average cycle time (open → close), for all prio types
+M2 | Standard deviation
+M3 | % cases outside the upper limit, per prio type
+Q2 | What is the deviation in turn-around time compared to committed response time?
+M4 | (Current average cycle time (M1) – Committed response time)/ M1
+M5 | Subjective evaluation by project manager
+Q3 | Is the current performance satisfactory from project manager’s viewpoint?
+M5 | Subjective evaluation by project manager
 
