@@ -45,10 +45,11 @@ __Cost includes:__
 > a software project that does not have to meet a reliability requirement
 > can meet any other requirement
 
-Vad betyder då den här lagen? Jo det ska ni få veta! (Brace yourselves) Lagen
+# SVENSKA INCOMING
+**Vad betyder då den här lagen? Jo det ska ni få veta! (Brace yourselves) Lagen
 innebär att ifall projektet inte har en tydligt specificerad krav på 
 tillförlitlighet när det ska skeppas så kan detta arbiträrt väljas. Vilket
-resulterar i sämre kvalitet som sedan visas i __testning__ eller senare faser.
+resulterar i sämre kvalitet som sedan visas i __testning__ eller senare faser.**
 
 * Over-estimations => project likely to take longer
 * Under-estimations => lower quality in order to meet target
