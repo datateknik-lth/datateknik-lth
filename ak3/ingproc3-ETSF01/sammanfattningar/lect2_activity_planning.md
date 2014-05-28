@@ -83,4 +83,9 @@
   * A network may not contain loops.
   * No dangling activities.
 
-
+### Lagged activities
+  ´´´
+   ____        ____        ____                                     
+  |____|----->|____|----->|____|                                                
+            1/ ____ \2                                 
+             \|____|/                                    
