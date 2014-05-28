@@ -4,7 +4,8 @@ A business case may be presented for several potential projects. It should show
 that the benefits of the project will exceed development, implementation and 
 operational costs. This is part of portfolio management. 
 
-Content of a business case
+Content of a business case:
+
 1. Introduction/background:
   * describes a problem to be solved or an oppertunity to be exploited.
 2. The proposed project:
