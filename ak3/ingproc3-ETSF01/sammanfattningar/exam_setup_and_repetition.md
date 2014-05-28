@@ -142,6 +142,21 @@ Value for money.
 * Schedule performance indicator (SPI) = EV/PV
 * Estimated Actual Cost = BAC / CPI    
 
-EAC = BAC / CPI
+#### Example 
+```
+BAC = 100
+Actal cost = 80
+|===========>        |
+    EV = 60 ^        ^ PV = 100
+```
+
+* CPI = EV / AC = 60 / 80 = 75 % => over budget
+* SPI = EV / PV = 60 / 100 = 60 %
+* EAC = BAC / CPI = 100 / 0.75 = 133
+
+* Cost variance = EV - AC = 60 - 80 = -20
+* Budget variance = PV - AC = 100 - 80 = 20
+* Schedule variance = EV - PV = 60 - 100 = -40
+
 
 
