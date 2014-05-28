@@ -8,9 +8,9 @@ operational costs. This is part of portfolio management.
 
 ###Content of a business case:###
 
-1. **Introduction/background**:
+1. Introduction/background:
   * describes a problem to be solved or an oppertunity to be exploited.
-2. **The proposed project**:
+2. The proposed project:
   * a brief outline of the project scope.
 3. **The market**:
   * the project could be to develop a new product. The likely *demand for the 
