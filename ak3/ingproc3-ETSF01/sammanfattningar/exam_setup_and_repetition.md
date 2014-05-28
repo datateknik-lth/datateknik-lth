@@ -56,7 +56,16 @@ Standard deviation (S) = (worst time (b) - minimum time (a))/6
 
 ## Activity planning (WIP)
 
-klas
+Brrreakdown Structures
+WBS
+PBS
+Hybrid
+ And GQM! DEFINE MEASUREMENTS!!!!!!!
+ 
+ 
+Precedence Networks
+Diff floats, ES, EF, LS, LF, Critical Paths!!!
+
 
 ## SPI (Lecture 3)
 
@@ -161,6 +170,8 @@ Actal cost = 80
 
 ## Cost Benifit Evaluation (Lecture 6)
 
-Djank the dank 
+Net Profit: 
 
+Payback period:
 
+ROI:
