@@ -113,7 +113,7 @@ Align with
 ### Measurements
 Q/m | Info
 --- | ---
-**Q1** | **What is current turn-around time f issues of varying prio?**
+**Q1** | **What is current turn-around time for issues of varying prio?**
 *M1* | *Average cycle time (open → close), for all prio types*
 *M2* | *Standard deviation*
 *M3* | *% cases outside the upper limit, per prio type*
@@ -122,4 +122,11 @@ Q/m | Info
 *M5* | *Subjective evaluation by project manager*
 **Q3** | **Is the current performance satisfactory from project manager’s viewpoint?**
 *M5* | *Subjective evaluation by project manager*
+
+## Summary
+* SW Metrics provide decision support
+  * Project progress, product quality, process, cost etc.
+* Objective vs subjective measurements
+* Different scales
+* Goal Question Metrics (GQM): top-down approach
 
