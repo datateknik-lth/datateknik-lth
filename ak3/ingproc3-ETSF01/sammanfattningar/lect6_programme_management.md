@@ -249,7 +249,7 @@ High Level activity plan
 A                 C               |            F
 --------------    --------------  |            --------------
 |System study|___\|Build common|__|___________\|Data        |
-|/design     |   /|systems     |  |           /|migration   |
+|/design     | | /|systems     |  |           /|migration   |
 -------------- |  --------------  |            -------------- 
                |  D               |   E               /|\
                |  --------------  |   --------------   |
