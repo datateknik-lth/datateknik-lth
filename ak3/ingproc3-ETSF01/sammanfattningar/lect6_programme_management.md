@@ -80,14 +80,14 @@ operational costs. This is part of portfolio management.
 
 *Costs and benefits must be identified and expressed in the same unit..*
 
-Liftime of Return on Investment (ROI) for potential project
+**Liftime of Return on Investment (ROI) for potential project**
 
 * **Estimate timing costs and income**
 * **Development incurs costs**
-* **Release of system/product generates income -gradual pay off**
+* **Release of system/product generates income - gradual pay off**
 * **Include decommissioning costs
 
-Typical project life cycle cash flow
+Typical project life cycle cash flow**
 ```
   |
 i |
@@ -110,11 +110,12 @@ r |
 e |
 ```
 
-**Cost-benefit evaluation techniques
+**Cost-benefit evaluation techniques**
 
 * **Return on investment (ROI) or also known as Accounting rate of return (ARR) 
-  = Net profit / total investment. *Also useful for company individual choices
+  = Net profit / total investment.** *Also useful for company individual choices
   or features.*
 * **Net profit:** total income - total cost
 * **Payback period:** time to break even
+
 
