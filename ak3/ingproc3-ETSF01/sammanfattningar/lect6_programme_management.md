@@ -83,23 +83,23 @@ operational costs. This is part of portfolio management.
 Liftime of Return of Investment (ROI) for potential project
 
 ```
-
-i|
-n|
-c|
-o|
-m|
-e|
--------------------------------------------------------------------------------
-e|                                                           time ->
-x|
-p|
-e|
-n|
-d|
-i|
-t|
-u|
-r|
-e|
+  |
+i |
+n |                       
+c |                              *      *
+o |                        *                     *  
+m |                     *                                *
+e |                   *                                           *
+---------------------*--------------------------------------------------*-----*-
+e |*                *                                            time -> *   *
+x | *              *                                                       *
+p |  *            *
+e |   *          *
+n |     *       *
+d |       *  *
+i |
+t |
+u |
+r |
+e |
 
