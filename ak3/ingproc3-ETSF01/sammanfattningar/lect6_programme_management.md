@@ -166,7 +166,7 @@ Probability of
   xxxxxxx         |              xxx
     xxx           |               x
 ----------------------------------------> Profit
-high              |        xxxxxx   high
+low               |        xxxxxx   high
           xx      |       xxxxxxxx    
         xxxxxx    |        xxxxxx 
           xx      |
