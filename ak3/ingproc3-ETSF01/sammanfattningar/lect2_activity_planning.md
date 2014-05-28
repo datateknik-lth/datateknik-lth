@@ -17,10 +17,6 @@
  * When do the staff need to be transfered between projects to increase 
    efficiency?
 
-## Different types of planning
- * Iterative planning
- * Gradual detailing
-
 ## Activity networks
 
  ```
