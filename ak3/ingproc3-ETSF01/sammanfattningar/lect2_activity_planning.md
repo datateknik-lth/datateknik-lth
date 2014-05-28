@@ -91,3 +91,7 @@
             1/ ____ \2                                 
              \|____|/                                   
 ```
+
+Lagged acitivites are dependent on other activities but are initiated with a lag. In the above
+example, the second-row activity is started 1 day after the dependent activity and completed 
+2 days after the dependent activity has completed.
