@@ -215,4 +215,47 @@ low               |        xxxxxx   high
 * **Innovative partnerships - new technologies, precompetitive**
 
 **Responsibilities of a program manager**
+```
+_________________________________________________
+|                                               |
+|   Stakeholders, sponsors                      |
+|_______________________________________________|
+                      /\ 
+                     /  \        |*Vision
+                      ||         |*Mandate
+                 _____||_____    |*Cost estimates of projects
+                 |  Program |   / *Risk for projects
+                 |  Manager |   \ *Resources
+                 -----||-----    |* ...
+                      ||         |
+                     \  /        |
+                      \/
+------------------------------------------------
+|                                              |
+|   Projects                                   |
+|______________________________________________|
+```
+
+**Project Management at Programme Level**
+```
+High Level activity plan
+
+  B                                            G 
+  --------------                               --------------
+  |Corporate   |_____________________________\ |Impl. corp  |
+  |image design|                 /|\         / |interface   |
+  --------------                  |            --------------
+                                  |
+A                 C               |            F
+--------------    --------------  |            --------------
+|System study|___\|Build common|__|___________\|Data        |
+|/design     | | /|systems     |  |           /|migration   |
+-------------- |  --------------  |            -------------- 
+               |  D               |   E               /|\
+               |  --------------  |   --------------   |
+               |_\|Relocate    |_\|/_\|Training    |___|
+                 /|offices     |     /|            |
+                  --------------      -------------                  
+```
+To this activity plan, an Gantt chart is made to overview the plan.
 
