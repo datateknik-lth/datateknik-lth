@@ -114,12 +114,12 @@ Align with
 Q/m | Info
 --- | ---
 **Q1** | **What is current turn-around time f issues of varying prio?**
-*M1 | Average cycle time (open → close), for all prio types*
-*M2 | Standard deviation*
-*M3 | % cases outside the upper limit, per prio type*
+*M1* | *Average cycle time (open → close), for all prio types*
+*M2* | *Standard deviation*
+*M3* | *% cases outside the upper limit, per prio type*
 **Q2** | **What is the deviation in turn-around time compared to committed response time?**
-*M4 | (Current average cycle time (M1) – Committed response time)/ M1*
-*M5 | Subjective evaluation by project manager*
+*M4* | *(Current average cycle time (M1) – Committed response time)/ M1*
+*M5* | *Subjective evaluation by project manager*
 **Q3** | **Is the current performance satisfactory from project manager’s viewpoint?**
-*M5 | Subjective evaluation by project manager*
+*M5* | *Subjective evaluation by project manager*
 
