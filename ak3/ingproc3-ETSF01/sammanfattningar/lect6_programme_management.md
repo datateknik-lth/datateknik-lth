@@ -116,8 +116,10 @@ e |
   = Net profit / total investment.** 
   *Also useful for company individual choices
   or features.*
-* **Net profit:** total income - total cost
-* **Payback period:** time to break even
+* **Net profit:** 
+  - total income - total cost
+* **Payback period:** 
+  - time to break even
 
 ```
       average annual profit
