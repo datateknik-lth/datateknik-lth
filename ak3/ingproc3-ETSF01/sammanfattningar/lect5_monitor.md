@@ -10,9 +10,9 @@ By using this the aim is to reach
 
 * Objective: check if project is on track with plan
 * Different kinds of data/measurements
-..* Data from reports
-..* Subjective data on completion rate
-..* Data comparing actual cost/value and planned cost/value
+  * Data from reports
+  * Subjective data on completion rate
+  * Data comparing actual cost/value and planned cost/value
 
 ### Cost vs Time
 *Behind time* but *under budget*, ex: delayed due to not
@@ -194,13 +194,13 @@ manager must recognize when this is happening and take immediate action! **dum d
 
 ### Get back on track
 * Try to shorten critical path by adding resources
-..* Overtime
-..* Re-allocate existing staff to more critical activities
-..* Get more staff
-..* Reduce quality of some activities
+  * Overtime
+  * Re-allocate existing staff to more critical activities
+  * Get more staff
+  * Reduce quality of some activities
 * Reconsider activity dependencies
-..* Over-lap activities to avoid waiting for completion of another
-..* Split activities to remove dependencies to activities / critical resources
+  * Over-lap activities to avoid waiting for completion of another
+  * Split activities to remove dependencies to activities / critical resources
 
 ### Typical change control process
 1. One or more stakeholder might perceive the **need for a change**

@@ -69,7 +69,18 @@ while the coach is responsible for developing individual and team performance.
 ## The Deming Cycle - PDSA ##
 
 ```
-... => Plan => Do => Study => Act => Plan => ...
+         , - ~ ~ ~ - ,
+     , '       |       ' ,
+   ,        -> |    Act    ,
+  ,    Study   |     |      ,
+ ,             |     v       ,
+ ,-------------|-------------,
+ ,       ^     |             ,
+  ,      |     |<-  Plan    ,
+   ,    Do     |           ,
+     ,         |        , '
+       ' - , _ _ _ ,  '
+
 ```
 
 These steps are also known as the "*General Steps for SPI*"
