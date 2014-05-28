@@ -120,7 +120,7 @@ affecting the end of the project.
    - Free float
     * The time by which an activity may be delayed without affecting any subsequent activities.
    - Interfering float
-    * The difference between total float and free float. Indicates how much the activity can be
+    * The difference between total float (Vad är total float, berätta för mig / Andrée) and free float. Indicates how much the activity can be
       delayed without delaying the project end date.
 
 The critical path shows the path of activities in a project that define the duration of the whole
