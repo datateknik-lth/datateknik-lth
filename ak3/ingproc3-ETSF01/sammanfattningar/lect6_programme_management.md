@@ -46,7 +46,7 @@ operational costs. This is part of portfolio management.
 
 #### -Buying from external suppliers[10.2]
 
-  Different buy-situations:
+```Different buy-situations:
 * Bespoke system/component
 * Outsourcing a task
 * Commercial off-the-shelf (COTS)
