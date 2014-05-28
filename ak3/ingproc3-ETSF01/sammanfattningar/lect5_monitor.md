@@ -17,6 +17,7 @@ By using this the aim is to reach
 ### Cost vs Time
 *Behind time* but *under budget*, ex: delayed due to not
 deploying committed staff
+
 On time but *over budget*, ex: additional resources have
 been added to cope with work load.
 

@@ -3,24 +3,19 @@
 > Time is natures way of stopping everything happening at once.
 
 ## The objectives of activity planning
-  - Feasability assessment
-  
-  Is the project possible within the required timescales and resources?
-  - Resource allocation
-  
-  What are the most effective ways of allocating resources? When should
-  the resources be available?
-  - Detailed costing
-  
-  How much will the project cost? After producing an activity plan, we can
-  obtain more detailed estimates of costs.
-  - Motivation
-  
-  Providing targets and monitoring progress can motivate staff.
-  - Coordination
-  
-  When do the staff need to be transfered between projects to increase 
-  efficiency?
+- Feasability assessment
+  * Is the project possible within the required timescales and resources?
+- Resource allocation
+  * What are the most effective ways of allocating resources? When should
+    the resources be available? 
+- Detailed costing
+ * How much will the project cost? After producing an activity plan, we can
+   obtain more detailed estimates of costs.
+- Motivation
+ * Providing targets and monitoring progress can motivate staff.
+- Coordination
+ * When do the staff need to be transfered between projects to increase 
+   efficiency?
 
 ## Different types of planning
  * Iterative planning
@@ -55,28 +50,29 @@
   There are three approaches to identifying the activities or tasks:
 
   - Activity based planning
-  Creating a list of all the activities that the project needs. Can be done by creating 
-  a **Work Breakdown Structure** (WBS). This involves identifying the main tasks that are 
-  needed for the project and then breaking them down into lower-level tasks. Too great depth
-  will result in a large number of small tasks that will be diffcult to manage. Too shallow
-  project provides insufficient detail.
+   * Creating a list of all the activities that the project needs. Can be done by creating 
+     a **Work Breakdown Structure** (WBS). This involves identifying the main tasks that are 
+     needed for the project and then breaking them down into lower-level tasks. Too great depth
+     will result in a large number of small tasks that will be diffcult to manage. Too shallow
+     project provides insufficient detail.
 
   - Product-based approach
-  Consists of producing a **Product Breakdown Structure** (PBS) and a **Product Flow Diagram** (PFD).
-  The PFD idicates for each product which other products are required as inputs. With the help of a 
-  PFD you can easily create an ordered list of activities by identifying the order of products and
-  which acitivies are needed for them.
+   * Consists of producing a **Product Breakdown Structure** (PBS) and a **Product Flow Diagram** (PFD).
+     The PFD idicates for each product which other products are required as inputs. With the help of a 
+     PFD you can easily create an ordered list of activities by identifying the order of products and
+     which acitivies are needed for them.
 
   - Hybrid approach
-  The hybrid approach is a mix of both. Instead of creating a WBS that is based on the projects 
-  activities, you create a WBS that is based on the projects products. 
+   * The hybrid approach is a mix of both. Instead of creating a WBS that is based on the projects 
+     activities, you create a WBS that is based on the projects products. 
 
 ## Network planning models
-  * Program Evaluation Review Technique (PERT)
-  * Critical Path Method (CPM)
-  * Precedence network
+  
+  - Program Evaluation Review Technique (PERT)
+  - Critical Path Method (CPM)
+  - Precedence network
 
-  Rules for project networks:
+### Rules for project networks:
   
   * Should have only one start node.
   * Should have only one end node.
@@ -87,4 +83,15 @@
   * A network may not contain loops.
   * No dangling activities.
 
+### Lagged activities
+  
+```
+   ____        ____        ____                                     
+  |____|----->|____|----->|____|                                                
+            1/ ____ \2                                 
+             \|____|/                                   
+```
 
+Lagged acitivites are dependent on other activities but are initiated with a lag. In the above
+example, the second-row activity is started 1 day after the dependent activity and completed 
+2 days after the dependent activity has completed.
