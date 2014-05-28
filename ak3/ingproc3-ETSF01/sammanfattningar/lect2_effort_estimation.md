@@ -183,3 +183,9 @@ where A is a magical constant and sf, the scale factor, depends on the following
 These ratings are estimated on a six level scale ranging from *very low* to
 *extra high*. From this guesstimation a table provides a numerical magical
 constant.
+
+<math>
+y = x^2
+
+y_2 = \cos \pi
+</math>
