@@ -189,9 +189,11 @@ em\_1..em\_n are *effort multipliers*. A wide range of standard effort
 multipliers are defined in COCOMO II for every development stage along with
 corresponding magical constant.
 
-### Expert judgement Ask an important looking person to pull a suitable
-guesstimation out of his pocket. Research show that expert judgement in practice
-often is based on *analogy*.[citation needed]
+### Expert judgement
+
+Ask an important looking person to pull a suitable guesstimation out of his
+pocket. Research show that expert judgement in practice often is based on
+*analogy*.[citation needed]
 
 How to? First, find the right people (people with experience from similar
 products and processes). Then, ask the right questions (present context and
