@@ -32,7 +32,7 @@ operational costs. This is part of portfolio management.
 10. **Management Plan**:
   * Missing information but part of the business plan.
 
-### Selection of project approach
+#### Selection of project approach
 
 *steps from Step Wise chart*
 
@@ -44,6 +44,6 @@ operational costs. This is part of portfolio management.
 
 - 3. Process model
 
-##### Buying from external suppliers[10.2]
+**Buying from external suppliers[10.2]**
 
 
