@@ -140,4 +140,30 @@ NPV =----------------------
   - There is e.g. a Microsoft Excel function which can be used to calculate the
     IRR (or use a suitable technique from numerical analysis)
 
+## Portfolio Management 
+
+Porfolio project management provides an overview of all the projects that an
+organisation is undertaking or is considering. The optimization coverage of 
+product ranges and market segment are need & profit.
+
+**Optimize Over Time**
+```
+-----------------
+|  Project 1    |
+----------------
+
+--------------------------------------------------------------------
+|  Project 2                                                        |
+--------------------------------------------------------------------
+
+                --------------------------------
+                |   Project 3                  |
+                --------------------------------
+
+                                      ---------------------------------------
+                                      |   Project 4                         |
+                                      ---------------------------------------
+------------------------------------------------------------------------------>
+                                                                        time t
+```
 
