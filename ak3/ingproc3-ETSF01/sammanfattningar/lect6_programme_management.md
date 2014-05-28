@@ -53,7 +53,7 @@ Different buy-situations:
   - customized
 
 **Types of contract**
-* Fixed price contracts: fixed price, terms, requirements & delivery time
+* **Fixed price contracts**: fixed price, terms, requirements & delivery time
   - + known cost,supplier motivation
 * Time and materails contracts
 * Fixed price per delivered unit
