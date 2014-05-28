@@ -116,10 +116,10 @@ example, the second-row activity is started 1 day after the dependent activity a
 
 ## Critical path and float
 
-   The float of an activity is defined as the difference between its earliest start date and latest start date
-   (or earliest finish - latest finish).
-   It is a measure of how much the start or completion of an activity may be delayed without
-   affecting the end of the project.
+The float of an activity is defined as the difference between its earliest start date and latest start date
+(or earliest finish - latest finish).
+It is a measure of how much the start or completion of an activity may be delayed without
+affecting the end of the project.
 
    - Free float
     * The time by which an activity may be delayed without affecting any subsequent activities.
@@ -127,8 +127,8 @@ example, the second-row activity is started 1 day after the dependent activity a
     * The difference between total float and free float. Indicates how much the activity can be
       delayed without delaying the project end date.
 
-   The critical path shows the path of activities in a project that define the duration of the whole
-   project. Any delay in these activities will delay the whole project, which means these activities
-   have no float.
+The critical path shows the path of activities in a project that define the duration of the whole
+project. Any delay in these activities will delay the whole project, which means these activities
+have no float.
 
-   If a project duration needs to be reduced it is the critical path that needs to be shortened. 
+If a project duration needs to be reduced it is the critical path that needs to be shortened. 
