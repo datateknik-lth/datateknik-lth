@@ -69,6 +69,7 @@
   - Critical Path Method (CPM)
    * Activity on arrow
   - Precedence network
+   * Activity on node
 
 ## Rules for project networks:
   
