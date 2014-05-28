@@ -183,3 +183,5 @@ where A is a magical constant and sf, the scale factor, depends on the following
 These ratings are estimated on a six level scale ranging from *very low* to
 *extra high*. From this guesstimation a table provides a numerical magical
 constant.
+
+em\_1..em\_n are *effort multipliers*.
