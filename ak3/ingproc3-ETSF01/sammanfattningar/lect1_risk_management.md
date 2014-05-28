@@ -54,12 +54,12 @@ will not be met in *time* and on budget (*cost/effort*).
  * Brainstorming - getting knowledgeable stakeholders together to pool concerns.
  * Casual mapping - Identifying possible chains of cause and effect using a map.
  
-##### Casual mapping (Applied example)
+##### Causal mapping (Applied example)
 ```
                                 (DELAY IN PROJECT!)                                           
                                /                  \                
                               /                    \              
-                             /                 (Poor project outcome)                     
+                             /                 (People need education)                     
                             /                            \              
                            /                              \              
                           /                                \              
@@ -197,7 +197,7 @@ you want to review them.
 
 * Imagine now that the target for completing A+B+C was 52 days.
 * Calculate the Z-value as (T - t\_e)/s = (52 - 48.65) / 3.32 = 1.01 
-* Look the Z-value up on the table of Z-values (not included)
+* Match the Z-value with a probability by using a pre-existing table.
 
 Which results in a 15% chance of **NOT** meeting the target 52 days.
 And that's PERT for you, kids!
