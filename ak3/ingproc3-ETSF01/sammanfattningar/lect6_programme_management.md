@@ -57,18 +57,19 @@ operational costs. This is part of portfolio management.
 
 ### Types of contract
 * **Fixed price contracts**: fixed price, terms, requirements & delivery time
-  - + known cost,supplieri motivation
-  - - higher price to absorb risk, frozen reqs, *impossible* cost - quality risk
-* **Time and materails contracts**:fixed rate/unit of effort
-  - + reqs changes, lack of price pressure
+  - + known cost, supplier motivation
+  - - higher price to absorb the additional risk, frozen requirements,
+  *impossible* cost -- quality risk
+* **Time and materails contracts**: fixed rate/unit of effort
+  - + requirements changes, lack of price pressure
   - - customer liability due to uncertain cost & commitment, lack of incentive
-      supplier
-* **Fixed price per delivered unit**:incremental delivery and payment = a series
-    of contracts
+      for supplier
+* **Fixed price per delivered unit**: incremental delivery and payment => a
+    series of contracts
   - + customer understanding price calculation, comparability between pricing
       schedules, emerging functionality can be accounted, supplier motivated to
       be cost-effective
-  - - difficulties with SW size measurement - may need independent fixed price 
+  - - difficulties with SW size measurement - may need independent fixed price
       counter, changing requirements - how do you charge?
 
 ### Cost-benefit analysis (CBA) 
@@ -93,9 +94,9 @@ Typical project life cycle cash flow
 ```
   |
 i |
-n |                       
+n |
 c |                              *      *
-o |                        *                     *  
+o |                        *                     *
 m |                     *                                *
 e |                   *                                           *
 ---------------------*--------------------------------------------------*-----*-
@@ -114,10 +115,11 @@ e |
 
 **Cost-benefit evaluation techniques**
 
-* **Return on investment (ROI) or also known as Accounting rate of return (ARR) 
-  = Net profit / total investment.** 
-  *Also useful for company individual choices
-  or features.*
+* **Return on investment (ROI) or also known as Accounting Rate of Return (ARR) 
+  = Net profit / total investment.**
+
+  Also useful for company individual choices
+  or features.
 * **Net profit:** 
   - total income - total cost
 * **Payback period:** 
@@ -125,12 +127,12 @@ e |
 
 ```
       average annual profit
-ROI =---------------------- X 100
+ROI = --------------------- X 100
         total investment
 
-        value in year t
-NPV =----------------------
-            (1 + r)^t
+      value in year t
+NPV = ---------------
+         (1 + r)^t
 ```
 
 * **Net present-value**
