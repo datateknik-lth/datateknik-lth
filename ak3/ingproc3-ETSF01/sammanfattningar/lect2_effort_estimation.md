@@ -171,7 +171,7 @@ productive in practice.
 
 In COCOMO II there are models for estimates at three different stages in a project; *Application composition (inception)*, *Early design (elaboration)* and *Post architecture (construction)*. The core model is now
 
-    pm = A(size)^(sf) * (em_1) * (em_2) * ... * (em_n)
+    pm = A * (size)^(sf) * (em_1) * (em_2) * ... * (em_n)
 
 where A is a magical constant and sf, the scale factor, depends on the following *exponent driver ratings*:
 
