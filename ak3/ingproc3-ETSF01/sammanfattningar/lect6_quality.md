@@ -12,7 +12,7 @@ achieving user goals
 people, business, software, property, environment etc
 * Satisfaction - happy users!
 
-### External Software Quality Characteristis
+### External Software Quality Characteristics
 * Functionality - does it satisfy user needs?
 * Reliability - can the software maintain its level
 of performance?
