@@ -72,7 +72,7 @@ while the coach is responsible for developing individual and team performance.
          , - ~ ~ ~ - ,
      , '       |       ' ,
    ,           |    Act    ,
-  ,    Study-> |     |      ,
+  ,    Study ->|     |      ,
  ,             |     v       ,
  ,-------------|-------------,
  ,       ^     |             ,
