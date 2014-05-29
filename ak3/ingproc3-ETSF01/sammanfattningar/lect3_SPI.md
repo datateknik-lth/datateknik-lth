@@ -129,7 +129,7 @@ Examples: QIP, iFLAP, Lean Six Sigma
 * **Combination** of **LEAN** and **Six Sigma**
   * *Lean:* Toyota productions, eliminate waste, quality
   * *Six Sigma:* Motorola (1986) 99.99966% of products statistically expected
-    to be free of defect (6*σ)
+    to be free of defect (6σ)
 * A process for process improvement
 * LSS 'belts' - training and certification
 
