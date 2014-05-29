@@ -8,29 +8,31 @@ operational costs. This is part of portfolio management.
 
 ###Content of a business case:###
 
-1. **Introduction/background**:
-  * describes a problem to be solved or an oppertunity to be exploited.
-2. **The proposed project**:
-  * a brief outline of the project scope.
-3. **The market**:
-  * the project could be to develop a new product. The likely *demand for the 
-    product* is assessed.
-4. **Organizational/Operational infrastructure**:
-  * describes how the structure of the organization will be afftected by the 
-    implementation of the project.
-5. **Benefits**:
-  * These should be expressed in financial terms.
-6. **Outline implementation plan**:
-  * how the project is going to be implemented.
-7. **Costs**:
-  * the implementation plan will supply information to establish these.
-8. **Financial plan**:
-  * combines costs and benefit data to establish value of project.
-9. **Risks**:
-  * initial risk analysis to identify risks to project execution and to business
-    aspects that affect profit.
-10. **Management Plan**:
-  * Missing information but part of the business plan.
+<dl>
+  <dt>Introduction/background</dt>
+  <dd>describes a problem to be solved or an oppertunity to be exploited.</dd>
+  <dt>The proposed project</dt>
+  <dd>a brief outline of the project scope.</dd>
+  <dt>The market</dt>
+  <dd>the project could be to develop a new product. The likely <em>demand for the
+    product</em> is assessed.</dd>
+  <dt>Organizational/Operational infrastructure</dt>
+  <dd>describes how the structure of the organization will be afftected by the
+    implementation of the project.</dd>
+  <dt>Benefits</dt>
+  <dd>These should be expressed in financial terms.</dd>
+  <dt>Outline implementation plan</dt>
+  <dd>how the project is going to be implemented.</dd>
+  <dt>Costs</dt>
+  <dd>the implementation plan will supply information to establish these.</dd>
+  <dt>Financial plan</dt>
+  <dd>combines costs and benefit data to establish value of project.</dd>
+  <dt>Risks</dt>
+  <dd>initial risk analysis to identify risks to project execution and to
+    business aspects that affect profit.</dd>
+  <dt>Management Plan</dt>
+  <dd>Missing information but part of the business plan.
+</dl>
 
 ### Selection of project approach
 
