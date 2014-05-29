@@ -123,11 +123,12 @@ Therefore in this example we should obviously **EXTEND THE SYSTEM!!!!!!**
 
 
 #### Risk planning: There are five alternatives:
-1. Acceptance
-1. Avoidance - Find a risk-free solution.
-1. Reduction - Reduce probability
-1. Mitigation - Reduce damage, e.g. taking backups
-1. Transfer - e.g. outsource
+**AARMT**
+* **A** cceptance
+* **A** voidance - Find a risk-free solution.
+* **R** eduction - Reduce probability
+* **M** itigation - Reduce damage, e.g. taking backups
+* **T** ransfer - e.g. outsource
 
 #### METHOD: Risk reduction leverage
 
