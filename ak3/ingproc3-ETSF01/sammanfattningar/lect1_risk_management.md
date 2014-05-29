@@ -158,8 +158,10 @@ RRL > 1.00 *therefore worth doing*
 | Real time performance problems |
 | Development technically too difficult |
 
-#### METHOD: Using PERT 
+#### METHOD: Using PERT
+
 **PERT = Program Evaluation and Review Technique**
+
 **PERT - A statistical tool for analysing completion time**
 
 ##### Method
