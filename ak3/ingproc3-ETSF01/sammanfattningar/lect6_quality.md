@@ -14,15 +14,15 @@ people, business, software, property, environment etc
 
 ### External Software Quality Characteristics
 **FEMURP**
-* Functionality - does it satisfy user needs?
-* Efficiency - relates to the physical resources
+* **F**unctionality - does it satisfy user needs?
+* **E**fficiency - relates to the physical resources
 used during execution
-* Maintainability - relates to the effort needed to
+* **M**aintainability - relates to the effort needed to
 make changes to the software
-* Usability - how easy is it to use?
-* Reliability - can the software maintain its level
+* **U**sability - how easy is it to use?
+* **R**eliability - can the software maintain its level
 of performance?
-* Portability - how easy can it be moved to a
+* **P**ortability - how easy can it be moved to a
 new environment?
 
 ## TQM - Total Quality Management
