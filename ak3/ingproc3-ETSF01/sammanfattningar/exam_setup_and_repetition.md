@@ -51,7 +51,7 @@ D
 
 ### PERT (Program Evaluation and Review Technique)
 
-Expected time (t\_e) = (minimum time (a) + 4 * medium time (m) + worst time (b) / 6
+Expected time (t\_e) = (minimum time (a) + 4 * medium time (m) + worst time (b)) / 6
 Standard deviation (S) = (worst time (b) - minimum time (a))/6
 
 ## Activity planning (WIP)
