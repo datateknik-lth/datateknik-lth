@@ -17,26 +17,22 @@
  It consists of both a **cause** and an **effect**
  For example:
 
- - Use of new compiler (**cause**)
- 
-  Integration problem && delayed training phase (**effect**)
+- Use of new compiler (**cause**)
+ * Integration problem && delayed training phase (**effect**)
 
- - Low top management priority in Project A (**cause**)
-
-   Resources (staff) moved from project A to another project (**effect**)
+- Low top management priority in Project A (**cause**)
+ * Resources (staff) moved from project A to another project (**effect**)
 
 ###Risky commitments - Overscoping
 The main risk of overscoping is that the project target (scope)
 will not be met in *time* and on budget (*cost/effort*).
 
- * The traditional dev model (waterfall) - sequential & doc-driven
-
-   "*overpromise* software capabilities in cortractually binding requirements
+* The traditional dev model (waterfall) - sequential & doc-driven
+ * "*overpromise* software capabilities in cortractually binding requirements
    specification before they *understand* their risk implications."
 
- * Agile dev model (XP/Scrum) - iterative & code driven
-
-   "... neat ideas... I'll code 'em up, and if they *don't fit* other 
+* Agile dev model (XP/Scrum) - iterative & code driven
+ * "... neat ideas... I'll code 'em up, and if they *don't fit* other 
    peoples ideas, we'll just evolve things until they work."
    
 ###Risk Management

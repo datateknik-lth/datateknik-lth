@@ -44,7 +44,7 @@ operational costs. This is part of portfolio management.
 
 - **3 Process model**
 
-#### -Buying from external suppliers[10.2]
+### Buying from external suppliers
 
   Different buy-situations:
 * **Bespoke system/component**
@@ -53,7 +53,7 @@ operational costs. This is part of portfolio management.
   - bought *as is*
   - customized
 
-#### -Types of contract
+### Types of contract
 * **Fixed price contracts**: fixed price, terms, requirements & delivery time
   - + known cost,supplieri motivation
   - - higher price to absorb risk, frozen reqs, *impossible* cost - quality risk
