@@ -82,8 +82,8 @@ PUMA = Planera Utför Mstudera Agera
 ```
          , - ~ ~ ~ - ,
      , '       |       ' ,
-   ,        -> |    Act    ,
-  ,    Study   |     |      ,
+   ,           |    Act    ,
+  ,    Study ->|     |      ,
  ,             |     v       ,
  ,-------------|-------------,
  ,       ^     |             ,
