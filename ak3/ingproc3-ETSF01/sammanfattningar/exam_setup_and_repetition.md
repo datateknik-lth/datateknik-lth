@@ -88,9 +88,18 @@ Standard deviation (S) = (worst time (b) - minimum time (a))/6
  * A set of metrics, based on the models, is associated with every question in order to answer it in a measurable way. 
  
 
-Precedence Networks
-Diff floats, ES, EF, LS, LF, Critical Paths!!!
+### Precedence Networks
 
+Some terms to consider using when describing precedence networks are:
+
+* Float 
+ * The amount of time between two activities which are dependant on eachother. (fråga adde om du inte fattar)
+* Earliest Start (ES)
+* Earliest Finish (EF)
+* Latest Start (LS)
+* Latest Finish (LF)
+* Critical Path
+  * The subset of activities which are dependant on eachother with 0 float time.
 
 ## SPI (Lecture 3)
 
