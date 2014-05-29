@@ -1,30 +1,39 @@
 # Working in teams
 
 ## Project roles & responsibilities
-**Project sponsor or director** Secure budget + resources.
+<dl>
+<dt>Project sponsor or director</dt>
+<dd>Secure budget + resources.
 Champion of project goals, ultimate decision maker. Approve
-changes, progress, sign-off deliverables etc.
+changes, progress, sign-off deliverables etc.</dd>
 
-**Steering committee** Resp for overall project success.
+<dt>Steering committee</dt>
+<dd>Resp for overall project success.
 Representatives for key stakeholders and involved organisational
-units. Support project sponsor by providing multiple perspectives.
+units. Support project sponsor by providing multiple perspectives.</dd>
 
-**Project manager** Day-to-day resp to ensure project meets goals
+<dt>Project manager</dt>
+<dd>Day-to-day resp to ensure project meets goals
 (Scope-Time-Cost) by planning and managing project and project
-team. Secure acceptance of deliverables from sponsor and stakeholders.
+team. Secure acceptance of deliverables from sponsor and stakeholders.</dd>
 
-**Stakeholders: Key and other** All project roles and others who
-may be impacted by the outcome of the project.
+<dt>Stakeholders: Key and other</dt>
+<dd>All project roles and others who
+may be impacted by the outcome of the project.</dd>
 
-**Customer respresentatives/decision-makers** Active and
+<dt>Customer respresentatives/decision-makers</dt>
+<dd>Active and
 available to project on matters of customer interests, e.g.
-regarding requirements and acceptance of deliveriables.
+regarding requirements and acceptance of deliveriables.</dd>
 
-**Vendors** Contracted to deliver products or services to the
- project.
+<dt>Vendors</dt>
+<dd>Contracted to deliver products or services to the
+ project.</dd>
 
-**Project team members** Execute tasks, produce deliverables as
-directed by project manager.
+<dt>Project team members</dt>
+<dd>Execute tasks, produce deliverables as
+directed by project manager.</dd>
+</dl>
 
 ## Organizational structures
 An organizational structure is needed to form and manage 
