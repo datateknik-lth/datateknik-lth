@@ -213,6 +213,7 @@ their production practices. These levels are defined as follows.
   * Crises common
   * Success depends entirely on having exceptional managers and developers
   * Level 1 companies, however, can deliver products
+
   __Key Process Areas__
   * None, initial level
 * **Level 2** *Managed (Repeatable, in slides)*: Organizations at this level
@@ -236,6 +237,7 @@ their production practices. These levels are defined as follows.
   * A Software Engineering Process Group (SEPG) is defined
   * Capabilitiy: standard and consistent - both software engineering and
     management are stable and repeatable
+
   __Key Process Areas__
   * Organization process def
   * Peer reviews
@@ -248,6 +250,7 @@ their production practices. These levels are defined as follows.
   * Organization-wide metrics database
   * Meaningful variations can be distinguished from noise
   * Capability: predictable
+
   __Key Process Areas__
   * Software quality management
   * Quantitative process management
@@ -257,6 +260,7 @@ their production practices. These levels are defined as follows.
   * The organisation has the means to identify process weaknesses and take
     actions
   * Cost benefit analysis possible
+
   __Key Process Areas__
   * Process change management
   * Technology change management
