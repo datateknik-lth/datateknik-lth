@@ -1,8 +1,8 @@
 Suftware Prucess Impruvment
 =========
 
-* Why Focus on processes?
-  * Processes affect **product** **quality**
+* Why focus on processes?
+  * Processes affect **product quality**
   * Processes affect **people**, **schedule** and **technology**
   * Software is more design intense => people dependent
 
@@ -11,6 +11,12 @@ Suftware Prucess Impruvment
   similar to ISO
 * **PSP:** Personal Software Process
 * **TSP:** Team Software Process
+
+Software processes are different from manufacturing processes in that:
+
+* Manufacturing is *repeatable* -- the same item is produced many times, while software is *unique* -- it is written only when nothing similar exists.
+* Manufacturing is *well-defined* -- the specification of the output is clearly defined before the process starts, while software is *incomplete & evolving* -- requirements are sketchy from the start and also likely to change during the development cycle.
+
 
 ### Personal Software Process ###
 > The PSP aims to provide software engineers with disciplined methods for
