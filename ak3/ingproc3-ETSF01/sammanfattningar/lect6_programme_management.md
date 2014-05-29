@@ -85,7 +85,7 @@ operational costs. This is part of portfolio management.
 * **Estimate timing costs and income**
 * **Development incurs costs**
 * **Release of system/product generates income - gradual pay off**
-* **Include decommissioning cost**s
+* **Include decommissioning cost**
 
 Typical project life cycle cash flow
 ```
