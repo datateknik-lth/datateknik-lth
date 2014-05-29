@@ -129,7 +129,7 @@ Examples: QIP, iFLAP, Lean Six Sigma
 * **Combination** of **LEAN** and **Six Sigma**
   * *Lean:* Toyota productions, eliminate waste, quality
   * *Six Sigma:* Motorola (1986) 99.99966% of products statistically expected
-    to be free of defect (6*sigma)
+    to be free of defect (6*σ)
 * A process for process improvement
 * LSS 'belts' - training and certification
 
@@ -200,10 +200,13 @@ five levels of process maturity which indicate the sophistication and quality of
 their production practices. These levels are defined as follows.
 
 #### Structure
+
 * Maturity Level: indicate capability and contains Key Process Areas
 * Key Process Areas: goals and common features
 * Common Features: addresses implementation and contains Key Practices
 * Key Practices: describes infrastructure and activities
+
+#### Maturity Levels
 
 * **Level 1** *Initial*: The procedures followed tend to be haphazard. Some
   projects may be successful, but this tends to be because of the skills of
@@ -303,8 +306,8 @@ Software Process Improvement Capability dEtermination model
 
 ## Information Flows
 
-* Focuses on flow and transformation of information e.g. req changes -> testers,
-  tech dep vs comm flow
+* Focuses on flow and transformation of information e.g. requirement changes to
+  testers, tech dep vs comm flow (?)
 * Used to identify bottlenecks, missing connections, information brokers (key
   nodes)
 * Social network analysis often applied
