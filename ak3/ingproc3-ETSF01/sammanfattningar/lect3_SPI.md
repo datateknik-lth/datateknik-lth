@@ -1,24 +1,34 @@
-Suftware Prucess Impruvment
-=========
+Software Process Improvement
+============================
 
 * Why focus on processes?
   * Processes affect **product quality**
   * Processes affect **people**, **schedule** and **technology**
   * Software is more design intense => people dependent
 
-## Process Management for Software ##
+Software processes are different from manufacturing processes in that:
+
+* Manufacturing is *repeatable* -- the same item is produced many times, while
+  software is *unique* -- it is written only when nothing similar exists.
+* Manufacturing is *well-defined* -- the specification of the output is clearly
+  defined before the process starts, while software is *incomplete & evolving*
+  -- requirements are sketchy from the start and also likely to change during
+  the development cycle.
+* Manufacturing is *known* -- the process between input and output is clearly
+  known and can be done repeatedly, while software is *unknown* -- it is based
+  on new technologies, new interfacing requirements etc.
+* Manufacturing is based on *machines & tools* -- the process' efficiency is
+  mostly dependent on the quality of the machines and less on the operators,
+  while software development is based on *people* -- knowledge, experience and
+  skill of people can make huge differences in productivity.
+
+## Process Management for Software
 * **CMMI:** Capability Maturity Model Integration, software certification
   similar to ISO
 * **PSP:** Personal Software Process
 * **TSP:** Team Software Process
 
-Software processes are different from manufacturing processes in that:
-
-* Manufacturing is *repeatable* -- the same item is produced many times, while software is *unique* -- it is written only when nothing similar exists.
-* Manufacturing is *well-defined* -- the specification of the output is clearly defined before the process starts, while software is *incomplete & evolving* -- requirements are sketchy from the start and also likely to change during the development cycle.
-
-
-### Personal Software Process ###
+### Personal Software Process
 > The PSP aims to provide software engineers with disciplined methods for
 > improving personal software development processes.
 
