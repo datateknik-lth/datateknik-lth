@@ -222,7 +222,7 @@ their production practices. These levels are defined as follows.
   * Realistic commitments
   * Capability: disciplined, earlier successes can be repeated
 
-    __Key Process Areas__
+  __Key Process Areas__
   * Configuration management
   * Software QA
   * Subcontract management
