@@ -2,7 +2,7 @@
 ## Organisational Behaviour Research
 Aim: Explain people's behaviour
 * Theories á la "If A then B is likely to follow"
-* Dependencies, not causal relationships & formulaes such as e.g. Chemistry, Physics
+* Dependencies, not causal relationships & formulas such as e.g. Chemistry, Physics
 
 ## Taylorism
 Select the best people for the job (**!**), instruct them in the best methods,
@@ -29,9 +29,10 @@ though there were no change in work.
 * The capacity to exercise imagination and creative qualities distributed
 
 ## Herzberg
+
 * Hygiene or maintenance factors make you dissatisfied if they are not
-right e.g. pay, working conditions
-* Motivators make you feel the job is worthwhile e.g. a sense of achievement
+right, e.g. pay or working conditions
+* Motivators make you feel the job is worthwhile, e.g. a sense of achievement or the challenge of the work itself
 
 ## The Oldham-Hackman model
 
