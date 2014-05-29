@@ -164,7 +164,7 @@ __Improve__: implement
 __Control__: remeasure, continously assess
 
 ##### Retrospective Analysis
-* Consider the past in order to identify problems and improvements - individua,
+* Consider the past in order to identify problems and improvements - individual,
   but mostly in groups
 * Often applied after project completion
 * Important SPI method for self-governing agile teams
