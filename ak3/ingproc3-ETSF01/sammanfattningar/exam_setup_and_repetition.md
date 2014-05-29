@@ -169,9 +169,22 @@ Actal cost = 80
 * Schedule variance = EV - PV = 60 - 100 = -40
 
 ## Cost Benifit Evaluation (Lecture 6)
+* **Return on investment (ROI) or also known as Accounting rate of return (ARR) 
+  = Net profit / total investment.** 
+  *Also useful for company individual choices
+  or features.*
+* **Net profit:** 
+  - total income - total cost
+* **Payback period:** 
+  - time to break even
 
-Net Profit: 
+```
+      average annual profit
+ROI =---------------------- X 100
+        total investment
 
-Payback period:
+        value in year t
+NPV =----------------------
+            (1 + r)^t
+```
 
-ROI:
