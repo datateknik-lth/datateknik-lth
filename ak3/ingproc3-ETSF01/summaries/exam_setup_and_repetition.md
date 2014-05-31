@@ -51,21 +51,55 @@ D
 
 ### PERT (Program Evaluation and Review Technique)
 
-Expected time (t\_e) = (minimum time (a) + 4 * medium time (m) + worst time (b) / 6
+Expected time (t\_e) = (minimum time (a) + 4 * medium time (m) + worst time (b)) / 6
 Standard deviation (S) = (worst time (b) - minimum time (a))/6
 
 ## Activity planning (WIP)
 
-Brrreakdown Structures
-WBS
-PBS
-Hybrid
- And GQM! DEFINE MEASUREMENTS!!!!!!!
- 
- 
-Precedence Networks
-Diff floats, ES, EF, LS, LF, Critical Paths!!!
 
+### Identifying activities
+
+  There are three approaches to identifying the activities or tasks:
+
+  - Activity based planning (**WBS**)
+   * Creating a list of all the activities that the project needs. Can be done by creating 
+     a **Work Breakdown Structure** (WBS, filled with verbs). This involves identifying the main tasks that are 
+     needed for the project and then breaking them down into lower-level tasks. Too great depth
+     will result in a large number of small tasks that will be diffcult to manage. Too shallow
+     project provides insufficient detail.
+
+  - Product-based approach (**PBS**)
+   * Consists of producing a **Product Breakdown Structure** (PBS, filled with nouns) and a **Product Flow Diagram** (PFD).
+     The PFD idicates for each product which other products are required as inputs. With the help of a 
+     PFD you can easily create an ordered list of activities by identifying the order of products and
+     which acitivies are needed for them.
+
+  - Hybrid approach
+   * The hybrid approach is a mix of both. Instead of creating a WBS that is based on the projects 
+     activities, you create a WBS that is based on the projects products.
+
+### GQM (Goal, Question, Metric) 
+
+* Conceptual level (goal) 
+ * A goal is defined for an object, for a variety of reasons, with respect to various models of quality, from various points of view and relative to a particular environment.
+* Operational level (question) 
+ * A set of questions is used to define models of the object of study and then focuses on that object to characterize the assessment or achievement of a specific goal.
+* Quantitative level (metric) 
+ * A set of metrics, based on the models, is associated with every question in order to answer it in a measurable way. 
+ 
+
+### Precedence Networks
+
+Some terms to consider using when describing precedence networks are:
+
+* Float 
+ * The amount of time between two activities which are dependant on eachother. (fråga adde om du inte fattar)
+* Earliest Start (ES)
+* Earliest Finish (EF)
+* Latest Start (LS)
+* Latest Finish (LF)
+* Critical Path
+  * The subset of activities which are dependant on eachother with 0 float time.
 
 ## SPI (Lecture 3)
 
@@ -82,8 +116,8 @@ PUMA = Planera Utför Mstudera Agera
 ```
          , - ~ ~ ~ - ,
      , '       |       ' ,
-   ,        -> |    Act    ,
-  ,    Study   |     |      ,
+   ,           |    Act    ,
+  ,    Study ->|     |      ,
  ,             |     v       ,
  ,-------------|-------------,
  ,       ^     |             ,
@@ -169,9 +203,22 @@ Actal cost = 80
 * Schedule variance = EV - PV = 60 - 100 = -40
 
 ## Cost Benifit Evaluation (Lecture 6)
+* **Return on investment (ROI) or also known as Accounting rate of return (ARR) 
+  = Net profit / total investment.** 
+  *Also useful for company individual choices
+  or features.*
+* **Net profit:** 
+  - total income - total cost
+* **Payback period:** 
+  - time to break even
 
-Net Profit: 
+```
+      average annual profit
+ROI =---------------------- X 100
+        total investment
 
-Payback period:
+        value in year t
+NPV =----------------------
+            (1 + r)^t
+```
 
-ROI:

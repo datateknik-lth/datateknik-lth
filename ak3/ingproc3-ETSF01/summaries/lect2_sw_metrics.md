@@ -66,6 +66,7 @@ All of these require decision support!
 * Data collected in diﬀerent projects should be comparable
 * Data collected should be reliable and of high quality
 * People do not want to collect data that is not used
+
 ### Solutions
 * Collect only data that you really need (but all data that you need)
 * Understand and record the context in which data is collected

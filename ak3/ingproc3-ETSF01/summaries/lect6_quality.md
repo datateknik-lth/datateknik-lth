@@ -12,16 +12,17 @@ achieving user goals
 people, business, software, property, environment etc
 * Satisfaction - happy users!
 
-### External Software Quality Characteristis
-* Functionality - does it satisfy user needs?
-* Reliability - can the software maintain its level
-of performance?
-* Usability - how easy is it to use?
-* Efficiency - relates to the physical resources
+### External Software Quality Characteristics
+**FEMURP**
+* **F** unctionality - does it satisfy user needs?
+* **E** fficiency - relates to the physical resources
 used during execution
-* Maintainability - relates to the effort needed to
+* **M** aintainability - relates to the effort needed to
 make changes to the software
-* Portability - how easy can it be moved to a
+* **U** sability - how easy is it to use?
+* **R** eliability - can the software maintain its level
+of performance?
+* **P** ortability - how easy can it be moved to a
 new environment?
 
 ## TQM - Total Quality Management

@@ -2,7 +2,7 @@
 ## Organisational Behaviour Research
 Aim: Explain people's behaviour
 * Theories á la "If A then B is likely to follow"
-* Dependencies, not causal relationships & formulaes such as e.g. Chemistry, Physics
+* Dependencies, not causal relationships & formulas such as e.g. Chemistry, Physics
 
 ## Taylorism
 Select the best people for the job (**!**), instruct them in the best methods,
@@ -29,21 +29,25 @@ though there were no change in work.
 * The capacity to exercise imagination and creative qualities distributed
 
 ## Herzberg
+
 * Hygiene or maintenance factors make you dissatisfied if they are not
-right e.g. pay, working conditions
-* Motivators make you feel the job is worthwhile e.g. a sense of achievement
+right, e.g. pay or working conditions
+* Motivators make you feel the job is worthwhile, e.g. a sense of achievement or the challenge of the work itself
 
 ## The Oldham-Hackman model
-Satisfaction of a job is based on five factors.
 
-* Meaningful
-  * Skill varierty: Multiple skills used in the exercise
-  * Task identiy: Ownership
-  * Task significance: Influence on others
-* Autonomy: Dicretion of the way that you do the job
-* Feedback: Information you get back rom the results of your work
+The satisfaction of a job is based on five factors, listed below. The first three factors (skill variety, task identity and task significance) make the job "meaningful" to the person who is doing it.
+
+1. Skill variety: The number of skills used in the exercise
+2. Task identiy: A sense of ownership of your work
+3. Task significance: Influence on others
+4. Autonomy: Responsibility, authority. Discretion about the way that you do the job
+5. Feedback: Information you get back about the results of your work
+
+According to Oldman and Hackman, activities should be designed so that staff follow the progress of a particular product and feel personally associated with it.
 
 ## Stress
+
 Stress is reduced with good project management. Manage the resources
 properly (no overtime), clear goals, proper monitor and control to
 avoid a crisis.
