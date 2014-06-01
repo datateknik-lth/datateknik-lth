@@ -34,7 +34,7 @@ Extentor är hårdvaluta eftersom de ibland försvinner från kurshemsidorna mel
 repot för att hålla reda på mindre viktiga filer, som föreläsningsbilder. Dessa
 blir snabbt både ointressanta och inaktuella och behöver därför inte finnas med
 i historiken. De kan också ta upp stor plats. För att ändå kunna ha dem på samma
-ställe som övriga resurser är [git-annex](#git-annex) en bra lösning.
+ställe som övriga resurser är [git-annex](#user-content-git-annex) en bra lösning.
 
 Katalogstruktur
 ---------------
