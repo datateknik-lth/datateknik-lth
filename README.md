@@ -34,7 +34,9 @@ Extentor är hårdvaluta eftersom de ibland försvinner från kurshemsidorna mel
 repot för att hålla reda på mindre viktiga filer, som föreläsningsbilder. Dessa
 blir snabbt både ointressanta och inaktuella och behöver därför inte finnas med
 i historiken. De kan också ta upp stor plats. För att ändå kunna ha dem på samma
-ställe som övriga resurser är [git-annex](#user-content-git-annex) en bra lösning.
+ställe som övriga resurser är [git-annex](#user-content-git-annex) en bra
+lösning. Se [ak3/ingproc3-ETSF01/lectures](ak3/ingproc3-ETSF01/lectures) för ett
+exempel.
 
 Katalogstruktur
 ---------------
@@ -57,6 +59,28 @@ git-annex
 ---------
 
 [git-annex][] gör det möjligt att spåra filer med git, utan att checka in deras
-innehåll i git.
+innehåll i git. Namnet på filen, vilken katalog den ligger i, dess storlek och
+checksumma lagras i form av en [symbolisk länk][wp-symlink] som pekar in i
+repots `.git`-katalog. Information om var filens innehåll finns tillgänglig
+lagras i en separat branch `git-annex`. Den kan exempelvis finnas på en webb-
+eller SSH-server, i en Google Drive eller på en extern hårddisk. Metadatan
+lagras alltså här, på Github, medan datan lagras någon annanstans.
+
+Filen kan när som helst hämtas med kommandot `git annex get <filnamn>`. När den
+inte längre behövs kan den raderas med `git annex drop <filnamn>`. git-annex
+kontrollerar då att den fortfarande är tillgänglig någon annanstans så att den
+kan hämtas igen senare.
 
 [git-annex]: https://git-annex.branchable.com/
+[wp-symlink]: https://en.wikipedia.org/wiki/Symbolic_link "Symbolic link - Wikipedia, the free encyclopedia"
+
+### Installation
+
+git-annex är skrivet i Haskell. För den som inte tycker att det är ett nöje i
+sig att kompilera Haskell rekommenderas att använda en färdigbyggd binär. På
+[git-annex webbplats][git-annex] finns binärer för Linux, Windows och Mac OS X.
+För Debian och Ubuntu finns git-annex i förråden och kan installeras med
+`apt-get install git-annex`. För Arch Linux rekommenderas paketet
+[git-annex-bin från AUR][aur-git-annex-bin].
+
+[aur-git-annex-bin]: https://aur.archlinux.org/packages/git-annex-bin/ "AUR (en) - git-annex-bin"
