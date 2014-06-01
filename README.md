@@ -27,8 +27,7 @@ källkoden finns för att andra ska kunna uppdatera och förbättra innehållet.
 Samtidigt blir det enklare att läsa igenom det andra skrivit om det finns
 färdigrenderade PDF:er så att man slipper ladda ner och kompilera själv.
 
-[wp-markdown]: https://en.wikipedia.org/wiki/Markdown "Markdown - Wikipedia, the
-free encyclopedia"
+[wp-markdown]: https://en.wikipedia.org/wiki/Markdown "Markdown - Wikipedia, the free encyclopedia"
 
 Katalogstruktur
 ---------------
