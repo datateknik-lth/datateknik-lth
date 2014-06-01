@@ -1,8 +1,8 @@
 Översättning mellan upplaga 5 och 4
 
-Detta dokument kan visas online på https://rawgithub.com/felixmulder/datateknik-lth/master/ak3/fysik-FAFF25/optik/upplaga4ovningsuppgifter.html
+Detta dokument kan visas online på https://rawgit.com/datateknik-lth/datateknik-lth/master/ak3/fysik-FAFF25/fotonik/upplaga4ovningsuppgifter.html
 
-Upplägg: 5:e till vänster, 4:e till höger
+Femte upplagan till vänster, fjärde till höger.
 
 * Kapitel 3
 
