@@ -1,0 +1,15 @@
+* Condition numbers
+
+The *matrix norm* of an /n x n/ matrix /A/ is defined as
+
+\begin{equation}
+\left|\left| A \right|\right|_\infty = \text{maximum absolute row sum} .
+\end{equation}
+
+The condition number of the /n x n/ matrix /A/ is
+
+\begin{equation}
+\text{cond}(A) = \left|\left|A\right|\right| \cdot \left|\left|A^{-1}\right|\right| .
+\end{equation}
+
+Ref: Sauer, p. 88.
