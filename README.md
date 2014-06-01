@@ -43,17 +43,16 @@ Katalogstruktur
 
 Strukturen är enligt följande
 
- ```
- /årskurs/kursnamn-kurskod/extentor
- /årskurs/kursnamn-kurskod/sammanfattningar
- /årskurs/kursnamn-kurskod/övrigt
- ```
+    /årskurs/kursnamn-KURSKOD/extentor
+    /årskurs/kursnamn-KURSKOD/sammanfattningar
 
 Sökvägar bestående av endast gemener (små bokstäver) är alltså att föredra, då
-de är lättare att skriva. Om det finns en vedertagen förkortning för kursnamnet
-(endim, algodat, digsigmm, matstat, mm.) kan den med fördel användas istället
-för att skriva ut hela namnet. Undvik t.ex. att skriva ut *"Ingenjörsprocessen
-för programvaruutveckling -- ekonomi och kvalitet"*.
+de är lättare att skriva. Undantaget är kurskoden som skrivs med versaler av
+historiska skäl. Om det finns en vedertagen förkortning för kursnamnet (endim,
+algodat, digsigmm, matstat, mm.) kan den med fördel användas istället för att
+skriva ut hela namnet. Undvik t.ex. att skriva ut *"Ingenjörsprocessen för
+programvaruutveckling -- ekonomi och kvalitet"*. Svenska och engelska blandas
+friskt tills konsensus att använda det ena eller det andra språket uppnåtts.
 
 git-annex
 ---------
