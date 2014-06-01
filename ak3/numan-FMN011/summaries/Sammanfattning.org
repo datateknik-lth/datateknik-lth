@@ -1,4 +1,16 @@
-* Condition numbers
+* Error magnification and condition number
+
+Relative forward (solution) error:
+
+\begin{displaymath}
+  \frac{\lvert\lvert x - x_{\text{approx}} \rvert\rvert_\infty}{\lvert\lvert x \rvert\rvert_\infty}
+\end{displaymath}
+
+Relative backward (residual) error:
+
+\begin{displaymath}
+\frac{\lvert\lvert r \rvert\rvert_\infty}{\lvert\lvert b \rvert\rvert_\infty}
+\end{displaymath}
 
 The *matrix norm* of an /n x n/ matrix /A/ is defined as
 
