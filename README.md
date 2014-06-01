@@ -18,6 +18,18 @@ Regler
     moderna Linuxdistributioner. Använder man Windows eller Mac OS X kan man
     behöva ställa in sin texteditor till att använda UTF-8.
 
+Innehåll
+--------
+
+Om du skrivit ett dokument i t.ex. [Markdown][wp-markdown] eller LaTeX och
+kompilerat till PDF så committa gärna in båda filerna. Det är viktigt att
+källkoden finns för att andra ska kunna uppdatera och förbättra innehållet.
+Samtidigt blir det enklare att läsa igenom det andra skrivit om det finns
+färdigrenderade PDF:er så att man slipper ladda ner och kompilera själv.
+
+[wp-markdown]: https://en.wikipedia.org/wiki/Markdown "Markdown - Wikipedia, the
+free encyclopedia"
+
 Katalogstruktur
 ---------------
 
