@@ -358,7 +358,7 @@ in which to execute the different tasks. The table repeats cyclically.
 
 The scheduler simply starts the first task in the calendar (table), awaits its
 completion, waits until it's time to start the next task, waits for its
-completion, and so on. The reason it cannoot start executing the second one
+completion, and so on. The reason it cannot start executing the second one
 immediately is that the schedule has been calculated based on worst running
 times. Making this rather ineffective but safe. In a slightly more complicated
 case of preemptive scheduling, the schedule also contains how long each task is
