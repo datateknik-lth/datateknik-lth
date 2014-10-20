@@ -1,0 +1,516 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
+
+\usepackage[utf8x]{inputenc}
+
+\usepackage{fancyvrb}
+\usepackage{amssymb}
+
+% Minskar margins
+\usepackage{fullpage}
+
+
+\title{Programmering, minneshjälp för den glömske}
+\author{Philip Larsson}
+\date{2013--02--07}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+
+\begin{document}
+\maketitle
+
+
+
+\section{Programmering - bra att veta}
+\subsection{Inmatning}
+Inmatning sker med klassen \verb+Scanner+. \verb+Scanner+ hör till paketet \verb+java.util+ så detta måste importeras.
+
+\begin{lstlisting} 
+// Read/scan from keyboard
+Scanner s = new Scanner(System.in);
+
+// Read next int to nand next string to str
+int n = s.nextInt();
+String str = s.nextLine();
+\end{lstlisting}
+Vi kan koppla Scanner objektet till att läsa in från textfiler istället
+\begin{lstlisting}
+Scanner sf = new Scanner(new File("in data.txt"));
+\end{lstlisting}
+Men, då vi använder anropet \verb+new File+ måste vi samtidigt använda Javas felhanteringsmekanism.
+\begin{lstlisting}
+Scanner sf = null;
+try{
+	sf = new Scanner(new File("in data.txt"));
+} catch (FileNotFoundException e) {
+	System.err.println("Could not open file!");
+	System.exit(1);
+}
+\end{lstlisting}	
+
+\subsection{Random}
+För att använda klassen \verb+Random+ måste vi importera:
+\begin{lstlisting}
+import java.util.Random;
+\end{lstlisting}
+Vi använder random på följande sätt:
+\begin{lstlisting}
+// skapar en slumptalsgenerator rng 
+Random rng = new Random();	
+
+// slumpar tal 0...5 + 1 
+int dice = rng.nextInt(6) + 1;	
+\end{lstlisting}
+
+\subsection{Formatera utskrifter med printf}
+Om man ska skriva ut blandat text och värden kan det vara smidigare att använda printf.
+\begin{lstlisting}
+int a = 13;
+int b = 37;
+System.out.printf("The value of a is %d and the value of b is %d", a, b);
+\end{lstlisting}
+\emph{\%d} är en styrkod i exemplet ovan.
+Men det finns flera:
+\begin{itemize}
+\item{ \%[bredd]d - heltal, där bredd är antal positioner som talet ska skrivas i. Utelämnas bredd skrivs talet ut i så många positioner som behövs}
+\item{ \%[bredd].[antal decimaler]f - reella tal (eng floating number)}
+\item{ \%[bredd]s - strängar}
+\end{itemize}
+\begin{lstlisting}
+double pi = Math.PI;
+System.out.printf("Pi = %.3f ", pi);
+
+String firstName = "Leonardo";
+System.out.printf("First name : %s", firstName);
+\end{lstlisting}
+\subsection{Foreach loop}
+\begin{lstlisting}
+ArrayList<Person> pList = new ArrayList<Person>();
+for (Person p : pList) {
+	System.out.println(p.getName());
+}
+\end{lstlisting} 
+Läses som \emph{för varje Person p i pList}.
+
+\subsection{compareTo}
+\begin{lstlisting}
+int compareTo(String other)
+denna.compareTo(other);
+\end{lstlisting} 
+Jämför strängen med en annan sträng, returnerar:
+\begin{itemize}
+\item{ett negativt heltal om denna sträng kommer före den andra i alfabetisk ordning}
+\item{0 om då båda strängarna är lika}
+\item{ett positivt heltal om denna sträng kommer efter den andra i alfabetisk ordning}
+\end{itemize}
+\verb+other:+ den sträng vi jämför med.
+\subsection{Stringbuilder}
+Objekt av klassen \verb+String+ är oföränderliga - det innebär att det saknas operationer för exempelvis ändring, insättning och borttagning av tecken inuti strängen. Dessa operationer finns istället i klassen StringBuilder, som alltså beskriver en sträng som vi kan ändra i. \\
+Nedan visas ett par metoder i StringBuilder:
+\begin{lstlisting}
+class StringBuilder:
+/* Creates a new, empty StringBuilder */
+	String Builder()
+
+/*Creates a new StringBuilder with the same content as a given String.
+s: the string this StringBuilder shall include from the beginning. * /
+	StringBuilder(String s)
+
+/ * Extends the string with a string. 
+str: the string to be added * /
+	StringBuilder append(String str)
+	
+/ * Removes the characters inside the string. 
+start: index of the first character to be deleted, 
+end: index of the character after the last character to be deleted. * /
+	StringBuilder delete(int start, int end)
+	
+\end{lstlisting} 
+Exempel:
+\begin{lstlisting}
+String firstName = "Bosse";
+StringBuilder sb = new StringBuilder(firstName);
+sb.append(" Bus");
+String name = sb.toString();
+\end{lstlisting} 
+\subsection{StringTokenizer}
+StringTokenizer används för att plocka ut delar av en sträng. 
+För att använda StringTokenizer måste vi importera \verb+java.util+.
+
+\begin{lstlisting}
+class StringTokenizer:
+
+/ * Creates a StringTokenizer that pick out the parts of a given string. 
+* The parts in the string is assumed separated by spaces and tabs. 
+* s: the string that we must dismantle. * /
+	StringTokenizer(String s)
+
+/ * Creates a StringTokenizer that pick out the parts of a given string. 
+* s: the string that we will dismantle, 
+* delimiters: the character that separates the string parts. * /
+	StringTokenizer(String s, String delimiters)
+
+/ * Counts how many parts are left in the current string. * /
+	int countTokens()
+	
+/ * Determine if there are more elements in the current string. * /
+	boolean hasMoreTokens()
+	
+ /* Returns the next part of the current string, provides execution error if there are no more parts in the string. * /
+	String nextToken()
+\end{lstlisting} 
+Exempel:
+\begin{lstlisting}
+/*Plockar ut orden ur en String */
+String s = "I'm gonna pop som tags";
+StringTokenizer st = new StringTokenizer(s);
+System.out.println("There is " + st.countTokens() + " words at this line.");
+while (st.hasMoreTokens()) {
+	System.out.println(st.nextToken());
+}
+\end{lstlisting} 
+
+\subsection{Skyddsnivåer}
+\begin{itemize}
+\item{ \verb+public:+ Attribut och metoder som vi skriver \verb+public+ framför kan anropas och användas varifrån som helst. }
+\item{ \verb+Ingen markering:+ Attribut och metoder som vi inte skriver något framför kan bara anropas och användas av andra klasser i samma katalog. }
+\item{ \verb+private:+ Attribut och metoder som vi skriver \verb+private+ framför kan bara anropas och användas inifrån den egna klassen. }
+\item{ \verb+protected:+ Klassen själv, andra klasser i samma paket, och this i subklasser har tillgång till dem.}
+\end{itemize}
+
+\subsection{Vektorer}
+En vektor är ett slags objekt med ett bestämt antal värde, där varje värde har ett givet index.
+En vektor har alltid en bestämd storlek, och denna anges när vi skapar den. 
+\begin{lstlisting}
+String[] names;
+names = new String[5];
+\end{lstlisting}
+Listor är i allmänhet betydligt enklare att arbeta med, men vi har dock själva större kontroll på vad som händer i datorn när vi använder vektorer. \\
+Om vi i förväg vet vilka värden som skall ligga i en vektor så kan vi ge den sitt startvärde direkt.
+\begin{lstlisting}
+String[] workDays = {"mon", "tue", "wed", "thu", "fri"};
+\end{lstlisting}
+\subsection{Vektorer med flera index - matriser}
+Vi kan ha vektorer med mer än ett index, en matris!
+\begin{lstlisting}
+double[][] value = new double[3][3];
+\end{lstlisting}
+
+\subsection{Överskuggning och Överlagring}
+\begin{itemize}
+\item{ Överskuggning innebär att vi ersätter en gammal (ärvd) operation med en ny som har samma signatur - vi får alltså ingen ny operation. }
+\item{ Överlagring innebär att vi lägger till en ny operation som har samma namn som en ärvd operation, men annan signatur. (t.ex olika antal parametrar eller olika typer på sina parametrar) }
+\end{itemize}
+Vi kan även använda den överskuggade operationen när vi överskuggar med hjälp av \verb+super+. 
+\begin{lstlisting}
+public void forward(int n){
+	super.forward(n);
+	count += n;
+}
+\end{lstlisting}
+Vi skriver \verb+super.forward(n)+ för att få kompilatorn att förstå att det är operationen \verb+forward(int)+ i superklassen som skall anropas. Om vi hade skrivit \verb+forward(int)+ hade vi anropat oss själva - sådana anrop kallas rekursiva och är väldigt användbara i många sammanhang, men här hade det bara inneburit at operationen hade anropat sig själv tills minnet tar slut (och vi får \verb+java.lang.StackOverflowError+). 
+
+\subsection{Abstrakta klasser}
+En klass kan ärva från en abstrakt klass precis på samma sätt som man ärver från andra klasser, men en abstrakt klass skiljer sig lite: 
+\begin{itemize}
+\item{Man kan inte skapa ett objekt av den abstrakta klassen, om någon försöker så får denna kompileringsfel.}
+\item{En abstrakt klass kan ha abstrakta metoder\footnote{En abstrakt metod är en metod utan implementation, och de måste implementeras av subklasser.}}
+\end{itemize}
+Observera att bara kan ärva (\emph{extends}) ett objekt \footnote{Medans man kan implementera flera interface}. \\
+Det finns flera poänger med abstrakta klasser:
+\begin{itemize}
+\item{ Vi behöver inte längre skriva någon kod i de operationer som vi ändå inte kan implementera på något vettigt sätt. }
+\item{ Den som ärver klassen upptäcker om någon av de abstrakta operationerna har glömts bort eller deklarerats felaktigt - även detta skulle ge upphov till kompileringsfel. }
+\end{itemize}
+\begin{lstlisting}
+abstract class Bank {
+	// Variabler
+	private double cash;
+	
+	// Abstrakta metoder
+	public abstract void setup();
+	public abstract int getNbrOfAccounts();
+	public abstract string getBankName();
+	
+	// Vanliga metoder
+	public double getCash() {
+		return cash;
+	}
+}
+\end{lstlisting}
+\subsection{Exceptions}
+Det finns två slag av Exceptions:
+\begin{itemize}
+\item{Unchecked Exceptions Ð används då felet beror på programmeraren \\
+Ex: NullPointerException eller ArrayIndexOutOfBoundsException
+}
+\item{Checked Exceptions Ð används då felet inte beror på programmeraren \\
+Ex: FileNotFoundException om man försöker öppna en fil som inte finns
+}
+\end{itemize}
+När man anropar en metod som genererar en checked exception måste man ta hand om det. Normalt fångar man det i en try-catch-sats:
+\begin{lstlisting}
+   Scanner scan = null;
+   try {
+      // open file with file name fileName
+      scan = new Scanner(new File(fileName));
+   } catch (FileNotFoundException e) {
+      System.err.println("Couldn't open file " + fileName);
+      System.exit(1);
+   }
+    ... use scan ...
+\end{lstlisting}
+Om exception inträffar, avbryts exekveringen av satserna i try-blocket och satserna i catch-blocket exekveras.
+\\ \\
+I satsen \verb+catch(Exception e)+ kan t.ex. följande metoder användas för att få mer information:
+\begin{itemize}
+\item{ \verb+e.printStackTrace();+ som skriver ut information om raden där felet inträffat och den/de metodanrop som lett till denna rad.}
+\item{ \verb+e.getMessage();+ som returnerar en sträng med meddelande om felets art.}
+\end{itemize}
+Generera egna exceptions:
+\begin{lstlisting}
+  throw new IllegalArgumentException("amount to deposit < 0");
+\end{lstlisting}
+Mönstret är: 
+\begin{lstlisting}
+  throw new ExceptionClass(); 
+  throw new ExceptionClass(message); 
+\end{lstlisting}
+Detta gör att exception-objekt skapas, exekvering av metoden avbryts. Javasystemet letar efter fångade catch-block.
+\\ \\
+Exempel:
+\begin{lstlisting}
+/**
+ * Deposits the specified amount.
+ * pre: The specified amount is >= 0
+ * post: The specified amount is added to balance
+ * @param n The amount to deposit
+ * @throws IllegalArgumentException if the specified amount is < 0
+ */
+public void deposit(int n) {
+   if (n < 0) {
+      throw new IllegalArgumentException("amount to deposit < 0");
+   }
+   balance =  balance + n;
+}
+\end{lstlisting}
+\section{Sökning}
+\subsection{Linjärsökning}
+\begin{lstlisting}
+int pos;
+for (pos = 0; pos < n; pos++) {
+	if (v[pos] == value) {
+		break;
+	}
+}
+\end{lstlisting}
+Denna sökmetod kallas linjärsökning eftersom vi söker stegvis genom vektorn, element för element. I värsta fall, dvs då det sökta elementet antingen inte finns, eller finns sist i vektorn, måste vi söka igenom hela vektorn. Skulle det sökta värdet finnas behöver vi göra i genomsnitt n/2 jämförelser. Söktiden är linjär, eller $O(n)$.
+
+\subsection{Binärsökning}
+Om den vektor vi söker i är sorterad kan vi skriva betydligt effektivare algoritmer än den ovan. Ett exempel är att ''gissa ett tal'' och sedan gaffla sig fram. Vi börjar i mitten och delar successivt in återstående alternativ i så lika delar som möjligt. Vi inför två variabler, \verb+min+ och \verb+max+ för att hålla reda på inom vilka indexgränser det sökta värdet kan finnas. Därefter bestämmer vi mittpunkten i intervaller, \verb+mid+, och undersöker det värdet som ligger där. Vi får tre fall: \\
+\begin{itemize}
+\item{Värdet i mittpunkten är större än det största värdet. Vi kan då konstatera att det sökta värdet måste finnas mellan \verb+min+ och \verb+min+ -1, så vi ändrar \verb+max+ till \verb+mid+ -1 och gör ett nytt försök.}
+\item{Värdet i mittpunkten är mindre än det sökta värdet. Vi vet då att värdet måste finnas mellan \verb+mid+ +1 och \verb+max+, så vi ändrar \verb+min+ till \verb+mid+ +1 och gör ett nytt försök.} 
+\item{Vi hittar det sökta värdet, vilket gör att vi kan avbryta sökningen och konstatera att värdet finns i index \verb+mid+.}
+\end{itemize}
+
+Exempel:
+\begin{lstlisting}
+public static int binarySearch(int[] a, int n, int value){
+	int min = 0;
+	int max = n-1;
+	while (min <= max) {
+		int mid = (min+max)/2;
+		if (a[mid] > value){
+			max = mid-1;
+		} else if (a[mid] < value) {
+			min = mid + 1;
+		} else {
+			return mid;
+		}
+	}
+return -1;
+}
+\end{lstlisting}
+Om vi i varje steg eliminerar hälften av de återstående elementen och från början har $ n \approx 2^k$ element i vektorn behövs $k$ varv för att vi bara skall ha en möjlig kandidat kvar. Det största antalet varv i loppen blir därför proportionellt mot $log_2 n$ (man brukar skriva $O(log n))$, en avsevärd förbättring jämfört med linjärsökning. \\
+Skillnaden är inte så stor vid sökningar i mindre vektorer, men om vi skulle söka efter en person i en vektor med hela svenska befolkningen skulle linjärsökning kräva i snitt $ 4.500.000$ jämförelser, medan det med binärsökning skulle räcka med mindre än 25 jämförelser. 
+\section{Sortering}
+I Java finns det ett smidigt sätt att sortera vektorer:
+\begin{lstlisting}
+Arrays.sort(v);
+\end{lstlisting}
+om vi skall sortera hela heltalsvektorn v. 
+\subsection{Urvalssortering}
+Den kanske enklaste metoden att sortera är att börja med att leta upp det minsta värdet i vektorn och sätta in det först. Därefter letar vi upp det näst minsta elementet (som är det minsta av de återstående elementen) och sätter in det näst först, och så fortsätter vi att leta upp och sätta in det tredje minsta, fjärde minsta, etc, tills alla element är i rätt ordning. 
+\begin{lstlisting}
+public static void selectionSort(int[] a, int n) {
+	for (int i = 0; i < n; i++) {
+		int smallest = i;
+		for (int k = i+1; k < n; k++) {
+			if (a[k] < a[smallest]) {
+				smallest = k;
+			}
+		}
+		int tmp = a[i];
+		a[i] = a[smallest];
+		a[smallest] = tmp;
+	}
+}
+\end{lstlisting}
+För att få ett mått på hur effektiv denna metod är kan vi räkna antalet jämförelser som behövs för att sortera en vektor med $n$ tal. I första varvet i den yttre for-loopen gör vi $ n - 1$ jämförelser (de görs inuti den inre for-loopen), i det andra varvet i den yttre for-loopen gör vi $n - 2$ jämförelser, etc. Totalt får vi: 
+\begin{center}
+$ T(n) = (n -1) + (n-2) + \dots + 2 + 1 = \frac{n(n-1)}{2} = O(n^2)$
+\end{center}
+jämförelser. dvs om vi dubblar antalet element i vektorn så krävs det ungefär fyra gånger fler jämförelser för att sortera elementen. 
+\subsection{Bubbelsortering}
+En annan sorteringsmetod är bubbelsortering. Den är inte särskilt effektiv men den är ganska lätt att förstå och tillhör allmänbildningen. \\
+Metoden bygger på att vi upprepade gånger går igenom vektorn bakifrån och låter tal som är mindre än sina föregångare byta plats med dessa. När vi i något var inte längre behöver byta plats på två element är vi färdiga. I varje varv kan vi gå ett steg kortare eftersom de minsta talen efterhand samlas i vektorns början. 
+\section{Lista, stack och kö}
+\subsection{Listor}
+En lista är en ordnad följd av element.
+\begin{itemize}
+\item{Det finns en före-efter-relation mellan elementen}
+\item{Begrepp som "första element i listan", "efterföljaren till visst element i listan" är meningsfulla. Det finns alltså ett positionsbegrepp.}
+\end{itemize}
+Vi kan skapa en Lista med interfacet list:
+\begin{lstlisting}
+List<String> names;
+\end{lstlisting}
+och på så vis vänta med att välja vilken typ av lista vi vill ha.
+Två exempel på olika klasser som implementerar List.
+\begin{itemize}
+\item{ \verb+ArrayList+, som är särskilt bra på att snabbt hämta värden med get-operationen. Insättningar bör man bara göra sist i listan, då insättningar i andra positioner orsaker flyttningar av element.}
+\item{ \verb+LinkedList+, som är särskilt bra på att sätta in och ta bort element i början av listan.}
+\end{itemize}
+Vi skapar en lista såhär:
+\begin{lstlisting}
+List<String> names = new ArrayList<String>();
+\end{lstlisting}
+Observera:
+\begin{lstlisting}
+// works but considered ugly:
+ArrayList<String> names = new ArrayList<String>();
+
+// better! :
+List<String> names = new ArrayList<String>();
+\end{lstlisting}
+
+\subsection{Kö}
+En kö kallas även FIFO-lista. First In First Out. \\
+Insättningar göras alltid sist i följden, och bortagning avser alltid första elementet. \\
+Analogi: En (vanlig) kö när man handlar mat på ICA...
+
+\subsection{Stack}
+En stack kallas även LIFO-lista. Last In First Out. \\
+Operationer sker på toppen av stacken, dvs. nya element läggs till längst upp, och element tas bort längst upp. \\
+Analogi: En tallriks dispenser, en hög med papper. \\
+
+
+\section{Bra att veta}
+
+\subsection{Klassen Object}
+Det finns en klass \verb+Object+, som är ''alla klassers moder'', om vi inte uttryckligen ärver någon annan klass så ärver vi automatiskt klassen \verb+Object+. \\
+Klassen \verb+Object+ innehåller inte särskilt mycket av intresse, men följande kan vara bra att känna till:
+\begin{itemize}
+\item{toString \\ \\
+	\verb+public String toString()+ \\ \\
+	ger en sträng som beskriver objektet. Denna operation anropas automatiskt om vi skulle försöka skriva ut ett objekt, och implementationen i klassen \verb+Object+ skriver ut klassnamnet och ett heltal (objektets hash-kod)}
+
+\item{Metoden \verb+equals+ används för att jämföra om två objekt är lika. \\ \\
+	\verb+public boolean equals(Object obj);+ \\ \\
+	Metoden returnerar true om och endast om de jämföra objekten är identiska. Om man istället vill att innehållet inuti objekten ska jämföras måste man skugga \verb+equals+.
+	\begin{lstlisting}
+public boolean equals(Object obj){
+	if (obj instanceof Person){
+		return idNbr == ((Person) obj).idNbr;
+	}else{
+		return false;
+	}
+}
+	\end{lstlisting}
+	\begin{itemize}
+	\item{Observera att parametern till \verb+equals+ måste vara av typen \verb+Object+, annars blir det inte skuggning. Därför måste också typomvandlig till Person ske när man ska använda obj:s idNbr. }
+	\item{Uttrycket \verb+obj instanceof Person+ returnerar true om obj:s typ är av Person eller någon subklass till Person.}
+	\item{Uttrycket \verb+obj instanceof Person+ returnerar false om obj har värdet null.}
+	\end{itemize}
+	}
+
+\item{Förutom operationerna ovan innehåller även \verb+Object+ en operation \\ \\
+	\verb+int hasCode()+ \\ \\
+		som ger en så kallad hash-kod, dvs ett slags numeriskt fingeravtryck för ett objekt. Detta innebär att alla objekt har en hashkod.}
+	
+\end{itemize}
+
+
+\subsection{Interfaces}
+Ett interface(svenska: gränssnitt) är som ett skal med metoder som den som implementerar måste använda. En klass kan implementera flera interface.
+\begin{lstlisting}
+public interface InterfaceName{
+	//here is public abstract methods
+}
+\end{lstlisting}
+\begin{lstlisting}
+public class ClassName implements InterfaceName{
+	// attributs, methods, constructor as usual, but all methods in InterfaceName must be included
+}
+\end{lstlisting}
+Om det skiljer mycket mellan metoderna i klasserna så använd interface istället för en superklass.
+
+
+\subsection{Kodningskonventioner}
+Enligt Javas kodningskonvention skall man skriva klasser med stor begynnelsebokstav, ex namnet \verb+Account+ istället för \verb+account+. \\ \\
+Av historiska skäl väljer man i allmänhet att skriva konstanter med stora bokstäver. 
+\begin{lstlisting}
+public final int GOLDEN_NUMBER = 42;
+\end{lstlisting}
+
+\subsection{iterator}
+\begin{lstlisting}
+ArrayList a1 = new ArrayList();
+Iterator itr = a1.iterator();
+\end{lstlisting}
+
+\subsection{Principer}
+Klasser och objekt gör det möjligt för oss att skriva våra program så att de blir lättare att förstå än om vi bara använder ett huvudprogram och underprogram - detta är särskilt viktigt i större programsystem. att utnyttja klasser och objekt på rätt sätt är dock långtifrån trivialt, och mycket har skrivits om hur man gör.
+\begin{itemize}
+\item{Cohesion, som talar om hur väl en klass eller ett paket (ofta använder man namnet 'modul') hänger ihop - en klass eller ett paket som gör precis en sak har hög kohesion, medan en klass eller ett paket som har flera olika relaterade uppgifter har låg cohesion. \\
+Våra program blir betydligt enklare att förstå, modifiera och återanvända om de ingående klasserna och paketen har hög kohesion, dvs om de gör en eller några få saker vardera.}
+
+\item{Coupling, som anger hur en klass beror av andra klasser. I ett system med låg coupling kommunicerar objekt med hjälp av enkla protokoll (specifikationer), de varken kan eller behöver känna till det inre tillståndet hos varandra. \\ \\
+Ett system med låg coupling gör det möjligt för oss att ändra i en klass utan att andra klasser påverkas i någon större utsträckning, i ett system med hög coupling kan däremot en ändring i en klass ge upphov till en lång kedja av ändringar i andra klasser. Andra problem med låg coupling är att det är svårt att förstå vare enskild klass utan att förstå alla de klasser som den interagerar med, och dessutom att det är svårt att testa individuella klasser. }
+\end{itemize}
+När vi skriver lite större program bör vi sträva efter att ha hög kohesion och låg coupling - ofta får vi automatiskt låg coupling om vi har hög kohesion. Att program ibland blir lite effektivare om vi ökar graden av coupling motiverar sällan den ökade komplexiteten som det ger upphov till. \\
+Det finns ett antal principer som kan hjälpa oss att ge våra program bättre struktur:
+\begin{itemize}
+\item{Separation-of-concerns: När vi designar våra system bör vi försöka dela ner dem i mindre delar (klasser), där de olika delarna har så lite gemensam funktionalitet som möjligt - detta är ett sätt att öka de ingående delarnas cohesion.}
+\item{Single-responsibility: En klass skall helst bars ha en enda, väldefinierad uppgift, och alla dess operationer bör ha med denna uppgift att göra. För varje ny uppgift en klass får ökar risken att klassen behöver ändras - genom att hålla antalet ansvarsområden för en klass nere ökar vi dess cohesion. }
+\item{Information-hiding: Om vi gör det omöjligt att se det inre av våra klasser (genom att vi \verb+private+-deklarerar attribut och lämpliga operationer) så riskerar ingen annan att koppla sin klass för hårt till det inre tillståndet i vår klass - vi tvingar alltså på användaren lägre coupling.}
+\item{Open-closed principle: En klass bör vara öppen för utvidgningar, men stängd för ändringar. Detta innebär bland annat att vi inte bör lägga till nya operationer i en klass som redan används, utan att vi stället utvidgar den till nya subklasser. Ofta designar vi våra grundläggande klasser för att våra så allmänna som möjligt (gärna abstrakta), och använder överskuggning för att få objekt av subklasser att bete sig annorlunda än objekt av den ursprungliga klassen.}
+\end{itemize}
+
+
+\end{document}
