@@ -1,0 +1,62 @@
+\RequirePackage{xkeyval}
+\RequirePackage{tikz}
+\RequirePackage{amssymb}
+
+\define@key{boxedtheorem}{titlecolor}{\def\titlecolor{#1}}
+\define@key{boxedtheorem}{titlebackground}{\def\titlebackground{#1}}
+\define@key{boxedtheorem}{background}{\def\background{#1}}
+\define@key{boxedtheorem}{titleboxcolor}{\def\titleboxcolor{#1}}
+\define@key{boxedtheorem}{boxcolor}{\def\boxcolor{#1}}
+\define@key{boxedtheorem}{thcounter}{\def\thcounter{#1}}
+\define@key{boxedtheorem}{size}{\def\size{#1}}
+\presetkeys{boxedtheorem}{titlecolor = black, titlebackground = white, background = white,%
+                         titleboxcolor = black, boxcolor = black, thcounter=, size = .9\textwidth}{}
+
+\newcommand{\couleurs}[1][]{%
+    \setkeys{boxedtheorem}{#1}
+    \tikzstyle{fancytitle} =[draw=\titleboxcolor, rounded corners, fill=\titlebackground,
+                            text= \titlecolor]
+    \tikzstyle{mybox} = [draw=\boxcolor, fill=\background, very thick,
+                        rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+}
+
+
+%Commande générique pour faire un joli encadré
+\newsavebox{\boiboite}
+\newcommand{\titre}{Titre}
+\newenvironment{boite}[2][]%
+    {%
+    \renewcommand{\titre}{#2}
+    \couleurs[#1]
+    \begin{lrbox}{\boiboite}%
+     \begin{minipage}[!h]{\size}
+    }%
+    {%
+     \end{minipage}
+    \end{lrbox}
+    \begin{center}
+    \begin{tikzpicture}
+    \node [mybox] (box){\usebox{\boiboite}};
+    \node[fancytitle, right=10pt] at (box.north west) {\titre};
+    \end{tikzpicture}
+    \end{center}
+    }
+
+
+
+
+\newcommand{\newboxedtheorem}[4][]{%
+    \couleurs[#1]
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ] } } { }%
+    }
+    \newenvironment{#2}[1][]{%
+    \@ifnotempty{#4}{\refstepcounter{#4}}
+    \begin{boite}[#1]{\textbf{#3\@ifnotempty{#4}{ \csname the#4\endcsname}}\@ifnotempty{##1}{
+    (##1)}\textbf{.}}
+    }%
+    {%
+    \end{boite}
+    }
+}
