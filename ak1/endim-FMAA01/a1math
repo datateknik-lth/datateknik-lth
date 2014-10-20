@@ -1,0 +1,455 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
+\usepackage[utf8x]{inputenc}
+
+
+\usepackage{fancyvrb}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+%\usepackage[section]{placeins}
+
+\title{A1:an Repetition}
+\author{Philip Larsson}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+
+\section{Kapitel 1. Grundläggande begrepp och terminologi}
+\subsection{Delmängd}
+Om ändpunkterna ska räknas med används symbolerna [ ] och raka sträck $\vdash -- \dashv$. \\
+Om ändpunkterna inte skall medräknas används ] [ och rundade sträck typ $\subset -- \supset$.
+\subsection{Talsystem}
+\begin{itemize}
+\item{$\mathbb{Z}$ Heltal $\dots , -2, -1, 0, 1, 2, \dots$}
+\item{$\mathbb{Q}$ Rationella tal. Bråktal/kvoter ex $\frac{2}{3}$. \\
+Heltal är också rationella eftersom $5 = \frac{5}{1}$.}
+\item{$\mathbb{R}$ Reella Tal. Alla tal som kan skrivas på en tallinje. Tal som $\pi$ och $\sqrt{2}$ samt även alla heltal och rationella tal.}
+\end{itemize}
+
+\section{Kapitel 2. Algebra}
+\subsection{Räkneoperationer}
+Konjugatregeln \\
+$(a+b)(a-b)=a^2-b^2$ \\ \\
+Kvadreringsregeln \\
+$(a+b)^2 = a^2 + 2ab + b^2$ \\
+$(a-b)^2 = a^2 - 2ab + b^2$
+\subsection{Potenser}
+$a^x * a^y = a^{x+y}$ \\
+$(a^x)^y = a^{x*y}$ \\
+$\frac{a^x}{a^y} = a^{x-y}$ \\
+$a^0 = 1$ \\ \\
+$a^{-x} = \frac{1}{a^x} $ \\
+$(a * x)^x = a^x * b^x$ \\
+$(\frac{a}{b}) = \frac{a^x}{b^x}$
+\subsection{Polynom och rationella uttryck}
+Exempel på polynom är \\
+$p_1(x) = x^4 +2x -12x-5$ \\
+$p_2(x) = (x-2)^2(x-4) + (x-2)(x+2)$ \\
+Den korrekta matematiska förklaringen är att ett polynom kan skrivas på formen 
+\begin{center}
+$p(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0 $
+\end{center}
+Ett tal kallas för nollställe till $p(x)$ om $p(\alpha) = 0$. Detta betyder att $\alpha$ är ett nollställe till $p(x)$. 
+\subsection{Rationella uttryck}
+Ett uttryck $(f(x))$ som kan skrivas på formen 
+\begin{center}
+$f(x) = \frac{p(x)}{q(x)} $
+\end{center}
+kallas för ett rationellt uttryck. \\
+Exempel 
+\begin{center}
+$ \frac{x^3-x}{x^2 + x -2}$ $\frac{x^4-3x^2 -4}{x^3-7x+2}$ $\frac{x^4 - 2 x}{1}$
+\end{center}
+Observera att varje polynom är ett rationellt uttryck (med nämnare ett, som i sista exemplet ovan).  
+\section{Kapitel 3. Ekvationer och olikheter}
+En ekvation är ett matematiskt påstående som innehåller en likhet och vanligen en eller flera obekanta. \\
+Exempel: 
+\begin{center}
+$x^2 -x - 2 = 0$ \\
+$sinx = \frac{\sqrt{3}}{2} $
+\end{center}
+Att lösa en sådan ekvation är att bestämma alla värden på $x$ som uppfyller likheten. 
+\subsection{Polynomekvationer}
+Ekvationer av typen 
+\begin{center}
+$x^2 + px + q = 0$ 
+\end{center}
+kan lösas med hjälp av pq formeln 
+\begin{center}
+\fbox{$x=-\frac{p}{2} ± \sqrt{(\frac{p}{2})^2 -q}$}
+\end{center}
+\subsection{Olikheter}
+Ledvis addition och subtraktion bevarar olikheter. Multiplikation eller division med ett positivt tal likaså. Däremot gäller det att ledvis multiplikation eller division med ett negativt tal ändrar riktning på olikhetstecknet. 
+
+\section{Kapitel 4. Summor och talföljder}
+Summatecknet $\sum$ \\ \\
+$ \displaystyle\sum_{k=1}^{100} k = 1+2+3+ \ldots +99+100 $ \\
+Det som står över summatecknet kallas för slutvärdet (100), och det som står under kallas för summationsindex och det är dess startvärde (k = 1). 
+\subsection{Aritmetisk summa}
+$\displaystyle\sum_{k=1}^{n} k = 1+2+3+\ldots+(n-1)+n = \frac{n(n+1)}{2}$
+\subsection{Geometrisk summa}
+$\displaystyle\sum_{k=0}^{n} x^k = 1+x+x^2+\ldots+x^{n-1}+x^n = \frac{x^{n+1}-1}{x-1}, x­1$
+\subsection{Binomialsatsen}
+K fakultet : \\
+$k! = k \cdot (k-1) \cdot \ldots \cdot 2 \cdot 1 $ då $ k \geq 1 $ \\
+Observera att $0! = 1$. \\ \\
+Exempel på fakultet: \\
+$3! = 3 \cdot 2 \cdot 1 = 6$ \\
+$5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$ \\ \\
+Definition binomialkoefficienten. 
+\begin{center}
+${n\choose k} = \frac{n!}{k!(n-k)!}$ 
+\end{center}
+$n \choose k$ läses som ''n över k'' \\ \\
+Binomialsatsen
+\begin{center}
+$(a+b)^n = a^n + {n \choose 1}a^{n-1}b^1 + {n \choose 2} a^{n-2}b^2 + \ldots + {n \choose n-1} a^1 b^{n-1} + b^n$
+\end{center}
+Kan också skrivas med hjälp av summatecken:
+\begin{center}
+$\displaystyle\sum_{k=0}^{n} {n \choose k} a^{n-k}b^k$
+\end{center}
+
+\section{Kapitel 5. Analytisk geometri}
+Räta linjens ekvation: 
+\begin{center}
+\fbox{$y = kx + m$}
+\end{center}
+\emph{k} kallas för riktningskoefficienten och anger linjens riktning. \\
+Konstanten \emph{m} anger vart den skär y-axeln.  \\ \\
+Vi kan också ange en linje med enpunktsformeln. 
+\begin{center}
+\fbox{$y-y_1 = k(x-x_1)$}
+\end{center}
+
+\subsection{Parabel}
+Parabler är en andragradskurva. 
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{parabel}}
+  \end{center}
+  \label{bild3}
+\end{figure} \\
+Punkten där parabeln vänder kallas för vertex. 
+\begin{center}
+\begin{tabular}{l|r}
+ \hline
+  \multicolumn{2}{c}{Förflyttnings och omskalningsregler} \\
+  \hline
+  $x$ ersätts med $x-a$		&	förflyttning $a$ steg åt höger \\
+  $x$ ersätts med $y-b$		&	förflyttning $a$ steg uppåt \\
+  $x$ ersätts med $kx$		&	hoptryckning faktorn $k$ i x-led \\
+  $y$ ersätts med $ky$		&	hoptryckning faktorn $k$ i y-led \\
+  \end{tabular}
+\end{center}
+\subsection{Absolutbelopp och avstånd i planet}
+Avståndet mellan $a$ och origo betecknar vi $|a|$. Avståndet kallas absolutbeloppet av $a$. \\
+Observera att ett avstånd alltid är ett icke negativt tal. \\ \\
+Ex. $|-7| = 7$ \\
+Man skulle lite slarvigt kunna säga att absolutbeloppet plockar bort ett minustecken hos ett tal. \\
+$|a-b|$ kommer att ge oss avståndet mellan $a$ och $b$.
+\subsection{Cirkel ellips och hyperbel}
+Andra andragradskurvor förutom parabel är cirkeln, ellipsen och hyperbeln. 
+
+\subsubsection{Cirkel}
+Cirkelns ekvation:
+\begin{center}
+\fbox{$(x-x_0)^2 + (y-y_0)^2 = r^2$}
+\end{center}
+\subsubsection{Ellips}
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{ellips}}
+  \end{center}
+  \label{bild5}
+\end{figure} 
+En ellips med medelpunkt $(x_0,y_0)$ och halvaxlarna $a$ och $b$ består av mängden av alla punkter $(x,y)$ som uppfyller ekvationen : 
+\begin{center}
+\fbox{$\frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} = 1$}
+\end{center}
+\subsubsection{Hyperbel}
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{hyperbel}}
+  \end{center}
+  \label{bild3}
+\end{figure} 
+\begin{center}
+\fbox{$\frac{(x-x_0)^2}{a^2} - \frac{(y-y_0)^2}{b^2} = 1$}
+\end{center}
+Med andra ord precis som en ellips fast med bytt tecken i vänsterledet. 
+\section{Kapitel 7. Funktionsbegreppet}
+Med en funktion menar vi en regel som till varje reellt tal (i någon given delmängd av $\mathbb{R}$) ordnar precis ett reellt tal. Ett exempel är den funktion $f$ som till vare reellt tal $x$ ordnar motsvarande kvadrerande tal $x^2$, dvs
+\begin{center}
+$f(x)=x^2$
+\end{center}
+En funktion består av två komponenter. En regel och en delmängd. \\
+Ex:
+\begin{center}
+$f(x) = \sqrt{x-1}, x \geq 1$
+\end{center}
+Här har vi infört ett krav på variabeln, så funktionen är bara definierad för $x \geq 1$. Funktionen $f$ sägs då ha definitionsmängd $[1,\infty[$. Vi skriver då $D_f = [1,\infty[$
+\\ \\
+Avläsning på y-axeln ger oss alla värden som funktionen antar. Detta kallas funktionens värdemängd. 
+
+\section{Kapitel 8. Elementära funktioner}
+\subsection{Polynomfunktioner}
+För en polynomfunktion av högst grad ett blir funktionskurvan en rät linje. Ett andragradspolynom ger upphov till en parabel. 
+\begin{center}
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{graphyx2}}
+  \label{bild6}
+    \resizebox{!}{30mm}{\includegraphics{graphx24x5}}
+  \end{center}
+  \label{bild7}
+\end{figure} 
+Graf $y=x+2$ och $y=x^2+4x+5$
+\end{center}
+
+\subsection{Potenser och exponentialfunktioner}
+\subsubsection{Potensfunktion}
+\begin{center}
+$f(x) = x^a, x > 0 $
+\end{center}
+Exponenten är fix ($a$), men basen varierar i en potensfunktion. 
+\subsubsection{Exponentialfunktion}
+\begin{center}
+$f(x) = a^x, x \in \mathbb{R}$
+\end{center}
+Om vi fixerar basen, men låter exponenten variera får vi en exponentialfunktion. \\
+\\
+Ett gemensamt drag för exponentialfunktioner är att oavsett bas så går grafen genom punkten $(0,1)$
+\subsection{Logaritmfunktioner}
+{\Large $^a\log x$} \\
+Talet $a$ kallas logaritmens bas. 
+\begin{center}
+$b = ^a\log x \Leftrightarrow a^b = x$
+\end{center}
+Man kan lite slarvigt säga att a-logaritmen av $x$ är ''det tal som $a$ ska upphöjas med för att få $x$''. \\ 
+Exempel:  \\
+För att beräkna $^4\log16$ ställer vi oss frågan: Vilket tal ska 4 upphöjas med för att få 16? Svaret är 2, så slutsatsen är att $^4\log16=2$. \\
+$\therefore ^4\log16 = ^4\log4^2 = 2$ \\ \\
+Man kan se det som att $^4\log $ och 4:an ''tar ut varandra''. \\ \\
+Tänk på att logaritmer endast är definierade för positiva tal. Exempelvis så saknar $^2\log(-5)$ mening eftersom $2^x = -5$ saknar lösning. \\ \\
+Samtliga logaritm-grafer går igenom punkten $(1,0)$ eftersom
+\begin{center}
+$^a\log 1 = 0$
+\end{center}
+Vissa logaritmer har speciella beteckningar. 
+\begin{itemize}
+\item{$^e \log x = \ln x$, och kallas den naturliga logaritmen}
+\item{$^{10}\log = \lg x$}
+\end{itemize}
+\subsubsection{Logaritm-regler} 
+\begin{center}
+$ logxy = logx + logy$ \\
+$ log\frac{x}{y} = logx - logy $ \\
+$ logx^k = k~logx $
+\end{center}
+
+\subsection{Trigonometriska funktioner}
+\begin{center}
+\begin{tabular}{p{40mm}p{40mm}}
+$ cos \alpha = \frac{\text{närliggande katet}}{\text{hypotenusan}}$ & 
+$ sin \alpha = \frac{\text{motstående katet}}{\text{hypotenusan}}$ \\ & \\
+$ tan \alpha = \frac{\text{motstående katet}}{\text{närliggande katet}} $ &
+$ cot \alpha = \frac{\text{närliggande katet}}{\text{motstående katet}} $ \\
+\end{tabular}
+\end{center}
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{halvkvadrat.png}}
+  \label{bild}
+    \resizebox{!}{30mm}{\includegraphics{halvliksidigtriangel.png}}
+  \end{center}
+  \label{bild2}
+\end{figure}
+
+\subsubsection{Grader}
+Med hjälp av ovanstående trianglar får vi nu ut följande värden: \\
+\begin{center}
+\begin{tabular}{lr}
+	$ cos 45 ^\circ = sin 45 ^\circ = \frac{1}{\sqrt{2}} $	&	$ tan 45^\circ = cot 45^\circ = 1 $ \\ \\
+	$ cos 60 ^\circ = sin 30 ^\circ = \frac{1}{2} $			&	$ tan 60^\circ = cot 30 ^\circ = \sqrt{3} $ \\ \\
+	$ cos 30 ^\circ = sin 60 ^\circ = \frac{\sqrt{3}}{2} $	&	$ tan 30^\circ = cot 60 ^\circ = \frac{1}{\sqrt{3}} $ 
+
+\end{tabular}	
+\end{center}
+
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{cossinus}}
+  \end{center}
+  \label{bild3}
+\end{figure}
+Cosinusvärdet läses på den vågräta axeln (x-axeln), och sinusvärdet på den lodräta (y-axeln). 
+\begin{center}
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{cosx}}
+  \label{bild6}
+    \resizebox{!}{30mm}{\includegraphics{sinx}}
+  \end{center}
+  \label{bild7}
+\end{figure} 
+$\cos x$ och $\sin x$
+\end{center} 
+Tan är definierat på följande sätt: 
+\begin{center}
+$tan x = \frac{sin x}{cos x}$
+\end{center}
+
+
+\subsubsection{Radianer}
+Radianer är ett bättre sätt att ange vinklar. Vi utgår från enhetscirkeln och ett helt varv motsvaras av $2\pi$ radianer. Av detta följer det att: \\ 
+\begin{center}
+\begin{tabular}{lcr}
+	$ \pi~rad = 180 ^\circ $	&	$ \frac{\pi}{2}~rad = 90^\circ $	&	$ \frac{\pi}{3}~rad= 60 ^\circ $ \\ \\
+	$ \frac{\pi}{4}~rad= 45 ^\circ $ &	$ \frac{\pi}{6}~rad = 30^\circ $ 	&	$ \frac{\pi}{12}~rad= 15^\circ $ 
+\end{tabular}
+\end{center}
+Detta leder till att: \\
+\begin{center}
+\begin{tabular}{lr}
+	$ cos\frac{\pi}{4} = sin\frac{\pi}{4} = \frac{1}{\sqrt{2}}$	&	$ tan\frac{\pi}{4} = cot\frac{\pi}{4} = 1 $ \\ \\
+	$ cos\frac{\pi}{3} = sin\frac{\pi}{6} = \frac{1}{2} $ &	$ tan \frac{\pi}{3} = cot\frac{\pi}{6} = \sqrt{3} $ \\Ê\\
+	$ cos \frac{\pi}{6} = sin\frac{\pi}{3} = \frac{\sqrt{3}}{2}$	& 	$ tan\frac{\pi}{6} = cot\frac{\pi}{3} = \frac{1}{\sqrt{3}} $ 
+\end{tabular}
+\end{center}
+\subsection{Trigonometriska funktioner}
+Trigonometriska ettan: 
+\begin{center}
+$cos^2x + sin^2 x = 1$
+\end{center}
+\subsubsection{Sinus uttryckt i cosinus och vice versa}
+$cos(-x) = cosx $ 	\\
+$sin(-x) = -sinx $ 	\\
+$cos(\frac{\pi}{2} -x) = sinx$ \\
+$sin(\frac{\pi}{2} -x) = cosx$ \\
+$cos^2x + sin^2x = 1$
+\\ \\
+Det går även att uttrycka kvadranterna $cos^2 x $ och $ sin^2 x$ såhär: 
+\begin{center}
+$cos^2x = \frac{1+ cos2x}{2}$ \\
+$sin^2x = \frac{1-cos2x}{2}$
+\end{center}
+\subsubsection{Subtraktionsformler}
+$ cos(x-y) = cosx~cosy + sinx~siny$ \\
+$ sin(x-y) = sinx~cosy - cosx~siny$ 
+
+\subsubsection{Additionsformel för cosinus och sinus}
+$cos(x+y) = cosx~cosy-sinx~siny$ \\
+$sin(x+y) = sinx~cosy + cosx~siny$ 
+
+\subsubsection{Formlerna för dubbla vinkeln}
+$ cos2x = cos^2x - sin^2x$ \\
+$ sin2x = 2sinx~cosx $
+
+\section{Area-, sinus- och cosinussatsen}
+\emph{AREASATSEN} \\
+Arean av en triangel är halva produkten av två sidors längder multiplicerat med sinus för mellanliggande vinkel. 
+\begin{center}	
+	$	T = \frac{bc}{2}sin\alpha $
+\end{center}
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{areasatsen}}
+  \end{center}
+  \label{bild3}
+\end{figure}
+\clearpage
+\noindent\emph{SINUSSATSEN}
+I en triangel med sidorna $ a, b, c$ och motstående vinklar $\alpha, ~\beta, ~\gamma$~ gäller \\
+\begin{center}
+$\frac{sin\alpha}{a} = \frac{sin\beta}{b} = \frac{sin\gamma}{c} $
+\end{center}
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{sinussatsen.png}}
+  \end{center}
+  \label{bild3}
+\end{figure}
+%\FloatBarrier
+\emph{COSINUSSATSEN} \\
+Om sidorna i en triangel är $a, ~b, ~c$ och den till sidan $a$ motstående vinkeln är $\alpha$, så gäller
+\begin{center}
+$ a^2 = b^2 + c^2 - 2bc~cos~\alpha $
+\end{center}   
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{cosinussatsen.png}}
+  \end{center}
+  \label{bild3}
+\end{figure}
+
+
+\subsection{Cirkelns ekvation}
+Ekvation för en cirkel med given radie $r$ och given medelpunkt $(x_0,y_o)$. Låt $(x,y)$ vara en godtycklig punkt på cirkeln. Enligt definitionen av cirkel är avståndet mellan $(x_0,y_0)$ och $(x,y)$ konstant lika med $r$. 
+\begin{center}
+$ (x-x_0)^2 + (y-y_0)^2 = r^2 $
+\end{center}
+
+
+
+
+
+\subsection{Aritmetisk summa}
+$ \sum\limits_{k=1}^{n} k=1+2+3+...+(n-1)+n = \frac{n(n+1)}{2} $
+
+\subsection{Geometrisk summa}
+$ \sum\limits_{k=0}^{n} x^k = 1+x+x^2+...+x^{n-1}+x^n= {x^{n+1} -1 \over x-1} $ \\
+$ x \neq 1$
+
+\subsection{Ellipsens ekvation}
+$({x-x_0 \over a})^2 + ({y-y_o \over b})^2 = 1$ \\
+Medelpunkt i $x_0 $ och $y_0$. \\
+Talen a och b är ellipsens skärning med positiva x-axeln $(y=0)$ respektive y-axeln $(x=0)$. De kallas för ellipsens halvaxlar. 
+
+\subsection{Definitionsmängd och värdemängd}
+TO BE ADDED!
+
+\subsection{Bevis av pythagoras sats}
+Bilderna nedan visar en kvadrat vars sida är $a+b$ längdenheter lång. Genom att partionera kvadranten i två olika pussel kan man bevisa pythagoras sats.
+\begin{center}
+BILD
+\end{center}
+Eftersom de 4 trianglarna i båda pusslarna är lika stora så måste de båda streckande kvadranterna $(a^2 + b^2)$ ha lika stor area tillsammans som kvadraten i den högra $(c^2)$. \\
+Alltså: $ a^2 + b^2 = c^2 $
+
+
+
+\section{Summor och talföljder}
+\subsection{Binomialkoefficient}
+\begin{center}
+$ {n \choose k} = { n!\over k!~(n-k)!} $ 
+\end{center}
+För heltal $ n, k \geq 0 $ med $ n \geq k$ definieras binomialkoefficienten $ {n \choose k} $
+\subsection{Binomialsatsen}
+\begin{center}
+$(a+b)^n = \sum\limits_{k=0}^{n} {n \choose k} a^{n-k} b^k $
+\end{center}
+\section{Faktorsatsen}
+Låt $f(x)$ vara ett polynom. \\
+$f(a)=0 \Longleftrightarrow x-a $ delar $f(x)$ \\
+\emph{Exempel} \\
+\begin{center}
+$ f(x) = x^3 -2x^2 - 11x +12 $ \\
+$ f(1) = 1^2 - 2 -11 + 12 = 0$ \\
+alltså delas f(x) av $ x=1 $ enligt faktorsatsen. 
+\end{center}
+\subsection{Korta versionen}
+$f(x) = (x-a)q(x) + C \Longleftrightarrow C=f(a) $ \\
+Alla $f(a) = 0 \Longleftrightarrow x-a $ delar $f(x)$ \\
+($f(x)$ är ett polynom.)
+
+
+
+
+\end{document}
