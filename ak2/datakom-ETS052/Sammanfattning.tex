@@ -1,0 +1,385 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
+
+\usepackage[utf8x]{inputenc}
+
+\usepackage{fancyvrb}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{boiboites}
+\usepackage{color}
+
+\title{Sammanfattning Datorkommunikation}
+\author{Philip Larsson}
+\date{2013-10-22}
+
+\newboxedtheorem[boxcolor=orange, background=blue!5, titlebackground=blue!20,
+titleboxcolor = black]{tips}{Tips}{anything}
+
+\newboxedtheorem[boxcolor=cyan, background=blue!5, titlebackground=blue!20,
+titleboxcolor = black]{verktyg}{Verktyg}{anything2}
+
+
+\begin{document}
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+\section{Allmänt}
+\subsection{OSI-modellen}
+OSI-modellen används som en referensmodell idag. \\
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+7	&	Applikation \\
+\hline
+6	&	Presentation \\
+\hline
+5	& 	Session \\
+\hline
+4	&	Transport \\
+\hline
+3	&	Nät	\\
+\hline
+2	&	Länk	\\
+\hline
+1	&	Fysisk	\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{TCP-IP modellen}
+Eftersom protokollen för Internet utvecklades oberoende av arbetet med OSI-modellen så innehåller de inte samma skikt. \\
+Skikt 5, 6 och 7 är i TCP-IP modellen endast ett skikt: applikationsskiktet. TCP/IP modellen definierar inte heller något länkskikt eller fysiskt skikt.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Applikation \\
+\hline
+Transport \\
+\hline
+Nät	\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Router, switch, hub}
+\begin{itemize}
+\item{Hubb\\
+	Jobbar på fysiska lagret. Det den får in på en port skickar den ut till alla andra portar.}
+\item{Switch \\
+	Jobbar på länk lagret. Fungerar inledningsvis som en hubb, men lär sig vilken dator som sitter på respektive port. Den sparar detta i en addresstabell.}
+\item{Router \\
+	Jobbar på nätlagret. Som switch men har även en routingtabell över närmaste väg. Används när man ska koppla ihop nät. Tillhandahåller även andra funktioner som t.ex. brandvägg.}
+\end{itemize}
+
+\section{Skikt i OSI-modellen}
+\begin{enumerate}
+\item{\textbf{Fysiska skiktet}\\
+	Ansvarigt för att skicka bitar mellan två noder som är kopplade via en fysisk länk. Arbetar med bitar.}
+\item{\textbf{Länk skiktet} \\
+	Ansvarigt för att överföra ramar från en nod till nästa över en länk. Arbetar med ramar.}
+\item{\textbf{Nätskiktet} \\
+	Ansvarigt för att skicka paket mellan en sändar-värd och en mottagar-värd (som kan vara kopplade på olika nät). Arbetar med paket.}
+\item{\textbf{Transportskiktet} \\
+	Ansvarigt för att skicka data mellan två applikationsprocesser. Använder portnummer för att separera applikationer. Arbetar med segment.}
+\item{\textbf{Sessionsskiktet} \\
+	Ansvarigt för styrning och synkronisering av dialogen mellan sändar och mottagar process. Arbetar med data.}
+\item{\textbf{Presentationsskiktet} \\
+	Ansvarigt för översättning, komprimering och kryptering av applikationsdata. Arbetar med data.}
+\item{\textbf{Applikationsskiktet / tillämplingsskiktet} \\
+	Avsvarigt för att tillhandahålla användartjänster (t.ex. e-post och filöverföring). Det enda skiktet användaren behöver se. De andra 6 lagren inklusive tillhörande protokoll har till uppgift att betjäna protokollen inom applikationsskiktet. Arbetar med data.}
+\end{enumerate}
+\section{Begrepp inom det fysiska lagret}
+Data: information vi vill överföra. \\
+Signal: så som data är representerat när det skickas över en länk.
+\subsection{Bandbredd}
+\begin{itemize}
+\item{Analog definition: frekvensbandet på kanalen (mäts i Hz).}
+\item{Digital definition: antalet bitar per sekund som kanalen kan överföra (bps). Kallas även för bit-rate.}
+\end{itemize}
+\subsection{Störningar}
+När en signal färdas över en länk kommer den att försämras p.g.a.. störningar. \\
+Olika typer av störningar:
+\begin{itemize}
+\item{Dämpning: signalenergin minskar.}
+\item{Distortion: signalen ändrar sin form.}
+\item{Brus: slumpmässiga störningar som kan bero på brus alstrade i elektroniska kretsar, eller brus från atmosfären.}
+\end{itemize}
+\subsection{Prestanda}
+\begin{itemize}
+\item{Throughput / genomströmmning: \\
+	Ett systems verkliga kapacitet. Mäts i bps.}
+\item{Fördröjning (latency): \\
+	Hur lång tid det tar för ett system att hantera ett meddelande eller paket mellan sändare och mottagare. \\
+	Är en summa av utbredningstid, transmissionstid, kötid och betjäningstid.}
+\end{itemize}
+\subsection{Digital kommunikation}
+Handlar om att skicka data i form av bitar (ettor och nollor) över en fysisk länk. Bitarna kan antingen representeras av digitala signaler (digital transmission) eller av analoga signaler (analog transmission).
+\subsubsection{Digital transmission}
+Ettor och nollor representeras av olika spänningsnivåer eller energinivåer. \\
+Processen att konvertera digital data till digitala signaler kallas för linjekodning. Tre metoder för linjekodning:
+\begin{itemize}
+\item{\textbf{Non-return-to-zero (NRZ)} \\
+	En etta motsvaras av en amplitudnivå och en nolla motsvaras av en annan amplitudnivå. Brukar vara så att en nolla representeras av en positiv spänningsnivå och en etta en negativ spänningsnivå.\\
+	Kan bli problem med synkroniseringen mellan sändare och mottagare när flera ettor och nollor kommer efter varandra.}
+\item{\textbf{Manchester} \\
+	En bit representeras av en spänningsändring, så en nolla representeras av en positiv spänningsnivå till negativ och en etta representeras av en negativ spänningsnivå till positiv.\footnote{Tänk att det är ''bra'' att gå från negativ till positivt, så då en 1:a.}}
+\item{\textbf{Differential Manchester} \\
+	Om signalen följer förra bitens mönster så är det en nolla. Om mönstret bryts så blir det en etta. Första tecknet (biten) vet man oftast inte och skriver ett frågetecken under den.}
+\end{itemize}
+\subsubsection{Analog transmission}
+Vid analog transmission så representeras ettorna och nollorna av förändringar av en sinusvåg. Sinusvågen karaktäriseras av amplitud, fas och frekvens och genom att variera dessa storheter kan man skapa olika sinusvågor som kan representera etta och nolla. Vi har tre olika moduleringstekniker:
+\begin{itemize}
+\item{\textbf{Amplitudmodelering} (amplitude shift keying, ASK) \\
+	Amplituden ändras så att en etta representeras av en annan amplitud än en nolla. Är dock känslig för störningar.}
+\item{\textbf{Frekvensmodelering} (frequency shift keying, FSK) \\
+	Ettor och nollor representeras av olika frekvenser. Mindre känslig för störningar än ASK. }
+\item{\textbf{Fasmodulering} (phase shift keying, PSK) \\
+	Ettor och nollor representeras av olika fas.}
+\end{itemize}
+\section{Begrepp inom länkskiktet}
+Länkprotokoll tillhandahåller funktioner för att hantera en länkförbindelse, feldetektering, felhantering och flödeskontroll för data som skickas öven en förbindelse. I länkprotokollen brukar termen ram (eng. frame) användas istället för paket. Anledningen till detta är att paketen ''ramas is'' av flaggor. Flaggorna underlättar när mottagaren ska detektera vart ramen börjar och slutar. 
+\subsection{Bitstuffing}
+Om en flagga består av bitmönstret 0111 1110 måste vi se till att samma mönster inte finns i ramen. Detta löser man med bitstuffing (bitutfyllnad). Om det kommer fem ettor efter varandra så stoppar man in en nolla efter femte ettan. Sekvensen 0111 1110 0 blir alltså 0111 1101 00. Mottagaren tar bort den nolla som följer fem ettor i rad för att få fram det ursprungliga meddelandet (alltså ramen).
+\subsection{Feldetektering}
+Ett bitfel är när mottagaren tolkar en etta som en nolla eller tvärt om. Detta måste detekteras och det gör man genom att lägga på extra bitar som beräknas fram genom datan. Tre feldetekteringsmetoder: 
+\subsubsection*{Paritetsbit (Simple Parity-Check Code)}
+Om jämn paritet används så lägger sändaren till en etta om det finns ett ojämt antal ettor i paketet, annars lägger sändaren till en nolla. Så om data innehåller 5 stycken 1:or så blir paritetsbiten 1.
+\subsubsection*{Cyklisk redundanscheck (CRC)}
+En annan feldetekteringsmedtod som är bättre än paritetsbit. Går till så här: 
+\begin{itemize}
+\item{Först och främst har mottagare och sändare kommit överens om ett \emph{generatorpolynom} ($C(x)$) som används för att verifiera meddelandet. }
+\item{Sen skriver vi bitmönstret som ett polynom. T.ex. så blir 0011 1010 $x^5 + x^4 + x^3 + x^1$ och detta kallas $M(x)$.}
+\item{Sedan multiplicerar vi $M(x)$ med $x^k$ där $k$ är högsta exponenten i generatorpolynomet. Så om $C(x)$ är $x^3+x^2+1$ så är $k=3$. $M(x) \times x^k = B(x)$}
+\item{Därefter modulo 2 delar vi $B(x)$ med $C(x)$ och får ett svar $f(x)$ samt en rest $R(x)$. $R(x)$ adderas till $B(x)$ och då får vi meddelandet som ska skickas, $P(x)$. \\
+$R(x)$ skrivs i lika många bitar som $k$ är. T.ex. om $R(x) = x^2 + 1$ så skrivs det som 101.}
+\end{itemize} 
+Mottagaren delar sedan det mottagna meddelandet med generatorpolynomet $C(x)$ och om ingen rest ges så är paketet helt korrekt (resten skrivs som $E(x)$).
+\subsubsection*{Kontrollsumma (checksum)}
+Går till så här: \\
+Adderar alla bitar med varandra, oftast 8 bitar + 8 bitar. Om nån bit ''skjuts över'' (carry bit) så adderas den också. Meddelandet är alltså komplementet (till den summa man får) tillsammans med de ursprungliga bitarna. Komplementet får man genom att byta ut alla nollar mot ett och vice versa. \\
+Exempel: \\
+Vi har: 10101001 10111001\\
+Det som skickas iväg är ursprungliga meddelandet samt checksumman, alltså: 10101001 10111001 10011100. \\ \\
+Det mottagaren gör är att addera ihop allt och om summan blir bara ettor så gick paketet fram utan bitfel. \\ 
+Exempel: \\
+Tar emot 10101001 10111001 10011100 \\
+\subsection{Felhantering}
+2 olika sätt. Antingen be om ett nytt paket eller försöka rätta de fel som detekterades. Om man ska kunna be om ett nytt paket måste varje paket kunna identifieras. Det gör de med sekvensnummer. \\
+I en omsändningsalgoritm är det vanligt att alla paket som kommer fram korrekt bekräftas (\textbf{ACK}:as). Mottagaren talar om vilket sekvensnummer (paket) den väntar på. \\
+Man kan också tänka sig en negativ bekräftelse, d.v.s. att man \textbf{NAK}:ar de sekvensnummer vars paket man inte har tagit emot korrekt.  
+\subsubsection{Automatic-repeat-request (ARQ) algoritmer}
+\begin{itemize}
+\item{\textbf{Stop-and-wait ARQ} \\
+När ett paket har skickats så måste sändaren få en bekräftelse för det paketet innan den kan skicka nästa paket. Tekniken gör att det tar lång tid att överföra en större mängd data.}
+\item{\textbf{Go-back-N ARQ} \\
+	Kan skicka flera paket åt gången. Sändaren har ett sändfönster. \\
+	$S_F = \text{Sliding window first} $ \\
+	$S = \text{Paket som senast skickades} $\\
+	$S_L = \text{Sliding window last} $ \\
+	Sändarfönstret måste vara mindre än sekvensnumret.}
+\item{\textbf{Selective repeat ARQ} \\
+	Bekräftar paket den tar emot men kan även skicka ett NAK om något paket gick förlorat.}
+\end{itemize}
+\subsection{Point-to-Point Protocol (PPP)}
+Ett länkprotokoll. \\
+Kapslar in IP-paket, etablera, testa och konfigurera länk via LCP eller förbereda för nätprotokoll via NCP.
+
+\subsection{Multiplexering}
+Multiplexering används när fysiska länkar behöver delas av flera förbindelser. Alltså att en fysisk kanal delas upp i flera kanaler. 
+\subsubsection*{Duplex}
+\begin{itemize}
+\item{Simplex: Kommunikation i en riktning. T.ex. TV-sändningar.}
+\item{Halv-duplex: Kommunikation i båda riktningar men bara en i taget. T.ex. walkie talkie.}
+\item{Full-duplex: Kommunkiation i båda riktningar samtidigt. T.ex. telefoni.}
+\end{itemize}
+
+\subsubsection{Metoder för multiplexering}
+
+\begin{itemize}
+\item{\textbf{Frekvensmultiplexering (FDM)} \\
+	Länkens bandbredd delas upp i flera frekvensband. Varje kanal får sedan sitt egna frekvensband.}
+\item{\textbf{Tidsmultiplexering} \\
+	Finns \emph{Synkron} tidsmultiplexering och \emph{statisk} multiplexering. Båda går till så att länken delas upp i ramar som innehåller tidsluckor, och varje kanal får en egen tidslucka. Varje ram brukar börja med en synkroneringsbit som alternerar mellan 0 och 1. \\
+	Skillnaden mellan \emph{synkron} och \emph{statisk} tidsmultiplexering är att om en kanal inte har något att skicka i \emph{synkron} tidsmultiplexering så kommer tidsluckan att vara tom. \\
+	I \emph{statisk} tidsmultiplexering får kanalerna endast tillgång till tidsluckan när den har något att sända. Om kanalen inte har något att sända så får de andra kanalerna mer kapacitet.}
+\end{itemize}
+\subsection{Medium Access Control (MAC) Protokoll}
+Alla värdar på en länk/nät måste ha samma regler för hur och när de ska få sända data på länken. Dessa regler kallas för accesmetoder (medium access control).
+
+\subsubsection{Accesmetoder}
+Kan delas upp i två grupper, controlled access och random access:
+\begin{itemize}
+\item{\textbf{Controlled access} \\
+	Terminalerna kommer överens om vem som får skicka och när. En terminal måste ha tillstånd att sända data. Ex. polling, token ring.}
+\item{\textbf{Random Access} \\
+	Alla terminaler sköter sig själva och bestämmer själv när de får skicka. Kollisioner kommer förmodligen att ske. Ex. Aloha, CSMA/CD, CSMA/CA.}
+\end{itemize}
+Och de är:
+\begin{itemize}
+\item{\textbf{Polling} \\
+	Har en ''master'' dator och en eller flera ''slav'' datorer. All data som ska skickas måste gå via mastern, och får endast skickas på begäran av mastern.}
+\item{\textbf{Token ring} \\
+	Datorerna är kopplade i en ring och använder sig av en token (typ stafettpinne) som bestämmer när man får sända. Fördelar med denna metod är att det inte sker några kollisioner och att all kapacitet används och delas lika. Nackdelar är att systemet kraschar om token försvinner eller om en dator kopplas bort.}
+\item{\textbf{Aloha} \\
+	Om två terminaler vill skicka måste det gå via centraldatorn, men skickar så fort de har något att skicka (till skillnad mot polling som väntar på tillstånd att få sända). Kollisioner kommer att uppstå.}
+\item{\textbf{CSMA / CD} \\
+	\emph{Carrier Sense Multiple Access / Collision Detection}. Om någon dator vill skicka på länken så gör den det. Den lyssnar och om länken är ledig skickar den. Om datorn märker att en kollision har inträffat (om t.ex. två datorer skickade samtidigt) så väntar datorn en slumpmässig tid och försöker sedan igen.}
+\item{\textbf{CSMA / CA} \\
+	\emph{Carrier Sense Multiple Access / Collision Avoidance}. Som CSMA/CD men används där det är svårt att veta om en kollision har ägt rum. Försöker undvika kollisioner helt genom att t.ex. först skicka en RTS (request to send) till accesspunkten och sedan vänta på en CTS (clear to send) innan den börjar skicka data.}
+\end{itemize}
+\subsection{IEEE standardiseringsprojekt 802.}
+Varje dator som kopplas in till ett 802.x nät måste ha en unik address som är inbränd i nätverkskortet. Kallas MAC-address (ibland också fysisk adress) och är 6 byte lång. 
+\begin{itemize}
+\item{\textbf{802.3x} \\ Ethernet en samling standardiserade metoder för trådade LAN}
+\item{\textbf{802.11x} \\ Wlan standarder}
+\end{itemize}
+IEEE 802.11 använder accessmetoden CSMA/CA. När en station detekterat att mediet är ledigt, väntar den en viss tid, kallad \emph{distributed interface space} (\textbf{DIFS}). Om mediet fortfarande är ledigt efter DIFS skickar stationen en Request To Send (RTS) till mottagarstationen. Mottagaren av RTS väntar en viss tid, kallat \emph{short interface space} (\textbf{SIFS}) och skickar sedan en Clear To Send (CTS) till sändarstationen. Efter att sändarstationen har tagit emot ett CTS väntar den tiden SIFS och skickar sedan sin dataram. När mottagarstationen har tagit emot sin dataram väntar det tiden SIFS och skickar sedan ett ACK.
+\subsection{Nättopologier}
+\begin{itemize}
+\item{Buss}
+\item{Ring}
+\item{Stjärna}
+\end{itemize}
+\subsection{Unicast och broadcast}
+Unicast: en sändare och en mottagare. \\
+Broadcast: en sändare och flera mottagare.
+\subsection{Spread Spectrum}
+Teknik för trådlösa länkar med mycket störningar.
+\begin{itemize}
+\item{\textbf{Frequency Hopping Spread Spectrum (FHSS)} \\
+	Hoppar mellan frekvenser och skickar lite på varje frekvens.}
+\item{\textbf{Direct Sequence Spread Spectrum (DSSS)} \\
+	En bit kodas med flera bitar som är bestämda av sändare och mottagare.}
+\end{itemize}
+
+\section{Begrepp inom nätskiktet}
+\textbf{Nätadressen} behövs för att vi ska veta vart nånstans datorn finns. Består av \emph{nät-id} och \emph{värd-id}. Nät-id identifierar de nät som enheten är kopplad till. Värd-id identifierar enheten själv. \\
+\textbf{Router} används för att skicka data mellan näten. Den gör beslut om bästa väg för paketen (routing, se nedan). Routing-beslut baseras på nät-identiteten inte värd-identiteten. \\
+\textbf{Forwarding} är att skicka vidare paket beroende på nätadressen, och det är det routern gör. \\
+\textbf{Routing} är den process som routern gör när denna väljer vilken väg som paketen i nätverket ska ta. 
+\subsection{IP - ett nätprotokoll}
+Enda nätverksprotokollet som får användas på Internet. Finns två versioner som används idag, IPv4 och IPv6. \\
+IP har ingen felhantering eller flödeskontroll\footnote{ICMP hjälper med detta}, utan är ett så kallat \emph{best effort protokoll}\footnote{Best effort protokoll: ger inga garantier för om paketet kommer fram i rätt ordning, utan fel eller över huvud taget.} Varje värd måste ha en unik address, en så kallad IP-adress. 
+\subsubsection{IPv4}
+IP-adresserna delas upp i klassindelad adressering och klasslös adressering. 
+\subsubsection*{Klassindelad addressering (classful addressing)}
+IP-addresserna delas in i klasser vars nät-id och värd-id har olika storlek beroende på hur stort nätet är. 
+\subsubsection*{Klasslös addressering (classless addressing)}
+Man separerar nät-id och värd-id med hjälp av en mask. Masken består av 32 bitar och en etta indikerar att addressbiten på motsvarande plats ingår i nätidentiteten. \\ \\
+Exempel: \\
+mask: 255.255.192.0 \\
+IP-adress: 130.235.188.247 \\
+en etta indikerar att addressbiten ingår i nät-id. Alltså är vårt nät-id = 130.235.128.0 och värd-id är då resten = 0.0.60.247. \\ \\
+Man kan också skriva masken efter IP-addressen separerat med ett snedstreck ''/''. Exempelvis 130.235.188.247/18 anger att de 18 första bitarna i IP-adressen är nät-id.
+
+\subsubsection{IPv6}
+Fördelar med IPv6 gentemot IPv4:
+\begin{itemize}
+\item{Fler addresser (128 bitars addresser)}
+\item{Konstant headerlängd förenklar routingprocessen}
+\item{Stöd för realtidsdata}
+\item{Stöd för datasäkerhet såsom autentisering och kryptering}
+\end{itemize}
+IPv6 adresser består av 128 bitar (16 byte) och kan förkortas. \\
+Man kan ta bort nollor som inte ändrar värdet (d.v.s. 0043 är samma sak som 43) och förkorta följder av nollor och ersätta dem med dubbla kolon. Men man kan bara förkorta nollor till kolon en gång, annars går det inte att återskapa den ursprungliga adressen. \\
+Exempel:
+\begin{center}
+\framebox{FF03:0043:0000:0000:0000:B0CA:0000:3C30} \\
+$\downarrow$ \\
+\framebox{FF03:43:0:0:0:B0CA:0:3C30} \\
+$\downarrow$ \\
+\framebox{FF03:43::BOCA:0:3C30}
+\end{center}
+
+\subsection{Address Resolution Protocol}
+Jobbar på lager 2-3. \\
+Används för att mappa en IP-address till en MAC-address. Varje värd har en ARP-tabell där den lagrar MAC-IP adresser. \\
+Det går till så här:
+\begin{itemize}
+\item{Dator1: \emph{ARP Request} till \emph{broadcast} ''Vem har IP x.x.x.x.?''\\
+	Skickar med sin IP-address och MAC-address i ARP Requesten.}
+\item{Dator2: \emph{ARP Reply} svarar dator1 ''Jag har IP x.x.x.x och min MAC-address är z.z.z.z.z.z ''}
+\end{itemize}
+Dator1 och dator2 sparar varandras MAC-IP adresser i tabellen så de inte behöver fråga nästa gång de ska kommunicera.
+\subsection{Routing Algoritmer}
+\subsubsection{Distance Vector}
+Varje router i nätet har en egen bild över hur nätet ser ut. \\
+Routrarna skickar sin routingtabell till sina grannar, och detta gör den med jämna intervall eller vid en förändring. \\
+Enkelt $\rightarrow$ låga krav på CPU och minne.
+\subsubsection{Link State}
+Skickar info om vilka länkar routern ansluter till och vilka de närmaste grannarna är. Alla routrar har samma karta över nätet och får på egen hand räkna ut bästa väg till olika destinationer. Skickar info om förändringar har skett, men inte annars. \\
+Mer avancerat $\rightarrow$ högre krav på CPU och minne.
+\subsection{ICMP - ett nätverksprotokoll}
+Ett hjälpprotokoll för IP som ska hjälpa till med felmeddelanden och förfrågningar. \\
+ICMP meddelandet packas in i ett IP paket. 
+\section{Begrepp inom transportskiktet}
+\subsection{TCP - ett transportprotokoll (Transmission control protocol)}
+Används när en applikation vill ha en kontrollerad och tillförlitlig dataöverföring. Skapar en överföringssession.
+\subsection{UDP - ett transportprotokoll (User Datagram Protocol)}
+Är precis som IP ett \emph{Best effort} protokoll. Lämpar sig för applikationer där hastigheten är viktigare än att något paket försvinner eller kommer i fel ordning, t.ex. i spel. \footnote{Notering: UDP tillför egentligen inte med så många funktioner till transportskiktet.}
+\section{Begrepp inom applikationsskiktet}
+Två grundläggande användarmodeller, Client Server och Peer to Peer.
+\subsection*{Client Server}
+''Traditionell'' metod, där alla klienter hämtar data från en server.
+\subsection*{Peer to Peer}
+Användare fungerar både som en klient och en server, och data skickas mellan klienterna. \footnote{Ibland används en hybrid mellan båda användarmoddellerna.}
+\subsection{WWW Applikation}
+Baseras på klient server modellen. \\
+Består av tre delar:
+\begin{itemize}
+\item{\textbf{Webbsidor} 
+	\begin{itemize}
+	\item{Statiska: HTML}
+	\item{Dynamiska: PHP m.fl.}
+	\end{itemize}
+	}
+\item{\textbf{URL} \\
+	En standard för att namnge webbsidor.}
+\item{\textbf{HTTP} \\
+	Applikationsprotokoll som används för att hämta webbsidor från en server. \\
+	Använder en TCP-förbindelse.}
+\end{itemize}
+\subsection{Domain Name System (DNS)}
+Sköter mappning från symboliska namn till IP-addresser\footnote{Metafor: telefonbok. Den mappar något som är lätt för människor att komma ihåg (namn) med ett nummer (telefonnummer).}. En värd vet alltid IP-addressen till närmaste DNS Server. 
+\section{Telenäten}
+Accessnäten är analoga. Från telefon till lokalstation överförs talet analogt i frekvensområdet $0-4$ kHz. \\
+Kärnnäten är digitala. \emph{PCM} sker i lokalstationerna.
+\subsection{Pulse Code Modulation (PCM)}
+Utvecklades för telekombranschen för att digitalisera telekomnätet. \\ 
+Sker i tre steg:
+\begin{enumerate}
+\item{\textbf{Sampling} \\
+	Man mäter signalen vid vissa tidpunkter. Om högsta frekvensen är $n$ Hz, så måste man sampla med $2n$ Hz (\emph{Nyqvist})}
+\item{\textbf{Kvantisering} \\
+	Avrundar mätvärdena från samplingen till ett begränsat antal amplitudnivåer. Många mätvärden behöver förmodligen avrundas och leder därmed till ett \emph{kvantiseringsfel}.}
+\item{\textbf{Kodning} \\
+	Alla avrundade mätvärden kodas till binära tal. \\
+	Nu är den analoga signalen en följd av binära tal som kan lagras i datorn.}
+\end{enumerate}
+\subsection{Mobilnät}
+Nätet är geografiskt indelat i celler. I varje cell finns det en basstation (stor antenn). Varje cell får ett visst frekvensband. Frekvensbandet återanvänds i flera celler. \\ \\
+Flera mobilterminaler måste dela på samma frekvensband i en cell. Då behövs metoder för multipel access: 
+\begin{itemize}
+\item{\textbf{Frequency Division Multiple Access (FDMA)} \\
+Det tillgängliga frekvensbandet delas upp i ett stort antal radiokanaler, var och en med sin bärfrekvens.}
+\item{\textbf{Time Division Multiple Access (TDMA)} \\
+	Kanalerna turas om att skicka i olika tidsluckor.}
+\item{\textbf{Code Division Multiple Access (CDMA)} \\
+	Många kanaler skickar på samma frekvens, men varje kanal har en unik kod så att det går att skilja dem åt.}
+\end{itemize}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
