@@ -1,0 +1,567 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
+\usepackage[utf8x]{inputenc}
+
+
+\usepackage{fancyvrb}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{makeidx}
+
+\title{Programmering fortsättningskurs}
+\author{Philip Larsson}
+\date{2013--03--09}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+
+
+\begin{document}
+\maketitle
+\scriptsize
+\tableofcontents
+\normalsize
+
+\section{Träd}
+Träd är en icke linjär struktur. \\
+Ett träd består av en huvudnod (roten) som har noll eller flera subträd. \\
+En nod som saknar barn kallas löv. \\
+En gren är en serie noder förbundna med varandra. 
+\subsection{Binära träd}
+Ett binärt träd är ett träd där varje nod har högst två barn.
+\subsection{Strikt binärt träd}
+Ett strikt binärt träd är ett träd där varje nod har noll eller två barn. 
+\subsection{Binärt sökträd}
+Ala värden som finns i vänster subträd är mindre än värdet som finns i föräldern. Alla värden som finns i höger subträd är större än värdet som finns i föräldern. \\
+Dubbletter tillåts inte!  
+\subsection{Balanserade binära sökträd}
+Ett binärt träd är balanserat om det för varje nod i trädet gäller att höjdskillnaden mellan dess båda subträd är högst ett. 
+\clearpage
+\section{Traversering}
+Att genomsöka alla noderna i ett träd kallas att traversera trädet. Detta kan göras genom post-, pre- eller inordertraversering.
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{traversering_Tree}}
+  \end{center}
+  \label{bild1}
+\end{figure}
+\begin{itemize}
+\item{Preorder: \\
+	Först roten, sedan vänster subträd i preorder, därefter höger subträd i preorder. \\
+	\emph{M, H, A, K, S, N, T}} 
+\item{Inorder: \\
+	först vänster subträd i inorder, sedan roten och därefter höger subträd i inorder (detta blir växande ordning i ett binärt sökträd). \\
+	\emph{A, H, K, M, N, S, T}}
+\item{Postorder: \\
+	först vänster subträd i postorder, sedan höger subträd i postorder och därefter roten. \\
+	\emph{A, K, H, N, T, S, M}}
+\end{itemize}
+
+\section{Interfacet Set}
+En mängd (Set) får inte innehålla några dubbletter. \\ \\
+Interfacen \verb+Collection+ och \verb+Set+ har i Java samma operationer. Skillnaden är att i \verb+Set+ får inga dubbletter förekomma. \\
+\verb+Set+ får innehålla null element, men bara ett null-element, pga dubblettförbudet. \\
+\\
+Klasser som implementerar interfacet Set:
+\begin{itemize}
+\item{TreeSet (balanserat träd)}
+\item{HashSet (använder hashtabell)}
+\end{itemize}
+Några metoder som kan vara bra att känna till:\\ \\
+\begin{tabular}{l|l}
+\hline
+	\verb+boolean add(E obj)+	&	Lägger till obj om det inte redan finns \\ \\
+	\verb+boolean addAll(Collection<E> coll)+	&	Lägger till alla element om de inte redan \\
+	&	finns, returnerar true om set:et är ändrat. \\ \\
+	\verb+boolean contains(Object obj)+	&	Returnerar true om set:et innehåller ett element \\
+	&	som är identiskt(equal) till obj \\
+\hline	
+\end{tabular}
+\section{Interfacet Comparator}
+\begin{lstlisting}
+	public interface Comparator<T> {
+		/**
+		*Compares its two arguments for order.
+		*Returns a negative integer, zero, or a positive
+		*integer as the first argument is less than,
+		*equal to, or greater than the second.
+		*/
+		int compare(T e1, T e2);
+	}
+\end{lstlisting}
+Comparator är ett interface med en metod \verb+compare+ som ska användas för att jämföra två olika objekt av typen T. När man anropar sort skickar man med ett objekt av en klass som implementerar Comparator. Inuti sort används \verb+compare+ för jämförelser
+
+En klass som implementerar interfacet \verb+Comparable+ implementerar en metod \verb+compare+ för jämförelse. \\ \\
+Comparator kan vara bra när man vill jämföra objekt av en klass på flera olika sätt. 
+\begin{itemize}
+\item{Ex: En klass Person. Vi vill både kunna sortera personer i alfabetisk ordning och efter personnummer.}
+\end{itemize}
+\begin{lstlisting}
+	public class Person {
+		private String name;
+		private String pNbr;
+		...
+	}
+	public class NameComparator implements Comparator<Person> {
+		public int compare(Person p1, Person p2) {
+			return p1.getName().compareTo(p2.getName());
+		}
+	}
+\end{lstlisting}
+\begin{lstlisting}
+	/* This tree will be sorted by name */
+	TreeSet<Person> nameTree = new TreeSet<Person>(new NameComparator());
+\end{lstlisting}
+\section{Interfacet Map}
+Element är tvådelade - en nyckel(key) med tillhörande värde(value). Nyckeln är unik, men inte värdena. \\ \\
+Klasser som implementerar interfacet Map: 
+\begin{itemize}
+\item{TreeMap (implementerar interfacet SortedMap, dvs elementen kommer att vara sorterade)}
+\item{HashMap (använder en hashtabell)}
+\end{itemize}
+Några metoder som kan vara bra att känna till:\\ \\
+\begin{tabular}{l|l}
+\hline
+	\verb+V get(Object key)+	&	Returnerar värdet associerat med key. \\ 
+	&	Returnerar null om det inte finns. \\ \\
+	\verb+V put(K key, V value)+	&	Associerar key med value i denna mapen. \\
+	&	Dvs lägger till i mapen. \\ \\
+	\verb+V remove(Object key)+	&	Tar bort objektet med nyckeln key i mapen. \\ \\
+\hline	
+\end{tabular}
+
+\section{Hashtabell}
+En hashtabell är en datastruktur där data sparas tillsammans med en nyckel. Positionen i strukturen beräknas med en hashfunktion. Ofta behöver man en datastruktur som kan hantera både insättningar och sökningar effektivt.
+\begin{itemize}
+\item{Sluten hashtabell: \\
+	En vektor används för att lagra elementen. Hanterar kollisioner med t.ex. linjär teknik eller kvadratisk teknik. }
+\item{Öppen hashtabell: \\
+	En vektor av listor. Kolliderande objekt placeras i samma lista. }
+\end{itemize}
+Exempel på på sätt att hantera kollisioner:
+\begin{itemize}
+\item{Linjär teknik: första lediga plats efter. \\
+	Problem med linjär teknik:
+	\begin{itemize}
+	\item{Ger upphov till primär klustring i tabellen.}
+	\item{Objekt vars hashkoder är nära ett ''vanligt'' hashvärde kommer att drabbas av kollisioner och bygga ut klustret.}
+	\item{Stora kluster gör sökningen långsam.}
+	\end{itemize}
+}
+\item{Kvadratisk teknik: undviker primär klustring (att alla värden samlas intill varandra i vektorn). Funkar inte nästa plats $1^2$ hoppar den till $2^2$ steg bort, funkar inte det går den $3^2$ osv. \\
+Alltså: Primärt hashvärde = $pHash$ = värdet där den ''egentligen'' borde läggas in. \\
+	$pHash, pHash + 1^2, pHash +2^2, pHash +3^3, \dots, pHash +i^2$
+}
+\end{itemize}Man måste skugga \verb+hashCode+ och \verb+equals+ i den klass vars objekt ska fungera som en nyckel i en hashtabell. \\ \\
+I Javas klassbibliotek används öppna hashtabeller i klasserna \verb+HashSet+ och \verb+HashMap+. \\ \\
+Fyllnadsgraden i en hashtabell är $\frac{\text{antal element}}{\text{antal tabellplatser}}$.  \\ \\
+Om man skall skriva en for-each sats över en hashtabell:
+\begin{lstlisting}
+Set<String,Object> map = new Hashmap<String,Object>();
+
+for (Map.Entry<String, Object> entry : map.entrySet()) {
+    String key = entry.getKey();
+    Object value = entry.getValue();
+    // ...
+}
+\end{lstlisting}
+Observera att element i en hashtabell inte är sorterade. Ett elements plats i tabellen bestäms av dess hashvärde. 
+\section{Rekursiva metoder}
+En rekursiv metod måste ha:
+\begin{itemize}
+\item{En eller flera parametrar}
+\item{Ett eller flera basfall}
+\item{Ett eller flera rekursiva anrop. De rekursiva anropen måste leda till att ett basfall så småningom nås. }
+\end{itemize}
+
+\section{Skyddsnivåer}
+\begin{itemize}
+\item{ \verb+public:+ Attribut och metoder som vi skriver \verb+public+ framför kan anropas och användas varifrån som helst. }
+\item{ \verb+Ingen markering:+ Attribut och metoder som vi inte skriver något framför kan bara anropas och användas av andra klasser i samma katalog. }
+\item{ \verb+private:+ Attribut och metoder som vi skriver \verb+private+ framför kan bara anropas och användas inifrån den egna klassen. }
+\item{ \verb+protected:+ Klassen själv, andra klasser i samma paket, och this i subklasser har tillgång till dem.}
+\end{itemize}
+ 
+ 
+\section{Överskuggning och överlagring}
+\begin{itemize}
+\item{Överskuggning innebär att vi ersätter en gammal (ärvd) operation med en ny som har samma signatur - vi får alltså ingen ny operation. }
+\item{ Överlagring innebär att vi lägger till en ny operation som har samma namn som en ärvd operation, men annan signatur. (t.ex olika antal parametrar eller olika typer på sina parametrar) }
+\end{itemize}
+Vi kan även använda den överskuggade operationen när vi överskuggar med hjälp av \verb+super+. 
+\begin{lstlisting}
+public void forward(int n){
+	super.forward(n);
+	count += n;
+}
+\end{lstlisting}
+Vi skriver \verb+super.forward(n)+ för att få kompilatorn att förstå att det är operationen \verb+forward(int)+ i superklassen som skall anropas. Om vi hade skrivit \verb+forward(int)+ hade vi anropat oss själva - sådana anrop kallas rekursiva och är väldigt användbara i många sammanhang, men här hade det bara inneburit at operationen hade anropat sig själv tills minnet tar slut (och vi får \verb+java.lang.StackOverflowError+). 
+
+\section{Exceptions}
+Det finns två slag av Exceptions:
+\begin{itemize}
+\item{Unchecked Exceptions Ð används då felet beror på programmeraren \\
+Ex: NullPointerException eller ArrayIndexOutOfBoundsException
+}
+\item{Checked Exceptions Ð används då felet inte beror på programmeraren \\
+Ex: FileNotFoundException om man försöker öppna en fil som inte finns
+}
+\end{itemize}
+När man anropar en metod som genererar en checked exception måste man ta hand om det. Normalt fångar man det i en try-catch-sats:
+\begin{lstlisting}
+   Scanner scan = null;
+   try {
+      // try to open file fileName
+      scan = new Scanner(new File(fileName));
+   } catch (FileNotFoundException e) {
+      System.err.println("Couldn't open file " + fileName);
+      System.exit(1);
+   }
+    ... use scan ...
+\end{lstlisting}
+Om exception inträffar, avbryts exekveringen av satserna i try-blocket och satserna i catch-blocket exekveras.
+\\ \\
+I satsen \verb+catch(Exception e)+ kan t.ex. följande metoder användas för att få mer information:
+\begin{itemize}
+\item{ \verb+e.printStackTrace();+ som skriver ut information om raden där felet inträffat och den/de metodanrop som lett till denna rad.}
+\item{ \verb+e.getMessage();+ som returnerar en sträng med meddelande om felets art.}
+\end{itemize}
+Generera egna exceptions:
+\begin{lstlisting}
+  throw new IllegalArgumentException("amount to deposit < 0");
+\end{lstlisting}
+Mönstret är: 
+\begin{lstlisting}
+  throw new ExceptionClass(); 
+  throw new ExceptionClass(message); 
+\end{lstlisting}
+Detta gör att exception-objekt skapas, exekvering av metoden avbryts. Javasystemet letar efter fångade catch-block.
+\\ \\
+Exempel:
+\begin{lstlisting}
+/**
+ * Deposits the specified amount.
+ * pre: The specified amount is >= 0
+ * post: The specified amount is added to balance
+ * @param n The amount to deposit
+ * @throws IllegalArgumentException if the specified amount is < 0
+ */
+public void deposit(int n) {
+   if (n < 0) {
+      throw new IllegalArgumentException("amount to deposit < 0");
+   }
+   balance =  balance + n;
+}
+\end{lstlisting}
+\section{Sortering}
+Varför sortera?
+\begin{itemize}
+\item{Göra sökning enklare.}
+\item{Förenkla vissa algoritmer.}
+\end{itemize}
+\subsection{Mergesort}
+En söndra och härda-algoritm. \\
+Först sorteras vänstra halvan, sedan den högra. Sedan samsorteras de båda sorterade halvorna.
+Mergesort har tidskomplexiteten $O(n \log n)$ oavsett indata.
+\subsection{Quicksort}
+Välj ut ett element (förslagsvis i mitten), detta element kallas för pivotelementet. \\
+Flytta element som är mindre än pivotelementet till vänster om det och flytta element som är större till höger. 
+Quicksort har tidskomplexiteten $O(n \log n)$, men $O(n^2)$ i värsta fall.
+\subsection{Heapsort}
+Heapsort har tidskomplexiteten $O(n \log n)$, är vektorn sorterad tar det $n$ för att sätta in och $\log n$ för att ta ut, alltså ändå $O(n \log n)$.
+\subsection{Insättningssortering (insertion sort)}
+Element på plats $k$ i vektorn sätts in på rätt plats bland de redan sorterade elementen på plats $0 \rightarrow(k-1)$. \\
+Tidskomplexiteten är $O(n^2)$ \\
+Insättningssortering är bra om vektorn nästan är sorterad från början. 
+\subsection{Urvalssortering (selection sort)}
+
+Den kanske enklaste metoden att sortera är att börja med att leta upp det minsta värdet i vektorn och sätta in det först. Därefter letar vi upp det näst minsta elementet (som är det minsta av de återstående elementen) och sätter in det näst först, och så fortsätter vi att leta upp och sätta in det tredje minsta, fjärde minsta, etc, tills alla element är i rätt ordning. 
+\begin{lstlisting}
+public static void selectionSort(int[] a, int n) {
+	for (int i = 0; i < n; i++) {
+		int smallest = i;
+		for (int k = i+1; k < n; k++) {
+			if (a[k] < a[smallest]) {
+				smallest = k;
+			}
+		}
+		int tmp = a[i];
+		a[i] = a[smallest];
+		a[smallest] = tmp;
+	}
+}
+\end{lstlisting}
+För att få ett mått på hur effektiv denna metod är kan vi räkna antalet jämförelser som behövs för att sortera en vektor med $n$ tal. I första varvet i den yttre for-loopen gör vi $ n - 1$ jämförelser (de görs inuti den inre for-loopen), i det andra varvet i den yttre for-loopen gör vi $n - 2$ jämförelser, etc. Totalt får vi: 
+\begin{center}
+$ T(n) = (n -1) + (n-2) + \dots + 2 + 1 = \frac{n(n-1)}{2} = O(n^2)$
+\end{center}
+jämförelser. dvs om vi dubblar antalet element i vektorn så krävs det ungefär fyra gånger fler jämförelser för att sortera elementen. 
+\subsection{Sammanfattning sortering}
+\begin{tabular}{l|l}
+Urvalssortering $O(n^2)$		&	Långsam för stora n. Efter k pass är de k minsta sorterade. \\ \\
+Insättningssortering $O(n^2)$	&	Bra för nästan sorterad indata (linjär då). \\ \\
+Heapsort $O(n \log n)$ 			&	Kan utformas så att inget extra minnesutrymme krävs. \\
+								& 	I praktiken långsammare än Quicksort. \\
+								&	Efter k pass är de k största elementen sorterade. \\ \\
+Mergesort $O(n\log n)$			& 	Kräver extra minnesutrymme. \\
+								&	I praktiken långsammare än Quicksort. \\
+								& 	Kan utformas iterativa och användas för att sortera element som finns på fil. \\ \\
+Quicksort $O(n \log n)$			& 	Men $O(n^2)$ i värsta fall. \\
+								&	Inget extra minnesutrymme för temporär vektor krävs. \\ 
+								&	Bäst av de nämnda i praktiken om man väljer pivot \\ 
+								&	och utför partionering förnuftigt. \\
+\end{tabular}
+\section{Lista}
+Implementering av listor:
+\begin{itemize}
+\item{Vektor, föregångare och efterföljare finns ''naturligt''.}
+\item{Länkad datastruktur. Består av noder som har information om efterföljande element(eventuellt också föregående = dubbellänkad lista)}
+\end{itemize}
+En lista är en ordnad följd av element.
+\begin{itemize}
+\item{Det finns en före-efter-relation mellan elementen}
+\item{Begrepp som ''första element i listan'', ''efterföljaren till visst element i listan'' är meningsfulla. Det finns alltså ett positionsbegrepp.}
+\end{itemize}
+Vi kan skapa en Lista med interfacet list:
+\begin{lstlisting}
+List<String> names;
+\end{lstlisting}
+och på så vis vänta med att välja vilken typ av lista vi vill ha.
+Två exempel på olika klasser som implementerar List.
+\begin{itemize}
+\item{ \verb+ArrayList+, som är särskilt bra på att snabbt hämta värden med get-operationen. Insättningar bör man bara göra sist i listan, då insättningar i andra positioner orsaker flyttningar av element.}
+\item{ \verb+LinkedList+, som är särskilt bra på att sätta in och ta bort element i början av listan.}
+\end{itemize}
+Vi skapar en lista såhär:
+\begin{lstlisting}
+List<String> names = new ArrayList<String>();
+\end{lstlisting}
+Observera:
+\begin{lstlisting}
+// works but considered ugly:
+ArrayList<String> names = new ArrayList<String>();
+
+// better! :
+List<String> names = new ArrayList<String>();
+\end{lstlisting}
+
+\section{Kö}
+En kö kallas även FIFO-lista. First In First Out. \\
+Insättningar göras alltid sist i följden, och bortagning avser alltid första elementet. \\
+Analogi: En (vanlig) kö när man handlar mat på ICA...
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{queueExample}}
+  \end{center}
+  \label{bild1}
+\end{figure}
+\\
+Några metoder som kan vara bra att känna till: \\
+\begin{tabular}{l|l}
+\hline
+	\verb+boolean offer(E item)+	&	Sätter in item sist i kön. \\  \\
+	\verb+E poll()+	&	Tar bort och returnerar första elementet i kön \\ \\
+	\verb+peek+		&	Returnerar första elementet i kön (utan att ta bort det). \\ \\
+\hline	
+\end{tabular}
+
+
+\subsection{Prioritetskö}
+En prioritetskö är en samling element där varje element har en prioritet (som används för
+att jämföra elementen med). Elementen plockas ut i prioritetsordning till skillnad mot en
+vanlig kö där elementen plockas ut i den ordning de satts in i kön.
+De operationer man ska kunna göra på en prioritetskö är
+\begin{itemize}
+\item{sätta in element.}
+\item{ta reda på det högst prioriterade elementet (minsta elementet).}
+\item{ta bort det högst prioriterade elementet (minsta elementet).}
+\end{itemize}
+
+Det finns inget speciellt interface för prioritetsköer. Man använder interfacet \verb+Queue<E>+.
+
+\section{Stack}
+En stack kallas även LIFO-lista. Last In First Out. \\
+Operationer sker på toppen av stacken, dvs. nya element läggs till längst upp, och element tas bort längst upp. \\
+Analogi: En tallriks dispenser, en hög med papper. \\
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{stackExample}}
+  \end{center}
+  \label{bild1}
+\end{figure}
+\\
+Några metoder som kan vara bra att känna till: \\
+\begin{tabular}{l|l}
+\hline
+	\verb+void push(E obj)+	&	Lägger obj överst på stacken. \\  \\
+	\verb+E pop()+	&	Tar bort och returnerar översta elementet från stacken. \\ \\
+	\verb+E peek()+		&	Returnerar första elementet i kön (utan att ta bort det). \\ \\
+	\verb+boolean isEmpty()+	&	Undersöker om stacken är tom. \\ \\
+\hline	
+\end{tabular}
+\section{Heap}
+Heap - ett komplett binärt träd där varje nod innehåller ett element som är $\leq$ barnens element. \\
+Alltså: Trädets grenar är så lika långa som möjligt. I fall det inte är möjligt så fylls den nedersta nivån på från vänster (vänsterbalanserat).
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{!}{30mm}{\includegraphics{heapExample}}
+  \end{center}
+  \label{bild1}
+\end{figure}
+För varje nod gäller det att roten innehåller det minsta elementet. \\ \\
+En heap kan med fördel lagras i en vektor. 
+\begin{itemize}
+\item{Roten finns på plats 0.}
+\item{Barnen till noden på plats $i$ finns på platserna $2i +1$ och $2i +2$ i vektorn. Noden på plats $i$ har alltså sin förälder på plats $(i-1)/2$.}
+\end{itemize}
+Offer (insättning i heap) görs genom att:
+\begin{itemize}
+\item{Nya element placeras på första lediga plats i vektorn. \\
+	Detta ger rätt form på trädet.}
+\item{Sedan byten uppåt tills rätt ordning.}
+\end{itemize}
+
+
+\section{Interfaces}
+Ett interface(svenska: gränssnitt) är som ett skal med metoder som den som implementerar måste använda. En klass kan implementera flera interface. Alla metoder är även implicit publika.  
+\begin{lstlisting}
+public interface InterfaceName{
+	/** Returns size */
+	int getSize();
+}
+\end{lstlisting}
+\begin{lstlisting}
+public class ClassName implements InterfaceName{
+	// attributs, methods, constructor as usual, but all methods in InterfaceName must be included
+}
+\end{lstlisting}
+Om det skiljer mycket mellan metoderna i klasserna så använd interface istället för en superklass.
+\subsection{Java Collections Framework}
+\begin{itemize}
+\item{Är en hierarki av interface, abstrakta klasser och konkreta klasser för samlingar av element.}
+\item{Finns i paketet \verb+java.util.+}
+\end{itemize}
+
+\begin{center}
+JFC - interface hieraki
+\end{center}
+\begin{tabular}{l|l}
+	Collection	&	en samling av element, där dubbletter tillåts \\ \\
+	Queue		&	en samling av element som utgör en kö	 \\ \\
+	List		&	en samling element där dubbletter tillåts och där positionerna är möjlig \\
+				&	(första, sista, element på plats i, ...) \\	\\
+	Set			&	en samling element där dubbletter är förbjudna \\ \\
+	SortedSet	&	som Set men med kravet att elementen går att jämföra \\ \\
+	Map			&	en samling element där varje element har en nyckel och ett värde \\ \\
+	SortedMap	&	som Map men med krav att nycklarna går att jämföra
+\end{tabular}	
+
+\begin{center}
+\begin{tabular}{|c|c|}
+	\hline
+	Interface	&	Implementering \\
+	\hline
+	Queue		&	LinkedList, PriorityQueue \\
+	List		&	ArrayList, LinkedList \\
+	Set			&	HashSet \\
+	SortedSet	&	TreeSet	\\
+	Map			&	HashMap \\
+	SortedMap	&	TreeMap \\
+	\hline
+\end{tabular}
+\end{center}
+\section{Klassen Object}
+Det finns en klass \verb+Object+, som är ''alla klassers moder'', om vi inte uttryckligen ärver någon annan klass så ärver vi automatiskt klassen \verb+Object+. \\
+Klassen \verb+Object+ innehåller en del metoder som kan vara bra att känna till:
+\begin{itemize}
+\item{toString \\ \\
+	\verb+public String toString()+ \\ \\
+	ger en sträng som beskriver objektet. Denna operation anropas automatiskt om vi skulle försöka skriva ut ett objekt, och implementationen i klassen \verb+Object+ skriver ut klassnamnet och ett heltal (objektets hash-kod)}
+
+\item{Metoden \verb+equals+ används för att jämföra om två objekt är lika. \\ \\
+	\verb+public boolean equals(Object obj);+ \\ \\
+	Metoden returnerar true om och endast om de jämföra objekten är identiska. Om man istället vill att innehållet inuti objekten ska jämföras måste man skugga \verb+equals+.
+	\begin{lstlisting}
+public boolean equals(Object obj){
+	if (obj instanceof Person){
+		return idNbr == ((Person) obj).idNbr;
+	}else{
+		return false;
+	}
+}
+	\end{lstlisting}
+	\begin{itemize}
+	\item{Observera att parametern till \verb+equals+ måste vara av typen \verb+Object+, annars blir det inte skuggning. Därför måste också typomvandlig till Person ske när man ska använda obj:s idNbr. }
+	\item{Uttrycket \verb+obj instanceof Person+ returnerar true om obj:s typ är av Person eller någon subklass till Person.}
+	\item{Uttrycket \verb+obj instanceof Person+ returnerar false om obj har värdet null.}
+	\end{itemize}
+	}
+
+\item{Förutom operationerna ovan innehåller även \verb+Object+ en operation \\ \\
+	\verb+public int hashCode()+ \\ \\
+		som ger en så kallad hash-kod, dvs ett slags numeriskt fingeravtryck för ett objekt. Detta innebär att alla objekt har en hashkod. \\
+		Exempel: \\
+		\begin{lstlisting}
+		public int hashCode() {
+			return isbn.hashCode();
+		}
+		\end{lstlisting}
+		}
+	
+\end{itemize}
+
+\section{Algoritmers tidsåtgång}
+Storleksordning för funktioner: 
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$f(n)$		&	namn \\ \hline \hline
+$1$			&	konstant \\
+$\log n$	&	logaritmisk \\
+$n$			&	linjär \\
+$n \log n$	&	log-linjär \\
+$n^2$		&	kvadratisk \\
+$n^3$		&	kubisk	\\
+$2^n$		&	exponentiell \\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Tidskomplexitet för några algoritmer}
+\begin{itemize}
+\item{Sortera $n$ tal med urvalssortering, bubbelsortering eller insättningssortering: $O(n^2)$}
+\item{Sortera med Mergesort och Quicksort: $O(n \log n)$}
+\item{Söka bland $n$ osorterade element: $O(n)$}
+\item{Söka med binärsökning bland $n$ sorterade element: $O(\log n)$}
+\item{Sätta in element först i en lista med $n$ element: $O(1)$.}
+\end{itemize}
+
+
+
+\end{document}
