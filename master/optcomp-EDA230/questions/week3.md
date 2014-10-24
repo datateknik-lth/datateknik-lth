@@ -51,9 +51,10 @@ SSAPRE
     SSA-renaming algorithm. PHI-operands corresponding to another PHI-operand
     is set to `*BOTTOM*`.
 3.  Finalize1
-    *   Downsafety: PHI is downsafe there is a real occurrence of the
-        computation before a program exit or modification of the computation's
-        value. SSAPRE may not add a computation which might not be used at all.
+    *   Downsafety: PHI is downsafe if there is a real occurrence of the
+        computation after PHI but before the program exit or modification of
+        the computation's value after the PHI function. SSAPRE may not add a
+        computation which might not be used at all.
         ```
         while (a < b)
         i += x * y;
