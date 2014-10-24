@@ -93,3 +93,26 @@ ElementRest -> epsilon
 ```
 
 The conflicting productions are merged.
+
+## Collection attributes ##
+
+```
+coll T A.c() [new T()] with m;
+```
+
+*   Where T is the type
+*   A.c() is the location attribute
+*   [new T()] is a fresh object of type T
+*   m is the collection method which should be a one argument method in T
+
+### Contribution attributes ###
+
+```
+B contributes T to A.c() for A-ref
+```
+
+*   Where B is the contributing node
+*   T is the value contributed to the collection method
+*   A.c() is the collection attribute
+*   A-ref is a reference to A. This can be propagated down via an inherited
+    method
