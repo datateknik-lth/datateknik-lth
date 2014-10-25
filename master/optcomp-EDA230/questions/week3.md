@@ -21,6 +21,9 @@ Terms
 ## Partially anticipated ##
 A computation E is partially anticipated at a point p if there is a path P from
 p to a computation at a point q and E is preserved along P.
+*Jonas's definition:* An expression is *anticipated* at a point p in the CFG if
+it is certain that it will be evaluated with all operands having the same
+value on all paths to p.
 
 ## Fully anticipated ##
 A computation E is fully anticipated at a point p if it is partially anticipated
