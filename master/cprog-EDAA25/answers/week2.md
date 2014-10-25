@@ -1,6 +1,7 @@
-1.  Arrays as parameters are changed to pointers to save data. What this means,
-    however, is that whenever passing an array to a function, the function could
-    theoretically change the array since it's not passed by value.
+1.  Whenever passing an array to a function, the function could
+    theoretically change the array since it's not passed by value. 
+    Instead of copying the whole array every time we call the function
+    it is more efficient to pass a pointer.
     
 1.  Matrices are stored in the same way as an array. The first block denotes the
     amount of rows, the second the stepsize between them. Meaning that if we
