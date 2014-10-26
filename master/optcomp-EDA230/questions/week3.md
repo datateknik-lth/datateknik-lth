@@ -49,7 +49,7 @@ SSAPRE
     vertices with assignments to an operand of E.
 2.  Rename. All occurrences (real, Ф, and Ф-operand). Renaming uses the
     SSA-renaming algorithm. Ф-operands corresponding to another Ф-operand
-    is set to `⊥`.
+    is set to **⊥**.
 3.  Finalize1
     *   Downsafety: Ф is downsafe if there is a real occurrence of the
         computation after Ф but before the program exit or modification of
@@ -67,10 +67,10 @@ SSAPRE
     *   Availability: Find the Ф-functions where an expression safely can be
         made available, and then find the latest point to insert the expression
         (reduce live ranges). `can_be_available` is set to `false` if the
-        Ф-function is not downsafe and has a `⊥` operand, this
+        Ф-function is not downsafe and has a **⊥** operand, this
         propagated to every operand's definition. `later` is initially set to
         `can_be_available`, but if there exits an operand which is not
-        `⊥`and has a real use, then it is set to false (and propagated
+        **⊥**and has a real use, then it is set to false (and propagated
         to each operand).
 
     *   Modify: For each Ф-function which satisfy `will_be_available`
