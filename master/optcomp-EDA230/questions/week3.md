@@ -19,19 +19,19 @@ Terms
 =====
 
 ## Partially anticipated ##
-A computation E is partially anticipated at a point p if there is a path P from
-p to a computation at a point q and E is preserved along P.
-*Jonas's definition:* An expression is *anticipated* at a point p in the CFG if
+A computation *E* is partially anticipated at a point *p* if there is a path *P* from
+*p* to a computation at a point *q* and *E* is preserved along *P*.
+*Jonas's definition:* An expression is **anticipated** at a point *p* in the CFG if
 it is certain that it will be evaluated with all operands having the same
-value on all paths to p.
+value on all paths to *p*.
 
 ## Fully anticipated ##
-A computation E is fully anticipated at a point p if it is partially anticipated
-along every path from p to program exit.
+A computation *E* is fully anticipated at a point *p* if it is partially anticipated
+along every path from *p* to program exit.
 
 ## Down safe ##
-A point q is down-safe with respect to a computation E, if E is fully
-anticipated at q. Since SSAPRE is not allowed to to add computations which
+A point *q* is down-safe with respect to a computation *E*, if *E* is **fullyanticipated**
+at *q*. Since *SSAPRE* is not allowed to to add computations which
 wouldn't be there otherwise, the following code can't be optimized:
 ```
 while (a < b)
