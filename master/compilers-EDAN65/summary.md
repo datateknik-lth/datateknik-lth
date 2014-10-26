@@ -1,7 +1,7 @@
 Summary
 =======
 
-## Ambiguos grammars ##
+## Ambiguous grammars ##
 
 Introduce new non-terminals to mitigate the ambiguity.
 
