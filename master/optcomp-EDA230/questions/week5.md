@@ -90,5 +90,4 @@ gives a positive distance vector. In this case `J - I` gives a positive
 vector `d_c = (1, 2)`.
 
 ### TIP! ###
-In this vector `(1, 2)` left is read right is write. I.e. if the first
-element is larger than the second then the read occurs first.
+If both `(x, y)` are positive then the read occurs before the write.
