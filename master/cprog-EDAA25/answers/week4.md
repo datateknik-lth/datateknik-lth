@@ -11,7 +11,7 @@
 1.  Natural alignment refers to giving data items an address which is a multiple
     of its size.
     ```
-    /*  Results in a struct of size 7 */
+    /*  Results in a struct of size 8 */
     struct node_t {
             short a;
             char  b;
