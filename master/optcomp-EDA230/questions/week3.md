@@ -44,19 +44,16 @@ Since the `while` loop might never run, this can be fixed by changing the
 SSAPRE
 ======
 
-* phi == little phi
-* PHI == big phi
-
-1.  Insert PHI-functions. PHI is inserted at `DF+(R + A)`, where
+1.  Insert Ф-functions. Ф is inserted at `DF+(R + A)`, where
     R is the set of vertices with real occurrences of E, and A is the set of
     vertices with assignments to an operand of E.
-2.  Rename. All occurrences (real, PHI, and PHI-operand). Renaming uses the
-    SSA-renaming algorithm. PHI-operands corresponding to another PHI-operand
+2.  Rename. All occurrences (real, Ф, and Ф-operand). Renaming uses the
+    SSA-renaming algorithm. Ф-operands corresponding to another Ф-operand
     is set to `*BOTTOM*`.
 3.  Finalize1
-    *   Downsafety: PHI is downsafe if there is a real occurrence of the
-        computation after PHI but before the program exit or modification of
-        the computation's value after the PHI function. SSAPRE may not add a
+    *   Downsafety: Ф is downsafe if there is a real occurrence of the
+        computation after Ф but before the program exit or modification of
+        the computation's value after the Ф function. SSAPRE may not add a
         computation which might not be used at all. I.e. in the following code,
         `x * y` might never be needed.
         ```
@@ -67,16 +64,16 @@ SSAPRE
         This can be fixed by changing
         the `while` into an `if` and `do-while`.
 
-    *   Availability: Find the PHI-functions where an expression safely can be
+    *   Availability: Find the Ф-functions where an expression safely can be
         made available, and then find the latest point to insert the expression
         (reduce live ranges). `can_be_available` is set to `false` if the
-        PHI-function is not downsafe and has a `*BOTTOM*` operand, this
+        Ф-function is not downsafe and has a `*BOTTOM*` operand, this
         propagated to every operand's definition. `later` is initially set to
         `can_be_available`, but if there exits an operand which is not
         `*BOTTOM*`and has a real use, then it is set to false (and propagated
         to each operand).
 
-    *   Modify: For each PHI-function which satisfy `will_be_available`
+    *   Modify: For each Ф-function which satisfy `will_be_available`
         (`can_be_avail && !later`), the expression is inserted at each incoming
         edge where the expression is not available.
 
