@@ -7,7 +7,7 @@
     revisiting a vertex.
 5.  When they have the same operator
 6.  The `n log(n)` version uses a hashmap when entering a scope
-7.  Whenever two (Felix luktar fisk) different values reach a common point in the program
+7.  Whenever two different values reach a common point in the program
 8.  A point q is down-safe with respect to a computation E, if E is fully
     anticipated at q.
 9.  
