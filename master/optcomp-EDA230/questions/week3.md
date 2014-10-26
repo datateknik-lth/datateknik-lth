@@ -57,13 +57,14 @@ SSAPRE
     *   Downsafety: PHI is downsafe if there is a real occurrence of the
         computation after PHI but before the program exit or modification of
         the computation's value after the PHI function. SSAPRE may not add a
-        computation which might not be used at all.
+        computation which might not be used at all. I.e. in the following code,
+        `x * y` might never be needed.
         ```
         while (a < b)
         i += x * y;
         a++;
         ```
-        Since the `while` loop might never run, this can be fixed by changing
+        This can be fixed by changing
         the `while` into an `if` and `do-while`.
 
     *   Availability: Find the PHI-functions where an expression safely can be
