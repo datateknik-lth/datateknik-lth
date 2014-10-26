@@ -70,7 +70,7 @@ SSAPRE
         Ф-function is not downsafe and has a **⊥** operand, this
         propagated to every operand's definition. `later` is initially set to
         `can_be_available`, but if there exits an operand which is not
-        **⊥**and has a real use, then it is set to false (and propagated
+        **⊥** and has a real use, then it is set to false (and propagated
         to each operand).
 
     *   Modify: For each Ф-function which satisfy `will_be_available`
