@@ -57,9 +57,10 @@ SSAPRE
         computation which might not be used at all. I.e. in the following code,
         `x * y` might never be needed.
         ```
-        while (a < b)
-        i += x * y;
-        a++;
+        while (a < b)  {
+            i += x * y;
+            a++;
+        }
         ```
         This can be fixed by changing
         the `while` into an `if` and `do-while`.
