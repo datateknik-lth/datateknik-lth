@@ -29,7 +29,9 @@
     ```
     Since the compiler is not permitted to change the ordering within the struct
     it must insert one extra byte between a and c in the first defintion. These
-    bytes are called padding.
+    bytes are called padding. It is important to note that the last member is 
+    padded with the number of bytes required so that the total size of the 
+    structure should be a multiple of the largest alignment of any structure member.
 
 1.  LOL no clue
 
