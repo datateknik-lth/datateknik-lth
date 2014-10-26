@@ -49,7 +49,7 @@ SSAPRE
     vertices with assignments to an operand of E.
 2.  Rename. All occurrences (real, Ф, and Ф-operand). Renaming uses the
     SSA-renaming algorithm. Ф-operands corresponding to another Ф-operand
-    is set to `*BOTTOM*`.
+    is set to `⊥`.
 3.  Finalize1
     *   Downsafety: Ф is downsafe if there is a real occurrence of the
         computation after Ф but before the program exit or modification of
