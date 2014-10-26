@@ -67,7 +67,7 @@ SSAPRE
     *   Availability: Find the Ф-functions where an expression safely can be
         made available, and then find the latest point to insert the expression
         (reduce live ranges). `can_be_available` is set to `false` if the
-        Ф-function is not downsafe and has a **⊥** operand, this
+        Ф-function is not downsafe and has a **⊥** operand, this is
         propagated to every operand's definition. `later` is initially set to
         `can_be_available`, but if there exits an operand which is not
         **⊥** and has a real use, then it is set to false (and propagated
