@@ -19,8 +19,8 @@
     ```
     After linear function test replacement:
     ```c
-    floar *p = &a[0];
-    floar *u = &a[0];
+    float *p = &a[0];
+    float *u = &a[0];
     while (p < u) {
         s += *p;
         p++;
