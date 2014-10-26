@@ -94,7 +94,7 @@ If both `(x, y)` are positive then the read occurs before the write.
 
 Hyperplane Method
 =================
-The Hyplerplane Method is a way to enable parallel execution of all loops
+The Hyperplane Method is a way to enable parallel execution of all loops
 except the outermost. Given a perfect loop nest `L` and a distance matrix
 `D`, the method finds a `m x m` unimodular matrix `U`, this matrix carries
 all the dependencies in the outermost loop `L1`. All inner loops `L2..Lm`
@@ -106,10 +106,10 @@ first column is (for all elements) `>= 1`.
 `d1 x u >= 1` .... `dn x u >= 1`, where `u = (u1, u2... um)`, the first
 column of `U`.
 
-Now can be determined by 
+U can be determined by 
 ```
-                           | u1 1 0 0 |
-U = [ u; [ I_(m-1); 0] ] = | u2 0 1 0 |
-                           | u3 0 0 1 |
-                           | um 0 0 0 |
+                                 | u1 1 0 0 |
+U = [ u; [ I_(m-1); zeroes ] ] = | u2 0 1 0 |
+                                 | u3 0 0 1 |
+                                 | um 0 0 0 |
 ```
