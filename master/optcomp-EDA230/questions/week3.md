@@ -34,9 +34,10 @@ A point *q* is down-safe with respect to a computation *E*, if *E* is **fully**
 **anticipated** at *q*. Since *SSAPRE* is not allowed to to add computations which
 wouldn't be there otherwise, the following code can't be optimized:
 ```
-while (a < b)
+while (a < b) {
     i += x * y;
     a++;
+}
 ```
 Since the `while` loop might never run, this can be fixed by changing the
 `while` into an `if` and `do-while`.
