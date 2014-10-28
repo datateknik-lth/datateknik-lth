@@ -33,7 +33,14 @@
     padded with the number of bytes required so that the total size of the 
     structure should be a multiple of the largest alignment of any structure member.
 
-1.  LOL no clue
+1.  Lets say we want to align pointer with size_t 8, aka we want to round up to the next multiple of 8.
+    We start by adding 7 to the size (think modulo) and then remove all bits < 8, aka bitwise complement:
+    ```
+    unsigned a = (unsigned)p;
+    a = (a + 7) & ~7;
+    p = (double*)aa;
+    ```
+    
 
 1.  A flexible array member is an array of unspecified length inside a struct.
     ```
