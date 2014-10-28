@@ -20,7 +20,7 @@
     After linear function test replacement:
     ```c
     float *p = &a[0];
-    float *u = &a[0];
+    float *u = &a[100];
     while (p < u) {
         s += *p;
         p++;
