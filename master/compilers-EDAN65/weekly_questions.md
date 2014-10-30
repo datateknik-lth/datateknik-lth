@@ -54,7 +54,7 @@ Attributed AST
 
     the visitor class then performs some operation on each node. For instance a
     PrintVisitor might print the AST
-*   *Qualified access* "typ a.b()" alltså metodanrop - Andree Ekroth
+*   *Qualified access* "typ a.b()" alltså metodanrop - Andrée Ekroth
 *   *Demand evaluation* lazy val, values are cached
 *   *Intrinsic attriutes* internal attributes like ID - constructed when
     building the AST
