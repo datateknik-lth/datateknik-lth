@@ -1,0 +1,1 @@
+Note question 7: The list is null terminated (the last node's next element points to NULL).

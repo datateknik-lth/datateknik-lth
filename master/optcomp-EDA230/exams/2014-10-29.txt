@@ -1,0 +1,1 @@
+Note question 6: Partition based value-numbering = global value numbering
