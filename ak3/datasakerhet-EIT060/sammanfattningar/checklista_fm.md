@@ -430,7 +430,7 @@ Exam Checklist
 * **Key confirmation:** one party is assured that the second party has possession
   of a secret key, but doesn't have to know the identity of said party
 * **Explicit key authentication:** implicit key authentication and key confirmation 
-* together, imply explicit key authentication.
+  together, imply explicit key authentication.
 * **Replay attacks:** listening in on communication between parties and then
   repeating the information to one party. Can be used to authenticate when a
   nonce hasn't been used
