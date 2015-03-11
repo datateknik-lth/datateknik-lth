@@ -429,8 +429,8 @@ Exam Checklist
   specifically identified 2nd party may gain access to a secret key
 * **Key confirmation:** one party is assured that the second party has possession
   of a secret key, but doesn't have to know the identity of said party
-* **Explicit key authentication:** both implicit and explicit key authentication
-  and key confirmation
+* **Explicit key authentication:** implicit key authentication and key confirmation 
+* together, imply explicit key authentication.
 * **Replay attacks:** listening in on communication between parties and then
   repeating the information to one party. Can be used to authenticate when a
   nonce hasn't been used
