@@ -21,11 +21,13 @@ Regler
 Innehåll
 --------
 
-Om du skrivit ett dokument i t.ex. [Markdown][wp-markdown] eller LaTeX och
-kompilerat till PDF så committa gärna in båda filerna. Det är viktigt att
-källkoden finns för att andra ska kunna uppdatera och förbättra innehållet.
-Samtidigt blir det enklare att läsa igenom det andra skrivit om det finns
-färdigrenderade PDF:er så att man slipper ladda ner och kompilera själv.
+Tidigare har repot tagit emot både [Markdown][wp-markdown] eller LaTeX med
+tillhörande pdf. Framöver så vill vi endast ta emot Markdown. Således kommer
+alla pull requests med LaTeX att ignoreras. För att lösa problemet med formler
+i Markdown använd gärna en tjänst som [iTex2Img](http://www.sciweavers.org/free-online-latex-equation-editor).
+Spara bilderna direkt i repot och länka via Markdown. Vi går över till markdown
+för att göra innehåller lättare att läsa utan att behöva ladda ner det stora
+repot.
 
 [wp-markdown]: https://en.wikipedia.org/wiki/Markdown "Markdown - Wikipedia, the free encyclopedia"
 
@@ -35,7 +37,7 @@ repot för att hålla reda på mindre viktiga filer, som föreläsningsbilder. D
 blir snabbt både ointressanta och inaktuella och behöver därför inte finnas med
 i historiken. De kan också ta upp stor plats. För att ändå kunna ha dem på samma
 ställe som övriga resurser är [git-annex](#user-content-git-annex) en bra
-lösning. Se [ak3/ingproc3-ETSF01/lectures](ak3/ingproc3-ETSF01/lectures) för ett
+lösning. Se [ETSF01-ingproc3/lectures](ETSF01-ingproc3/lectures) för ett
 exempel.
 
 Katalogstruktur
@@ -43,8 +45,8 @@ Katalogstruktur
 
 Strukturen är enligt följande
 
-    /årskurs/kursnamn-KURSKOD/extentor
-    /årskurs/kursnamn-KURSKOD/sammanfattningar
+    /KURSKOD-kursnamn/extentor
+    /KURSKOD-kursnamn/sammanfattningar
 
 Sökvägar bestående av endast gemener (små bokstäver) är alltså att föredra, då
 de är lättare att skriva. Undantaget är kurskoden som skrivs med versaler av
