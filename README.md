@@ -56,6 +56,18 @@ skriva ut hela namnet. Undvik t.ex. att skriva ut *"Ingenjörsprocessen för
 programvaruutveckling -- ekonomi och kvalitet"*. Svenska och engelska blandas
 friskt tills konsensus att använda det ena eller det andra språket uppnåtts.
 
+Konvertera LaTeX till Markdown
+------------------------------
+
+Detta kan göras enkelt via pandoc. Installera pandoc och kör:
+
+```bash
+$ pandoc -f latex -t markdown file_name.tex > out_name.md
+```
+
+Alla formler behöver fixas via Tex2Img, laddas ner som bilder
+och sedan länkas direkt i markdown.
+
 git-annex
 ---------
 
