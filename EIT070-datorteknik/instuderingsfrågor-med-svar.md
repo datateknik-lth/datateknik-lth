@@ -45,12 +45,65 @@
     Pipelining är när processorn kör flera olika instruktioner samtidigt genom att tillåta en instruktion i varje fas (t.ex en i "Fetch" och en i "Execute").
 
 2. Vilka  konflikter  kan  uppstå  i  en  pipeline?  
-3. Illustrera  hur  konflikter  uppstår?  
-4. Vad  kan  man  göra  för  att  undvika  konflikter?  
-5. Vad  är  branchpredikion?  
-6. Vad  är  spekulativ  exekvering?  
-7. Delayed  branching  – vad  är  det?  Ge  ett  exempel.  
-8. Ge  exempel  på  en  kompilatorteknik  som  kan  användas  för  att  unvika/hantera  konflikter i pipelinen.  
+    Strukturella konflikter:
+        när en två pipelineade instruktioner försöker använda en hårdvarukomponent (ex. primärminnet) samtidigt
+    Datakonflikter:
+        När en instruktion beror på data som påverkas av en exekverande instruktion.
+    Kontrollkonflikter:
+        När en instruktion som låg direkt efter en branch instruktion påbörjat exekvering, men som senare visar sig *inte* ska exekveras. Alltså då om branchen genomfördes.
+
+
+3. Illustrera  hur  konflikter  uppstår? 
+    
+4. Vad  kan  man  göra  för  att  undvika  konflikter? 
+    Generell åtgärd är att sätta stalls, eller 'nop'-instruktioner, efter varje instruktion som kan orsaka en pipelinekonflikt.
+    En annan åtgärd, inriktat mot att förhindra kontrollkonflikter, är att använda sig av delayed branching (förklaras nedan.)
+
+5. Vad  är  branchpredikion? 
+    När processorn försöker, med hjälp av en predictionalgoritm, gissa vilken väg en kommande branch-instruktion kommer ta. Det finns två generella strategier för detta:
+
+    Statisk prediktion, där man *inte* tar hänsyn till historiken. Olika implementeringar:
+        – Predict never taken – antar att hoppet inte kommer
+tas (Motorola 68020)
+        – Predict always taken – antar att hoppet alltid kommer
+        tas
+        – Predict beroende på riktning (Power PC 601):
+            » Predict branch taken för tillbaka hopp
+            » Predict branch not taken för framåt hopp'
+            
+    Dynamisk prediktion, där man tar hänsyn till historiken.
+        1-bit prediktering: Man sparar vad som hände vid förra branchen, och antar att samma kommer hända vid nästa branch-instruktion.
+        2-bit prediktering: Man använder en state-machine, vilket är lättast förstått av att titta på [detta diagram](http://imgur.com/VsEKhx2), som är hämtat från Pipelining föreläsningen.
+    
+
+6. Vad  är  spekulativ  exekvering?
+    När processorn börjar exekvera instruktioner baserat på branch-gissningen gjord av en branch-prediction.
+
+7. Delayed  branching  – vad  är  det?  Ge  ett  exempel.
+    När instruktioner körda innan en branch-instruktion, som inte kommer påverka om branchen kommer genomgöras eller ej, läggs precis efter en branch-instruktion så stall/nop inte behövs.
+
+    Ett exempel *innan* delayed branching:
+    
+    `...
+    add $5, $6              # $5 = $5 + $6, i.e. something that doesn't affect the beq statement
+    beq $1, $2, some_label  # Branch to some_label if $1 == $2
+    nop
+    ...
+    `
+    
+    Ett exempel *med* delayed branching:
+    
+    `...
+    beq $1, $2, some_label  # Branch to some_label if $1 == $2
+    add $5, $6              # $5 = $5 + $6. Now replaces the nop statement
+    ...
+    `
+
+8. Ge  exempel  på  en  kompilatorteknik  som  kan  användas  för  att  unvika/hantera  konflikter i pipelinen.
+    Delayed branching är en teknik som kompilatorer kan använda för att minska pipelinekonflikter.
+    Även automatisk nop-insättning efter alla instruktioner känsliga för strukturella- och datakonflikter, som `lw` (Load word).
+
+    Båda dessa utnyttjas när man anger assemblydirektivet '.setreorder' i MIPS.
 
 ## Minne
 
