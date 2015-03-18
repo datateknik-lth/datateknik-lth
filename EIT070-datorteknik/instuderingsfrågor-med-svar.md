@@ -172,7 +172,7 @@ tas (Motorola 68020)
 
 12. Antag  ett  program  som  exekverar  alla  instruktioner  i  en  sekvens  (en  i  taget)  och  att  det  finns  ett  cacheminne  för  instruktioner  där  cacherader  har  storlek  64bytes  och  varje  instruktion  kräver  2  bytes.  Vad  är  sannolikheten  för  att  nästa  instruktion  finns  i  samma cacherad  som  förra  instruktion?
 
-    Sannolikheten är 1/32.
+    Sannolikheten är `31/32` då antalet instruktioner per cacherad är `64/2 = 32` vilket innebär att sannolikheten är `1/32` att nästa instruktion ligger på nästa cacherad. Det omvända fallet blir då som sagt `1-(1/32) = 31/32`.
 
 13. Vad  är  fördelen  med  paging?
 
