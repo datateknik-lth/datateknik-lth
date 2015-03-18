@@ -9,7 +9,11 @@
 
 2. Vem  är  Von  Neumann?
     
-    John von Neumann var en matematiker som bland annat beskrev den datorarkitektur som lade grunden till dagens moderna datorarkitekturer. Den datorarkitekturen, Von-Neumann arkitekturen, gick ut på att se program och datan som programmet använder, som samma sak och placera de i samma minne. [Här är en bild](http://www.teach-ict.com/as_as_computing/ocr/H447/F453/3_3_3/vonn_neuman/miniweb/images/von_newmann_architecture.jpg) [(Källa)](http://www.teach-ict.com/as_as_computing/ocr/H447/F453/3_3_3/vonn_neuman/miniweb/pg3.htm) som visar Von-Neumann arkitektur.
+    John von Neumann var en matematiker som bland annat beskrev den datorarkitektur som lade grunden till dagens moderna datorarkitekturer. Den datorarkitekturen, Von-Neumann arkitekturen, gick ut på att se program och datan som programmet använder, som samma sak och placera de i samma minne. Här är ett diagram som visar Von-Neumann arkitektur.
+
+    ![Diagram på Von-Neumann arkitektur](./bilder/von_newmann_architecture.jpg)
+
+    [(Källa)](http://www.teach-ict.com/as_as_computing/ocr/H447/F453/3_3_3/vonn_neuman/miniweb/pg3.htm)
 
 3. Vad  gör  en  kompilator?
     
@@ -64,7 +68,10 @@
     När en instruktion som låg direkt efter en branch instruktion påbörjat exekvering, men som senare visar sig *inte* ska exekveras. Alltså då om branchen genomfördes.
 
 3. Illustrera  hur  konflikter  uppstår?
-    [Illustration av hur kontrollkonflikter kan uppstå](http://imgur.com/5cMUvDO), hämtat från pipelining föreläsningen.
+
+    Denna bilden är hämtad från pipelining föreläsningen.
+    
+    ![Illustration av hur kontrollkonflikter kan uppstå](./bilder/kontrollhazaradsPipeline.png)
     
 4. Vad  kan  man  göra  för  att  undvika  konflikter? 
 
@@ -90,7 +97,9 @@ tas (Motorola 68020)
     **Dynamisk prediktion**, där man tar hänsyn till historiken:
 
     - 1-bit prediktering: Man sparar vad som hände vid förra branchen, och antar att samma kommer hända vid nästa branch-instruktion.
-    - 2-bit prediktering: Man använder en state-machine, vilket är lättast förstått av att titta på [detta diagram](http://imgur.com/VsEKhx2), som är hämtat från Pipelining föreläsningen.
+    - 2-bit prediktering: Man använder en state-machine, vilket är lättast förstått av att titta på diagrammet nedan, som är hämtat från Pipelining föreläsningen.
+
+    ![Diagram över en 2-bit prediction state machine](./bilder/prediction2bit.png)
     
 
 6. Vad  är  spekulativ  exekvering?
