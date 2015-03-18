@@ -9,7 +9,11 @@
 
 2. Vem  är  Von  Neumann?
     
-    John von Neumann var en matematiker som bland annat beskrev den datorarkitektur som lade grunden till dagens moderna datorarkitekturer.
+    John von Neumann var en matematiker som bland annat beskrev den datorarkitektur som lade grunden till dagens moderna datorarkitekturer. Den datorarkitekturen, Von-Neumann arkitekturen, gick ut på att se program och datan som programmet använder, som samma sak och placera de i samma minne. Här är ett diagram som visar Von-Neumann arkitektur.
+
+    ![Diagram på Von-Neumann arkitektur](./bilder/von_newmann_architecture.jpg)
+
+    [(Källa)](http://www.teach-ict.com/as_as_computing/ocr/H447/F453/3_3_3/vonn_neuman/miniweb/pg3.htm)
 
 3. Vad  gör  en  kompilator?
     
@@ -25,7 +29,7 @@
 
 6. Vad  skiljer  ett  högnivåspråk  från  ett  maskinspråk?
 
-    Datorn kan inte direkt läsa ett högnivåspråk utan det måste genomgå kompilation till maskinspråk (eller bytekod om det ska köras i t.ex. JVM) för att kunna exekveras.
+    Datorn kan inte direkt läsa ett högnivåspråk utan det måste genomgå kompilation till maskinspråk (eller bytekod om det ska köras i t.ex. JVM) för att kunna exekveras. Det är också lättare att producera kod säkert och lättförståerligt i högnivåspråk, medans assembly-kod tenderar att vara jobbigt att både utveckla och förstå/läsa.
 
 7. Görs  alla  beräkningar  (+, -,  ...,  AND,  OR)  i  ALU:n?
 
@@ -35,7 +39,7 @@
     
 9. Ge  exempel  på  fördelar  med  att  använda  register  för  att  lagra  data
     
-    Data i register tar mindre tid att hämta än data i t.ex. CPU cache, RAM-minne eller från disk. Det går även snabbare att spara till register.
+    Data i register tar mindre tid att hämta än data i t.ex. CPU cache, RAM-minne eller från disk. Det går även snabbare att spara till register. I en pipelinearkitektur så kan dessutom register användas av flera instruktioner samtidigt, vilket inte är möjligt med t.ex. primärminne.
 
 10. Om  en  processor  gör  ”Fetch”  och  ”Execute”,  vad  görs  under  ”Fetch?  Vad  görs  under  ”Execute”?  Är  det  som  görs  under  ”Fetch”  samma  för  alla  instruktioner”
     
@@ -63,7 +67,11 @@
 
     När en instruktion som låg direkt efter en branch instruktion påbörjat exekvering, men som senare visar sig *inte* ska exekveras. Alltså då om branchen genomfördes.
 
-3. Illustrera  hur  konflikter  uppstår? 
+3. Illustrera  hur  konflikter  uppstår?
+
+    Denna bilden är hämtad från pipelining föreläsningen.
+    
+    ![Illustration av hur kontrollkonflikter kan uppstå](./bilder/kontrollhazaradsPipeline.png)
     
 4. Vad  kan  man  göra  för  att  undvika  konflikter? 
 
@@ -89,7 +97,9 @@ tas (Motorola 68020)
     **Dynamisk prediktion**, där man tar hänsyn till historiken:
 
     - 1-bit prediktering: Man sparar vad som hände vid förra branchen, och antar att samma kommer hända vid nästa branch-instruktion.
-    - 2-bit prediktering: Man använder en state-machine, vilket är lättast förstått av att titta på [detta diagram](http://imgur.com/VsEKhx2), som är hämtat från Pipelining föreläsningen.
+    - 2-bit prediktering: Man använder en state-machine, vilket är lättast förstått av att titta på diagrammet nedan, som är hämtat från Pipelining föreläsningen.
+
+    ![Diagram över en 2-bit prediction state machine](./bilder/prediction2bit.png)
     
 
 6. Vad  är  spekulativ  exekvering?
@@ -134,7 +144,7 @@ tas (Motorola 68020)
 
 2. Vad  är  random  access  när  man  talar  om  minnen?
 
-    Att alla sektorer på minnet tar lika lång tid att hämta.
+    Att alla sektorer på minnet tar lika ungefär lång tid att hämta.
 
 3. Ge  exempel  på  minne  som  inte  har  random  access?
 
@@ -154,19 +164,49 @@ tas (Motorola 68020)
      - RAM
      - Hårddiskar (som i sig själva kan innehålla minneshierarkier då de själva har cacheminne)
      - Externa lagringsmedia
+     
+     Siffror som 
 
-5. Varför  uppstår  en  minneshierarki?  
+5. Varför  uppstår  en  minneshierarki? 
+
+    En minneshierarki uppstår för att vi kan inte ha både stora och snabba minnen; man måste kompromissa. Därför lägger man mindre, snabbare minnen närmare processorn för att öka snabbheten och minska accesstid och större, långsammare minnen längre från processorn. 
+
 6. Vad  kallas  principen  som  gör  att  cacheminne  fungerar?  Förklara  principen.  Ge  ett  exempel  på  programkod  där  cacheminne  INTE  ger  någon  vinst.  
     
     Lokalitetsprincipen, gör 
+
+    Principen är *Lokalitet av referenser*, varpå det finns två viktiga subprinciper:
+		* Temporal lokalitet:
+			Om en instruktion/data blivit refererad nu, så är sannlokhuteten stor att samma referens görs inom kort.
+		* Rumslokalitet:
+			Om instruktion/data blivit refererat nu, så är sannolikheten stor att instruktioner/data vid addresser i närheten kommer användas inom kort.
     
 7. Vad  är  en  cachemiss?  Varför  uppkommer  cachemissar?  Hur  hanteras  det?  
 
-8. Cacheminnen  kan  ha  olika  mappningar – vilka?  Hur  fungerar  varje  mappning?  
+8. Cacheminnen  kan  ha  olika  mappningar – vilka?  Hur  fungerar  varje  mappning? 
+
+    - **Direktmappning**
+        Man placerar instruktionen på *nästan* samma plats som den är på i minnet. Man placerar den på följande index:
+		`Cacheindex = Instruktionens address i minnet % cachestorlek`
+		Är den platsen i cachen upptagen av något annat så skriver man helt enkelt över det.
+		
+	- **Associativemappning**
+		Innebär att man bara fyller på cacheminnet på följd och använder ersättningsalgoritm vid cachemiss i ett fullt cacheminne.
+
+	- **Set-associative mappning**
+		Detta är en blandning mellan direkt- och associativmappning. Man delar in cacheminnet i flera *sets*, mappar vissa instruktionsaddresser till dessa sets, och använder associativmappning inom varje set. Ett exempel skulle vara om man har två sets, en för alla instruktioner med en udda address och en för alla med jämn address. Inom varje set använder man dock associativmappning.
 
 9. I  direktmappning,  hur  ersätts  cacherader  vid  cachemissar?
 
+    De skrivs över utan vidare.
+
 10. Vad  är  en  ersättningsalgoritm?    
+ 
+    En algoritm som används vid associativemappning (samt inuti varje set i set-associative mappning) för att bestämma vilken/vilket cacherad/cacheblock som ska kastas ut för att göra plats för det nya. Det finns tre stycken nämnda i cacheminneföreläsningen i denna kursen:
+
+    - **Least recently used (LRU)** – kandidat är den cacherad vilken varit i cachen men som inte blivit refererad (läst/skriven) på länge
+    - **First-In First Out (FIFO)** – kandidat är den som varit längst i cacheminnet
+    - **Least frequently used (LFU)** – kandidat är den cacherad som refererats mest sällan 
 
 11. Vad  menas  med  att  cacheminnet  inte  är  konsistent?  Hur  hålls  ett  cacheminne  konsistent?
 
@@ -236,6 +276,16 @@ tas (Motorola 68020)
 1. Vad  gör  ett  operativsystem?
 
     Kärnan hanterar hårdvaruresurser, t.ex. arbetsminne, in/ut-enheter och processortid. Användarprogram 
+    
+    *Alternativt svar:* 
+    - Filsystemshantering
+    - Minneshantering
+    - Processhantering
+    - Avbrott
+    - In- och utmatning
+    - Nätverk
+    - Säkerhet
+    - Drivrutiner
 
 2. Vad  är  multitasking?
 
