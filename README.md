@@ -24,10 +24,10 @@ Innehåll
 Tidigare har repot tagit emot både [Markdown][wp-markdown] eller LaTeX med
 tillhörande pdf. Framöver så vill vi endast ta emot Markdown. Således kommer
 alla pull requests med LaTeX att ignoreras. För att lösa problemet med formler
-i Markdown använd gärna en tjänst som [iTex2Img](http://www.sciweavers.org/free-online-latex-equation-editor).
-Spara bilderna direkt i repot och länka via Markdown. Vi går över till markdown
-för att göra innehåller lättare att läsa utan att behöva ladda ner det stora
-repot.
+i Markdown så finns det numera ett script i repot [tex2img.py](tex2img.py) som
+omvandlar tex formulas till bilder. Spara bilderna direkt i repot och länka
+via Markdown. Vi går över till markdown för att göra innehåller lättare att
+läsa utan att behöva ladda ner det stora repot.
 
 [wp-markdown]: https://en.wikipedia.org/wiki/Markdown "Markdown - Wikipedia, the free encyclopedia"
 
