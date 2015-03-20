@@ -323,4 +323,4 @@ tas (Motorola 68020)
     
 
 -------
-Källan för instuderingsfrågorna finns i `instuderingfrågor.pdf` som ursprungligen kommer [härifrån](http://www.eit.lth.se/fileadmin/eit/courses/eit070/2015/Instuderingsfr%E5gor.pdf).
+Källan för instuderingsfrågorna finns i `instuderingfrågor.pdf` som ursprungligen kommer härifrån http://www.eit.lth.se/fileadmin/eit/courses/eit070/2015/Instuderingsfr%E5gor.pdf.
