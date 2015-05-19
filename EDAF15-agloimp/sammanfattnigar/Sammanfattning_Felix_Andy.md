@@ -57,6 +57,12 @@ Terms
 > might overwrite data that will be read next. I.e. few of the loaded bytes
 > will be of use
 
+* **Arithmetic shift**
+> When dividing value by a power of two, we can shift the numerator right same
+> number of times as the order of the denominator (i.e. 4 times for 16 and 2
+> times for 4). When this is done with negative integers we need to add one
+> to the solution
+
 Common questions
 ================
 
