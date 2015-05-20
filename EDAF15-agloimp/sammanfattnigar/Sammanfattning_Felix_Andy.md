@@ -227,8 +227,6 @@ C
 > Below is an implementation of getting the ones in an `unsigned long long`
 
 ```c
-#include <limits.h>
-
 unsigned count(unsigned long long a)
 {
     unsigned ones = 0;
