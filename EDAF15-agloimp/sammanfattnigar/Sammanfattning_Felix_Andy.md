@@ -226,11 +226,6 @@ C
 >
 > Below is an implementation of getting the ones in an `unsigned long long`
 
-**Rearranging fields in structs**
-> This is not allowed to be done by the compiler. To minimize the struct size,
-> you need to arrange the fields such that the alignment padding is minimized.
-
-
 ```c
 #include <limits.h>
 
@@ -244,3 +239,7 @@ unsigned count(unsigned long long a)
     return ones;
 }
 ```
+
+**Rearranging fields in structs**
+> This is not allowed to be done by the compiler. To minimize the struct size,
+> you need to arrange the fields such that the alignment padding is minimized.
