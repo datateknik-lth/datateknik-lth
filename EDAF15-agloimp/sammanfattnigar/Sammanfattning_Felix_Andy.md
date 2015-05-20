@@ -58,7 +58,7 @@ Terms
 > When dividing value by a power of two, we can shift the numerator right same
 > number of times as the order of the denominator (i.e. 4 times for 16 and 2
 > times for 4). When this is done with negative integers we need to add one
-> to the solution
+> to the solution if the computed value is not a power of two.
 
 **True dependence**
 > An instruction `I_1`is followed by `I_2`. If `I_1` produces a value that
@@ -142,6 +142,20 @@ int aligned(void *ptr, size_t a)
 }
 ```
 
+**Checking if something is a power of two**
+```c
+bool two_power(int x)
+{
+        /* The idea of the right side is explained in the 'aligned'
+         * function above
+         *
+         * If a < 0 || a == INT_MIN, then this would yield true, despite
+         * not being a powers of two
+         */
+        return x > 0 && (x & (x-1)) == 0;
+}
+```
+
 Tools
 =====
 
@@ -199,3 +213,34 @@ C
 > deallocated, they can be put in a free-list instead of deallocating them
 > using `free`. If the objects are of different sizes or only deallocated near
 > the end of an execution, free-lists are *not* useful.
+
+**Arithmetic and Logical Shift**
+> Arithmetic shift keeps the sign, logical will shift in zeros.  To get logical
+> shift, you need an `unsigned`.  To get an arithmetic, simply use a `signed`
+> type.
+>
+> **OBS!** Shifting *right* is not standardized to be logical or arithmetic. Meaning
+> it is up to the compiler implementation to decide. Usually, the above applies
+> (GCC and Clang), but it doesn't have to. Write a program to test your
+> compiler.
+>
+> Below is an implementation of getting the ones in an `unsigned long long`
+
+**Rearranging fields in structs**
+> This is not allowed to be done by the compiler. To minimize the struct size,
+> you need to arrange the fields such that the alignment padding is minimized.
+
+
+```c
+#include <limits.h>
+
+unsigned count(unsigned long long a)
+{
+    unsigned ones = 0;
+
+    for (; a > 0; a >>= 1)
+            if (a & 1) ones++;
+
+    return ones;
+}
+```
