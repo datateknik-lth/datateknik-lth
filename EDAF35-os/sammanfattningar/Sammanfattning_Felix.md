@@ -8,7 +8,7 @@ Terms
 **Exceptions**
 > Occur in the pipeline/MMU. Makes processor switch to supervisor mode.
 > I.e. exceptions are similar to interrupts, except that they are generated
-> internally in the processor (invluding MMU).
+> internally in the processor (including MMU).
 
 **System calls**
 > System calls switch to the kernel through the use of a special instruction in
@@ -69,7 +69,7 @@ variable?**
 > executed the system call instruction, it can return to instructions which
 > writes the error code in the `errno` variable then the `-1` value in the
 > return value register to indicate a failed system call. This works, since the
-> code that makes the system call is part of the applications address space.
+> code that makes the system call is part of the application's address space.
 
 **What are pipes used for?**
 > Pipes are used to redirect output and input between two programs.
@@ -94,7 +94,7 @@ instance an ELF executable file?**
 > the process will never receive EOF.
 
 **Why is the concept of process groups useful with pipes?**
-> If we for instance want to kill, stop or resume the entire piplein it's
+> If we for instance want to kill, stop or resume the entire pipeline it's
 > sufficient for the shell to make one `kill` system call with a negative
 > process id so that it is delivered to all processes in the group.
 
@@ -180,17 +180,17 @@ frequent than disk reads?**
 > avoided if exactly the same block is overwritten before it reaches the disk.
 
 **How are modern file systems designed to exploit the above fact?**
-> EXT3 makesthe writes in a journal which avoids time consuming moving of the
+> EXT3 makes the writes in a journal which avoids time consuming moving of the
 > disk write head. After data has been written to the journal, it is copied to
 > its correct locations in the file system, but this copying is not time
 > critical.
 
-**Two ways to reduce the number of system calls for accessing a file are:
+**Two ways to reduce the number of system calls for accessing a file are:**
 
-- Memory map the file using `mmap`
-- use the C library call `setvbuf`
+- **Memory map the file using `mmap`**
+- **use the C library call `setvbuf`**
 
-For which file access patterns is each most suitable and why?**
+**For which file access patterns is each most suitable and why?**
 > Normal buffering, possibly with a larger buffer set by `setvbuf` works well
 > for sequential accesses, and `mmap` can additionally be useful for more
 > irregular accesses since it can eliminate the need for using the `lseek`
@@ -211,6 +211,7 @@ For which file access patterns is each most suitable and why?**
 **What does the cleaner process do with LFS?**
 > The cleaner process performs garbage collection in order to create fresh
 > segments that can be used for writing in the log.
+>
 > * Overwritten data blocks of a file, or removed files - no action
 > * If a segment `S1` has live data (i.e. still in use) that and live data from
 >   other segments can be collected and copied to a segment `S2` in order to
@@ -236,11 +237,11 @@ via the kernel?**
 > then return to the program.
 
 **Looking at a traditional UNIX file system such as EXT2, how would you
-modify it to achieve the following goals:
+modify it to achieve the following goals:**
 
-- faster recovery after a crash
-- faster writes
-- faster reads of video streams**
+- **faster recovery after a crash**
+- **faster writes**
+- **faster reads of video streams**
 > * By having a log or journal which is written as transactions, recovery
 >   can be made by inspecting journal instead of doing full system check.
 >   A full check would include all files and directories to see that the inodes'
@@ -310,3 +311,9 @@ Scheduling
 **What is affinity scheduling?**
 > To schedule a thread on the same CPU as it was running last time in order to
 > have some useful data left in the cache.
+
+**What is the difference between soft and hard affinity?**
+> Soft affinity, which Linux uses, the scheduler only *tries* to schedule the
+> process to run on the same CPU. If it is infeasable, the process will be
+> migrated to another CPU. With hard affinity, if the process is bound to CPU
+> 0 - it can *only* execute on CPU 0.
