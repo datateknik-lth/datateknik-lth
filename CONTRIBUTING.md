@@ -2,6 +2,7 @@ Att bidra
 =========
 
 Vem som helst får bidra. Som vanligt:
+
 * Fork the repository
 * Submit a pull request
 * Get merged
