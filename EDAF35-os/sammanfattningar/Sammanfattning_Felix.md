@@ -19,7 +19,7 @@ Terms
 **Page table**
 > A page table contains mappings from virtual to physical pages and information
 > about whether the page was recently accessed, modified after it was copied to
-> RAM, readonly, whether it is in RAM or on swap dvice. The page table can be,
+> RAM, readonly, whether it is in RAM or on swap device. The page table can be,
 > and often is, implemented as a multi-level table where the virtual page
 > number is divided into e.g. three parts. Each part is used to index an array.
 > Each indexed array element contains a pointer to a new array which is indexed
@@ -142,8 +142,9 @@ to find it?**
 > fashion.
 
 **What is a linear page table?**
-> A linear page table is an array of page table entries and since it is so
-> large, it is stored in virtual memory.
+> Instead of using a multi-level page table, one could place it entirely in
+> virtual memory. This would let the virtual memory management deal with placement
+> in memory etc.
 
 **Translating virtual to physical page numbers for every memory access seems to
 significantly degrade performance. Why does it *usually* not?**
@@ -242,6 +243,7 @@ modify it to achieve the following goals:**
 - **faster recovery after a crash**
 - **faster writes**
 - **faster reads of video streams**
+
 > * By having a log or journal which is written as transactions, recovery
 >   can be made by inspecting journal instead of doing full system check.
 >   A full check would include all files and directories to see that the inodes'
@@ -285,20 +287,6 @@ Which performance problem does this lock have, if any?**
 > next. A disadvantage with ticket-based spinlocks is that at an unlock, all
 > waiting CPUs will fetch the counter telling whose turn it is. While it would
 > be better that only the CPU which will get the lock should be informed.
-
-**Show how a plain spinlock using the test-and-set instruction should be
-implemented using two loops**
-
-```c
-void lock(int *p)
-{
-        lock(&object);
-        while(locked(&p))
-                while(*p);
-        unlock(&object);
-} ?????? FIX ME
-```
-
 
 Scheduling
 ----------
