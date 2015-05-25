@@ -9,7 +9,7 @@ Terms
 > cannot be loaded until the outcome has been determined.
 
 **Rename Registers**
-> Are used to eliminate *true depencies* (when the outcome of one instruction
+> Are used to eliminate *true dependencies* (when the outcome of one instruction
 > is dependent on another). the concerned hazards are write after read and write
 > after write
 
@@ -143,6 +143,7 @@ int aligned(void *ptr, size_t a)
 ```
 
 **Checking if something is a power of two**
+
 ```c
 bool two_power(int x)
 {
@@ -165,8 +166,8 @@ Tools
 > affects compiler optimization.
 
 **gprof**
-> Execution times are shown for the different functions and the nmber of times
-> each function is called and by which function. Same disadvantages as *gcov*
+> Execution times are shown for the different functions and the number of times
+> each function is called and by which function. Same disadvantages as *gcov*.
 
 **OProfile**
 > Can count the number of times certain events happen such as: clock cycles,
@@ -174,19 +175,19 @@ Tools
 > instruction level. Advantages over *gcov*/*gprof* are that it does not need
 > special flags and should be used with the highest level of optimization. A
 > disadvantage is that to change what it should count, the user must have root
-> privileges on the machine
+> privileges on the machine.
 
 **valgrind**
 > Can detect many kinds of pointer and memory allocation errors. It can also
 > produce statistics of heap memory usage and cache performance.  Doesn't
 > require flags, but works best when debugging information is available. Is
-> much slower than other tools (e.g. 100 times slower execution)
+> much slower than other tools (e.g. 100 times slower execution).
 
 **cachegrind**
 > Cachegrind is used for performance measurement of the cache and the
 > processor's branch prediction. In contrast to valgrind, it is better to
 > enable optimization (and -g). Is used together with valgrind
-> `valgrind --cache-sim=no --branch-sim=yes --tool=cachegrind...`
+> `valgrind --cache-sim=no --branch-sim=yes --tool=cachegrind...`.
 
 **massif**
 > Measures the amount of heap memory different parts of a program allocates. Is
@@ -194,7 +195,7 @@ Tools
 
 **strace**
 > Prints to a file or to `stderr` each system call a process makes, with
-> arguments and return value, as well as signals it receives
+> arguments and return value, as well as signals it receives.
 
 C
 =
