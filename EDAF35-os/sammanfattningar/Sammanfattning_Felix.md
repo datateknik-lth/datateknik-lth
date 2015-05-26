@@ -58,6 +58,19 @@ Terms
 > mapped files over accessing them as files is that `lseek` system calls can be
 > avoided.
 
+**Completely Fair Scheduler**
+> The point of CFS is to be fair, hence the thread which has the lowest
+> `vruntime` will be scheduled next. To keep track of this the scheduler
+> keeps running tasks in a RB-tree. The tree is self balancing and the task
+> with the lowest `vruntime` is kept furthest to the left. Hence, getting the
+> task to run next is a constant time operation (because of smart
+> implementation), while (re-)inserting a task is a `O(log n)` operation. Thus,
+> every task slowly, but surely migrates to the left, eventually becoming the
+> next task to run.
+>
+> CFS has run priorities, but uses them as a decay factor. This factor will
+> make a low prioritized task's `vruntime` increase faster.
+
 Common questions
 ================
 
