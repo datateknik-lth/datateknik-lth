@@ -79,6 +79,15 @@ Terms
 Common questions
 ================
 
+**What is a SETUID program and how can this feature be useful?**
+> When accessing a file, the effective user id is checked. Thus, to edit
+> a file which you do not have access to - you can use a SUID program.
+>
+> The program will give the running user your UID as effective UID. Thus
+> allowing the user to change the file. A SUID program can thus allow users
+> to make controlled changes to files. A simple example is protecting a
+> highshcore file this way (i.e. only letting the game change the file).
+
 **How can the kernel make sure the process's variable errno gets the proper
 error code despite the kernel not knowing the actual address of said
 variable?**
