@@ -51,7 +51,12 @@ Terms
 > execution* and a data section containing global variables.
 
 **User credentials**
-> Name and password? Used to authenticate the user to the system...? FIX ME
+> Every user has a user ID (UID) and a group ID (GID). These credentials are
+> checked e.g. every time a user wants to access a file. They can thusly be
+> used to allow/disallow users access to certain files and/or directories.
+>
+> In Linux files have permissions for owner, group and others.
+
 
 **Memory mapped file**
 > A memory mapped file is mapped to a virtual address. An advantage of memory
