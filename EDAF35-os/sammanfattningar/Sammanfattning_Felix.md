@@ -26,6 +26,8 @@ Terms
 > by the next part of the virtual page number. Due to locality of references,
 > this approach saves memory, since the complete address space needs not be in
 > memory - only the used pages.
+>
+> Multi-level page tables are also called *forward mapped page table*
 
 **Page fault**
 > The data of the requested page is not in RAM and must be fetched from swap.
@@ -243,6 +245,13 @@ not `remove`?**
 > The system call removes only the directory entry and not the file itself,
 > unless it was the last directory entry referring to that file.
 
+**What is a virus? How do you write viruses for Linux?**
+> A *virus* is a small piece of code that is attached to some program, and
+> when run, the virus copies itself into other programs etc
+>
+> Add the virus e.g. at the end of the *text* segment of a program and change
+> the startup code to call it before main.
+
 **Except for mount points, why can a normal UNIX directory not contain files
 stored in a file system (hdd partition) different than the directory itself is
 stored in?**
@@ -383,6 +392,7 @@ Scheduling
 
 **What is the difference between soft and hard affinity?**
 > Soft affinity, which Linux uses, the scheduler only *tries* to schedule the
-> process to run on the same CPU. If it is infeasable, the process will be
-> migrated to another CPU. With hard affinity, if the process is bound to CPU
-> 0 - it can *only* execute on CPU 0.
+> process to run on the same CPU. If the thread has waited long enough, the
+> process will be migrated to another CPU (it's cache will have disappeared
+> anyway). With hard affinity, if the process is bound to CPU 0 - it can *only*
+> execute on CPU 0.
