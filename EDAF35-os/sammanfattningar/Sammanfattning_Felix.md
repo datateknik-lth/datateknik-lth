@@ -57,7 +57,6 @@ Terms
 >
 > In Linux files have permissions for owner, group and others.
 
-
 **Memory mapped file**
 > A memory mapped file is mapped to a virtual address. An advantage of memory
 > mapped files over accessing them as files is that `lseek` system calls can be
@@ -72,6 +71,9 @@ Terms
 > implementation), while (re-)inserting a task is a `O(log n)` operation. Thus,
 > every task slowly, but surely migrates to the left, eventually becoming the
 > next task to run.
+>
+> `vruntime` is not an absolute time, but weighted by the number of runnable
+> processes.
 >
 > CFS has run priorities, but uses them as a decay factor. This factor will
 > make a low prioritized task's `vruntime` increase faster.
@@ -124,6 +126,19 @@ instance an ELF executable file?**
 > If we for instance want to kill, stop or resume the entire pipeline it's
 > sufficient for the shell to make one `kill` system call with a negative
 > process id so that it is delivered to all processes in the group.
+>
+> In Linux, every process group is identified with the PID of the leader of the
+> group. I.e. in `$ grep -i unix *.tex | awk -F...` the `grep` process will be
+> the leader. Let's say that it has the PID 1337. To kill all of the processes
+> in the process group, one would simply execute `$ kill -9 -1337`.
+
+**What is the purpose of the operation called relocation which is used during
+link-editing? How is it done?**
+> The purpose is to modify instructions and data with static storage duration
+> that contains an address (including PC-relative) so that they have the
+> correct values.
+>
+> When concatenating the different sections the relative addresses are altered.
 
 Virtual Memory
 --------------
@@ -160,6 +175,9 @@ to find it?**
 > The coremap, indexed by physical page number, contains a pointer to the
 > owning page table entry. This must be updated so that its data can be found
 > on the swap when needed in the future.
+>
+> I.e. the owner of the replaced page entry is informed that its page has
+> disappeared.
 
 **What is the second chance page replacement?**
 > The coremap array is searched and when a page entry with reference bit zero
@@ -188,6 +206,37 @@ significantly degrade performance. Why does it *usually* not?**
 
 File systems
 ------------
+
+**What is the difference between journaled and log-structured file systems?**
+> A journaled file system keeps a circular journal separate from the file
+> system. While a log-structured file system maintains the log within the file
+> system itself.
+
+**What are the issues to reliably recover after a crash?**
+> * **Preservation** - the recovery should not modify files already written
+>   before the crash.
+> * **Predictability** - it is easier to recover after a crash if there are
+>   gurantees about the order in which disk writes occurred just before the
+>   crash.
+> * **Atomicity** - the file operations should either not happen at all, or be
+>   issued to completion. I.e. when moving a file between directories and the
+>   computer crashes, there should only be a file in exactly *one* of the
+>   directories.
+>
+> *Sidenote:* EXT2 is neither predictable nor atomic.
+
+**Explain the different RAID levels**
+> * Level 0 is disk striping, i.e. there is no redundancy between disks
+> * Level 1 is disk mirroring, data is always written to two disks. The
+>   data is always written to two disks. Most expensive.
+> * Level 2 stripes data at the bit-level. And uses a parity bit.
+> * Level 3 is bit-interleaved parity. The parity bit is the sum modulo two
+>   of the bits in a byte.
+> * Level 4 is block level striping.
+> * Level 5 the parity sectors are spread out among the check disks and the
+>   protection group.
+> * Level 6, called the *P + Q redundancy scheme* again error-correcting codes
+>   are used, now for dealing with multiple-disk failures.
 
 **Why is the system call to remove a file from a directory called `unlink` and
 not `remove`?**
@@ -254,6 +303,11 @@ frequent than disk reads?**
 **EXT4 supports fast access to large files. How?**
 > By using so called extents which are areas of size up to 128MB consisting of
 > consecutive disk blocks. I/O is faster with larger disk blocks.
+
+**Is EXT4 journaled or log-structured?**
+> Neither. EXT4 never modified, instead copied. Thus neither a log nor a journal
+> is needed. A side-effect of this copying is that the file system can trivially
+> support file versioning or backups similar to that off Apple's Time Machine.
 
 **What are UNIX signals and why is it important to return from a signal handler
 via the kernel?**
