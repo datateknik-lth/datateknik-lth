@@ -95,15 +95,16 @@ Common questions
   or memory location is modified only if it should be)
     - The CPU will fetch the instructions for the guessed outcome of the
       branch. But it is not allowed to modify memory until it knows for certain
-      that the branch was taken. If it was incorrect the instructions fetched are
-      simply ignored and the correct instructions are fetched. I.e. it uses
+      that the branch was taken. If it was incorrect the instructions fetched
+      are simply ignored and the correct instructions are fetched. It uses
       *register renaming* to avoid corrupting the actual registers until it
       knows if the branch was taken or not. If it should predict wrong, it will
       need to invalidate the instructions. For this, the *reorder buffer* is
       used.
 * Why do we not have fully associative caches in CPUs?
     - We would need too many comparators (parallel lookup units) to find the
-      wanted address. They would simply not fit on the silicon.
+      wanted address. The space needed can be better utilized by other
+      components.
 * What is the purpose of having sets in a cache?
     - The purpose is to reduce the risk of two or more addresses being mapped
       to the same row in the cache. This would result in cache misses as the
