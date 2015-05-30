@@ -9,9 +9,8 @@ Terms
 > cannot be loaded until the outcome has been determined.
 
 **Rename Registers**
-> Are used to eliminate *true dependencies* (when the outcome of one instruction
-> is dependent on another). The concerned hazards are write after read and write
-> after write
+> Are used to eliminate *anti- and output dependencies*. The concerned hazards are write after read and write
+> after write.
 
 **Reorder buffer**
 > The reorder buffer is used for *out-of-order execution*. It allows
