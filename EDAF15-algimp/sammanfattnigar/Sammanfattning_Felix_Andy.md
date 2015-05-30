@@ -10,7 +10,7 @@ Terms
 
 **Rename Registers**
 > Are used to eliminate *true dependencies* (when the outcome of one instruction
-> is dependent on another). the concerned hazards are write after read and write
+> is dependent on another). The concerned hazards are write after read and write
 > after write
 
 **Reorder buffer**
@@ -30,8 +30,8 @@ Terms
 **Fully associative cache**
 > Look through each row in the cache for the wanted address. Done with
 > comparators, that execute the lookup in parallel. For real applications this
-> is unfeasable since there would have to be too many comparators to fit on the
-> chip.
+> is unfeasable since there would have to a lot of comparators. The space can
+> be utilized in a better way.
 
 **Temporal locality**
 > Objects are close in time, i.e. used near each other in time
