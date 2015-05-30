@@ -80,48 +80,55 @@ Terms
 Common questions
 ================
 
-* Explain why a five-stage pipelined RISC processor usually does not see a
-  five-time speedup when running most programs.
-    - Pipeline stalls due to taken branches
-    - Pipeline stalls due to sequences such as a load directly followed by use
-      of the fetched value
-    - Delay due to cache miss
-    - Instructions such as divide taking multiple cycles to execute
-* Describe a program that can come close to a five-time speedup
-    - A program which does not suffer cache misses, and none of the other
-      problems above, which sometimes can be achieved by loop-unrolling and many
-      integer computations
-* How is chaos averted when using speculative execution? (I.e. that a register
-  or memory location is modified only if it should be)
-    - The CPU will fetch the instructions for the guessed outcome of the
-      branch. But it is not allowed to modify memory until it knows for certain
-      that the branch was taken. If it was incorrect the instructions fetched
-      are simply ignored and the correct instructions are fetched. It uses
-      *register renaming* to avoid corrupting the actual registers until it
-      knows if the branch was taken or not. If it should predict wrong, it will
-      need to invalidate the instructions. For this, the *reorder buffer* is
-      used.
-* Why do we not have fully associative caches in CPUs?
-    - We would need too many comparators (parallel lookup units) to find the
-      wanted address. The space needed can be better utilized by other
-      components.
-* What is the purpose of having sets in a cache?
-    - The purpose is to reduce the risk of two or more addresses being mapped
-      to the same row in the cache. This would result in cache misses as the
-      value would be overwritten many times. Set associative caches are used to
-      divide the cache so that the need for comparators is minimized.
-* In a 4-way set associative cache, where can the data at memory address A be
-  placed?
-    - In one of the sets defined by a function (`i = addr % CACHE_SIZE`). The
-      sets will each contain four *cache blocks*, thus the need for the same
-      amount of comparators (since the address may be placed anywhere within the
-      cache block).
-* When reallocating memory, what is the advantage of `realloc` over a
-  combination of `malloc` and `free`?
-    - With `malloc` you can run out of memory in a situation where `realloc`
-      would find memory. `realloc` also has a chance to be faster.
-* Write a function to check that a void pointer `ptr` has a value which is a
-  multiple of `size_t a`
+**Explain why a five-stage pipelined RISC processor usually does not see a
+five-time speedup when running most programs.**
+> Pipeline stalls due to taken branches
+> Pipeline stalls due to sequences such as a load directly followed by use
+> of the fetched value
+> Delay due to cache miss
+> Instructions such as divide taking multiple cycles to execute
+
+**Describe a program that can come close to a five-time speedup**
+> A program which does not suffer cache misses, and none of the other
+> problems above, which sometimes can be achieved by loop-unrolling and many
+> integer computations
+
+**How is chaos averted when using speculative execution? (I.e. that a register
+or memory location is modified only if it should be)**
+> The CPU will fetch the instructions for the guessed outcome of the
+> branch. But it is not allowed to modify memory until it knows for certain
+> that the branch was taken. If it was incorrect the instructions fetched
+> are simply ignored and the correct instructions are fetched. It uses
+> *register renaming* to avoid corrupting the actual registers until it
+> knows if the branch was taken or not. If it should predict wrong, it will
+> need to invalidate the instructions. For this, the *reorder buffer* is
+> used.
+
+**Why do we not have fully associative caches in CPUs?**
+> We would need too many comparators (parallel lookup units) to find the
+> wanted address. The space needed can be better utilized by other
+> components.
+
+**What is the purpose of having sets in a cache?**
+> The purpose is to reduce the risk of two or more addresses being mapped
+> to the same row in the cache. This would result in cache misses as the
+> value would be overwritten many times. Set associative caches are used to
+> divide the cache so that the need for comparators is minimized.
+
+**In a 4-way set associative cache, where can the data at memory address A be
+placed?**
+> In one of the sets defined by a function (`i = addr % CACHE_SIZE`). The
+> sets will each contain four *cache blocks*, thus the need for the same
+> amount of comparators (since the address may be placed anywhere within the
+> cache block).
+
+**When reallocating memory, what is the advantage of `realloc` over a
+combination of `malloc` and `free`?**
+> With `malloc` you can run out of memory in a situation where `realloc`
+> would find memory. `realloc` also has a chance to be faster.
+
+**Write a function to check that a void pointer `ptr` has a value which is a
+multiple of `size_t a`**
 
 ```c
 #include <stdint.h>
