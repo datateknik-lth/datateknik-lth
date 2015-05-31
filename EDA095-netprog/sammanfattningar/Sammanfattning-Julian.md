@@ -172,3 +172,44 @@ Skickar en lista av key-value par i URL'ns query del:
 [scheme:][//authority][path][?query][#fragment]
 
 Ex: Arg1=Value1&Arg2=Value2
+
+
+Föreläsning 3
+-------------
+
+Processer är exekverande program.
+De flesta OS can köra flera processer parallellt.
+OS allokerar en lite del av CPU tid till varje process.
+
+Processer som körs finns i datorns minne.
+De innehåller programkod (från kompileringen).
+Ett dataområde som sparar dynamisk data allokeras av programmet under körning med hjälp av kommandot "new".
+När ett program kallar på sina metoder/funktioner så sparar en stack deras parametrar.
+
+Väntande processer står som "REDO", CPUn väljer en och markerar den som "ELECTED", vid I/O så flyttas en "ELECTED" process till "BLOCKED" tills I/On är klar.
+
+Processer väljs utefter en scheduling-algorithm, exempelvis FIFO eller Priority.
+
+Traditionella processer är sekventiella, Concurrent processer har multipla trådar körandes, dvs processer inom processen.
+
+Trådar implementeras antingen genom att extenda Thread, eller implementa Runnable.
+
+Schedulering kan antingen vara preemptive, eller cooperative:
+
+ * En cooperativ schedulerare väljer tråden med högst prio, tills färdig eller yield kallas.
+ * En preemptive schedulerare allokerar tid till alla trådar så att alla får köra, hög prio får mest tid.
+
+Executors har en tråd-pool som utför jobb efterhand de submitas med hjälp av sin förbestämda mängd trådar.
+
+Busy wait: while(p); = DÅLIGT!
+
+Använd: synchronized (Object){while(p){try{ wait();} catch(Exception e){}}} & notifyAll();
+
+Deadlocks sker om två trådar har varsin resurs blockad och väntar på varandra. UNDVIK DETTA!
+En enkel tråd kan inte deadlocka sig själv.
+
+En tråd "dör" när det kört klart.
+
+
+
+
