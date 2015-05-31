@@ -140,6 +140,8 @@ HTTP response:
     ...
     </html>
 
+#### URI
+
 URIs är namnconventioner liknande URLs (RFC 2396)
 [scheme:]scheme-specific-part[#fragment]
 URIs kan vara absoluta (med ett scheme) eller relativa (utan).
@@ -153,9 +155,20 @@ Om authority är en server så är syntaxen för denne:
 User-info kan bestå av ett användarnamn och ett lösenord: 
 anonymous:pierre@cs.lth.se
 
+#### Dataöverföring
+
 Klienter kan skicka data till HTTP servrar med hjälp av en lista av key-value par:
 
 book=Java Network Programming
 author=Harold
 
-Detta används när man fyller i HTML formulär (forms), GET eller POST kan användas som metod här.
+Detta används när man fyller i HTML formulär (forms), GET eller POST kan användas som metod.
+
+
+##### GET
+
+Skickar en lista av key-value par i URL'ns query del:
+
+[scheme:][//authority][path][?query][#fragment]
+
+Ex: Arg1=Value1&Arg2=Value2
