@@ -313,8 +313,8 @@ frequent than disk reads?**
 > By using so called extents which are areas of size up to 128MB consisting of
 > consecutive disk blocks. I/O is faster with larger disk blocks.
 
-**Is EXT4 journaled or log-structured?**
-> Neither. EXT4 never modified, instead copied. Thus neither a log nor a journal
+**Is ZFS journaled or log-structured?**
+> Neither. ZFS never modified, instead copied. Thus neither a log nor a journal
 > is needed. A side-effect of this copying is that the file system can trivially
 > support file versioning or backups similar to that off Apple's Time Machine.
 
