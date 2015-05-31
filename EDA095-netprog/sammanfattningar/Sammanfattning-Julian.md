@@ -97,4 +97,65 @@ URLs är definerade av RFC 2396 och RFC 2732.
 
 Protokoll har default portar (http - 80)
 En URL kan vara absolut eller relativ till base URL.
-Ett URL kan skapas
+Ett URL kan skapas på 3 sätt:
+ * URL(String spec)
+ * URL(String protocol, String host, String file)
+ * URL(URL context, String spec)
+
+Exempel:
+ * new URL("http://www.cs.lth.se/index.html");
+ * new URL("http", "www.cs.lth.se", "/index.html");
+ * new URL(new URL("http://www.cs.lth.se/EDA095/"),"labs.shtml");
+
+Throws MalformedURLException If the string specifes an unknown protocol.
+
+Klient-Server kommunikation sker enkelt sett med en TCP koppling från klienten till servern på port 80.
+Klienten skickar request, servern svarar med en response.
+Requesten består av ett command word (HTTP method) för att identifiera requesten, parametrar, och annan möjlig data.
+Responsen består av en responskod och objekt som skall visas eller renderas av klienten.
+
+HTTP request:
+ 1. HTTP method, URL, version
+    GET /pierre_nugues HTTP/1.1
+ 2. Sequence of parameter names (46 types) followed by `:' and values pairs
+    Name: Value
+    Accept: text/plain
+    ...
+    Host: cs.lth.se
+    User-Agent: Mozilla/4.0
+ 3. Empty line: \r\n
+ 4. Possibly a message body (data) whose size is given by the Content-Length attribute
+
+HTTP response:
+ 1. Protocol, status code, textual phrase
+    HTTP/1.0 200 OK
+ 2. Sequence of parameter names followed by `:' and values
+    Date: Wed, 28 Mar 2007 12:12:54 GMT
+    Server: Apache/2.0.52 (sparc-sun-solaris2.8)
+    ...
+    Connection: close
+ 3. Empty line: \r\n
+ 4. Data
+    <html>
+    ...
+    </html>
+
+URIs är namnconventioner liknande URLs (RFC 2396)
+[scheme:]scheme-specific-part[#fragment]
+URIs kan vara absoluta (med ett scheme) eller relativa (utan).
+
+En hierarkisk URI parsas enligt följande syntax:
+
+[scheme:][//authority][path][?query][#fragment]
+Om authority är en server så är syntaxen för denne:
+
+[user-info@]host[:port]
+User-info kan bestå av ett användarnamn och ett lösenord: 
+anonymous:pierre@cs.lth.se
+
+Klienter kan skicka data till HTTP servrar med hjälp av en lista av key-value par:
+
+book=Java Network Programming
+author=Harold
+
+Detta används när man fyller i HTML formulär (forms), GET eller POST kan användas som metod här.
