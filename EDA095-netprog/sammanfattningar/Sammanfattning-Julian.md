@@ -72,3 +72,29 @@ Klasserna BufferedInput/OutputStream implementerar buffring.
 Glöm inte anropa flush!
 
 Reader/Writer implementerar möjligheten att skicka/ta emot tecken utan att omvandla dessa till bytes manuellt.
+
+
+Föreläsning 2
+-------------
+
+### Internet addresses
+
+InetAddress är en abstraktion av klasserna Inet4Address och Inet6Address.
+Representerar en IP adress.
+
+NetworkInterface klassesn representerar hårvarukopplade enheter så som Ethernet of Wi-Fi.
+
+SpamHaus.org tillhandahåller ett register av kända spammers.
+
+### URL
+
+En URL (Uniform resource locators) är ett namn på en resurs på internet och vilket protokoll som skall användas för att nå denne.
+URL = protocol://hostname/path/object
+Protokollet kan vara http, ftp, telnet, rmi, etc.
+hostname är en internetadress.
+path/object är adressen till en specifik fil/objekt på adressen.
+URLs är definerade av RFC 2396 och RFC 2732.
+
+Protokoll har default portar (http - 80)
+En URL kan vara absolut eller relativ till base URL.
+Ett URL kan skapas
