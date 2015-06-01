@@ -177,6 +177,8 @@ Ex: Arg1=Value1&Arg2=Value2
 Föreläsning 3
 -------------
 
+### Processer
+
 Processer är exekverande program.
 De flesta OS can köra flera processer parallellt.
 OS allokerar en lite del av CPU tid till varje process.
@@ -192,6 +194,8 @@ Processer väljs utefter en scheduling-algorithm, exempelvis FIFO eller Priority
 
 Traditionella processer är sekventiella, Concurrent processer har multipla trådar körandes, dvs processer inom processen.
 
+### Trådar
+
 Trådar implementeras antingen genom att extenda Thread, eller implementa Runnable.
 
 Schedulering kan antingen vara preemptive, eller cooperative:
@@ -201,6 +205,8 @@ Schedulering kan antingen vara preemptive, eller cooperative:
 
 Executors har en tråd-pool som utför jobb efterhand de submitas med hjälp av sin förbestämda mängd trådar.
 
+#### Delade resurser
+
 Busy wait: while(p); = DÅLIGT!
 
 Använd: synchronized (Object){while(p){try{ wait();} catch(Exception e){}}} & notifyAll();
@@ -208,8 +214,180 @@ Använd: synchronized (Object){while(p){try{ wait();} catch(Exception e){}}} & n
 Deadlocks sker om två trådar har varsin resurs blockad och väntar på varandra. UNDVIK DETTA!
 En enkel tråd kan inte deadlocka sig själv.
 
-En tråd "dör" när det kört klart.
+En tråd "dör" när den kört klart.
+
+
+Föreläsning 4
+-------------
+
+### HTTP
+
+Response codes:
+ * 2xx: Success
+ * 3xx: Redirection
+ * 4xx: Client error
+ * 5xx: Server error
+
+HTTP versioner:
+ * HTTP 1.0: En ny connection för varje request.
+ * HTTP 1.1: Möjlighet till återanvändning av existerande TCP socket med Connection: keep-alive
+
+Connection: keep-alive betyder att klienten är villig att återanvända samma socket
+
+En klient kan skicka 8 olika typer av requests:
+ * GET : hämta information som identifieras av request-URIn.
+ * POST : skicka data till resursen
+ * PUT : spara resursen som identifieras av request-URIn.
+ * DELETE : radera resursen som identifieras av request-URIn.
+ * HEAD : samma som GET men returnerar en respons utan data dvs endast med headers.
+ * OPTIONS : returnerar stödda metoder.
+ * TRACE : skickar tillbaka headern till klienten.
+ * CONNECT : reserverat namn för att connecta till en TCP/IP tunnel.
+
+En HTTP server måste minst implementera GET och HEAD.
+
+HTTP POST header:
+ 1. HTTP method, URL, version
+    POST /pierre_nugues/prog.sh HTTP/1.0
+ 2. Sequence of parameter names (46 types) followed by `:' and key-value pairs
+    Accept: text/plain
+    ...
+    Host: cs.lth.se
+    User-Agent: Mozilla/4.0
+ 3. Empty line: \r\n
+ 4. Data length should match the Content-Length parameter
+
+
+#### Cookies
+Cookies är en en liten bit information som som skickas från servern och sparas på klienten.
+Klienten skickar tillbaka cookien vid efterförljande accesses för att:
+ * Servern ska spara information om klienten
+ * Spionera på klienten
+
+När servern skickar en cookie så ser det ut: *Set-Cookie: fe_typo_user=4ca926632655c2ecb1a12c66eee5ad8f; path=/*
+
+När klienten skickar tillbaka cookier ser det ut: *Cookie: fe_typo_user=4ca926632655c2ecb1a12c66eee5ad8f*
+
+En cookies egenskaper:
+ * domain
+ * path
+ * expires
+ * connection type: http, secure
+
+### URLConnections
+
+En URLConnection representerar en länk mellan en URL och en applikation.
+
+```
+URL myDoc = new URL("http://cs.lth.se/");
+InputStream is = myDoc.openStream();
+
+===
+
+URL myDoc = new URL("http://cs.lth.se/");
+URLConnection uc = myDoc.openConnection();
+InputStream is = uc.getInputStream();
+```
+
+En URLConnection möjliggör:
+ 1. Åtkomst till header fields
+ 2. Modifiera klientens egenskaper
+ 3. Använda mer detaljerade commands så som POST/PUT.
+
+#### MIME
+Multipurpose Mail Internet Extensions - är en tag för att identifiera innehållet, content type.
+
+MIME definerar en kategori och ett format.
+Användbara MIMEs är text/html, text/plain, image/gif, image/jpeg, application/pdf etc.
+
+#### Caches
 
 
 
+Föreläsning 5
+-------------
 
+Föreläsning 6
+-------------
+
+Föreläsning 7
+-------------
+
+Föreläsning 8
+-------------
+
+Föreläsning 9
+-------------
+
+
+
+Föreläsning 10
+--------------
+
+HTML är tyvvär rätt så statiskt, oftast vill man ha sidor som är dynamiska -
+d.vs genererade utifrån något externt tillstånd exempelvis en databasfråga.
+
+###CGI
+Common Gateway Interface är ett sätt att generera dynamiska sidor med hjälp av godtyckligt skriptet.
+1.  När webbservern får en begäran om en webbsida
+    med en särskild URL startar servern ett externt
+    program – ett “CGI-skript”.
+2.  Det externa programmet läser in eventuella
+    parametrar i form av en “query string” antingen
+    via standard input eller s.k. “environmentvariabler”.
+3.  Skriptet genererar en HTML-sida baserat på
+    parametrarna och skriver HTML-koden till
+    standard output.
+4.  Programmet avslutas.
+
+#### Fördelar
+1. Du kan använda godtyckligt skriptspråk, du behöver pretty much bara ha tillgång till STD(IN/OUT) (och env-variabler)
+2. "Väl beprövat", tydligen.
+#### Nackdelar
+1. Ineffektivt då det startar en helt ny OS process.
+2. Måste avkoda query, post parametrar
+3. Spara på disk för att spara på tillstånd (olika processer, remember?)
+
+### Servlets
+* Skrivna i Java.
+* Systemoberoende.
+* Skapar inte ny operativsystemsprocess varje gång. (Effektivare!)
+* Startar inte om för varje HTTP-begäran. Kan komma ihåg information från gång till gång
+
+### JSP (Java Server Pages)
+Genererar en Servlet, funkar ungefär som servlets bara att servern måste generera en servlet sedan kompilera den (sker en gång!).
+Varje JSP-fil innehåller implicita objekt som beskriver request (get, post, header, etc parametrar), response, session, application och out (som STDOUT i CGI).
+
+###JSP vs Servlets
+#### JSP
+JSP, Java Servlet Pages, är templatad HTMLkod som genererar en Servlet.
+Syntax mycket likt mustache där man blandar HTML och Javakod.
+#### Servlets
+Servlets (little server) är javakod som genererar HTMLsidor.
+
+### PHP
+* Open Source
+* Liknar lite JSP
+* Request parametrar hittas i typ `$_GET[<variabelnamn>]` och samma fast POST, och SESSION.
+* Dynamiskt typat
+
+### Javascript
+* Påminner lite om java, inget mer gemensamt än namnet typ.
+* Göra beräkningar på tal och strängar.
+* Modifiera utseende och innehåll i ett webbläsarfönster.
+* Skapa nya fönster och ladda in nya sidor.
+* DOM manipulering.
+Kan ej:
+* Skicka TCP/UDP paket.
+* Använda filsystemet.
+
+### Ajax
+Asynchronous JavaScript and XML
+Samling av relaterade tekniker för interaktiv webb.
+* Förbättrar svarstider genom att HTML-sidor
+genereras lokalt mha JavaScript istället för på
+servern. Endast små datamängder överförs.
+* Data/skript överförs asynkront i bakgrunden.
+* Bygger på JavaScript och (ofta, men inte alltid) XML
+för överföring av data till/från servern.
+* Sidans struktur kan manipuleras dynamiskt.
