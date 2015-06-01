@@ -575,11 +575,119 @@ Föreläsning 7
 Föreläsning 8
 -------------
 
+Streaming corresponds to playing audio and video files from an Internet server.
+Normal TCP/UDP are based on packet-transmission and have no quality-of-service (QoS).
+
+Multimedia transmissions have to tackle:
+* *Bitrate* Audio: 128 kilobits/s. Videos: SD: 3 megabits/s. HD: 5 megabits/s., Ultra HD, 25 megabits/s.
+* *Delay* Must be less than 300 ms. (Perception threshold: 150 ms)
+* *Jitter* Packets may use different transmission paths that results into time expansion and compression Loss. Routers may drop packets when the network load is too high. A 10% loss is tolerable however
+
+### Using UDP/TCP/HTTP
+* UDP is compatible with the requirements but there isn't any congestion control and is blocked by many firewalls.
+  (DCCP is an attempt at fixing it)
+* TCP is widely used in commercial streaming
+* HTTP Is great for streaming, it isn't blocked by many firewalls!
+
+#### Real Time Transport Protocol (a.k.a Streaming with UDP!)
+* Identifies the content
+* Adds time stamps
+* Adds sequence numbers
+* RTP is encapsulated inside UDP packets
+* RTP can be used with unicast and multicast transmission (awesome)
+* RTP does not guarantee a real-time delivery.
+* RTP needs an application layer to:
+  * Re-order packets
+  * Attenuate jitter
+  * Compensate packet loss
+
+##### RTCP
+Part of RTP, is used in conjunction to RTP and provides stream playback statistics.
+Statistics on packets sent, received, lost, jitter.
+
+##### RTSP
+Part of RTP, used for controlling media playback.
+* *SETUP* Causes the server to allocate resources for a stream and start an RTSP session
+* *PLAY* Tells the server to start sending data
+* *RECORD* Records data
+* *PAUSE* Temporarily halts a stream without freeing server resources
+* *TEARDOWN* Frees resources associated with the stream. The
+* *RTSP* session ceases to exist on the server
+
+#### Streaming with HTTP
+* Slower than UDP, but can use already existing conventional web servers and is more resilient to firewall blocking.
+* HTTP Streaming is a modern alternative to RTP, two protocols to chose from:
+  * DASH, Dynamic Adaptive Streaming via HTTP
+  * HTTP Live Streaming
+The streaming architecture is organized so that it splits the media content
+into a set of files that are sequentially transmitted using the HTTP protocol.
+The client uses the GET command with a position in the media file, where s/he want to start viewing.
+Dash can chose quality depending on network connectivity (low bandwidth = low quality, etc)
+
+### SIP (Session Initialization Protocol)
+SIP is a protocol to establish a session with a remote host in UDP or RTP.
+SIP enables to set up a call, negotiate the parameters, manage, and close the session.
+Borrows many ideas from HTTP and uses UDP or TCP.
+Once the session is established on port 5060, the media transmission can use RTP or something else.
+SIP is similar to RTSP.
+
+### H.323
+H.323 is a competitor to SIP.
+It has been promoted by the ITU – the telephone companies
+Complete and in the beginning more complex then SIP
+Good integration with telephone systems
 
 
 Föreläsning 9
 -------------
 
+### UDP
+`DatagramPacket` representerar ett meddelande som kan skickas med UDP.
+`DatagramSocket` representerar en sändare/mottagare för meddelanden.
+
+För att skicka datagram:
+    public void send(DatagramPacket dp) throws IOException;
+med ett datagram som fyllts i med denna konstruktorn:
+    public DatagramPacket(byte[] buffer, int length, InetAddress destination, int port);
+
+För att ta emot datagram:
+    public void receive(DatagramPacket dp) throws IOException;
+med ett datagram som fyllts i med denna konstruktorn:
+    public DatagramPacket(byte[] buffer, int length);
+
+När man tar emot UDP paket bör man sätta en timeout.
+(obs, skapa DatagramPacket med byte[]-buffert inlagd först!)
+
+### Unicast
+* Ett meddelande sänds från en avsändare till EN mottagare.
+* Flera mottagare - flera kopior av meddelandet sänds.
+
+### Multicast
+* Ett meddelande sänds från en avsändare till FLERA mottagare – alla som är intresserade av att mottaga det.
+* Endast EN kopia av meddelandet så långt som möjligt.
+* Kräver stöd av routrar.
+* Exempel: Live-utsändning av videodata.
+* Finns speciella multicast addresser som man kan skicka meddelanden till, och ta emot meddelanden från.
+* För att undvika överdrivna trafikvolymer och begränsa spridningen av multicastmeddelanden använder man TTL,
+  en räknare som räknar ner för varje router som paketet passerar - när denna når noll skickas inte paketet vidare.
+
+#### MulticastSocket
+* Ansluta sig till en multicastgrupp.
+* Skicka meddelanden till andra datorer i gruppen.
+* Mottaga meddelanden från andra datorer i gruppen.
+* Lämna en multicastgrupp.
+
+##### Konstruktorer
+mycket likt DatagramSocket:
+    public MulticastSocket() throws SocketException; // Sender!
+    public MulticastSocket(int port) throws SocketException; // Offer!
+Och för att ta emot meddelanden behöver du anropa:
+    public void joinGroup(InetAddress address) throws IOException;
+För att lämna en MultiCastGrupp:
+    public void leaveGroup(InetAddress address) throws IOException;
+Ta emot och skicka paket (likt UDP!):
+    public void receive(DatagramPacket dp) throws IOException;
+    public void send(DatagramPacket packet) throws IOException;
 
 
 Föreläsning 10
