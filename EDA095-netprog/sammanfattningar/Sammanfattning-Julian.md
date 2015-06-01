@@ -604,6 +604,7 @@ Common Gateway Interface är ett sätt att generera dynamiska sidor med hjälp a
 #### Fördelar
 1. Du kan använda godtyckligt skriptspråk, du behöver pretty much bara ha tillgång till STD(IN/OUT) (och env-variabler)
 2. "Väl beprövat", tydligen.
+
 #### Nackdelar
 1. Ineffektivt då det startar en helt ny OS process.
 2. Måste avkoda query, post parametrar
