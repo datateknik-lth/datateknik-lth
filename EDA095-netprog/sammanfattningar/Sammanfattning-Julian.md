@@ -1,6 +1,8 @@
 EDA095 - Nätverksprogrammering
 ==============================
 
+Tack till Meris Bahtijaragic osv.
+
 Föreläsning 1
 -------------
 
@@ -16,7 +18,7 @@ Helt programspecifikt.
 
 #### Transportlagret
 
-Transportlagret bidrar till att applikationer ska kunne skicka meddelanden mellan varandra. 
+Transportlagret bidrar till att applikationer ska kunna skicka meddelanden mellan varandra. 
 Med hjälp av portnummer, som är en rent logisk abstraktion, mappas meddelanden till rätt applikation.
 De två vanligaste protokollen är TCP (Transmission control protocol) och UDP (User datagram protocol).
 
@@ -297,7 +299,7 @@ En URLConnection möjliggör:
 För att byta från GET till POST så används setDoOutput().
 
 #### MIME
-Multipurpose Mail Internet Extensions - är en tag för att identifiera innehållet, content type.
+Multipurpose Internet Mail Extensions - är en tag för att identifiera innehållet, content type.
 
 MIME definerar en kategori och ett format.
 Användbara MIMEs är text/html, text/plain, image/gif, image/jpeg, application/pdf etc.
@@ -341,14 +343,239 @@ SESAME extendar REST protokollet för att hantera grafer:
 Föreläsning 5
 -------------
 
+Transmission Control Protocol - TCP.
+
+Representerar en fast uppkoppling mellan två portar. Automatisk omsändning av meddelanden och ingen storleksbegränsning.
+
+Inom Java så använder sig Servern av en ServerSocket som väntar på ankommande anslutningar.
+Klienten använder sig av en vanlig Socket som kopplar upp sig till denna server.
+När servern accepterat en anslutning så skapas en Socket, som sedan kan användas för meddelandesändning.
+
+Mellan Klientens och Serverns Socket så går det strömmar, den enes OutputStream, går in i den andres InputStream.
+
+För att meddelanden mellan applikationer skall kunnas tolkas på rätt sätt så krävs det att ett applikationsprotokoll skapas. Detta med förutbestämda former.
+
+
 Föreläsning 6
 -------------
+
+### HTML
+**PRINTA DESSA SLIDES!**
+
+HTML kommer från SGML.
+
+Man kan displaya HTML i Swing med hjälp av JLabel.
+
+Man kan displaya HTML sidor i Swing med hjälp av JEditorPane.
+
+#### HTMLEditorKit
+
+```
+import javax.swing.text.html.HTMLEditorKit;
+public class ParserGetter extends HTMLEditorKit {
+  // purely to make this method public
+  public HTMLEditorKit.Parser getParser(){
+    return super.getParser();
+  }
+}
+
+parse(Reader r, HTMLEditorKit.ParserCallback cb, boolean ignoreCharSet)
+
+
+class extends HTMLEditorKit.ParserCallback{
+  void handleText(char[] data, int pos) //TagStripper.java
+  void handleStartTag(HTML.Tag t, MutableAttributeSet a, int pos)
+  void handleEndTag(HTML.Tag t, int pos)
+  void handleSimpleTag(HTML.Tag t, MutableAttributeSet a, int pos)
+  void handleComment(char[] data, int pos)
+  void handleEndOfLineString(String eol)
+  void handleError(String errorMsg, int pos)
+}
+
+
+public class TagStripper extends HTMLEditorKit.ParserCallback {
+  private Writer out;
+  public TagStripper(Writer out) {
+    this.out = out;
+  }
+  public void handleText(char[] text, int position) {
+    try {
+      out.write(text);
+      out.flush();
+    } catch (IOException ex) {
+      System.err.println(ex);
+    }
+  }
+}
+
+try {
+  if (!new URI(href).isAbsolute()) {
+    System.out.println("\tAbsolute link: " + new URL(new URL(baseURL), href));
+  }
+} catch (Exception e) { }
+
+or just
+
+new URL(new URL(baseURL), href)
+```
+
+jsoup är ett library som parsar HTML.
+
+### XML
+
+ * Extensible Markup Language, XML. 
+ * HTML är fult, XML ska städa upp det. 
+ * HTML/XML behöver parsers. 
+ * För att hämta specifik information från XML används XPath.
+ * XSL transformerar XML för att sedan kunna översättas till HTML.
+
+#### Unicode
+
+> Unicode is a computing industry standard for the consistent encoding, representation, and handling of text expressed in most of the world's writing systems.
+
+Unicode kan encodas med UTF-8, UTF-16, eller UTF-32.
+
+För att sortera tecken används 3 nivåer (collation):
+ 1. Bas charaktärer, ex A och B
+ 2. Om dessa är samma så jämförs accenterna, ex A och Á
+ 3. Slutligen jämför stor/liten, ex a och A
+
+#### XML
+
+XML använder sig av ren text, inte binär kod.
+
+Strukturen beskrivs i DTD (Document type definition).
+
+En DTD består av 3 typer av komponenter:
+ 1. Elements
+ 2. Attributes
+ 3. Entities
+
+XML måste ha en start- OCH sluttag.
+
+Element kan ha attribut:
+```
+<title align="center" style="bold"> <----
+  Network Processing Cookbook
+</title>
+```
+
+Entiteter startar med ett & och slutar med ett ; :
+```
+< &lt;
+> &gt;
+& &amp;
+" &quot;
+' &apos;
+```
+
+Element i DTD:
+```
+<!ELEMENT book (title, (author | editor)?, img, chapter+)>
+<!ELEMENT title (#PCDATA)>
+
+PCDATA - Parsed character data. 
+ANY - PCDATA or any DTD element
+EMPTY - No content - just a placeholder
+```
+
+Attribut i DTD:
+```
+<!ATTLIST title
+  style (underlined | bold | italics) "bold"
+  align (left | center | right) "left">
+  
+CDATA - The string type: any character except < , > , & , ' , and "
+ID - An identier of the element unique in the document; ID must begin with a letter, an underscore, or a colon
+IDREF - A reference to an identier
+NMTOKEN - String of letters, digits, periods, underscores, hyphens, and colons. It is more restrictive than CDATA, for instance, spaces are not allowed
+```
+
+XML example:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, (author | editor)?, img, chapter+)>
+<!ELEMENT title (#PCDATA)>
+...
+]>
+<book>
+<title style="i">Network Processing Cookbook</title>
+<author style="b">Pierre Cagne</author>
+<img src="pierre.jpg"/>
+<chapter number="c1">
+<subtitle>Introduction</subtitle>
+<para>Let&apos;s start doing simple things: collect texts.
+</para>
+<para>First, choose a site you like</para>
+</chapter>
+</book>
+
+
+With DTD:
+
+<!ELEMENT book (title, (author | editor)?, img, chapter+)>
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title style (u | b | i) "b">
+<!ELEMENT author (#PCDATA)>
+<!ATTLIST author style (u | b | i) "i">
+<!ELEMENT editor (#PCDATA)>
+<!ATTLIST editor style (u | b | i) "i">
+<!ELEMENT img EMPTY>
+<!ATTLIST img src CDATA #REQUIRED>
+<!ELEMENT chapter (subtitle, para+)>
+<!ATTLIST chapter number ID #REQUIRED>
+<!ATTLIST chapter numberStyle (Arabic | Roman) "Roman">
+<!ELEMENT subtitle (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+```
+
+XML parsers.
+
+DOM - Document object model. Skapar en graf av dokumentet.
+
+SAX - Simple API for XML, simpel callback vid taggar. snabb.
+
+Man kan transformera XML med XSL. XSLT traverserar XML trädet och genererar output. XSLT använder XPath för att namnge noder och attribut. XPath namnger på samma sätt som en filstruktur, ex /title/author/name etc.
+
+XSL exempel:
+```
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="1.0">
+<xsl:template match="/book">
+  <html>
+    <head>
+      <title>Pierre's Book</title>
+    </head>
+    <body>
+      <h1>Book</h1>
+    </body>
+  </html>
+</xsl:template>
+```
+
+De flesta browsers förstår XSLT och kan tranformera XML. Detta görs med en instruktion i början av XML dokumentet.
+
+ * The MIME type: type="application/xml"
+ * The XSL file address: href="program.xsl"
+
+Exempelvis:
+```
+<?xml-stylesheet type="application/xml"
+href="MyBook.xsl" charset="UTF-8"?>
+```
 
 Föreläsning 7
 -------------
 
+
+
 Föreläsning 8
 -------------
+
+
 
 Föreläsning 9
 -------------
