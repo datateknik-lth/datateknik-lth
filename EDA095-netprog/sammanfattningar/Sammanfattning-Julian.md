@@ -294,6 +294,8 @@ En URLConnection möjliggör:
  2. Modifiera klientens egenskaper
  3. Använda mer detaljerade commands så som POST/PUT.
 
+För att byta från GET till POST så används setDoOutput().
+
 #### MIME
 Multipurpose Mail Internet Extensions - är en tag för att identifiera innehållet, content type.
 
@@ -302,7 +304,39 @@ Användbara MIMEs är text/html, text/plain, image/gif, image/jpeg, application/
 
 #### Caches
 
+När en klient besöker en sida, så sparas bilder etc i klientens cacheminne, så att dessa inte behöver laddas ner igen för att förbättra performance.
+Caches kontrolleras av HTTP headersen:
+ * Expires (HTTP 1.0)
+ * Cache-control (HTTP 1.1): max-age, no-store
+ * Last-modifed
+ * ETag: A unique identifer sent by the server. The identifer changes when the resource changes
 
+#### REST
+
+Representational State Transfer är en stilmodel för webben. 
+
+RESTful arkitektur betyder implicit att 3 standarder används:
+ 1. HTTP:
+    * Transfer protocol of the web
+    * On top of TCP/IP
+    * Pairs of requests from clients and responses from servers
+ 2. URI/URLs:
+    * A way to name and address objects on the net
+ 3. HTML/XML
+
+REST metoder, mappad med CRUD:
+ * Create -> POST
+ * Read -> GET
+ * Update -> PUT
+ * Delete -> DELETE
+
+#### SESAME
+
+SESAME extendar REST protokollet för att hantera grafer:
+ 1. GET hämtar statements från repo
+ 2. PUT uppdaterar data, skriver över. Förväntas innehålla supported RDF doc.
+ 3. DELETE raderar statements från repo.
+ 4. POST uppdaterar data, antingen med ett RDF doc, eller special purpose transaction document.
 
 Föreläsning 5
 -------------
