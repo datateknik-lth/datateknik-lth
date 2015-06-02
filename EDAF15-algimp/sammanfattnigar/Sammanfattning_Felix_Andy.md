@@ -5,7 +5,7 @@ Terms
 > Pipelined processors use speculative computing to be more efficient. This
 > means that they will need to guess the outcome of a branch. This can be done
 > with the help of a *Branch History Table*, where the results of the last
-> branhces are stored. Without this optimization, instructions following the branch
+> branches are stored. Without this optimization, instructions following the branch
 > cannot be loaded until the outcome has been determined.
 
 **Rename Registers**
@@ -29,7 +29,7 @@ Terms
 **Fully associative cache**
 > Look through each row in the cache for the wanted address. Done with
 > comparators, that execute the lookup in parallel. For real applications this
-> is unfeasable since there would have to a lot of comparators. The space can
+> is unfeasible since there would have to a lot of comparators. The space can
 > be utilized in a better way.
 
 **Temporal locality**
@@ -173,7 +173,7 @@ Tools
 
 **gcov**
 > Counts exact execution counts for each source line as well as branch
-> frequenceies (taken/non-taken). Needs special flags for the compilation and
+> frequencies (taken/non-taken). Needs special flags for the compilation and
 > affects compiler optimization.
 
 **gprof**
