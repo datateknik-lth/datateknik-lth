@@ -606,7 +606,7 @@ Part of RTP, is used in conjunction to RTP and provides stream playback statisti
 Statistics on packets sent, received, lost, jitter.
 
 ##### RTSP
-Part of RTP, used for controlling media playback.
+Used for controlling media playback.
 * *SETUP* Causes the server to allocate resources for a stream and start an RTSP session
 * *PLAY* Tells the server to start sending data
 * *RECORD* Records data
