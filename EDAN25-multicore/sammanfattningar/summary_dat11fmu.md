@@ -8,7 +8,7 @@ Speedup = 1 / ( (1-P) - P/N )
 Where P is part of program that can be parallelized
 ```
 
-`volatile` in java needed for compound atomicity (but not for assignment)
+`volatile` in java can be used for assignment, but not compound atomicity.
 
 Three main issues
 -----------------
