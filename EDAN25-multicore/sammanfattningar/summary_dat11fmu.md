@@ -134,12 +134,18 @@ Cache coherence protocols
 1. At a write, the cache coherence protocol should either remove all other
    copies, including the memory copy, or send the newly written data to
    update each copy.
+
       - The first is called *write invalidate*
-      - The latter is called *write update protocol*, is almost always better
+      - The latter is called *write update protocol*
+
+   Which protocol is better depends on the application's sharing behavior, but
+   in general write invalidation is better. (ref: book pp. 175)
+
 2. Detecting when a write has completed so that the processor can perform the
    next memory access
+
 3. Maintaining illusion of atomicity - with memory in multiple nodes the
-   accesses can't be atomic, but a SC machine mus behave as if they are.
+   accesses can't be atomic, but a SC machine must behave as if they are.
 
 Memory access penalty
 ---------------------
