@@ -72,9 +72,9 @@ Dekker’s Algorithm
 ------------------
 
 Dekker’s algorithm solves the process synchronization problem with busy
-waits. Meaning: using the below specified code results in a correctl
+waits. Meaning: using the below specified code results in a correct
 handling of critical areas. Alas, the threads spend CPU cycles in the
-while loop, needlessly. If we implement Dekker’s we should compliment it
+while loop, needlessly. If we implement Dekker’s we should complement it
 with wait/notify functionality. Without this improvement the semaphores
 can be referred to as spinlocks. The only advantage with using spinlocks
 is that there is no context switch required.
@@ -114,7 +114,7 @@ A race condition is when multiple threads access and manipulate the same
 data concurrently, and where outcome of the execution depends on the
 particular order in which access takes place.
 
-Mutual Exclustion
+Mutual Exclusion
 -----------------
 
 If thread $T_i$ is executing in its critical section, then no other
@@ -172,7 +172,7 @@ accumulated.
 
 Even with this fix, sleep still causes a minimum busy wait.
 
-volatile, transient keywords
+Volatile, transient keywords
 ----------------------------
 
 Volatile means that the compiler is not allowed to cache the value of
@@ -235,10 +235,10 @@ and can thus resume its execution. (Despite being lower prioritized than
 the other thread.) If we called the highest prioritized thead A, and
 call the lowest Z. If Z blocks A, and Z is interrupted by a higher
 prioritized thread (M?) that doesn’t share its resources, then this
-thread (M) also blocks A. This is called a *prioriy inversion* since Z
+thread (M) also blocks A. This is called a *priority inversion* since Z
 and M will execute before A.
 
-Priority inheritence protocol
+Priority inheritance protocol
 -----------------------------
 
 The basic idea is to modify the priority of the tasks causing the
@@ -254,7 +254,7 @@ Raises the priority of the low priority thread temporarily
 ### Priority Ceiling Protocol
 
 To bound the priority inversion phenomenon and prevent the formation of
-deadlocks and chained blocking; PCP extends the priority inheritence
+deadlocks and chained blocking; PCP extends the priority inheritance
 protocol with a rule for granting a lock request.
 
 When a job enters a critical section it receives the *priority ceiling*
@@ -280,12 +280,12 @@ job of said priority or lower.
     said job has a lower priority than the priority ceiling, the first
     job continues to run. If the interrupting job had a higher priority
     than the job running inside the semaphore, its priority is
-    transferred to the currently running job. (Priority inheritence)
+    transferred to the currently running job. (Priority inheritance)
 
 5.  When no others jobs are blocked by the thread it resumes its
     original priority, i.e. its “nominal priority.”
 
-6.  Priority inheritence is transitive. I.e. if job $J_3$ blocks $J_2$
+6.  Priority inheritance is transitive. I.e. if job $J_3$ blocks $J_2$
     which in turn blocks $J_1$ then $J_3$ may inherit the priority from
     $J_1$.
 
@@ -293,7 +293,7 @@ job of said priority or lower.
 access a resource is blocked by a lower prioritized job using the
 resource.
 
-### Immediate inheritence
+### Immediate inheritance
 
 The priority of the thread running in a semaphore is immediately raised
 to the ceiling priority.
@@ -342,7 +342,7 @@ Sufficient and necessary
 The analysis is *sufficient* if, when it answers “YES”, all deadlines
 are met.
 
-The analysis is *necesary* if, when it answers “NO”, there is a
+The analysis is *necessary* if, when it answers “NO”, there is a
 situation where deadlines could be missed.
 
 The analysis is *exact* if it is both necessary and sufficient.
