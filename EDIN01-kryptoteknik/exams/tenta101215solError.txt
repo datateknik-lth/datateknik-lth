@@ -1,0 +1,1 @@
+(3a should be C(D) = 1 + D + D^2 - D^6)
