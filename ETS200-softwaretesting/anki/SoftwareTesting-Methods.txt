@@ -1,0 +1,5 @@
+Explain <b>Black Box</b>&nbsp;Testing	Black box testing is a software testing method in which the internal structure/design/implementation of the item being tested is not known to the tester.	
+Explain <b>White Box </b>Testing	White box testing is a software testing method in which the internal structure/design/implementation of the item being tested is known to the tester.	
+Explain <b>Gray Box </b>Testing	In Gray Box Testing, the internal structure is partially known. This involves having access to internal data structures and algorithms for purposes of designing the test cases, but testing at the user, or black-box level.	
+Explain <b>Agile Testing</b>	Agile Testing is a software testing practice that follows the principles of agile software development. Agile is an iterative development methodology, where requirements evolve through collaboration between the customer and self-organizing teams and agile aligns development with customer needs.	
+Explain <b>Ad Hoc</b>&nbsp;Testing	Ad Hoc testing is a method of software testing without any planning and documentation.	
