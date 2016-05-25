@@ -7,30 +7,30 @@
 * Read  from an **input stream**, write to an **output stream**
 
 ####**Input**
-![](https://raw.githubusercontent.com/JDavidsson/eda095/master/summary/inputsreams.png)
+![](inputsreams.png)
 
 
 
 
 **Read ten bytes**
 ```java
-        byte[] input = new byte[10]
-        for (int i = 0; i < input.length; i++) {
-    	    int byte = inputStream.read();
-    	    if (byte == -1) break; 
-    	    input[i] = (byte) byte;
-	    }
+byte[] input = new byte[10];
+for (int i = 0; i < input.length; i++) {
+	int b = inputStream.read();
+	if (byte == -1) break; 
+    	input[i] = (byte) b;
+}
 ```
 **or just**
 ```java
-    byte[] input = new byte[10]; 
-    int r = inputStream.read(input);
-    //.read(byte[]) returns number of bytes read
+byte[] input = new byte[10]; 
+int r = inputStream.read(input);
+//.read(byte[]) returns number of bytes read
 ```
 
 ####**Output**
 
-![](https://raw.githubusercontent.com/JDavidsson/eda095/master/summary/outputstreams.png)
+![](outputstreams.png)
 
 * **Buffers** increases effectiviness but don't forget to **flush() !**
 
@@ -202,7 +202,7 @@ ms.send(packet);
 ----------
 
 
-###**IP + URL/URI:** 
+###**URL/URI:** 
 
 * **URI** *(Uniform Resource Identifier)* **:** reference to a resource (subsumes URL)
 
@@ -227,11 +227,6 @@ while((bytesRead = in.read(buf)) != -1) {
 }
 fos.close(); in.close(); //coffee break
 ```
-
-
-
- - **IP:** stands for **I** *don't care about explaining I-* **P** *right now*
-
 
 
 ----------
@@ -287,7 +282,7 @@ Both DOM & SAX are XML-parsers. The difference is that DOM builds a tree represe
 *  **Servlet:** code runs on server 
 
 > " JSP is a webpage scripting language that can generate dynamic content while Servlets are Java programs that are already compiled which also creates dynamic web content. Servlets run faster compared to JSP. JSP can be compiled into Java Servlets. It's easier to code in JSP than in Java Servlets. " 
-> https://www.google.se/?gws_rd=cr,ssl&ei=L7jdUubfL4mG4AS6vIGoDA#q=servlet+jsp+difference
+> http://stackoverflow.com/questions/4965914/java-jsp-vs-servlet
 
 ----------
 
@@ -317,4 +312,3 @@ Both DOM & SAX are XML-parsers. The difference is that DOM builds a tree represe
  - Remember, exceptions are thrown everywhere in the code
  - In real life you have to **Catch 'em all**
  * No guarantee of truth
-
