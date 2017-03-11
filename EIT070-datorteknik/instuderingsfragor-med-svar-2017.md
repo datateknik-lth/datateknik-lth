@@ -14,7 +14,7 @@ Pontus Ovhagen
 
 1. __Vad är Moores lag?__
     
-    Observation av att antalet transistorer dubblas varje år.
+    Observation av att antalet transistorer dubblas vartannat år.
 
     __Vad är Murphys lag?__
 
@@ -72,9 +72,9 @@ Pontus Ovhagen
     Access av data i processorregister förväntas ta få antal ns, 
     L1 tar ~10ns, L2 10-tal ns, RAM ~100ns (Primärminne), HDD 10-tal ms (Sekundärminne).
 
-10. __Om en processor gör _fetch_ och _execute_, vad gör under _fetch_? Vad görs under _execute_? Är det som görs under _fetch_ samma för alla instruktioner?__
+10. __Om en processor gör _fetch_ och _execute_, vad görs under _fetch_? Vad görs under _execute_? Är det som görs under _fetch_ samma för alla instruktioner?__
 
-    Under Fetch hämtas instruktion där PC pekar och flyttar instruktionen till CPU:n 
+    Under Fetch hämtas instruktionen där PC pekar och flyttar instruktionen till CPU:n 
     där kontrollenheten avkodar instruktionen, under execute hämtas datan och operationen 
     görs för att sedan lagra detta i ett register. Ja, 100%.
 
@@ -184,13 +184,13 @@ Pontus Ovhagen
     Den första biten avgör om talet är positivt eller negativt, 1 negativt, 0 positivt. 
     Om inledande bit är 1 och följande 7 också är 1, dvs. 1111 1111, har vi -1. 
     Detta kan ses som att man har -128 och adderar 0111 1111 (127) vilket blir -1. 
-    0000 0000 blir fortfarande 0. Övre gräns blir 127, undre -128.
+    0000 0000 blir fortfarande 0. Övre gräns blir 127 och undre -128 för en signed char.
 
 35. __Vad är Little Endian?__
 
     En variation av hur vi representerar tal vid lagring i minne.
 
-    Little Endian byter att du lagrar den minst signifikanta biten först.
+    Little Endian innebär att du lagrar den minst signifikanta biten först.
     Om vi har ett ord 0A 0B 0C 0D kan vi lagra detta i minnet som 0D, 0C, 0B, 0A. 
     I Big Endian (American Supersize-Me Endian) hade vi lagrat 0A, 0B, 0C, 0D.
 
@@ -237,7 +237,7 @@ Pontus Ovhagen
 
 1. __Vad är pipelining?__
 
-    Pipelining är när vi kör flera olika intruktioner samtidigt. Exempelvis, om 
+    Pipelining är när vi kör flera olika instruktioner samtidigt. Exempelvis, om 
     vi har instruktionerna Fetch och Execute så kan vi köra en Fetch och en Execute samtidigt 
     men aldrig 2 Fetch samtidigt.
 
@@ -377,7 +377,7 @@ Pontus Ovhagen
 
 5. __Varför uppstår en minneshierarki?__
 
-    Hastighet, datamängd och pris.
+    Avstånd från processor, hastighet, datamängd och pris.
 
 6. __Vad kallas principen som gör att cacheminne fungerar?__
 
@@ -392,11 +392,13 @@ Pontus Ovhagen
 
 8. __Cacheminnen kan ha olika mappningar - vilka? Hur fungerar varje mappning?__
 
-    Direktmappning - Vi söker på cacheline, om vi hittar rätt cacheline då kollar vi om taggen stämmer. Vi lagrar med en direktmappning, 
+    _Direktmappning_ - Vi söker på cacheline, om vi hittar rätt cacheline då kollar vi om taggen stämmer. Vi lagrar med en direktmappning, 
     det vill säga, cacheline blir 14 least significant bits i primärminnesaddressen och taggen blir 8 most significant bits av primärminnesaddressen.
-    Associative mappning - Vi använder nu endast tags, och får göra större sökningar då vi inte har direktmappat minne utan vi slänger in primäraddress 
+
+    _Associative mappning_ - Vi använder nu endast tags, och får göra större sökningar då vi inte har direktmappat minne utan vi slänger in primäraddress 
     som tag (-2 bit för byte target, ges av cpu).
-    2-way set associative mappning - Direktmappning fast med ett set om 2 platser.
+
+    _2-way set associative mappning_ - Direktmappning fast med ett set om 2 platser.
 
 9. __I direktmappning, hur ersätts cacherader vid cachemissar?__
 
@@ -428,7 +430,7 @@ Pontus Ovhagen
 
 15. __Vad är fragmentering när vi pratar om paging?__
 
-    När massor med småplatser uppstår primärminnet för page lagring som gör att vi ej kan kicka igång stora program.
+    När massor med småplatser uppstår i primärminnet detta gör att vi ej kan kicka igång stora program.
 
 16. __Vad är skillnaden på extern fragmentering och intern fragmentering?__
 
@@ -541,8 +543,8 @@ vilka avvägningar gör du (och vilka parametrar avgör)?__
 
 3. __Varför behövs cacheminnen?__
 
-    För att effektivisera processorns exekveringstid. Hämtningar är den 
-    den svaga länken.
+    För att effektivisera processorns exekveringstid. Hämtningar är 
+    processorns svaga länk.
 
 4. __Vad är en minneshierarki?__
 
@@ -574,11 +576,11 @@ storlek N bytes som ska användas till ett primärminne med storlek M bytes?__
 
     För att kunna lagra det man använde absolut senaste och om det
     inte är absolut senaste så finns det i en nivå upp. Och vi har flera nivåer 
-    då vi vill ha små och snabba cacheminnen. Så vi baserar cachestorlek på lokalitetsprincip.
+    då vi vill ha små och snabba cacheminnen närmst processorn. Så vi baserar cachestorlek på lokalitetsprincip.
 
 11. __Varför har man I-cache och D-cache?__
 
-    För att minimera stalls i pipeline. FO, WO och FI, FO kan göras samtidigt.
+    För att minimera stalls i pipeline. FO, FI och WO, WI kan göras samtidigt.
 
 12. __Vad är TLB?__
 
@@ -624,7 +626,7 @@ storlek N bytes som ska användas till ett primärminne med storlek M bytes?__
 
 21. __Hur kan kompilatorn förhindra dessa problem?__
 
-    Automatic nopping eller ändring av ordning.
+    Automatic nopping eller ändring av instruktionsordning.
 
 22. __Vad är en _LOAD_ & _STORE_ arkitektur?__
 
@@ -640,7 +642,7 @@ storlek N bytes som ska användas till ett primärminne med storlek M bytes?__
 
 2. __Vad är superscalar pipelining?__
 
-    Det ger oss möjligheten att initiera flera instruktioner samtidigt i samma pipeline steg. 
+    Det ger oss möjligheten att initiera flera instruktioner samtidigt i samma pipeline-steg. 
     Det är möjligt att initiera flera instruktioner i samma klockcykel.
 
 3. __Vad är skillnaden mellan en superscalar processor och en very long instruction word processor?__
