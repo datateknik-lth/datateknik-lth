@@ -9,7 +9,7 @@ changes, progress, sign-off deliverables etc.</dd>
 
 <dt>Steering committee</dt>
 <dd>Resp for overall project success.
-Representatives for key stakeholders and involved organisational
+Representatives for key stakeholders and involved organizational
 units. Support project sponsor by providing multiple perspectives.</dd>
 
 <dt>Project manager</dt>
@@ -21,7 +21,7 @@ team. Secure acceptance of deliverables from sponsor and stakeholders.</dd>
 <dd>All project roles and others who
 may be impacted by the outcome of the project.</dd>
 
-<dt>Customer respresentatives/decision-makers</dt>
+<dt>Customer representatives/decision-makers</dt>
 <dd>Active and
 available to project on matters of customer interests, e.g.
 regarding requirements and acceptance of deliveriables.</dd>
@@ -71,7 +71,7 @@ supporting roles (think IT-department).
 ### Informal
 #### Regular
 * **Oral** Around the coffee machine
-* **Written** Emails to collegues
+* **Written** Emails to colleagues
 
 #### Ad Hoc
 * **Oral** Ad hoc meetings
@@ -79,7 +79,7 @@ supporting roles (think IT-department).
 
 ## Leadership
 Leadership is the ability to influence other and achieve a common goal.
-Management includes leadership, as well as organising, planning and controlling.
+Management includes leadership, as well as organizing, planning and controlling.
 Both exercise power but in different ways, position power (formal authority; rewards,
 punishment)
 or personal power (individual qualities; an expert, access to information).

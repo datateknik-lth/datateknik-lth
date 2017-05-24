@@ -8,7 +8,7 @@
   * Estimate cost/effort based on historical data
   * Monitor project progress & risks
 * Software quality – product quality status
-* SW process improvement – process efficency & quality
+* SW process improvement – process efficiency & quality
 
 All of these require decision support!
 
@@ -27,7 +27,7 @@ All of these require decision support!
   * Price of software components
   * Experience of staff
 
-## Objective or subjective measurments
+## Objective or subjective measurements
 * Objective
   * Lines of code
   * Actual implementation time – source: reporting system

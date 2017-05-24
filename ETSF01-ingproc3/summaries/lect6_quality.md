@@ -53,7 +53,7 @@ new environment?
   * Release decision based on quality measurements
 
 ## Quality Plan
-A quality plan can be seen as a checklit that all quality
+A quality plan can be seen as a checklist that all quality
 issues have been dealt with by the planning process.
 
 * scope of plan & references to other documents
@@ -68,7 +68,7 @@ issues have been dealt with by the planning process.
 * training
 * risk management - methods of risk management that are to be used
 
-## Clear criterias for activities/inspections
+## Clear criteria for activities/inspections
 * Entry requirements - test data and expected results prepared
 * Implementation requirements - "when error is found, do this and that"
 * Exit requirements - done when all tests ok

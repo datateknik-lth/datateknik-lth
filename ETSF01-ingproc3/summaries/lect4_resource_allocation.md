@@ -33,8 +33,8 @@ Performed after activities, effort, and risks have been identified.
 
 ### Allocation step by step
 1. Identify resources needed and create a resource requirements list.
-2. Identify resource types, resources within a group are interchangeble, and resources between groups are not.
-3. Allocate resource types to activites, and examine each resource type histogram.
+2. Identify resource types, resources within a group are interchangeable, and resources between groups are not.
+3. Allocate resource types to activities, and examine each resource type histogram.
 4. If resources needed exceeds the available resources at some time, perform resource smoothing.
 
 * Resource histograms, where the first is before resource smoothing. Available resources are the dotted line, 
@@ -82,7 +82,7 @@ When prioritizing between two competing activities, there are two ways of doing 
 
 ### Resource usage
 Need to... 
-* maximise %usage of resources = reduce idle periods between tasks.
+* maximize %usage of resources = reduce idle periods between tasks.
 * balance costs against early completion date.
 * allow for contingency.
 
@@ -98,7 +98,7 @@ scope   /    \  effort
 ### Critical chains
 When performing resource scheduling, new dependencies may be created, which may lead to additional/new critical chains.
 Avoid adding dependencies to the activity network to reflect resource constraints. This avoids messiness and a 
-resource constraint may dissappear during the project, but the dependency will remain visually. 
+resource constraint may disappear during the project, but the dependency will remain visually. 
 Instead, amend dates on schedule to reflect resource constraints.
 
 Eventually, actual individuals will have to replace the resource types for tasks. 

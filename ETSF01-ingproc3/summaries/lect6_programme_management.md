@@ -6,18 +6,18 @@ A business case may be presented for several potential projects. It should show
 that the benefits of the project will exceed development, implementation and 
 operational costs. This is part of portfolio management. 
 
-###Content of a business case:###
+### Content of a business case:
 
 <dl>
   <dt>Introduction/background</dt>
-  <dd>describes a problem to be solved or an oppertunity to be exploited.</dd>
+  <dd>describes a problem to be solved or an opportunity to be exploited.</dd>
   <dt>The proposed project</dt>
   <dd>a brief outline of the project scope.</dd>
   <dt>The market</dt>
   <dd>the project could be to develop a new product. The likely <em>demand for the
     product</em> is assessed.</dd>
   <dt>Organizational/Operational infrastructure</dt>
-  <dd>describes how the structure of the organization will be afftected by the
+  <dd>describes how the structure of the organization will be affected by the
     implementation of the project.</dd>
   <dt>Benefits</dt>
   <dd>These should be expressed in financial terms.</dd>
@@ -60,7 +60,7 @@ operational costs. This is part of portfolio management.
   - + known cost, supplier motivation
   - - higher price to absorb the additional risk, frozen requirements,
   *impossible* cost -- quality risk
-* **Time and materails contracts**: fixed rate/unit of effort
+* **Time and materials contracts**: fixed rate/unit of effort
   - + requirements changes, lack of price pressure
   - - customer liability due to uncertain cost & commitment, lack of incentive
       for supplier
@@ -83,7 +83,7 @@ operational costs. This is part of portfolio management.
 
 *Costs and benefits must be identified and expressed in the same unit..*
 
-**Liftime of Return on Investment (ROI) for potential project**
+**Lifetime of Return on Investment (ROI) for potential project**
 
 * **Estimate timing costs and income**
 * **Development incurs costs**
@@ -146,8 +146,8 @@ NPV = ---------------
 
 ## Portfolio Management (PM) 
 
-Porfolio project management provides an overview of all the projects that an
-organisation is undertaking or is considering. The optimization coverage of 
+Portfolio project management provides an overview of all the projects that an
+organization is undertaking or is considering. The optimization coverage of 
 product ranges and market segment are need & profit.
 
 * **Predicting market**
@@ -207,7 +207,7 @@ low               |        xxxxxx   high
 * **Hard to express benefits in financial terms**
 * **Projects with the highest potential returns are often the most risky**
 
-##Programme Management
+## Programme Management
 
 **One definition:**  
 *a group of projects that are managed in a* **_co-ordinated_** *way to* **_gain benefits_**
@@ -215,7 +215,7 @@ low               |        xxxxxx   high
 * **Business cycle programmes - common time & resources**
 * **Strategic - with common goal**
 * **Infrastructure programmes - e.g. IT support projects**
-* **Research & developemt (R&D) development programmes - *safe* + *risky* projects**
+* **Research & development (R&D) development programmes - *safe* + *risky* projects**
 * **Innovative partnerships - new technologies, precompetitive**
 
 **Responsibilities of a program manager**

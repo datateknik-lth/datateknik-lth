@@ -80,7 +80,7 @@ while the coach is responsible for developing individual and team performance.
 
 1. Evaluation of current practices
 1. Planning for improvements
-1. Imlementing improvements
+1. Implementing improvements
 1. Evaluation of effects
 
 ## The Deming Cycle - PDSA
@@ -161,7 +161,7 @@ __Measuring__: Lead time, customer satisfaction, cost per customer, competence
 level etc
 __Analyze__: root cause analysis, "5 Why?", identify improvement
 __Improve__: implement
-__Control__: remeasure, continously assess
+__Control__: remeasure, continuously assess
 
 ##### Retrospective Analysis
 * Consider the past in order to identify problems and improvements - individual,
@@ -171,7 +171,7 @@ __Control__: remeasure, continously assess
   * Sprint (iteration) retrospectives
 * **Benefits**: Team learning & improvements, widen perspectives & insight into
   bigger picture
-* **Challanges**: taking the time together, remembering (correctly and uniformly),
+* **Challenges**: taking the time together, remembering (correctly and uniformly),
   risk of incorrect conclusion for pure experience based retros
 
 __Evidence-Based Timeline Retrospectives__
@@ -222,7 +222,7 @@ their production practices. These levels are defined as follows.
 * **Level 2** *Managed (Repeatable, in slides)*: Organizations at this level
   will have basic project management procedures in place. The way, however,
   individual tasks are carried out will depend largely on the person doing it.
-  * Policies for managing software projecs are implemented
+  * Policies for managing software projects are implemented
   * Realistic commitments
   * Capability: disciplined, earlier successes can be repeated
 
@@ -238,7 +238,7 @@ their production practices. These levels are defined as follows.
   * A typical process for developing and maintaining software in the
     organisation is defined
   * A Software Engineering Process Group (SEPG) is defined
-  * Capabilitiy: standard and consistent - both software engineering and
+  * Capability: standard and consistent - both software engineering and
     management are stable and repeatable
 
   __Key Process Areas__
@@ -278,18 +278,18 @@ recommend specific actions to bring the organization up to a higher level.
 * Each process area contains goals and practices
 * Two types of models
   * Staged: grades the overall development process
-  * Continous: grades each process area
+  * Continuous: grades each process area
 
 ### SPICE
 
-Software Process Improvement Capability dEtermination model
+Software Process Improvement Capability Determination model
 
 * Developed from CMM
 * Parts of SPICE defined as ISO standard
 * Consists of:
   * Process dimension: assessment per process area
   * Capability dimension: how processes are impl and managed
-* Particularly appropriate for small organisations (ability to focus on process
+* Particularly appropriate for small organizations (ability to focus on process
   areas)
 
 ## Process Modelling
