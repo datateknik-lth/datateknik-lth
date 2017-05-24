@@ -99,7 +99,7 @@ of the project, and a line displaying the actual progress.
 | 7 |                       \_.
 ```
 
-The dots represent the ideal veolocity, the lines the actual.
+The dots represent the ideal velocity, the lines the actual.
 
 * Fever chart (critical chain). The upper part indicates
 that the project most likely will be late, the lower part
@@ -214,5 +214,5 @@ impact should be considered including testing, long-term maintenance etc
 **decides to proceed or not**
 5. RFC and its impact discussed with all stakeholders, typically at a
 **change control board meeting** where RFC is approved or rejected.
-6. .... Varied process for implementating change. Should involve
+6. .... Varied process for implementing change. Should involve
 **communication** and **tracking of results**

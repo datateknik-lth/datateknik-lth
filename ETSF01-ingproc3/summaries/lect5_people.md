@@ -1,5 +1,5 @@
 # Managing people
-## Organisational Behaviour Research
+## Organizational Behaviour Research
 Aim: Explain people's behaviour
 * Theories á la "If A then B is likely to follow"
 * Dependencies, not causal relationships & formulas such as e.g. Chemistry, Physics
@@ -39,7 +39,7 @@ right, e.g. pay or working conditions
 The satisfaction of a job is based on five factors, listed below. The first three factors (skill variety, task identity and task significance) make the job "meaningful" to the person who is doing it.
 
 1. Skill variety: The number of skills used in the exercise
-2. Task identiy: A sense of ownership of your work
+2. Task identity: A sense of ownership of your work
 3. Task significance: Influence on others
 4. Autonomy: Responsibility, authority. Discretion about the way that you do the job
 5. Feedback: Information you get back about the results of your work

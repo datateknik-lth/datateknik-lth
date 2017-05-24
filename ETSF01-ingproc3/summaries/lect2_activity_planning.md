@@ -3,7 +3,7 @@
 > Time is natures way of stopping everything happening at once.
 
 ## The objectives of activity planning
-- Feasability assessment
+- Feasibility assessment
   * Is the project possible within the required timescales and resources?
 - Resource allocation
   * What are the most effective ways of allocating resources? When should
@@ -14,7 +14,7 @@
 - Motivation
  * Providing targets and monitoring progress can motivate staff.
 - Coordination
- * When do the staff need to be transfered between projects to increase 
+ * When do the staff need to be transferred between projects to increase 
    efficiency?
 
 ## Activity networks
@@ -28,7 +28,7 @@
           |____|
  ```
 
- Activity networks can be used to assess the feasability of the projects completion
+ Activity networks can be used to assess the feasibility of the projects completion
  date, identify when resources are needed, calculate when costs incur, and to coordinate
  the staff between tasks.
 
@@ -49,14 +49,14 @@
    * Creating a list of all the activities that the project needs. Can be done by creating 
      a **Work Breakdown Structure** (WBS, filled with verbs). This involves identifying the main tasks that are 
      needed for the project and then breaking them down into lower-level tasks. Too great depth
-     will result in a large number of small tasks that will be diffcult to manage. Too shallow
+     will result in a large number of small tasks that will be difficult to manage. Too shallow
      project provides insufficient detail.
 
   - Product-based approach
    * Consists of producing a **Product Breakdown Structure** (PBS, filled with nouns) and a **Product Flow Diagram** (PFD).
-     The PFD idicates for each product which other products are required as inputs. With the help of a 
+     The PFD indicates for each product which other products are required as inputs. With the help of a 
      PFD you can easily create an ordered list of activities by identifying the order of products and
-     which acitivies are needed for them.
+     which activities needed for them.
 
   - Hybrid approach
    * The hybrid approach is a mix of both. Instead of creating a WBS that is based on the projects 
@@ -92,7 +92,7 @@
              \|____|/                                   
 ```
 
-Lagged acitivites are dependent on other activities but are initiated with a lag. In the above
+Lagged activities are dependent on other activities but are initiated with a lag. In the above
 example, the second-row activity is started 1 day after the dependent activity and completed 
 2 days after the dependent activity has completed.
 

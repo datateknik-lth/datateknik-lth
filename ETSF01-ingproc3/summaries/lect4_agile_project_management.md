@@ -66,9 +66,9 @@ Used to, visualize workflow, limit work-in-progress, pull work from column to co
   * XP: changes allowed
 
 ### Activity planning
-* Product Owner/Customer defines and prioritises User stories
+* Product Owner/Customer defines and prioritizes User stories
 * Backlog or Story card management
-* Dependencies are built into the prioritised list, i.e. not explicitly marked
+* Dependencies are built into the prioritized list, i.e. not explicitly marked
 
 ### Effort estimation
 * Early estimates during exploration phase
@@ -84,7 +84,7 @@ Used to, visualize workflow, limit work-in-progress, pull work from column to co
 
 ### Risk management
 * Built into the process, e.g. stand-up meetings: Hindrances?
-* Transparency, openess with information
+* Transparency, openness with information
 * Iteration demos with customer / product owner
 
 Traditional risk management techniques can be used, but not prescribed by Agile methods as such.
@@ -102,7 +102,7 @@ Traditional risk management techniques can be used, but not prescribed by Agile 
 ### Scaling agile
 * Designed for small scale – 1 team
 * Scalable with Scrum-of–Scrums, shared backlog
-* Upscaling specific to each organisation
+* Upscaling specific to each organization
 
 ```
              ____

@@ -56,7 +56,7 @@ resulterar i sämre kvalitet som sedan visas i __testning__ eller senare faser.*
 
 ## When & Why
 * Strategic planning
-* Feasability study
+* Feasibility study
 * Requirements spec
 * Evaluation of suppliers' proposals
 * Project planning
@@ -68,7 +68,6 @@ resulterar i sämre kvalitet som sedan visas i __testning__ eller senare faser.*
 * People
   * Skills, competence and experience
   * Co-operation & communication
-* ... (srsly wtf, why the dots here grrl?)
 
 ## Bottom-up versus top-down estimation
 
@@ -150,7 +149,7 @@ FP   = UFP * "technical complexity factor"
   * *External output types* - transactions where data is output to the user
   * *External inquiry types* - transactions initiated by the user, which provide
     information but do not update internal files
-  * *Logical internal file types* - are the standing files (or datastore) used
+  * *Logical internal file types* - are the standing files (or data store) used
     by the system.
   * *External interface file types* - allow for output and input that may pass
     to and from other computer applications
@@ -192,7 +191,7 @@ corresponding magical constant.
 ## Expert judgement
 
 Ask an important looking person to pull a suitable guesstimation out of his
-pocket. Research show that expert judgement in practice often is based on
+pocket. Research show that expert judgment in practice often is based on
 *analogy*.[citation needed]
 
 How to? First, find the right people (people with experience from similar
